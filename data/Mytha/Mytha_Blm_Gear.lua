@@ -214,19 +214,19 @@ function init_gear_sets()
 	
 	sets.precast.WS['Myrkr'] = 
 	{
-		ammo="Staunch Tathlum +1",
-		head="Pixie Hairpin +1",
-		neck="Sanctity Necklace",
+		ammo="Strobilus",
+		head="Amalric Coif +1",
+		neck="Dualism Collar +1",
 		ear1="Moonshade Earring",
-		ear2="Etiolation Earring",
-		body="Amalric Doublet +1"
-		,hands="Regal Cuffs",
+		ear2="Nehalennia Earring",
+		body="Amalric Doublet +1",
+		hands=AF_HANDS,
 		ring1="Mephitas's Ring +1",
 		ring2="Mephitas's Ring",
-		back="Aurist's Cape +1",
-		waist="Yamabuki-no-Obi",
-		legs="Psycloth Lappas",
-		feet="Medium's Sabots"
+		back=AMBUFC_BACK,
+		waist="Shinjutsu-no-Obi +1",
+		legs="Amalric Slops +1",
+		feet="Psycloth Boots"
 	}
 		
 	sets.MaxTPMyrkr = {ear1="Evans Earring",ear2="Etiolation Earring"}
