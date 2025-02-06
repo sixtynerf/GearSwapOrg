@@ -4,7 +4,7 @@ function user_job_setup()
 	state.OffenseMode:options('Normal')
 	state.HybridMode:options('Normal')
 	state.IdleMode:options('Normal','PDT','MDT','MEVA')
-	state.Weapons:options('None','Bunzi','Lathi')
+	state.Weapons:options('None','Bunzi','Lathi','Hvergelmir')
 
 --Artifact Gear
 	AF_HEAD 		= {name="Spae. Petasos +2"}
@@ -78,9 +78,10 @@ function init_gear_sets()
     -- Start defining the sets
     --------------------------------------
 	
-	-- Weapons sets
+-- Weapons sets
 	sets.weapons.Lathi = {main="Lathi",sub="Enki Strap"}
 	sets.weapons.Bunzi = {main="Bunzi's Rod",sub="Ammurapi Shield"}
+	sets.weapons.Hvergelmir = {main="Hvergelmir",sub="Enki Strap"}
 	
     sets.buff.Sublimation = {waist="Embla Sash"}
     sets.buff.DTSublimation = {waist="Embla Sash"}	
