@@ -231,27 +231,27 @@ function init_gear_sets()
 	
 	sets.midcast.FastRecast = 
 	{
-		--104FC + 7QM + 20SIRD
+		--103FC + 7QM + 20SIRD + 16DT
 		main="Hvergelmir",		--50FC
-		sub="Khonsu",				
-		ammo="Impatiens",		--2QM+10SIRD
+		sub="Khonsu",			--			6DT	
+		ammo="Impatiens",		--	2QM	10SIRD
 		--head="Amalric Coif +1",
-		head=ONGO_HEAD,			--5FC+10SIRD
-		neck="Null Loop",
+		head=ONGO_HEAD,			--5FC		10SIRD
+		neck="Null Loop",		--			5DT		
 		--neck="Voltsurge Torque",	--4FC		
 		ear1="Malignance Earring",	--4FC
 		ear2="Loquac. Earring",		--2FC
 		--body="Zendik Robe",
 		body=ONGO_BODY,			--8FC
 		--hands="Volte Gloves",
-		hands=ONGO_HANDS,		--7FC			
+		hands=ONGO_HANDS,		--6FC			
 		ring1="Kishar Ring",		--4FC
-		ring2="Lebeche Ring",		--2QM
+		ring2="Lebeche Ring",		--	2QM
 		back=AMBUFC_BACK,		--10FC
-		waist="Witful Belt",		--3FC+3QM
+		waist="Witful Belt",		--3FC	3QM
 		--waist="Shinjutsu-no-obi +1",	--5FC
 		--legs=PsyclothLegs_FC,
-		legs=ONGO_LEGS,			--7FC
+		legs=ONGO_LEGS,			--7FC			5DT
 		feet=ONGO_FEET			--4FC
 	}
 
