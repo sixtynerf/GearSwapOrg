@@ -135,11 +135,16 @@ function init_gear_sets()
 	
 	sets.precast.FC.Stoneskin = set_combine(sets.precast.FC['Enhancing Magic'], {})
 	
-	sets.precast.FC['Elemental Magic'] = set_combine(sets.precast.FC, {ammo="Staunch Tathlum +1",ear1="Malignance Earring",ring2="Prolix Ring",back="Swith Cape +1",waist="Siegel Sash"})
+	sets.precast.FC['Elemental Magic'] = set_combine(sets.precast.FC, 
+		{
+			ammo="Staunch Tathlum +1",	--	11SIRD	3DT
+			ring1="Prolix Ring",		--2FC
+			--back="Swith Cape +1",
+		})
 	
-	sets.precast.FC.Cure = set_combine(sets.precast.FC, {main="Serenity",sub="Clerisy Strap +1",body="Heka's Kalasiris"})
+	--sets.precast.FC.Cure = set_combine(sets.precast.FC, {main="Serenity",sub="Clerisy Strap +1",body="Heka's Kalasiris"})
 	
-	sets.precast.FC.Curaga = sets.precast.FC.Cure
+	--sets.precast.FC.Curaga = sets.precast.FC.Cure
 	
 	sets.precast.FC.Impact = set_combine(sets.precast.FC, {head=empty,body="Twilight Cloak"})
 	
@@ -806,18 +811,38 @@ function init_gear_sets()
 	
 	sets.engaged = 
 	{
-		ammo="Staunch Tathlum +1",
-		head="Jhakri Coronal +2",neck="Combatant's Torque",ear1="Mache Earring +1",ear2="Telos Earring",
-		body=JHAKRI_BODY,hands=JHAKRI_HANDS,ring1="Ramuh Ring +1",ring2="Ramuh Ring +1",
-		back=gear.stp_jse_back,waist="Olseni Belt",legs=JHAKRI_LEGS,feet=JHAKRI_FEET
+		ammo="Amar Cluster",
+		head=BUMBA_HEAD,
+		--neck="Combatant's Torque",
+		neck="Null Loop",
+		ear1="Telos Earring",
+		ear2="Crep. Earring",
+		body=BUMBA_BODY,
+		hands=BUMBA_HANDS,
+		ring1=ChirichRing_Ring1,
+		ring2=ChirichRing_Ring2,
+		back=AMBUSTP_BACK,
+		waist="Olseni Belt",
+		legs=BUMBA_LEGS,
+		feet=BUMBA_FEET
 	}
 	
 	sets.engaged.DT = 
 	{
-		ammo="Staunch Tathlum +1",
-		head=BUMBA_HEAD,neck="Combatant's Torque",ear1="Mache Earring +1",ear2="Telos Earring",
-		body="Nyame Mail",hands=BUMBA_HANDS,ring1="Ramuh Ring +1",ring2="Ramuh Ring +1",
-		back=gear.stp_jse_back,waist="Olseni Belt",legs=BUMBA_LEGS,feet=BUMBA_FEET
+		ammo="Amar Cluster",
+		head=BUMBA_HEAD,
+		--neck="Combatant's Torque",
+		neck="Null Loop",
+		ear1="Telos Earring",
+		ear2="Crep. Earring",
+		body=BUMBA_BODY,
+		hands=BUMBA_HANDS,
+		ring1=ChirichRing_Ring1,
+		ring2=ChirichRing_Ring2,
+		back=AMBUSTP_BACK,
+		waist="Olseni Belt",
+		legs=BUMBA_LEGS,
+		feet=BUMBA_FEET
 	}
 
 	--Situational sets: Gear that is equipped on certain targets
