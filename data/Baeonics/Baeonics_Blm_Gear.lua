@@ -1,3 +1,6 @@
+--gs c toggle magicburstmode lock
+
+
 function user_job_setup()
 -- Options: Override default values
 	state.CastingMode:options('Normal','Proc','OccultAcumen')
