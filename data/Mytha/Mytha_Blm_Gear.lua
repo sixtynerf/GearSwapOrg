@@ -227,48 +227,143 @@ function init_gear_sets()
     
     
 --- Midcast Sets ----
+	
+	sets.midcast.FastRecast = 
+	{
+		--104FC + 7QM + 20SIRD
+		main="Hvergelmir",		--50FC
+		sub="Khonsu",				
+		ammo="Impatiens",		--2QM+10SIRD
+		--head="Amalric Coif +1",
+		head=ONGO_HEAD,			--5FC+10SIRD
+		neck="Null Loop",
+		--neck="Voltsurge Torque",	--4FC		
+		ear1="Malignance Earring",	--4FC
+		ear2="Loquac. Earring",		--2FC
+		--body="Zendik Robe",
+		body=ONGO_BODY,			--8FC
+		--hands="Volte Gloves",
+		hands=ONGO_HANDS,		--7FC			
+		ring1="Kishar Ring",		--4FC
+		ring2="Lebeche Ring",		--2QM
+		back=AMBUFC_BACK,		--10FC
+		waist="Witful Belt",		--3FC+3QM
+		--waist="Shinjutsu-no-obi +1",	--5FC
+		--legs=PsyclothLegs_FC,
+		legs=ONGO_LEGS,			--7FC
+		feet=ONGO_FEET			--4FC
+	}
 
-    sets.midcast.FastRecast = {main=gear.grioavolr_fc_staff,sub="Clerisy Strap +1",ammo="Hasty Pinion +1",
-		head="Amalric Coif +1",neck="Voltsurge Torque",ear1="Enchntr. Earring +1",ear2="Malignance Earring",
-		body="Zendik Robe",hands="Volte Gloves",ring1="Kishar Ring",ring2="Prolix Ring",
-		back="Swith Cape +1",waist="Witful Belt",legs="Psycloth Lappas",feet="Regal Pumps +1"}
-
-    sets.midcast.Cure = {main=gear.gada_healing_club,sub="Ammurapi Shield",ammo="Hasty Pinion +1",
-        head="Vanya Hood",neck="Incanter's Torque",ear1="Gifted Earring",ear2="Etiolation Earring",
-        body="Zendik Robe",hands="Telchine Gloves",ring1="Janniston Ring",ring2="Menelaus's Ring",
-        back="Tempered Cape +1",waist="Witful Belt",legs="Psycloth Lappas",feet="Vanya Clogs"}
+--- Uncomment this section if BLM will be use outisde Odyssey---
+--[[
+	sets.midcast.Cure = 
+	{
+		main=gear.gada_healing_club,
+		sub="Ammurapi Shield",
+		ammo="Hasty Pinion +1",
+		head="Vanya Hood",
+		neck="Incanter's Torque",
+		ear1="Gifted Earring",
+		ear2="Etiolation Earring",
+		body="Zendik Robe",
+		hands="Telchine Gloves",
+		ring1="Janniston Ring",
+		ring2="Menelaus's Ring",
+		back="Tempered Cape +1",
+		waist="Witful Belt",
+		legs="Psycloth Lappas",
+		feet="Vanya Clogs"
+	}
 		
-    sets.midcast.LightWeatherCure = {main="Chatoyant Staff",sub="Curatio Grip",ammo="Hasty Pinion +1",
-        head="Vanya Hood",neck="Phalaina Locket",ear1="Gifted Earring",ear2="Etiolation Earring",
-        body="Heka's Kalasiris",hands="Telchine Gloves",ring1="Janniston Ring",ring2="Menelaus's Ring",
-        back="Twilight Cape",waist="Hachirin-no-Obi",legs="Psycloth Lappas",feet="Vanya Clogs"}
+    	sets.midcast.LightWeatherCure = 
+	{
+		main="Chatoyant Staff",
+		sub="Curatio Grip",
+		ammo="Hasty Pinion +1",
+		head="Vanya Hood",
+		neck="Phalaina Locket",
+		ear1="Gifted Earring",
+		ear2="Etiolation Earring",
+		body="Heka's Kalasiris",
+		hands="Telchine Gloves",
+		ring1="Janniston Ring",
+		ring2="Menelaus's Ring",
+		back="Twilight Cape",
+		waist="Hachirin-no-Obi",
+		legs="Psycloth Lappas",
+		feet="Vanya Clogs"
+	}
 		
-		--Cureset for if it's not light weather but is light day.
-    sets.midcast.LightDayCure = {main="Serenity",sub="Curatio Grip",ammo="Hasty Pinion +1",
-        head="Vanya Hood",neck="Phalaina Locket",ear1="Gifted Earring",ear2="Etiolation Earring",
-        body="Zendik Robe",hands="Telchine Gloves",ring1="Janniston Ring",ring2="Menelaus's Ring",
-        back="Twilight Cape",waist="Hachirin-no-Obi",legs="Psycloth Lappas",feet="Vanya Clogs"}
-
-    sets.midcast.Curaga = sets.midcast.Cure
+	--Cureset for if it's not light weather but is light day.
+	
+	sets.midcast.LightDayCure = 
+	{
+		main="Serenity",
+		sub="Curatio Grip",
+		ammo="Hasty Pinion +1",
+		head="Vanya Hood",
+		neck="Phalaina Locket",
+		ear1="Gifted Earring",
+		ear2="Etiolation Earring",
+		body="Zendik Robe",
+		hands="Telchine Gloves",
+		ring1="Janniston Ring",
+		ring2="Menelaus's Ring",
+		back="Twilight Cape",
+		waist="Hachirin-no-Obi",
+		legs="Psycloth Lappas",
+		feet="Vanya Clogs"
+	}
+	
+	sets.midcast.Curaga = sets.midcast.Cure
 	
 	sets.midcast.Cursna =  set_combine(sets.midcast.Cure, {neck="Debilis Medallion",hands="Hieros Mittens",ring1="Haoma's Ring",ring2="Menelaus's Ring",back="Oretan. Cape +1"})
 	
 	sets.midcast.StatusRemoval = set_combine(sets.midcast.FastRecast, {main=gear.grioavolr_fc_staff,sub="Clemency Grip"})
 
-	sets.midcast['Enhancing Magic'] = {main=gear.gada_enhancing_club,sub="Ammurapi Shield",ammo="Hasty Pinion +1",
-		head="Telchine Cap",neck="Incanter's Torque",ear1="Andoaa Earring",ear2="Gifted Earring",
-		body="Telchine Chas.",hands="Telchine Gloves",ring1="Stikini Ring +1",ring2="Stikini Ring +1",
-		back="Perimede Cape",waist="Embla Sash",legs="Telchine Braconi",feet="Telchine Pigaches"}
-    
-    sets.midcast.Stoneskin = set_combine(sets.midcast['Enhancing Magic'], {neck="Nodens Gorget",ear2="Earthcry Earring",waist="Siegel Sash",legs="Shedir Seraweels"})
+	sets.midcast['Enhancing Magic'] = 
+	{
+		main=gear.gada_enhancing_club,
+		sub="Ammurapi Shield",
+		ammo="Hasty Pinion +1",
+		head="Telchine Cap",
+		neck="Incanter's Torque",
+		ear1="Andoaa Earring",
+		ear2="Gifted Earring",
+		body="Telchine Chas.",
+		hands="Telchine Gloves",
+		ring1="Stikini Ring +1",
+		ring2="Stikini Ring +1",
+		back="Perimede Cape",
+		waist="Embla Sash",
+		legs="Telchine Braconi",
+		feet="Telchine Pigaches"
+	}
+	
+	sets.midcast.Stoneskin = set_combine(sets.midcast['Enhancing Magic'], 
+		{
+			neck="Nodens Gorget",
+			ear2="Earthcry Earring",
+			waist="Siegel Sash",
+			legs="Shedir Seraweels"
+		})
 	
 	sets.midcast.Refresh = set_combine(sets.midcast['Enhancing Magic'], {head="Amalric Coif +1"})
 	
-	sets.midcast.Aquaveil = set_combine(sets.midcast['Enhancing Magic'], {main="Vadose Rod",sub="Genmei Shield",head="Amalric Coif +1",hands="Regal Cuffs",waist="Emphatikos Rope",legs="Shedir Seraweels"})
+	sets.midcast.Aquaveil = set_combine(sets.midcast['Enhancing Magic'], 
+		{
+			main="Vadose Rod",
+			sub="Genmei Shield",
+			head="Amalric Coif +1",
+			hands="Regal Cuffs",
+			waist="Emphatikos Rope",
+			legs="Shedir Seraweels"
+		})
 	
 	sets.midcast.BarElement = set_combine(sets.precast.FC['Enhancing Magic'], {legs="Shedir Seraweels"})
-
-    sets.midcast['Enfeebling Magic'] = {main="Bunzi's Rod",sub="Ammurapi Shield",ammo="Pemphredo Tathlum",
+]]
+	
+	sets.midcast['Enfeebling Magic'] = {main="Bunzi's Rod",sub="Ammurapi Shield",ammo="Pemphredo Tathlum",
         head="Mall. Chapeau +2",neck="Erra Pendant",ear1="Malignance Earring",ear2="Regal Earring",
         body="Spaekona's Coat +3",hands="Regal Cuffs",ring1="Kishar Ring",ring2="Metamor. Ring +1",
         back=AMBUNUKE_BACK,waist="Luminary Sash",legs="Psycloth Lappas",feet="Uk'uxkaj Boots"}
