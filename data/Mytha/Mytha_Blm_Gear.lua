@@ -658,20 +658,44 @@ function init_gear_sets()
 	
 	sets.MagicBurst = 
 	{
-		main="Bunzi's Rod",
-		sub="Ammurapi Shield",
+		--20Haste
+		--Switch Neck depending on the fight
+		main="Marin Staff +1",
+		sub="Enki Strap",
 		ammo="Ghastly Tathlum +1",
-		head="Ea Hat +1",
-		neck="Mizukage-no-Kubikazari",
+		head="Ea Hat +1",				--6Haste
+		neck=JSE_NECK,
+		--neck="Quanpur Necklace",
 		ear1="Malignance Earring",
-		ear2="Regal Earring",
-		body="Ea Houppe. +1",
-		hands="Amalric Gages +1",
-		ring1="Freke Ring",
-		ring2="Mujin Band",
+		ear2=EMPY_EAR,
+		--body=EMPY_BODY,
+		body="Ea Houppe. +1",				--3Haste
+		hands=ONGO_HANDS,				--3Haste
+		ring1="Freke Ring",				--10SIRD
+		ring2="Metamor. Ring +1",
 		back=AMBUNUKE_BACK,
 		waist="Acuity Belt +1",
-		legs="Ea Slops +1",
+		legs=EMPY_LEGS,					--5Haste
+		feet=ONGO_FEET					--3Haste
+	}
+
+	sets.MagicBurst.Death = 
+	{
+		main="Marin Staff +1",
+		sub="Enki Strap",
+		ammo="Ghastly Tathlum +1",
+		head="Pixie Hairpin +1",
+		neck=JSE_NECK,
+		--neck="Quanpur Necklace",
+		ear1="Barkaro. Earring",
+		ear2=EMPY_EAR,
+		body=EMPY_BODY,
+		hands=ONGO_HANDS,
+		ring1="Archon Ring",
+		ring2="Mephitas's Ring +1",
+		back=AMBUNUKE_BACK,
+		waist="Acuity Belt +1",
+		legs=EMPY_LEGS,
 		feet="Amalric Nails +1"
 	}
 
