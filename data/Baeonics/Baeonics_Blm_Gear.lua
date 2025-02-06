@@ -42,6 +42,7 @@ function user_job_setup()
 	AMBUNUKE_BACK 		= {name="Taranus's Cape",augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10',}}
 	AMBUFC_BACK 		= {name="Taranus's Cape", augments={'MP+60','Mag. Acc+20 /Mag. Dmg.+20','MP+20','"Fast Cast"+10',}}
 	AMBUSTP_BACK 		= {name="Taranus's Cape",augments={'DEX+20','Accuracy+20 Attack+20','"Store TP"+10',}}
+	
 --NECKS
 	JSE_NECK 		= {name="Src. Stole +2"}
 
@@ -378,7 +379,7 @@ function init_gear_sets()
 		neck="Erra Pendant",
 		ear1="Malignance Earring",
 		ear2="Regal Earring",
-		body="Spaekona's Coat +3",
+		body=AF_BODY,
 		hands="Regal Cuffs",
 		ring1="Kishar Ring",
 		ring2="Metamor. Ring +1",
@@ -397,7 +398,7 @@ function init_gear_sets()
 		neck="Erra Pendant",
 		ear1="Malignance Earring",
 		ear2="Regal Earring",
-		body="Spaekona's Coat +3",
+		body=AF_BODY,
 		hands="Regal Cuffs",
 		ring1=StikiniRing_Ring1,
 		ring2="Metamor. Ring +1",
@@ -424,7 +425,7 @@ function init_gear_sets()
 		neck="Erra Pendant",
 		ear1="Malignance Earring",
 		ear2="Regal Earring",
-		body="Spaekona's Coat +3",
+		body=AF_BODY,
 		hands="Regal Cuffs",
 		ring1=StikiniRing_Ring1,
 		ring2="Metamor. Ring +1",
@@ -443,7 +444,7 @@ function init_gear_sets()
 		neck="Erra Pendant",
 		ear1="Malignance Earring",
 		ear2="Regal Earring",
-		body="Spaekona's Coat +3",
+		body=AF_BODY,
 		hands="Regal Cuffs",
 		ring1="Evanescence Ring",
 		ring2="Archon Ring",
@@ -620,7 +621,7 @@ function init_gear_sets()
 		neck="Loricate Torque +1",
 		ear1="Gifted Earring",
 		ear2="Loquac. Earring",
-		body="Spaekona's Coat +3",
+		body=AF_BODY,
 		hands="Regal Cuffs",
 		ring1="Kishar Ring",
 		ring2="Prolix Ring",
