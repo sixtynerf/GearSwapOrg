@@ -625,10 +625,24 @@ function init_gear_sets()
 		feet="Regal Pumps +1"
 	}
 	
-	sets.midcast['Elemental Magic'].OccultAcumen = {main="Khatvanga",sub="Bloodrain Strap",ammo="Seraphic Ampulla",
-        head="Mall. Chapeau +2",neck="Combatant's Torque",ear1="Dedition Earring",ear2="Telos Earring",
-        body=gear.merlinic_occult_body,hands=gear.merlinic_occult_hands,ring1="Rajas Ring",ring2="Petrov Ring",
-        back=gear.stp_jse_back,waist="Oneiros Rope",legs="Perdition Slops",feet=gear.merlinic_occult_feet}
+	sets.midcast['Elemental Magic'].OccultAcumen = 
+	{
+		main="Khatvanga",
+		sub="Bloodrain Strap",
+		ammo="Seraphic Ampulla",
+	        head="Mall. Chapeau +2",
+		neck="Combatant's Torque",
+		ear1="Dedition Earring",
+		ear2="Telos Earring",
+	        body=gear.merlinic_occult_body,
+		hands=gear.merlinic_occult_hands,
+		ring1="Rajas Ring",
+		ring2="Petrov Ring",
+	        back=gear.stp_jse_back,
+		waist="Oneiros Rope",
+		legs="Perdition Slops",
+		feet=gear.merlinic_occult_feet
+	}
 	
 	sets.midcast.Impact.OccultAcumen = set_combine(sets.midcast['Elemental Magic'].OccultAcumen, {head=empty,body="Twilight Cloak"})
 	
@@ -637,92 +651,149 @@ function init_gear_sets()
 
 	-- Gear for Magic Burst mode.
 	
-	sets.MagicBurst = {main="Bunzi's Rod",sub="Ammurapi Shield",ammo="Ghastly Tathlum +1",
-		head="Ea Hat +1",neck="Mizukage-no-Kubikazari",ear1="Malignance Earring",ear2="Regal Earring",
-		body="Ea Houppe. +1",hands="Amalric Gages +1",ring1="Freke Ring",ring2="Mujin Band",
-		back=AMBUNUKE_BACK,waist="Acuity Belt +1",legs="Ea Slops +1",feet="Amalric Nails +1"}
+	sets.MagicBurst = 
+	{
+		main="Bunzi's Rod",
+		sub="Ammurapi Shield",
+		ammo="Ghastly Tathlum +1",
+		head="Ea Hat +1",
+		neck="Mizukage-no-Kubikazari",
+		ear1="Malignance Earring",
+		ear2="Regal Earring",
+		body="Ea Houppe. +1",
+		hands="Amalric Gages +1",
+		ring1="Freke Ring",
+		ring2="Mujin Band",
+		back=AMBUNUKE_BACK,
+		waist="Acuity Belt +1",
+		legs="Ea Slops +1",
+		feet="Amalric Nails +1"
+	}
 
-	sets.ResistantMagicBurst = {main="Bunzi's Rod",sub="Ammurapi Shield",ammo="Ghastly Tathlum +1",
-		head="Ea Hat +1",neck="Mizukage-no-Kubikazari",ear1="Malignance Earring",ear2="Regal Earring",
-		body="Ea Houppe. +1",hands="Amalric Gages +1",ring1="Mujin Band",ring2="Metamor. Ring +1",
-		back=AMBUNUKE_BACK,waist="Acuity Belt +1",legs="Ea Slops +1",feet="Amalric Nails +1"}
+-- Sets to return to when not performing an action.
 	
-    -- Sets to return to when not performing an action.
-    
-    -- Resting sets
-    sets.resting = {main="Mpaca's Staff",sub="Oneiros Grip",ammo="Staunch Tathlum +1",
-		head="Befouled Crown",neck="Loricate Torque +1",ear1="Ethereal Earring",ear2="Etiolation Earring",
-		body=JHAKRI_BODY,hands=gear.merlinic_refresh_hands,ring1=StikiniRing_Ring1,ring2=StikiniRing_Ring2,
-		back="Umbra Cape",waist="Carrier's Sash",legs="Assid. Pants +1",feet=gear.merlinic_refresh_feet}
+-- Resting sets
+	
+	sets.resting = 
+	{
+		main="Mpaca's Staff",
+		sub="Oneiros Grip",
+		ammo="Staunch Tathlum +1",
+		head="Befouled Crown",
+		neck="Loricate Torque +1",
+		ear1="Ethereal Earring",
+		ear2="Etiolation Earring",
+		body=JHAKRI_BODY,
+		hands=gear.merlinic_refresh_hands,
+		ring1=StikiniRing_Ring1,
+		ring2=StikiniRing_Ring2,
+		back="Umbra Cape",
+		waist="Carrier's Sash",
+		legs="Assid. Pants +1",
+		feet=gear.merlinic_refresh_feet
+	}
 
-    -- Idle sets
+-- Idle sets
     
-    -- Normal refresh idle set
-    sets.idle = {main="Mpaca's Staff",sub="Umbra Strap",ammo="Staunch Tathlum +1",
+-- Normal refresh idle set
+	
+	sets.idle = 
+	{
+		main="Mpaca's Staff",sub="Umbra Strap",ammo="Staunch Tathlum +1",
 		head="Befouled Crown",neck="Loricate Torque +1",ear1="Ethereal Earring",ear2="Etiolation Earring",
 		body=JHAKRI_BODY,hands=gear.merlinic_refresh_hands,ring1=StikiniRing_Ring1,ring2="Petrov Ring",
-		back="Umbra Cape",waist="Carrier's Sash",legs="Assid. Pants +1",feet=gear.merlinic_refresh_feet}
+		back="Umbra Cape",waist="Carrier's Sash",legs="Assid. Pants +1",feet=gear.merlinic_refresh_feet
+	}
 
-    -- Idle mode that keeps PDT gear on, but doesn't prevent normal gear swaps for precast/etc.
-    sets.idle.PDT = {main="Malignance Pole",sub="Umbra Strap",ammo="Staunch Tathlum +1",
-        head=BUMBA_HEAD,neck="Loricate Torque +1",ear1="Ethereal Earring",ear2="Etiolation Earring",
-        body=JHAKRI_BODY,hands=gear.merlinic_refresh_hands,ring1="Defending Ring",ring2="Petrov Ring",
-        back="Shadow Mantle",waist="Carrier's Sash",legs="Assid. Pants +1",feet="Mallquis Clogs +2"}
-		
-	sets.idle.MDT = {main="Daybreak",sub="Ammurapi Shield",ammo="Staunch Tathlum +1",
+	-- Idle mode that keeps PDT gear on, but doesn't prevent normal gear swaps for precast/etc.
+	
+	sets.idle.PDT = 
+	{
+		main="Malignance Pole",sub="Umbra Strap",ammo="Staunch Tathlum +1",
+	        head=BUMBA_HEAD,neck="Loricate Torque +1",ear1="Ethereal Earring",ear2="Etiolation Earring",
+	        body=JHAKRI_BODY,hands=gear.merlinic_refresh_hands,ring1="Defending Ring",ring2="Petrov Ring",
+	        back="Shadow Mantle",waist="Carrier's Sash",legs="Assid. Pants +1",feet="Mallquis Clogs +2"
+	}
+	
+	sets.idle.MDT = 
+	{
+		main="Daybreak",sub="Ammurapi Shield",ammo="Staunch Tathlum +1",
 		head=BUMBA_HEAD,neck="Warder's Charm +1",ear1="Etiolation Earring",ear2="Ethereal Earring",
 		body="Nyame Mail",hands=BUMBA_HANDS,ring1="Defending Ring",ring2="Shadow Ring",
-		back="Moonlight Cape",waist="Carrier's Sash",legs=BUMBA_LEGS,feet=BUMBA_FEET}
+		back="Moonlight Cape",waist="Carrier's Sash",legs=BUMBA_LEGS,feet=BUMBA_FEET
+	}
 		
 	sets.idle.DTHippo = set_combine(sets.idle.PDT, {feet="Hippo. Socks +1"})
 
-	sets.idle.Death = {main=gear.grioavolr_nuke_staff,sub="Umbra Strap",ammo="Staunch Tathlum +1",
+	sets.idle.Death = 
+	{
+		main=gear.grioavolr_nuke_staff,sub="Umbra Strap",ammo="Staunch Tathlum +1",
 		head="Befouled Crown",neck="Loricate Torque +1",ear1="Gifted Earring",ear2="Etiolation Earring",
 		body=JHAKRI_BODY,hands=gear.merlinic_refresh_hands,ring1="Mephitas's Ring +1",ring2="Mephitas's Ring",
-		back="Umbra Cape",waist="Fucho-no-obi",legs="Assid. Pants +1",feet=gear.merlinic_refresh_feet}
-
-    sets.idle.Weak = {main="Bolelabunga",sub="Genmei Shield",ammo="Staunch Tathlum +1",
+		back="Umbra Cape",waist="Fucho-no-obi",legs="Assid. Pants +1",feet=gear.merlinic_refresh_feet
+	}
+	
+	sets.idle.Weak = 
+	{
+		main="Bolelabunga",sub="Genmei Shield",ammo="Staunch Tathlum +1",
 		head="Befouled Crown",neck="Loricate Torque +1",ear1="Ethereal Earring",ear2="Etiolation Earring",
 		body=JHAKRI_BODY,hands=gear.merlinic_refresh_hands,ring1="Defending Ring",ring2="Dark Ring",
-		back="Umbra Cape",waist="Carrier's Sash",legs="Assid. Pants +1",feet=gear.merlinic_refresh_feet}
+		back="Umbra Cape",waist="Carrier's Sash",legs="Assid. Pants +1",feet=gear.merlinic_refresh_feet
+	}
 
-    -- Defense sets
+-- Defense sets
+	
+	sets.defense.PDT = 
+	{
+		main="Malignance Pole",sub="Umbra Strap",ammo="Staunch Tathlum +1",
+	        head=BUMBA_HEAD,neck="Loricate Torque +1",ear1="Genmei Earring",ear2="Etiolation Earring",
+	        body="Mallquis Saio +2",hands=BUMBA_HANDS,ring1="Defending Ring",ring2="Dark Ring",
+	        back="Shadow Mantle",waist="Carrier's Sash",legs=BUMBA_LEGS,feet="Mallquis Clogs +2"
+	}
 
-    sets.defense.PDT = {main="Malignance Pole",sub="Umbra Strap",ammo="Staunch Tathlum +1",
-        head=BUMBA_HEAD,neck="Loricate Torque +1",ear1="Genmei Earring",ear2="Etiolation Earring",
-        body="Mallquis Saio +2",hands=BUMBA_HANDS,ring1="Defending Ring",ring2="Dark Ring",
-        back="Shadow Mantle",waist="Carrier's Sash",legs=BUMBA_LEGS,feet="Mallquis Clogs +2"}
-
-	sets.defense.MDT = {main="Daybreak",sub="Ammurapi Shield",ammo="Staunch Tathlum +1",
+	sets.defense.MDT = 
+	{
+		main="Daybreak",sub="Ammurapi Shield",ammo="Staunch Tathlum +1",
 		head=BUMBA_HEAD,neck="Warder's Charm +1",ear1="Etiolation Earring",ear2="Ethereal Earring",
 		body="Nyame Mail",hands=BUMBA_HANDS,ring1="Defending Ring",ring2="Shadow Ring",
-		back="Moonlight Cape",waist="Carrier's Sash",legs=BUMBA_LEGS,feet=BUMBA_FEET}
-		
-    sets.defense.MEVA = {main="Daybreak",sub="Ammurapi Shield",ammo="Staunch Tathlum +1",
+		back="Moonlight Cape",waist="Carrier's Sash",legs=BUMBA_LEGS,feet=BUMBA_FEET
+	}
+	
+	sets.defense.MEVA = 
+	{
+		main="Daybreak",sub="Ammurapi Shield",ammo="Staunch Tathlum +1",
 		head=BUMBA_HEAD,neck="Warder's Charm +1",ear1="Etiolation Earring",ear2="Ethereal Earring",
 		body="Nyame Mail",hands=BUMBA_HANDS,ring1="Defending Ring",ring2="Shadow Ring",
-		back="Moonlight Cape",waist="Carrier's Sash",legs=BUMBA_LEGS,feet=BUMBA_FEET}
+		back="Moonlight Cape",waist="Carrier's Sash",legs=BUMBA_LEGS,feet=BUMBA_FEET
+	}
 
-	sets.Kiting = {ring2="Shneddick Ring",feet=BUMBA_FEET}
-    sets.latent_refresh = {waist="Fucho-no-obi"}
+	sets.Kiting = {ring2="Shneddick Ring +1"}
+	sets.latent_refresh = {waist="Fucho-no-obi"}
 	sets.latent_refresh_grip = {sub="Oneiros Grip"}
 	sets.TPEat = {neck="Chrys. Torque"}
 	sets.DayIdle = {feet=gear.merlinic_refresh_feet}
 	sets.NightIdle = {}
 	
-    -- Buff sets: Gear that needs to be worn to actively enhance a current player buff.
+-- Buff sets: Gear that needs to be worn to actively enhance a current player buff.
 	
-	sets.HPDown = {head="Pixie Hairpin +1",ear1="Genmei Earring",ear2="Evans Earring",
+	sets.HPDown = 
+	{
+		head="Pixie Hairpin +1",ear1="Genmei Earring",ear2="Evans Earring",
 		body=JHAKRI_BODY,hands=JHAKRI_HANDS,ring1="Mephitas's Ring +1",ring2="Mephitas's Ring",
-		back="Swith Cape +1",legs="Shedir Seraweels",feet=JHAKRI_FEET}
+		back="Swith Cape +1",legs="Shedir Seraweels",feet=JHAKRI_FEET
+	}
 		
-	sets.HPCure = {main=gear.gada_healing_club,sub="Ammurapi Shield",ammo="Hasty Pinion +1",
+	sets.HPCure = 
+	{
+		main=gear.gada_healing_club,sub="Ammurapi Shield",ammo="Hasty Pinion +1",
 		head=BUMBA_HEAD,neck="Nodens Gorget",ear1="Etiolation Earring",ear2="Ethereal Earring",
 		body="Vrikodara Jupon",hands="Telchine Gloves",ring1="Kunaji Ring",ring2="Meridian Ring",
-		back="Tempered Cape +1",waist="Witful Belt",legs="Psycloth Lappas",feet="Vanya Clogs"}
+		back="Tempered Cape +1",waist="Witful Belt",legs="Psycloth Lappas",feet="Vanya Clogs"
+	}
 	
 	sets.buff.Doom = set_combine(sets.buff.Doom, {})
-    sets.buff['Mana Wall'] = {back=AMBUNUKE_BACK,feet=EMPY_FEET}
+	
+	sets.buff['Mana Wall'] = {back=AMBUNUKE_BACK,feet=EMPY_FEET}
 	
     -- Engaged sets
 
@@ -732,24 +803,37 @@ function init_gear_sets()
     -- EG: sets.engaged.Dagger.Accuracy.Evasion
     
     -- Normal melee group
-    sets.engaged = {ammo="Staunch Tathlum +1",
-        head="Jhakri Coronal +2",neck="Combatant's Torque",ear1="Mache Earring +1",ear2="Telos Earring",
+	
+	sets.engaged = 
+	{
+		ammo="Staunch Tathlum +1",
+		head="Jhakri Coronal +2",neck="Combatant's Torque",ear1="Mache Earring +1",ear2="Telos Earring",
 		body=JHAKRI_BODY,hands=JHAKRI_HANDS,ring1="Ramuh Ring +1",ring2="Ramuh Ring +1",
-		back=gear.stp_jse_back,waist="Olseni Belt",legs=JHAKRI_LEGS,feet=JHAKRI_FEET}
-		
-    sets.engaged.DT = {ammo="Staunch Tathlum +1",
-        head=BUMBA_HEAD,neck="Combatant's Torque",ear1="Mache Earring +1",ear2="Telos Earring",
+		back=gear.stp_jse_back,waist="Olseni Belt",legs=JHAKRI_LEGS,feet=JHAKRI_FEET
+	}
+	
+	sets.engaged.DT = 
+	{
+		ammo="Staunch Tathlum +1",
+		head=BUMBA_HEAD,neck="Combatant's Torque",ear1="Mache Earring +1",ear2="Telos Earring",
 		body="Nyame Mail",hands=BUMBA_HANDS,ring1="Ramuh Ring +1",ring2="Ramuh Ring +1",
-		back=gear.stp_jse_back,waist="Olseni Belt",legs=BUMBA_LEGS,feet=BUMBA_FEET}
+		back=gear.stp_jse_back,waist="Olseni Belt",legs=BUMBA_LEGS,feet=BUMBA_FEET
+	}
 
 	--Situational sets: Gear that is equipped on certain targets
+	
 	sets.Self_Healing = {neck="Phalaina Locket",ring1="Kunaji Ring",ring2="Asklepian Ring",waist="Gishdubar Sash"}
 	sets.Cure_Received = set_combine(sets.Cure_Received, {})
 	sets.Self_Refresh = {back="Grapevine Cape",waist="Gishdubar Sash",feet="Inspirited Boots"}
 		
 end
 
+--Lockstyle of Aern Daggers
+function user_job_lockstyle()
+	windower.chat.input('/lockstyleset 022')
+end
+
 -- Select default macro book on initial load or subjob change.
 function select_default_macro_book()
-    set_macro_page(1, 7)
+    set_macro_page(1, 21)
 end
