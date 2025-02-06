@@ -382,16 +382,25 @@ function init_gear_sets()
 		legs="Psycloth Lappas",
 		feet="Uk'uxkaj Boots"
 	}
-		
-    sets.midcast['Enfeebling Magic'].Resistant = {main="Bunzi's Rod",sub="Ammurapi Shield",ammo="Pemphredo Tathlum",
-        head="Mall. Chapeau +2",neck="Erra Pendant",ear1="Malignance Earring",ear2="Regal Earring",
-        body="Spaekona's Coat +3",hands="Regal Cuffs",ring1=StikiniRing_Ring1,ring2="Metamor. Ring +1",
-        back=AMBUNUKE_BACK,waist="Luminary Sash",legs="Psycloth Lappas",feet="Skaoi Boots"}
-		
-    sets.midcast.ElementalEnfeeble = {main="Bunzi's Rod",sub="Ammurapi Shield",ammo="Pemphredo Tathlum",
-        head="Mall. Chapeau +2",neck="Erra Pendant",ear1="Malignance Earring",ear2="Regal Earring",
-        body="Spaekona's Coat +3",hands="Regal Cuffs",ring1=StikiniRing_Ring1,ring2="Metamor. Ring +1",
-        back=AMBUNUKE_BACK,waist="Acuity Belt +1",legs="Mallquis Trews +2",feet="Mallquis Clogs +2"}
+	
+	sets.midcast.ElementalEnfeeble = 
+	{
+		main="Bunzi's Rod",
+		sub="Ammurapi Shield",
+		ammo="Pemphredo Tathlum",
+		head="Mall. Chapeau +2",
+		neck="Erra Pendant",
+		ear1="Malignance Earring",
+		ear2="Regal Earring",
+		body="Spaekona's Coat +3",
+		hands="Regal Cuffs",
+		ring1=StikiniRing_Ring1,
+		ring2="Metamor. Ring +1",
+		back=AMBUNUKE_BACK,
+		waist="Acuity Belt +1",
+		legs="Mallquis Trews +2",
+		feet="Mallquis Clogs +2"
+	}
 		
 	sets.midcast.Dia = set_combine(sets.midcast['Enfeebling Magic'], sets.TreasureHunter)
 	sets.midcast['Dia II'] = set_combine(sets.midcast['Enfeebling Magic'], sets.TreasureHunter)
@@ -400,18 +409,46 @@ function init_gear_sets()
 	sets.midcast['Bio II'] = set_combine(sets.midcast['Enfeebling Magic'], sets.TreasureHunter)
 	
 	sets.midcast['Divine Magic'] = set_combine(sets.midcast['Enfeebling Magic'], {})
-
-    sets.midcast['Dark Magic'] = {main="Rubicundity",sub="Ammurapi Shield",ammo="Pemphredo Tathlum",
-        head="Amalric Coif +1",neck="Erra Pendant",ear1="Malignance Earring",ear2="Regal Earring",
-        body="Spaekona's Coat +3",hands="Regal Cuffs",ring1=StikiniRing_Ring1,ring2="Metamor. Ring +1",
-        back=AMBUNUKE_BACK,waist="Acuity Belt +1",legs="Merlinic Shalwar",feet=gear.merlinic_aspir_feet}
-
-    sets.midcast.Drain = {main="Rubicundity",sub="Ammurapi Shield",ammo="Pemphredo Tathlum",
-        head="Pixie Hairpin +1",neck="Erra Pendant",ear1="Malignance Earring",ear2="Regal Earring",
-        body="Spaekona's Coat +3",hands="Regal Cuffs",ring1="Evanescence Ring",ring2="Archon Ring",
-        back=AMBUNUKE_BACK,waist="Fucho-no-obi",legs="Merlinic Shalwar",feet="Agwu's Pigaches"}
-    
-    sets.midcast.Aspir = sets.midcast.Drain
+	
+	sets.midcast['Dark Magic'] = 
+	{
+		main="Rubicundity",
+		sub="Ammurapi Shield",
+		ammo="Pemphredo Tathlum",
+		head="Amalric Coif +1",
+		neck="Erra Pendant",
+		ear1="Malignance Earring",
+		ear2="Regal Earring",
+		body="Spaekona's Coat +3",
+		hands="Regal Cuffs",
+		ring1=StikiniRing_Ring1,
+		ring2="Metamor. Ring +1",
+		back=AMBUNUKE_BACK,
+		waist="Acuity Belt +1",
+		legs="Merlinic Shalwar",
+		feet=gear.merlinic_aspir_feet
+	}
+	
+	sets.midcast.Drain = 
+	{
+		main="Rubicundity",
+		sub="Ammurapi Shield",
+		ammo="Pemphredo Tathlum",
+		head="Pixie Hairpin +1",
+		neck="Erra Pendant",
+		ear1="Malignance Earring",
+		ear2="Regal Earring",
+		body="Spaekona's Coat +3",
+		hands="Regal Cuffs",
+		ring1="Evanescence Ring",
+		ring2="Archon Ring",
+		back=AMBUNUKE_BACK,
+		waist="Fucho-no-obi",
+		legs="Merlinic Shalwar",
+		feet="Agwu's Pigaches"
+	}
+	
+	sets.midcast.Aspir = sets.midcast.Drain
 	
 	sets.midcast.Aspir.Death = {main=gear.grioavolr_nuke_staff,sub="Enki Strap",ammo="Pemphredo Tathlum",
         head="Pixie Hairpin +1",neck="Erra Pendant",ear1="Malignance Earring",ear2="Regal Earring",
