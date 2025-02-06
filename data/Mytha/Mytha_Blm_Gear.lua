@@ -82,15 +82,15 @@ function init_gear_sets()
 	sets.weapons.Lathi = {main="Lathi",sub="Enki Strap"}
 	sets.weapons.Bunzi = {main="Bunzi's Rod",sub="Ammurapi Shield"}
 	sets.weapons.Hvergelmir = {main="Hvergelmir",sub="Enki Strap"}
+
+	sets.buff.Sublimation = {waist="Embla Sash"}
+	sets.buff.DTSublimation = {waist="Embla Sash"}	
 	
-    sets.buff.Sublimation = {waist="Embla Sash"}
-    sets.buff.DTSublimation = {waist="Embla Sash"}	
+-- Treasure Hunter
 	
-	-- Treasure Hunter
-	
-	sets.TreasureHunter = set_combine(sets.TreasureHunter, {legs=gear.merlinic_treasure_legs})
-    
-    ---- Precast Sets ----
+	sets.TreasureHunter = set_combine(sets.TreasureHunter)
+
+---- Precast Sets ----
     
     -- Precast sets to enhance JAs
     sets.precast.JA['Mana Wall'] = {back=AMBUNUKE_BACK,feet="Wicce Sabots +2"}
