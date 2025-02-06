@@ -332,8 +332,8 @@ function init_gear_sets()
 		ear2="Gifted Earring",
 		body="Telchine Chas.",
 		hands="Telchine Gloves",
-		ring1="Stikini Ring +1",
-		ring2="Stikini Ring +1",
+		ring1=StikiniRing_Ring1,
+		ring2=StikiniRing_Ring2,
 		back="Perimede Cape",
 		waist="Embla Sash",
 		legs="Telchine Braconi",
@@ -363,19 +363,33 @@ function init_gear_sets()
 	sets.midcast.BarElement = set_combine(sets.precast.FC['Enhancing Magic'], {legs="Shedir Seraweels"})
 ]]
 	
-	sets.midcast['Enfeebling Magic'] = {main="Bunzi's Rod",sub="Ammurapi Shield",ammo="Pemphredo Tathlum",
-        head="Mall. Chapeau +2",neck="Erra Pendant",ear1="Malignance Earring",ear2="Regal Earring",
-        body="Spaekona's Coat +3",hands="Regal Cuffs",ring1="Kishar Ring",ring2="Metamor. Ring +1",
-        back=AMBUNUKE_BACK,waist="Luminary Sash",legs="Psycloth Lappas",feet="Uk'uxkaj Boots"}
+	sets.midcast['Enfeebling Magic'] = 
+	{
+		main="Bunzi's Rod",
+		sub="Ammurapi Shield",
+		ammo="Pemphredo Tathlum",
+		head="Mall. Chapeau +2",
+		neck="Erra Pendant",
+		ear1="Malignance Earring",
+		ear2="Regal Earring",
+		body="Spaekona's Coat +3",
+		hands="Regal Cuffs",
+		ring1="Kishar Ring",
+		ring2="Metamor. Ring +1",
+		back=AMBUNUKE_BACK,
+		waist="Luminary Sash",
+		legs="Psycloth Lappas",
+		feet="Uk'uxkaj Boots"
+	}
 		
     sets.midcast['Enfeebling Magic'].Resistant = {main="Bunzi's Rod",sub="Ammurapi Shield",ammo="Pemphredo Tathlum",
         head="Mall. Chapeau +2",neck="Erra Pendant",ear1="Malignance Earring",ear2="Regal Earring",
-        body="Spaekona's Coat +3",hands="Regal Cuffs",ring1="Stikini Ring +1",ring2="Metamor. Ring +1",
+        body="Spaekona's Coat +3",hands="Regal Cuffs",ring1=StikiniRing_Ring1,ring2="Metamor. Ring +1",
         back=AMBUNUKE_BACK,waist="Luminary Sash",legs="Psycloth Lappas",feet="Skaoi Boots"}
 		
     sets.midcast.ElementalEnfeeble = {main="Bunzi's Rod",sub="Ammurapi Shield",ammo="Pemphredo Tathlum",
         head="Mall. Chapeau +2",neck="Erra Pendant",ear1="Malignance Earring",ear2="Regal Earring",
-        body="Spaekona's Coat +3",hands="Regal Cuffs",ring1="Stikini Ring +1",ring2="Metamor. Ring +1",
+        body="Spaekona's Coat +3",hands="Regal Cuffs",ring1=StikiniRing_Ring1,ring2="Metamor. Ring +1",
         back=AMBUNUKE_BACK,waist="Acuity Belt +1",legs="Mallquis Trews +2",feet="Mallquis Clogs +2"}
 		
 	sets.midcast.Dia = set_combine(sets.midcast['Enfeebling Magic'], sets.TreasureHunter)
@@ -388,7 +402,7 @@ function init_gear_sets()
 
     sets.midcast['Dark Magic'] = {main="Rubicundity",sub="Ammurapi Shield",ammo="Pemphredo Tathlum",
         head="Amalric Coif +1",neck="Erra Pendant",ear1="Malignance Earring",ear2="Regal Earring",
-        body="Spaekona's Coat +3",hands="Regal Cuffs",ring1="Stikini Ring +1",ring2="Metamor. Ring +1",
+        body="Spaekona's Coat +3",hands="Regal Cuffs",ring1=StikiniRing_Ring1,ring2="Metamor. Ring +1",
         back=AMBUNUKE_BACK,waist="Acuity Belt +1",legs="Merlinic Shalwar",feet=gear.merlinic_aspir_feet}
 
     sets.midcast.Drain = {main="Rubicundity",sub="Ammurapi Shield",ammo="Pemphredo Tathlum",
@@ -415,22 +429,22 @@ function init_gear_sets()
 	
 	    sets.midcast.Stun = {main=gear.grioavolr_fc_staff,sub="Clerisy Strap +1",ammo="Hasty Pinion +1",
         head="Amalric Coif +1",neck="Voltsurge Torque",ear1="Enchntr. Earring +1",ear2="Malignance Earring",
-        body="Zendik Robe",hands="Volte Gloves",ring1="Stikini Ring +1",ring2="Metamor. Ring +1",
+        body="Zendik Robe",hands="Volte Gloves",ring1=StikiniRing_Ring1,ring2="Metamor. Ring +1",
         back=AMBUNUKE_BACK,waist="Witful Belt",legs="Psycloth Lappas",feet="Regal Pumps +1"}
 		
     sets.midcast.Stun.Resistant = {main="Daybreak",sub="Ammurapi Shield",ammo="Pemphredo Tathlum",
         head="Amalric Coif +1",neck="Erra Pendant",ear1="Malignance Earring",ear2="Regal Earring",
-        body="Zendik Robe",hands="Volte Gloves",ring1="Stikini Ring +1",ring2="Metamor. Ring +1",
+        body="Zendik Robe",hands="Volte Gloves",ring1=StikiniRing_Ring1,ring2="Metamor. Ring +1",
         back=AMBUNUKE_BACK,waist="Witful Belt",legs="Merlinic Shalwar",feet=gear.merlinic_aspir_feet}
 
     sets.midcast.BardSong = {main="Daybreak",sub="Ammurapi Shield",ammo="Ghastly Tathlum +1",
         head="Amalric Coif +1",neck="Sanctity Necklace",ear1="Digni. Earring",ear2="Regal Earring",
-        body="Zendik Robe",hands="Regal Cuffs",ring1="Stikini Ring +1",ring2="Metamor. Ring +1",
+        body="Zendik Robe",hands="Regal Cuffs",ring1=StikiniRing_Ring1,ring2="Metamor. Ring +1",
         back=AMBUNUKE_BACK,waist="Luminary Sash",legs="Merlinic Shalwar",feet="Medium's Sabots"}
 		
 	sets.midcast.Impact = {main="Bunzi's Rod",sub="Ammurapi Shield",ammo="Pemphredo Tathlum",
 		head=empty,neck="Erra Pendant",ear1="Malignance Earring",ear2="Regal Earring",
-		body="Twilight Cloak",hands="Regal Cuffs",ring1="Stikini Ring +1",ring2="Metamor. Ring +1",
+		body="Twilight Cloak",hands="Regal Cuffs",ring1=StikiniRing_Ring1,ring2="Metamor. Ring +1",
 		back=AMBUNUKE_BACK,waist="Acuity Belt +1",legs="Mallquis Trews +2",feet="Mallquis Clogs +2"}
 		
     -- Elemental Magic sets
@@ -490,7 +504,7 @@ function init_gear_sets()
     -- Resting sets
     sets.resting = {main="Mpaca's Staff",sub="Oneiros Grip",ammo="Staunch Tathlum +1",
 		head="Befouled Crown",neck="Loricate Torque +1",ear1="Ethereal Earring",ear2="Etiolation Earring",
-		body=JHAKRI_BODY,hands=gear.merlinic_refresh_hands,ring1="Stikini Ring +1",ring2="Stikini Ring +1",
+		body=JHAKRI_BODY,hands=gear.merlinic_refresh_hands,ring1=StikiniRing_Ring1,ring2=StikiniRing_Ring2,
 		back="Umbra Cape",waist="Carrier's Sash",legs="Assid. Pants +1",feet=gear.merlinic_refresh_feet}
 
     -- Idle sets
@@ -498,7 +512,7 @@ function init_gear_sets()
     -- Normal refresh idle set
     sets.idle = {main="Mpaca's Staff",sub="Umbra Strap",ammo="Staunch Tathlum +1",
 		head="Befouled Crown",neck="Loricate Torque +1",ear1="Ethereal Earring",ear2="Etiolation Earring",
-		body=JHAKRI_BODY,hands=gear.merlinic_refresh_hands,ring1="Stikini Ring +1",ring2="Petrov Ring",
+		body=JHAKRI_BODY,hands=gear.merlinic_refresh_hands,ring1=StikiniRing_Ring1,ring2="Petrov Ring",
 		back="Umbra Cape",waist="Carrier's Sash",legs="Assid. Pants +1",feet=gear.merlinic_refresh_feet}
 
     -- Idle mode that keeps PDT gear on, but doesn't prevent normal gear swaps for precast/etc.
