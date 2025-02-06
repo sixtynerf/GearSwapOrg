@@ -1,6 +1,7 @@
 function user_job_setup()
 -- Options: Override default values
-	state.CastingMode:options('Normal','Resistant','Proc','OccultAcumen')
+	state.CastingMode:options('Normal','Proc','OccultAcumen')
+	--state.CastingMode:options('Normal','Resistant','Proc','OccultAcumen')
 	state.OffenseMode:options('Normal')
 	state.HybridMode:options('Normal')
 	state.IdleMode:options('Normal','PDT','MDT','MEVA')
