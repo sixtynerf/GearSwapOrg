@@ -107,7 +107,7 @@ function init_gear_sets()
 	
 	sets.precast.FC = 
 	{
-		--104FC + 7QM + 20SIRD
+		--103FC + 7QM + 20SIRD + 16DT
 		main="Hvergelmir",		--50FC
 		sub="Khonsu",			--			6DT	
 		ammo="Impatiens",		--	2QM	10SIRD
