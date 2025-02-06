@@ -607,10 +607,23 @@ function init_gear_sets()
 
 -- Minimal damage gear, maximum recast gear for procs.
 	
-	sets.midcast['Elemental Magic'].Proc = {main=empty,sub=empty,ammo="Impatiens",
-        head="Vanya Hood",neck="Loricate Torque +1",ear1="Gifted Earring",ear2="Loquac. Earring",
-        body="Spaekona's Coat +3",hands="Regal Cuffs",ring1="Kishar Ring",ring2="Prolix Ring",
-        back="Swith Cape +1",waist="Witful Belt",legs="Assid. Pants +1",feet="Regal Pumps +1"}
+	sets.midcast['Elemental Magic'].Proc = 
+	{
+		main=empty,
+		sub=empty,ammo="Impatiens",
+		head="Vanya Hood",
+		neck="Loricate Torque +1",
+		ear1="Gifted Earring",
+		ear2="Loquac. Earring",
+		body="Spaekona's Coat +3",
+		hands="Regal Cuffs",
+		ring1="Kishar Ring",
+		ring2="Prolix Ring",
+		back="Swith Cape +1",
+		waist="Witful Belt",
+		legs="Assid. Pants +1",
+		feet="Regal Pumps +1"
+	}
 	
 	sets.midcast['Elemental Magic'].OccultAcumen = {main="Khatvanga",sub="Bloodrain Strap",ammo="Seraphic Ampulla",
         head="Mall. Chapeau +2",neck="Combatant's Torque",ear1="Dedition Earring",ear2="Telos Earring",
