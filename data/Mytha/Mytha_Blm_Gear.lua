@@ -565,15 +565,43 @@ function init_gear_sets()
 		
 -- Elemental Magic sets
 	
-	sets.midcast['Elemental Magic'] = {main="Bunzi's Rod",sub="Ammurapi Shield",ammo="Ghastly Tathlum +1",
-        head="Agwu's Cap",neck="Saevus Pendant +1",ear1="Crematio Earring",ear2="Friomisi Earring",
-        body="Amalric Doublet +1",hands="Amalric Gages +1",ring1="Freke Ring",ring2="Shiva Ring +1",
-        back=AMBUNUKE_BACK,waist="Sekhmet Corset",legs="Merlinic Shalwar",feet="Amalric Nails +1"}
+	sets.midcast['Elemental Magic'] = 
+	{
+		main="Bunzi's Rod",
+		sub="Ammurapi Shield",
+		ammo="Ghastly Tathlum +1",
+		head=ONGO_HEAD,
+		neck="Saevus Pendant +1",
+		ear1="Crematio Earring",
+		ear2="Friomisi Earring",
+		body="Amalric Doublet +1",
+		hands="Amalric Gages +1",
+		ring1="Freke Ring",
+		ring2="Shiva Ring +1",
+		back=AMBUNUKE_BACK,
+		waist="Sekhmet Corset",
+		legs="Merlinic Shalwar",
+		feet="Amalric Nails +1"
+	}
 		
-   	sets.midcast['Elemental Magic'].HighTierNuke = {main="Bunzi's Rod",sub="Ammurapi Shield",ammo="Ghastly Tathlum +1",
-        head="Merlinic Hood",neck="Saevus Pendant +1",ear1="Malignance Earring",ear2="Regal Earring",
-        body="Amalric Doublet +1",hands="Amalric Gages +1",ring1="Freke Ring",ring2="Metamorph Ring +1",
-        back=AMBUNUKE_BACK,waist="Acuity Belt +1",legs="Merlinic Shalwar",feet="Amalric Nails +1"}
+   	sets.midcast['Elemental Magic'].HighTierNuke = 
+	{
+		main="Bunzi's Rod",
+		sub="Ammurapi Shield",
+		ammo="Ghastly Tathlum +1",
+		head="Merlinic Hood",
+		neck="Saevus Pendant +1",
+		ear1="Malignance Earring",
+		ear2="Regal Earring",
+		body="Amalric Doublet +1",
+		hands="Amalric Gages +1",
+		ring1="Freke Ring",
+		ring2="Metamorph Ring +1",
+		back=AMBUNUKE_BACK,
+		waist="Acuity Belt +1",
+		legs="Merlinic Shalwar",
+		feet="Amalric Nails +1"
+	}
 	
 	sets.midcast.Helix = sets.midcast['Elemental Magic']
 
