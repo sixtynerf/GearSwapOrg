@@ -905,7 +905,23 @@ function init_gear_sets()
 	
 	sets.buff.Doom = set_combine(sets.buff.Doom, {})
 	
-	sets.buff['Mana Wall'] = {back=AMBUNUKE_BACK,feet=EMPY_FEET}
+	sets.buff['Mana Wall'] = 
+	{
+		ammo="Amar Cluster",
+		head=BUMBA_HEAD,
+		--neck="Combatant's Torque",
+		neck="Null Loop",
+		ear1="Telos Earring",
+		ear2="Crep. Earring",
+		body=BUMBA_BODY,
+		hands=BUMBA_HANDS,
+		ring1=ChirichRing_Ring1,
+		ring2=ChirichRing_Ring2,
+		back=AMBUSTP_BACK,
+		waist="Olseni Belt",
+		legs=BUMBA_LEGS,
+		feet=BUMBA_FEET
+	}
 	
     -- Engaged sets
 
