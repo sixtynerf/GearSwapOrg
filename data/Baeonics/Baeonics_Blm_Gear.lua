@@ -791,10 +791,21 @@ function init_gear_sets()
 	
 	sets.idle = 
 	{
-		main="Mpaca's Staff",sub="Umbra Strap",ammo="Staunch Tathlum +1",
-		head="Befouled Crown",neck="Loricate Torque +1",ear1="Ethereal Earring",ear2="Etiolation Earring",
-		body=JHAKRI_BODY,hands=gear.merlinic_refresh_hands,ring1=StikiniRing_Ring1,ring2="Petrov Ring",
-		back="Umbra Cape",waist="Carrier's Sash",legs="Assid. Pants +1",feet=gear.merlinic_refresh_feet
+		main="Mpaca's Staff",
+		sub="Umbra Strap",
+		ammo="Staunch Tathlum +1",
+		head="Befouled Crown",
+		neck="Loricate Torque +1",
+		ear1="Halasz Earring",
+		ear2="Nehalennia Earring",
+		body="Shamash Robe",
+		hands=gear.merlinic_refresh_hands,
+		ring1=StikiniRing_Ring1,
+		ring2=StikiniRing_Ring2,
+		back=AMBUFC_BACK,
+		waist="Shinjutsu-no-Obi +1",
+		legs="Assid. Pants +1",
+		feet=gear.merlinic_refresh_feet
 	}
 
 	-- Idle mode that keeps PDT gear on, but doesn't prevent normal gear swaps for precast/etc.
@@ -819,10 +830,19 @@ function init_gear_sets()
 
 	sets.idle.Death = 
 	{
-		main=gear.grioavolr_nuke_staff,sub="Umbra Strap",ammo="Staunch Tathlum +1",
-		head="Befouled Crown",neck="Loricate Torque +1",ear1="Gifted Earring",ear2="Etiolation Earring",
-		body=JHAKRI_BODY,hands=gear.merlinic_refresh_hands,ring1="Mephitas's Ring +1",ring2="Mephitas's Ring",
-		back="Umbra Cape",waist="Fucho-no-obi",legs="Assid. Pants +1",feet=gear.merlinic_refresh_feet
+		ammo="Ghastly Tathlum +1",
+		head=EMPY_HEAD,
+		neck="Sanctity Necklace",
+		ear1="Halasz Earring",
+		ear2="Nehalennia Earring",
+		body="Ros. Jaseran +1",
+		hands=AF_HANDS,
+		ring1="Mephitas's Ring +1",
+		ring2="Mephitas's Ring",
+		back=AMBUFC_BACK,
+		waist="Shinjutsu-no-Obi +1",
+		legs="Amalric Slops +1",
+		feet=PsyclothFeet_WSD
 	}
 	
 	sets.idle.Weak = 
