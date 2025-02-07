@@ -106,9 +106,16 @@ function init_gear_sets()
     
 -- Precast sets to enhance JAs
 	
-	sets.precast.JA['Mana Wall'] = {back=AMBUNUKE_BACK,feet=EMPY_FEET}
+	sets.precast.JA['Mana Wall'] = 
+	{
+		back=AMBUNUKE_BACK,
+		feet=EMPY_FEET
+	}
 	
-	sets.precast.JA.Manafont = {body=RELIC_BODY}
+	sets.precast.JA.Manafont = 
+	{
+		body=RELIC_BODY
+	}
     
 -- equip to maximize HP (for Tarus) and minimize MP loss before using convert
 	
@@ -137,7 +144,10 @@ function init_gear_sets()
 		feet=ONGO_FEET			--4FC
 	}
 	
-	sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, {waist="Siegel Sash"})
+	sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, 
+		{
+			waist="Siegel Sash"
+		})
 	
 	sets.precast.FC.Stoneskin = set_combine(sets.precast.FC['Enhancing Magic'], {})
 	
@@ -644,8 +654,8 @@ function init_gear_sets()
 		ear2=EMPY_EAR,
 		body=AF_BODY,
 		hands=EMPY_HANDS,
-		ring1="Freke Ring",
-		ring2="Metamorph Ring +1",
+		ring1="Metamorph Ring +1",
+		ring2="Freke Ring",
 		back=AMBUNUKE_BACK,
 		waist="Acuity Belt +1",
 		legs=EMPY_LEGS,
@@ -663,8 +673,8 @@ function init_gear_sets()
 		ear2=EMPY_EAR,
 		body=AF_BODY,
 		hands=EMPY_HANDS,
-		ring1="Freke Ring",
-		ring2="Metamorph Ring +1",
+		ring1="Metamorph Ring +1",
+		ring2="Freke Ring",
 		back=AMBUNUKE_BACK,
 		waist="Acuity Belt +1",
 		legs=EMPY_LEGS,
@@ -715,7 +725,7 @@ function init_gear_sets()
 	sets.midcast.Impact.OccultAcumen = set_combine(sets.midcast['Elemental Magic'].OccultAcumen, {head=empty,body="Twilight Cloak"})
 	
 -- Gear that converts elemental damage done to recover MP.	
-	sets.RecoverMP = {body="Spaekona's Coat +3"}
+	sets.RecoverMP = {body=AF_BODY}
 
 	-- Gear for Magic Burst mode.
 	
@@ -734,8 +744,8 @@ function init_gear_sets()
 		--body=EMPY_BODY,
 		body="Ea Houppe. +1",				--3Haste
 		hands=ONGO_HANDS,				--3Haste
-		ring1="Freke Ring",				--10SIRD
-		ring2="Metamor. Ring +1",
+		ring1="Metamorph Ring +1",
+		ring2="Freke Ring",
 		back=AMBUNUKE_BACK,
 		waist="Acuity Belt +1",
 		legs=EMPY_LEGS,					--5Haste
@@ -812,18 +822,40 @@ function init_gear_sets()
 	
 	sets.idle.PDT = 
 	{
-		main="Malignance Pole",sub="Umbra Strap",ammo="Staunch Tathlum +1",
-	        head=BUMBA_HEAD,neck="Loricate Torque +1",ear1="Ethereal Earring",ear2="Etiolation Earring",
-	        body=JHAKRI_BODY,hands=gear.merlinic_refresh_hands,ring1="Defending Ring",ring2="Petrov Ring",
-	        back="Shadow Mantle",waist="Carrier's Sash",legs="Assid. Pants +1",feet="Mallquis Clogs +2"
+		main="Malignance Pole",
+		sub="Umbra Strap",
+		ammo="Staunch Tathlum +1",
+	        head=BUMBA_HEAD,
+		neck="Loricate Torque +1",
+		ear1="Ethereal Earring",
+		ear2="Etiolation Earring",
+	        body="Shamash robe",
+		hands=gear.merlinic_refresh_hands,
+		ring1="Defending Ring",
+		ring2="Petrov Ring",
+	        back="Shadow Mantle",
+		waist="Carrier's Sash",
+		legs="Assid. Pants +1",
+		feet="Mallquis Clogs +2"
 	}
 	
 	sets.idle.MDT = 
 	{
-		main="Daybreak",sub="Ammurapi Shield",ammo="Staunch Tathlum +1",
-		head=BUMBA_HEAD,neck="Warder's Charm +1",ear1="Etiolation Earring",ear2="Ethereal Earring",
-		body="Nyame Mail",hands=BUMBA_HANDS,ring1="Defending Ring",ring2="Shadow Ring",
-		back="Moonlight Cape",waist="Carrier's Sash",legs=BUMBA_LEGS,feet=BUMBA_FEET
+		main="Daybreak",
+		sub="Ammurapi Shield",
+		ammo="Staunch Tathlum +1",
+		head=BUMBA_HEAD,
+		neck="Warder's Charm +1",
+		ear1="Etiolation Earring",
+		ear2="Ethereal Earring",
+		body=BUMBA_BODY,
+		hands=BUMBA_HANDS,
+		ring1="Defending Ring",
+		ring2="Shadow Ring",
+		back="Moonlight Cape",
+		waist="Carrier's Sash",
+		legs=BUMBA_LEGS,
+		feet=BUMBA_FEET
 	}
 		
 	sets.idle.DTHippo = set_combine(sets.idle.PDT, {feet="Hippo. Socks +1"})
@@ -847,36 +879,79 @@ function init_gear_sets()
 	
 	sets.idle.Weak = 
 	{
-		main="Bolelabunga",sub="Genmei Shield",ammo="Staunch Tathlum +1",
-		head="Befouled Crown",neck="Loricate Torque +1",ear1="Ethereal Earring",ear2="Etiolation Earring",
-		body=JHAKRI_BODY,hands=gear.merlinic_refresh_hands,ring1="Defending Ring",ring2="Dark Ring",
-		back="Umbra Cape",waist="Carrier's Sash",legs="Assid. Pants +1",feet=gear.merlinic_refresh_feet
+		main="Bolelabunga",
+		sub="Genmei Shield",
+		ammo="Staunch Tathlum +1",
+		head="Befouled Crown",
+		neck="Loricate Torque +1",
+		ear1="Ethereal Earring",
+		ear2="Etiolation Earring",
+		body=JHAKRI_BODY,
+		hands=gear.merlinic_refresh_hands
+		,ring1="Defending Ring",
+		ring2="Dark Ring",
+		back="Umbra Cape",
+		waist="Carrier's Sash",
+		legs="Assid. Pants +1",
+		feet=gear.merlinic_refresh_feet
 	}
 
 -- Defense sets
 	
 	sets.defense.PDT = 
 	{
-		main="Malignance Pole",sub="Umbra Strap",ammo="Staunch Tathlum +1",
-	        head=BUMBA_HEAD,neck="Loricate Torque +1",ear1="Genmei Earring",ear2="Etiolation Earring",
-	        body="Mallquis Saio +2",hands=BUMBA_HANDS,ring1="Defending Ring",ring2="Dark Ring",
-	        back="Shadow Mantle",waist="Carrier's Sash",legs=BUMBA_LEGS,feet="Mallquis Clogs +2"
+		main="Malignance Pole",
+		sub="Umbra Strap",
+		ammo="Staunch Tathlum +1",
+	        head=BUMBA_HEAD,
+		neck="Loricate Torque +1",
+		ear1="Genmei Earring",
+		ear2="Etiolation Earring",
+	        body="Mallquis Saio +2",
+		hands=BUMBA_HANDS,
+		ring1="Defending Ring",
+		ring2="Dark Ring",
+	        back="Shadow Mantle",
+		waist="Carrier's Sash",
+		legs=BUMBA_LEGS,
+		feet="Mallquis Clogs +2"
 	}
 
 	sets.defense.MDT = 
 	{
-		main="Daybreak",sub="Ammurapi Shield",ammo="Staunch Tathlum +1",
-		head=BUMBA_HEAD,neck="Warder's Charm +1",ear1="Etiolation Earring",ear2="Ethereal Earring",
-		body="Nyame Mail",hands=BUMBA_HANDS,ring1="Defending Ring",ring2="Shadow Ring",
-		back="Moonlight Cape",waist="Carrier's Sash",legs=BUMBA_LEGS,feet=BUMBA_FEET
+		main="Daybreak",
+		sub="Ammurapi Shield",
+		ammo="Staunch Tathlum +1",
+		head=BUMBA_HEAD,
+		neck="Warder's Charm +1",
+		ear1="Etiolation Earring",
+		ear2="Ethereal Earring",
+		body=BUMBA_BODY,
+		hands=BUMBA_HANDS,
+		ring1="Defending Ring",
+		ring2="Shadow Ring",
+		back="Moonlight Cape",
+		waist="Carrier's Sash",
+		legs=BUMBA_LEGS,
+		feet=BUMBA_FEET
 	}
 	
 	sets.defense.MEVA = 
 	{
-		main="Daybreak",sub="Ammurapi Shield",ammo="Staunch Tathlum +1",
-		head=BUMBA_HEAD,neck="Warder's Charm +1",ear1="Etiolation Earring",ear2="Ethereal Earring",
-		body="Nyame Mail",hands=BUMBA_HANDS,ring1="Defending Ring",ring2="Shadow Ring",
-		back="Moonlight Cape",waist="Carrier's Sash",legs=BUMBA_LEGS,feet=BUMBA_FEET
+		main="Daybreak",
+		sub="Ammurapi Shield",
+		ammo="Staunch Tathlum +1",
+		head=BUMBA_HEAD,
+		neck="Warder's Charm +1",
+		ear1="Etiolation Earring",
+		ear2="Ethereal Earring",
+		body=BUMBA_BODY,
+		hands=BUMBA_HANDS,
+		ring1="Defending Ring",
+		ring2="Shadow Ring",
+		back="Moonlight Cape",
+		waist="Carrier's Sash",
+		legs=BUMBA_LEGS,feet=BUMBA_FEET
 	}
 
 	sets.Kiting = {ring2="Shneddick Ring +1"}
@@ -890,17 +965,35 @@ function init_gear_sets()
 	
 	sets.HPDown = 
 	{
-		head="Pixie Hairpin +1",ear1="Genmei Earring",ear2="Evans Earring",
-		body=JHAKRI_BODY,hands=JHAKRI_HANDS,ring1="Mephitas's Ring +1",ring2="Mephitas's Ring",
-		back="Swith Cape +1",legs="Shedir Seraweels",feet=JHAKRI_FEET
+		head="Pixie Hairpin +1",
+		ear1="Genmei Earring",
+		ear2="Evans Earring",
+		body=JHAKRI_BODY,
+		hands=JHAKRI_HANDS,
+		ring1="Mephitas's Ring +1",
+		ring2="Mephitas's Ring",
+		back="Swith Cape +1",
+		legs="Shedir Seraweels",
+		feet=JHAKRI_FEET
 	}
 		
 	sets.HPCure = 
 	{
-		main=gear.gada_healing_club,sub="Ammurapi Shield",ammo="Hasty Pinion +1",
-		head=BUMBA_HEAD,neck="Nodens Gorget",ear1="Etiolation Earring",ear2="Ethereal Earring",
-		body="Vrikodara Jupon",hands="Telchine Gloves",ring1="Kunaji Ring",ring2="Meridian Ring",
-		back="Tempered Cape +1",waist="Witful Belt",legs="Psycloth Lappas",feet="Vanya Clogs"
+		main=gear.gada_healing_club,
+		sub="Ammurapi Shield",
+		ammo="Hasty Pinion +1",
+		head=BUMBA_HEAD,
+		neck="Nodens Gorget",
+		ear1="Etiolation Earring",
+		ear2="Ethereal Earring",
+		body="Vrikodara Jupon",
+		hands="Telchine Gloves",
+		ring1="Kunaji Ring",
+		ring2="Meridian Ring",
+		back="Tempered Cape +1",
+		waist="Witful Belt",
+		legs="Psycloth Lappas",
+		feet="Vanya Clogs"
 	}
 	
 	sets.buff.Doom = set_combine(sets.buff.Doom, {})
@@ -976,7 +1069,7 @@ function init_gear_sets()
 		
 end
 
---Lockstyle of Aern Daggers
+--Lockstyle Arch Angels
 function user_job_lockstyle()
 	windower.chat.input('/lockstyleset 022')
 end
