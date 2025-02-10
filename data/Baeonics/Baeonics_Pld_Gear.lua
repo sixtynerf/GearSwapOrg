@@ -151,21 +151,21 @@ function init_gear_sets()
 		
     -- Precast sets to enhance JAs
 	
-	sets.precast.JA['Invincible'] = set_combine(sets.Enmity,{legs="Cab. Breeches +1"})
-	sets.precast.JA['Holy Circle'] = set_combine(sets.Enmity,{feet="Rev. Leggings +3"})
-	sets.precast.JA['Sentinel'] = set_combine(sets.Enmity,{feet="Cab. Leggings +1"})
-	sets.precast.JA['Rampart'] = set_combine(sets.Enmity,{}) --head="Valor Coronet" (Also Vit?)
-	sets.precast.JA['Fealty'] = set_combine(sets.Enmity,{body="Cab. Surcoat +1"})
-	sets.precast.JA['Divine Emblem'] = set_combine(sets.Enmity,{feet="Chev. Sabatons +1"})
-	sets.precast.JA['Cover'] = set_combine(sets.Enmity, {body="Cab. Surcoat +1"}) --head="Rev. Coronet +1",
+	sets.precast.JA['Invincible'] = set_combine(sets.Enmity,{legs=RELIC_LEGS})
+	sets.precast.JA['Holy Circle'] = set_combine(sets.Enmity,{feet=AF_FEET})
+	sets.precast.JA['Sentinel'] = set_combine(sets.Enmity,{feet=RELIC_FEET})
+	sets.precast.JA['Rampart'] = set_combine(sets.Enmity,{head=RELIC_HEAD}) --head=RELIC_HEAD (Also Vit?)
+	sets.precast.JA['Fealty'] = set_combine(sets.Enmity,{body=RELIC_BODY})
+	sets.precast.JA['Divine Emblem'] = set_combine(sets.Enmity,{feet=EMPY_FEET})
+	sets.precast.JA['Cover'] = set_combine(sets.Enmity, {body=RELIC_BODY}) --head="Rev. Coronet +1",
 	
-	sets.precast.JA['Invincible'].DT = set_combine(sets.Enmity.DT,{legs="Cab. Breeches +1"})
-	sets.precast.JA['Holy Circle'].DT = set_combine(sets.Enmity.DT,{feet="Rev. Leggings +3"})
-	sets.precast.JA['Sentinel'].DT = set_combine(sets.Enmity.DT,{feet="Cab. Leggings +1"})
-	sets.precast.JA['Rampart'].DT = set_combine(sets.Enmity.DT,{}) --head="Valor Coronet" (Also Vit?)
-	sets.precast.JA['Fealty'].DT = set_combine(sets.Enmity.DT,{body="Cab. Surcoat +1"})
-	sets.precast.JA['Divine Emblem'].DT = set_combine(sets.Enmity.DT,{feet="Chev. Sabatons +1"})
-	sets.precast.JA['Cover'].DT = set_combine(sets.Enmity.DT, {body="Cab. Surcoat +1"}) --head="Rev. Coronet +1",
+	sets.precast.JA['Invincible'].DT = set_combine(sets.Enmity.DT,{legs=RELIC_LEGS})
+	sets.precast.JA['Holy Circle'].DT = set_combine(sets.Enmity.DT,{feet=AF_FEET})
+	sets.precast.JA['Sentinel'].DT = set_combine(sets.Enmity.DT,{feet=RELIC_FEET})
+	sets.precast.JA['Rampart'].DT = set_combine(sets.Enmity.DT,{head=RELIC_HEAD})
+	sets.precast.JA['Fealty'].DT = set_combine(sets.Enmity.DT,{body=RELIC_BODY})
+	sets.precast.JA['Divine Emblem'].DT = set_combine(sets.Enmity.DT,{feet=EMPY_FEET})
+	sets.precast.JA['Cover'].DT = set_combine(sets.Enmity.DT, {head=AF_HEAD,body=RELIC_BODY}) --head="Rev. Coronet +1",
 	
     -- add mnd for Chivalry
     sets.precast.JA['Chivalry'] = {ammo="Paeapua",
@@ -367,7 +367,7 @@ function init_gear_sets()
     sets.resting = {ammo="Homiliary",
 		head="Jumalik Helm",neck="Coatl Gorget +1",ear1="Etiolation Earring",ear2="Ethereal Earring",
 		body="Jumalik Mail",hands="Souv. Handsch. +1",ring1="Defending Ring",ring2="Dark Ring",
-		back="Moonlight Cape",waist="Fucho-no-obi",legs="Sulev. Cuisses +2",feet="Cab. Leggings +1"}
+		back="Moonlight Cape",waist="Fucho-no-obi",legs="Sulev. Cuisses +2",feet=RELIC_FEET}
 
     -- Idle sets
     sets.idle = {main="Malignance Sword",sub="Duban",ammo="Homiliary",
@@ -414,8 +414,8 @@ function init_gear_sets()
     
     -- Extra defense sets.  Apply these on top of melee or defense sets.
 	sets.Knockback = {}
-    sets.MP = {head="Chev. Armet +1",neck="Coatl Gorget +1",ear2="Ethereal Earring",waist="Flume Belt +1",feet="Rev. Leggings +3"}
-	sets.passive.AbsorbMP = {head="Chev. Armet +1",neck="Coatl Gorget +1",ear2="Ethereal Earring",waist="Flume Belt +1",feet="Rev. Leggings +3"}
+    sets.MP = {head="Chev. Armet +1",neck="Coatl Gorget +1",ear2="Ethereal Earring",waist="Flume Belt +1",feet=AF_FEET}
+	sets.passive.AbsorbMP = {head="Chev. Armet +1",neck="Coatl Gorget +1",ear2="Ethereal Earring",waist="Flume Belt +1",feet=AF_FEET}
     sets.MP_Knockback = {}
     sets.Twilight = {head="Twilight Helm", body="Twilight Mail"}
 	sets.TreasureHunter = set_combine(sets.TreasureHunter, {})
@@ -501,7 +501,7 @@ function init_gear_sets()
 	sets.engaged.NoShellTank = {main="Sakpata's Sword",sub="Duban",ammo="Staunch Tathlum +1",
         head="Jumalik Helm",neck="Loricate Torque +1",ear1="Thureous Earring",ear2="Etiolation Earring",
         body=AF_BODY,hands="Sakpata's Gauntlets",ring1="Defending Ring",ring2=MOONLIGHTRING_2,
-        back="Moonlight Cape",waist="Flume Belt +1",legs=gear.odyssean_fc_legs,feet="Cab. Leggings +1"}
+        back="Moonlight Cape",waist="Flume Belt +1",legs=gear.odyssean_fc_legs,feet=RELIC_FEET}
 		
     sets.engaged.Reraise = set_combine(sets.engaged.Tank, sets.Reraise)
     sets.engaged.Acc.Reraise = set_combine(sets.engaged.Acc.Tank, sets.Reraise)
@@ -511,7 +511,7 @@ function init_gear_sets()
 	--------------------------------------
 	sets.buff.Doom = set_combine(sets.buff.Doom, {})
 	sets.buff.Sleep = {neck="Vim Torque +1"}
-    sets.buff.Cover = {body="Cab. Surcoat +1"}
+    sets.buff.Cover = {body=RELIC_BODY}
 end
 
 -- Select default macro book on initial load or subjob change.
