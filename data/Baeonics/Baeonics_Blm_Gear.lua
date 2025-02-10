@@ -836,7 +836,7 @@ function init_gear_sets()
 	        back="Shadow Mantle",
 		waist="Carrier's Sash",
 		legs="Assid. Pants +1",
-		feet="Mallquis Clogs +2"
+		feet=MALLQUIS_FEET
 	}
 	
 	sets.idle.MDT = 
@@ -914,7 +914,7 @@ function init_gear_sets()
 	        back="Shadow Mantle",
 		waist="Carrier's Sash",
 		legs=BUMBA_LEGS,
-		feet="Mallquis Clogs +2"
+		feet=MALLQUIS_FEET
 	}
 
 	sets.defense.MDT = 
