@@ -40,11 +40,11 @@ function user_job_setup()
 	EMPY_EAR 		= {name="Wicce Earring +1"}
 
 --RINGS
-	StikiniRing_Ring1	= { name = "Stikini Ring +1", bag = "wardrobe2" }
-	StikiniRing_Ring2	= { name = "Stikini Ring +1", bag = "wardrobe3" }
+	StikiniRing_Ring1	= {name = "Stikini Ring +1", bag = "wardrobe2"}
+	StikiniRing_Ring2	= {name = "Stikini Ring +1", bag = "wardrobe3"}
 
-	ChirichRing_Ring1	= { name = "Chirich Ring +1", bag = "wardrobe2" }
-	ChirichRing_Ring2	= { name = "Chirich Ring +1", bag = "wardrobe3" }
+	ChirichRing_Ring1	= {name = "Chirich Ring +1", bag = "wardrobe2"}
+	ChirichRing_Ring2	= {name = "Chirich Ring +1", bag = "wardrobe3"}
 
 --CAPES
 	AMBUNUKE_BACK 		= {name="Taranus's Cape",augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10',}}
