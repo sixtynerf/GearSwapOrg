@@ -30,3 +30,7 @@ bayld_items = {'Tlalpoloani','Macoquetza','Camatlatia','Icoyoca','Tlamini','Suij
 'Otomi Gloves','Kaabnax Hat','Kaabnax Trousers','Ejekamal Mask','Ejekamal Boots','Quiahuiz Helm','Quiahuiz Trousers',
 'Uk\'uxkaj Cap'}
 ]]
+
+function user_job_lockstyle()
+	windower.chat.input('/lockstyleset 022')
+end
