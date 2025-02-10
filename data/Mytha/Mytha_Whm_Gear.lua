@@ -22,9 +22,9 @@ function user_job_setup()
 	send_command('bind ^delete input /ja "Dark Arts" <me>')
 	send_command('bind !delete input /ja "Addendum: Black" <me>')
 	send_command('bind @delete input /ja "Manifestation" <me>')
-	send_command('bind ^\\\\ input /ma "Protectra V" <me>')
-	send_command('bind @\\\\ input /ma "Shellra V" <me>')
-	send_command('bind !\\\\ input /ma "Reraise IV" <me>')
+	send_command('bind ^\\ input /ma "Protectra V" <me>')
+	send_command('bind @\\ input /ma "Shellra V" <me>')
+	send_command('bind !\\ input /ma "Reraise IV" <me>')
 
     select_default_macro_book()
 end
@@ -313,7 +313,7 @@ function init_gear_sets()
 	sets.midcast['Enfeebling Magic'] = {main="Daybreak",sub="Ammurapi Shield",ammo="Pemphredo Tathlum",
 		head="Ebers Cap +3",neck="Null Loop",ear1="Gwati Earring",ear2="Malignance Earring",
 		body="Theo. Bliaut +2",hands="Ebers Mitts +3",ring1="Kishar Ring",ring2="Stikini Ring +1",
-		back="Alaunus's Cape",waist="Luminary Sash",legs=gear.chironic_macc_legs,feet="Theo Duckbills +2"}
+		back="Alaunus's Cape",waist="Obstinate Sash",legs=gear.chironic_macc_legs,feet="Theo Duckbills +2"}
 
 	sets.midcast['Enfeebling Magic'].Resistant = {main="Daybreak",sub="Ammurapi Shield",ammo="Pemphredo Tathlum",
 		head="Ebers Cap +3",neck="Null Loop",ear1="Gwati Earring",ear2="Malignance Earring",
@@ -332,11 +332,14 @@ function init_gear_sets()
     -- Sets to return to when not performing an action.
 
     -- Resting sets
-	sets.resting = {}
+	sets.resting = {main="Mpaca's Staff",sub="Oneiros Grip",ammo="Homiliary",
+		head="Null Masque",neck="Sibyl Scarf",ear1="Sanare Earring",ear2="Ethereal Earring",
+		body="Ebers Bliaut +3",hands=gear.chironic_refresh_hands,ring1="Stikini Ring +1",ring2="Stikini Ring +1",
+		back="Null Shawl",waist="Null Belt",legs="Assid. Pants +1",feet=gear.chironic_refresh_feet}
 
     -- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
 	sets.idle = {main="Mpaca's Staff",sub="Oneiros Grip",ammo="Homiliary",
-		head="Befouled Crown",neck="Sibyl Scarf",ear1="Sanare Earring",ear2="Ethereal Earring",
+		head="Null Masque",neck="Sibyl Scarf",ear1="Sanare Earring",ear2="Ethereal Earring",
 		body="Ebers Bliaut +3",hands=gear.chironic_refresh_hands,ring1="Stikini Ring +1",ring2="Stikini Ring +1",
 		back="Null Shawl",waist="Null Belt",legs="Assid. Pants +1",feet=gear.chironic_refresh_feet}
 
@@ -380,19 +383,31 @@ function init_gear_sets()
     -- EG: sets.engaged.Dagger.Accuracy.Evasion
 
     -- Basic set for if no TP weapon is defined.
-    sets.engaged = {}
+    sets.engaged = {main="Maxentius",sub="Genmei Shield",ammo="Staunch Tathlum +1",
+		head="Nyame Helm",neck="Null Loop",ear1="Brutal Earring",ear2="Dedition Earring",
+		body="Nyame Mail",hands="Nyame Gauntlets",ring1="Chirich Ring +1",ring2="Chirich Ring +1",
+		back="Null Shawl",waist="Null Belt",legs="Nyame Flanchard",feet="Nyame Sollerets"}
+		
+    sets.engaged.Acc = {main="Maxentius",sub="Genmei Shield",ammo="Staunch Tathlum +1",
+		head="Nyame Helm",neck="Null Loop",ear1="Crep. Earring",ear2="Telos Earring",
+		body="Nyame Mail",hands="Nyame Gauntlets",ring1="Chirich Ring +1",ring2="Chirich Ring +1",
+		back="Null Shawl",waist="Null Belt",legs="Nyame Flanchard",feet="Nyame Sollerets"}
 
-    sets.engaged.Acc = {}
+	sets.engaged.DW = {main="Maxentius",sub="Genmei Shield",ammo="Staunch Tathlum +1",
+		head="Nyame Helm",neck="Null Loop",ear1="Suppanomimi",ear2="Dedition Earring",
+		body="Nyame Mail",hands="Nyame Gauntlets",ring1="Chirich Ring +1",ring2="Chirich Ring +1",
+		back="Null Shawl",waist="Null Belt",legs="Nyame Flanchard",feet="Nyame Sollerets"}
 
-	sets.engaged.DW = {}
-
-    sets.engaged.DW.Acc = {}
+    sets.engaged.DW.Acc = {main="Maxentius",sub="Genmei Shield",ammo="Staunch Tathlum +1",
+		head="Nyame Helm",neck="Null Loop",ear1="Suppanomimi",ear2="Telos Earring",
+		body="Nyame Mail",hands="Nyame Gauntlets",ring1="Chirich Ring +1",ring2="Chirich Ring +1",
+		back="Null Shawl",waist="Null Belt",legs="Nyame Flanchard",feet="Nyame Sollerets"}
 
 		-- Buff sets: Gear that needs to be worn to actively enhance a current player buff.
     sets.buff['Divine Caress'] = {hands="Ebers Mitts +3",back="Mending Cape"}
 
 	sets.HPDown = {main="Queller Rod",sub="Genmei Shield",ammo="Homiliary",
-		head="Wivre Hairpin",neck="Loricate Torque +1",ear1="Hirudinea Earring",ear2="Ethereal Earring",
+		head="Pixie Hairpin +1",neck="Loricate Torque +1",ear1="Hirudinea Earring",ear2="Ethereal Earring",
 		body="Councilor's Garb",hands="Hieros Mittens",ring1="Defending Ring",ring2="Persis Ring",
 		back="Null Shawl",waist="Null Belt",legs="",feet=""}
 
@@ -408,6 +423,12 @@ end
 -- Select default macro book on initial load or subjob change.
 function select_default_macro_book()
 	set_macro_page(1, 1)
+end
+
+function user_job_buff_change(buff, gain)
+	if buff:startswith('Addendum: ') or buff:endswith(' Arts') then
+		style_lock = true
+	end
 end
 
 function user_job_lockstyle()
