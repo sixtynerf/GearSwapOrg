@@ -744,12 +744,21 @@ function init_gear_sets()
 	
 	sets.midcast.Phalanx = set_combine(sets.midcast['Enhancing Magic'], 
 		{
-			main="Sakpata's Sword",
-			sub="Forfend +1",
+			main="Colada",
+			sub="Duban",
+			ammo="Staunch Tathlum +1",
+			head="Souv. Schaller +1",
+			neck="Incanter's Torque",
+			ear1="Mimir Earring",
+			ear2="Tuisto Earring",
+			body="Shab. Cuirass +1",
 			hands="Souv. Handsch. +1",
-			back="Weard Mantle",
-			legs=KALUNGA_LEGS,
-			feet="Souveran Schuhs +1"
+			ring1="Defending Ring",
+			ring2=MOONLIGHTRING_2,
+			back="Merciful Cape",
+			waist="Olympus Sash",
+			legs=AF_LEGS,
+			feet="Odyssean Greaves"
 		})
 	
 	sets.midcast.Phalanx.SIRD = set_combine(sets.midcast['Enhancing Magic'].SIRD, 
