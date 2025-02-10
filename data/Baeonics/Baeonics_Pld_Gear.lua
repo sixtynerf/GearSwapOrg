@@ -528,7 +528,24 @@ function init_gear_sets()
 		feet="Souveran Schuhs +1"
 	}
 	
-	sets.midcast.Flash = set_combine(sets.Enmity, {})
+	sets.midcast.Flash = set_combine(sets.Enmity, 
+		{
+			main="Sakpata's Sword",
+			sub="Duban",
+			ammo="Staunch Tathlum +1",
+			head="Carmine Mask +1",			--Path D
+			neck="Moonlight Necklace",
+			ear1="Cryptic Earring",
+			ear2="Trux Earring",
+		        body="Souv. Cuirass +1",		--Path C
+			hands="Souv. Handsch. +1",		--Path C
+			ring1="Supershear Ring",
+			ring2="Eihwaz Ring",
+		        back="Moonlight Cape",
+			waist="Creed Baudrier",
+			legs="Souv. Diechlings +1",		--Path C
+			feet="Carmine Greaves +1"		--Path D
+		})
 	sets.midcast.Flash.SIRD = set_combine(sets.Enmity.SIRD, {})
 	sets.midcast.Stun = set_combine(sets.Enmity, {})
 	sets.midcast.Stun.SIRD = set_combine(sets.Enmity.SIRD, {})
