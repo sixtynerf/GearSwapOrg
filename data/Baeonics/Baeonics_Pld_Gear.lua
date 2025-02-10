@@ -856,7 +856,7 @@ function init_gear_sets()
 		hands="Souv. Handsch. +1",
 		ring1="Gelatinous Ring +1",
 		ring2="Shadow Ring",
-		back="Shadow Mantle",
+		back=AMBUENMITY_BACK,
 		waist="Flume Belt +1",
 		legs=EMPY_LEGS,
 		feet="Souveran Schuhs +1"
@@ -1010,10 +1010,21 @@ function init_gear_sets()
 
 	sets.engaged.Tank = 
 	{
-		main="Sakpata's Sword",sub="Duban",ammo="Staunch Tathlum +1",
-		head=EMPY_HEAD,neck="Loricate Torque +1",ear1="Creed Earring",ear2="Thureous Earring",
-		body="Tartarus Platemail",hands="Souv. Handsch. +1",ring1="Defending Ring",ring2="Shadow Ring",
-		back="Shadow Mantle",waist="Flume Belt +1",legs=EMPY_LEGS,feet="Souveran Schuhs +1"
+		main="Nixxer",
+		sub="Duban",
+		ammo="Staunch Tathlum +1",
+		head="Souv. Schaller +1",		--Path D
+		neck="Loricate Torque +1",
+		ear1="Odnowa Earring",
+		ear2="Odnowa Earring +1",
+		body="Souv. Cuirass +1",		--Path C			
+		hands="Souv. Handsch. +1",		--Path D
+		ring1="Defending Ring",
+		ring2="Gelatinous Ring +1",
+		back=AMBUENMITY_BACK,
+		waist="Creed Baudrier",
+		legs="Souv. Diechlings +1",		--Path C
+		feet="Souveran Schuhs +1"		--Path D
 	}
 		
 	sets.engaged.DDTank = 
