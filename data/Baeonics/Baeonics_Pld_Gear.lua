@@ -807,21 +807,21 @@ function init_gear_sets()
 	
 	sets.idle.Block = 
 	{
-		main="Deacon Sword",
+		main="Brilliance",
 		sub="Duban",
 		ammo="Staunch Tathlum +1",
-		head="Chevalier's Armet +1",
-		neck="Diemer Gorget",
-		ear1="Creed Earring",
-		ear2="Thureous Earring",
+		head=EMPY_HEAD,
+		neck="Combatant's Torque",
+		ear1="Foresti Earring",
+		ear2=EMPY_EAR,
 		body=KALUNGA_BODY,
-		hands="Souv. Handsch. +1",
+		hands="Souv. Handsch. +1",		--Path D
 		ring1="Gelatinous Ring +1",
 		ring2=MOONLIGHTRING_2,
-		back="Shadow Mantle",
+		back=AMBUBLOCK_BACK,
 		waist="Flume Belt +1",
 		legs=KALUNGA_LEGS,
-		feet="Souveran Schuhs +1"
+		feet=AF_FEET"
 	}
 	
 	sets.idle.MDT = 
