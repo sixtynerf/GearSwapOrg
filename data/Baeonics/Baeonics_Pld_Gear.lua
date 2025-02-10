@@ -845,21 +845,21 @@ function init_gear_sets()
 	
 	sets.idle.Tank = 
 	{
-		main="Sakpata's Sword",
+		main="Nixxer",
 		sub="Duban",
 		ammo="Staunch Tathlum +1",
-		head=EMPY_HEAD,
-		neck="Warder's Charm +1",
-		ear1="Creed Earring",
-		ear2="Thureous Earring",
-		body=KALUNGA_BODY,
-		hands="Souv. Handsch. +1",
-		ring1="Gelatinous Ring +1",
-		ring2="Shadow Ring",
+		head="Souv. Schaller +1",		--Path D
+		neck="Loricate Torque +1",
+		ear1="Odnowa Earring",
+		ear2="Odnowa Earring +1",
+		body="Souv. Cuirass +1",		--Path C			
+		hands="Souv. Handsch. +1",		--Path D
+		ring1="Defending Ring",
+		ring2="Gelatinous Ring +1",
 		back=AMBUENMITY_BACK,
-		waist="Flume Belt +1",
-		legs=EMPY_LEGS,
-		feet="Souveran Schuhs +1"
+		waist="Creed Baudrier",
+		legs="Souv. Diechlings +1",		--Path C
+		feet="Souveran Schuhs +1"		--Path D
 	}
 		
 	sets.idle.Kiting = 
