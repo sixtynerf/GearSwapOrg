@@ -1,22 +1,70 @@
 function user_job_setup()
 
-    -- Options: Override default values	
+    -- Options: Override default values
 	state.OffenseMode:options('Normal','Acc')
-    state.HybridMode:options('Tank','DDTank','Normal')
-    state.WeaponskillMode:options('Match','Normal', 'Acc')
-    state.CastingMode:options('Normal','SIRD')
+	state.HybridMode:options('Tank','DDTank','Normal')
+	state.WeaponskillMode:options('Match','Normal', 'Acc')
+	state.CastingMode:options('Normal','SIRD')
 	state.Passive:options('None','AbsorbMP')
-    state.PhysicalDefenseMode:options('PDT_HP','PDT','PDT_Reraise')
-    state.MagicalDefenseMode:options('MDT_HP','MDT','MDT_Reraise')
+	state.PhysicalDefenseMode:options('PDT_HP','PDT','PDT_Reraise')
+	state.MagicalDefenseMode:options('MDT_HP','MDT','MDT_Reraise')
 	state.ResistDefenseMode:options('MEVA_HP','MEVA')
 	state.IdleMode:options('Tank','Kiting','PDT','Block','MDT','Normal')
 	state.Weapons:options('None','SakpataAegis','SakpataOchain','NaeglingBlurred','ClubOchain')
 	
-    state.ExtraDefenseMode = M{['description']='Extra Defense Mode','None','MP','Twilight'}
-	
-	gear.fastcast_jse_back = {name="Rudianos's Mantle",augments={'INT+20','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','"Fast Cast"+10',}}
-	gear.enmity_jse_back = {name="Rudianos's Mantle",augments={'HP+60','Eva.+20 /Mag. Eva.+20','HP+20','Enmity+10',}}
+	state.ExtraDefenseMode = M{['description']='Extra Defense Mode','None','MP','Twilight'}
 
+--Artifact Gear
+	AF_HEAD 		= {name="Rev. Coronet +1"}			
+	AF_BODY 		= {name="Rev. Surcoat +1"}		
+	AF_HANDS 		= {name="Rev. Gauntlets +1"}		
+	AF_LEGS 		= {name="Rev. Breeches +1"}			
+	AF_FEET 		= {name="Rev. Leggings +1"}
+
+--Relic Gear
+	RELIC_HEAD 		= {name="Cab. Coronet +1"}		
+	RELIC_BODY 		= {name="Cab. Surcoat +1"}		
+	RELIC_HANDS 		= {name="Cab. Gauntlets +1"}
+	RELIC_LEGS 		= {name="Cab. Breeches +1"}
+	RELIC_FEET 		= {name="Cab. Leggings +1"}	
+
+--Empyrean Gear
+	EMPY_HEAD 		= {name="Chev. Armet +3"}		
+	EMPY_BODY 		= {name="Chev. Cuirass +3"}		
+	EMPY_HANDS 		= {name="Chev. Gauntlets +3"}		
+	EMPY_LEGS 		= {name="Chev. Cuisses +3"}		
+	EMPY_FEET 		= {name="Chev. Sabatons +3"}	
+
+--EMPY EAR
+	EMPY_EAR 		= {name="Chev. Earring +1"}
+
+--RINGS
+	StikiniRing_Ring1	= {name = "Stikini Ring +1", bag = "wardrobe2"}
+	StikiniRing_Ring2	= {name = "Stikini Ring +1", bag = "wardrobe3"}
+
+	ChirichRing_Ring1	= {name = "Chirich Ring +1", bag = "wardrobe2"}
+	ChirichRing_Ring2	= {name = "Chirich Ring +1", bag = "wardrobe3"}
+
+	MOONLIGHTRING_1 	= {name = "Moonlight Ring", bag = "wardrobe2"}
+	MOONLIGHTRING_2 	= {name = "Moonlight Ring", bag = "wardrobe3"}
+
+--CAPES
+	AMBUFC_BACK 		= {name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','"Fast Cast"+10','Damage taken-5%',}}
+	AMBUENMITY_BACK 	= {name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity+10','Damage taken-5%',}}
+	AMBUBLOCK_BACK 		= {name="Rudianos's Mantle", augments={'HP+60, M.Eva./Eva.+20, Enm.+10, M.Eva+10, Block Chance+5%',}}
+	AMBUPDT_BACK 		= {name="Rudianos's Mantle", augments={'HP+60, M.Eva/Eva+20, M.Eva+10, Enm.+10, PDT-10%',}}
+	AMBUSTP_BACK 		= {name="Rudianos's Mantle", augments={'HP+60, Acc/Att+20, Acc+10, STP+10, Resist All+10%',}}
+	AMBUWSD_BACK 		= {name="Rudianos's Mantle", augments={'HP+60, Acc/Att+20, STR+10, WSD+10%, PDT-10%',}}
+	AMBUSIRD_BACK 		= {name="Rudianos's Mantle", augments={'HP+60, Acc/Att+20, STR+10, WSD+10%, PDT-10%',}}
+	
+--NECKS
+	JSE_NECK 		= {name="Kgt. Beads +2"}
+
+----ESCHA and REISENJIMA
+	
+	PsyclothLegs_FC		= {name="Psycloth Lappas", augments={'MP+80','Mag. Acc.+15','"Fast Cast"+7',}}
+	PsyclothFeet_WSD	= {name="Psycloth Lappas"}	
+	
 	-- Additional local binds
 	send_command('bind !` gs c SubJobEnmity')
 	send_command('bind ^backspace input /ja "Shield Bash" <t>')
@@ -27,7 +75,7 @@ function user_job_setup()
 	send_command('bind ^delete input /ja "Provoke" <stnpc>')
 	send_command('bind !delete input /ma "Cure IV" <stal>')
 	send_command('bind @delete input /ma "Flash" <stnpc>')
-    send_command('bind !f11 gs c cycle ExtraDefenseMode')
+	send_command('bind !f11 gs c cycle ExtraDefenseMode')
 	send_command('bind @` gs c cycle RuneElement')
 	send_command('bind ^pause gs c toggle AutoRuneMode')
 	send_command('bind ^q gs c set IdleMode Kiting')
@@ -36,8 +84,8 @@ function user_job_setup()
 	send_command('bind @f10 gs c toggle TankAutoDefense')
 	send_command('bind ^@!` gs c cycle SkillchainMode')
 	
-    select_default_macro_book()
-    update_defense_mode()
+	select_default_macro_book()
+	update_defense_mode()
 end
 
 function init_gear_sets()
@@ -49,12 +97,12 @@ function init_gear_sets()
     sets.Enmity = {main="Sakpata's Sword",sub="Ochain",ammo="Paeapua",
         head="Loess Barbuta +1",neck="Moonlight Necklace",ear1="Friomisi Earring",ear2="Trux Earring",
         body="Souv. Cuirass +1",hands="Macabre Gaunt. +1",ring1="Apeile Ring +1",ring2="Apeile Ring",
-        back=gear.enmity_jse_back,waist="Creed Baudrier",legs="Souv. Diechlings +1",feet="Eschite Greaves"}
+        back=AMBUENMITY_BACK,waist="Creed Baudrier",legs="Souv. Diechlings +1",feet="Eschite Greaves"}
 		
     sets.Enmity.SIRD = {main="Sakpata's Sword",sub="Sacro Bulwark",ammo="Staunch Tathlum +1",
 		head="Loess Barbuta +1",neck="Moonlight Necklace",ear1="Friomisi Earring",ear2="Trux Earring",
 		body="Souv. Cuirass +1",hands="Macabre Gaunt. +1",ring1="Apeile Ring +1",ring2="Moonlight Ring",
-		back=gear.enmity_jse_back,waist="Rumination Sash",legs="Founder's Hose",feet="Odyssean Greaves"}
+		back=AMBUENMITY_BACK,waist="Rumination Sash",legs="Founder's Hose",feet="Odyssean Greaves"}
 		
     sets.Enmity.DT = {ammo="Staunch Tathlum +1",
         head="Souv. Schaller +1",neck="Unmoving Collar +1",ear1="Odnowa Earring +1",ear2="Tuisto Earring",
@@ -82,7 +130,7 @@ function init_gear_sets()
     sets.precast.JA['Chivalry'] = {ammo="Paeapua",
 		head="Nyame Helm",neck="Unmoving Collar +1",ear1="Nourish. Earring",ear2="Nourish. Earring +1",
 		body="Rev. Surcoat +3",hands="Cab. Gauntlets +1",ring1="Stikini Ring +1",ring2="Rufescent Ring",
-		back=gear.enmity_jse_back,waist="Luminary Sash",legs="Nyame Flanchard",feet="Carmine Greaves +1"}
+		back=AMBUENMITY_BACK,waist="Luminary Sash",legs="Nyame Flanchard",feet="Carmine Greaves +1"}
 		
     sets.precast.JA['Chivalry'].DT = {ammo="Paeapua",
 		head="Nyame Helm",neck="Unmoving Collar +1",ear1="Odnowa Earring +1",ear2="Tuisto Earring",
@@ -133,7 +181,7 @@ function init_gear_sets()
     sets.precast.FC = {main="Sakpata's Sword",sub="Chanter's Shield",ammo="Impatiens",
 		head="Carmine Mask +1",neck="Voltsurge Torque",ear1="Enchntr. Earring +1",ear2="Loquac. Earring",
 		body="Rev. Surcoat +3",hands="Leyline Gloves",ring1="Lebeche Ring",ring2="Kishar Ring",
-		back=gear.fastcast_jse_back,waist="Creed Baudrier",legs=gear.odyssean_fc_legs,feet="Odyssean Greaves"}
+		back=AMBUFC_BACK,waist="Creed Baudrier",legs=gear.odyssean_fc_legs,feet="Odyssean Greaves"}
 		
     sets.precast.FC.DT = {main="Sakpata's Sword",ammo="Impatiens",
         head="Souv. Schaller +1",neck="Voltsurge Torque",ear1="Odnowa Earring +1",ear2="Tuisto Earring",
@@ -185,7 +233,7 @@ function init_gear_sets()
     sets.precast.WS['Atonement'] = {ammo="Paeapua",
         head="Loess Barbuta +1",neck="Moonlight Necklace",ear1="Friomisi Earring",ear2="Trux Earring",
         body="Souv. Cuirass +1",hands="Macabre Gaunt. +1",ring1="Apeile Ring +1",ring2="Apeile Ring",
-        back=gear.enmity_jse_back,waist="Creed Baudrier",legs="Souv. Diechlings +1",feet="Eschite Greaves"}
+        back=AMBUENMITY_BACK,waist="Creed Baudrier",legs="Souv. Diechlings +1",feet="Eschite Greaves"}
 
 	-- Swap to these on Moonshade using WS if at 3000 TP
 	sets.MaxTP = {ear1="Cessance Earring",ear2="Brutal Earring",}
@@ -199,7 +247,7 @@ function init_gear_sets()
     sets.midcast.FastRecast = {main="Sakpata's Sword",sub="Chanter's Shield",ammo="Hasty Pinion +1",
 		head="Carmine Mask +1",neck="Voltsurge Torque",ear1="Enchntr. Earring +1",ear2="Loquac. Earring",
 		body="Rev. Surcoat +3",hands="Leyline Gloves",ring1="Gelatinous Ring +1",ring2="Kishar Ring",
-		back=gear.fastcast_jse_back,waist="Creed Baudrier",legs=gear.odyssean_fc_legs,feet="Odyssean Greaves"}
+		back=AMBUFC_BACK,waist="Creed Baudrier",legs=gear.odyssean_fc_legs,feet="Odyssean Greaves"}
 		
 	sets.midcast.FastRecast.DT = {main="Sakpata's Sword",sub="Ochain",ammo="Staunch Tathlum +1",
         head="Souv. Schaller +1",neck="Loricate Torque +1",ear1="Odnowa Earring +1",ear2="Tuisto Earring",
@@ -217,12 +265,12 @@ function init_gear_sets()
     sets.midcast.Cure = {main="Sakpata's Sword",sub="Sacro Bulwark",ammo="Staunch Tathlum +1",
 		head="Loess Barbuta +1",neck="Sacro Gorget",ear1="Nourish. Earring",ear2="Nourish. Earring +1",
 		body="Jumalik Mail",hands="Macabre Gaunt. +1",ring1="Defending Ring",ring2="Moonlight Ring",
-		back=gear.enmity_jse_back,waist="Creed Baudrier",legs="Carmine Cuisses +1",feet="Odyssean Greaves"}
+		back=AMBUENMITY_BACK,waist="Creed Baudrier",legs="Carmine Cuisses +1",feet="Odyssean Greaves"}
 		
     sets.midcast.Cure.SIRD = {main="Deacon Sword",sub="Sacro Bulwark",ammo="Staunch Tathlum +1",
 		head="Souveran Schaller +1",neck="Loricate Torque +1",ear1="Nourish. Earring",ear2="Nourish. Earring +1",
 		body="Jumalik Mail",hands="Macabre Gaunt. +1",ring1="Defending Ring",ring2="Moonlight Ring",
-		back=gear.enmity_jse_back,waist="Creed Baudrier",legs="Founder's Hose",feet="Odyssean Greaves"}
+		back=AMBUENMITY_BACK,waist="Creed Baudrier",legs="Founder's Hose",feet="Odyssean Greaves"}
 		
     sets.midcast.Cure.DT = {main="Deacon Sword",sub="Sacro Bulwark",ammo="Staunch Tathlum +1",
         head="Souv. Schaller +1",neck="Loricate Torque +1",ear1="Odnowa Earring +1",ear2="Tuisto Earring",
@@ -299,7 +347,7 @@ function init_gear_sets()
     sets.idle.MDT = {main="Sakpata's Sword",sub="Aegis",ammo="Staunch Tathlum +1",
 		head="Nyame Helm",neck="Warder's Charm +1",ear1="Etiolation Earring",ear2="Sanare Earring",
 		body="Nyame Mail",hands="Nyame Gauntlets",ring1="Archon Ring",ring2="Shadow Ring",
-		back=gear.fastcast_jse_back,waist="Carrier's Sash",legs="Nyame Flanchard",feet="Nyame Sollerets"}
+		back=AMBUFC_BACK,waist="Carrier's Sash",legs="Nyame Flanchard",feet="Nyame Sollerets"}
 
 	sets.idle.Tank = {main="Sakpata's Sword",sub="Ochain",ammo="Staunch Tathlum +1",
 		head="Chev. Armet +1",neck="Warder's Charm +1",ear1="Creed Earring",ear2="Thureous Earring",
@@ -356,7 +404,7 @@ function init_gear_sets()
 	sets.defense.MDT = {main="Malignance Sword",sub="Aegis",ammo="Staunch Tathlum +1",
 		head="Nyame Helm",neck="Warder's Charm +1",ear1="Odnowa Earring +1",ear2="Sanare Earring",
 		body="Nyame Mail",hands="Nyame Gauntlets",ring1="Archon Ring",ring2="Shadow Ring",
-		back=gear.fastcast_jse_back,waist="Carrier's Sash",legs="Nyame Flanchard",feet="Nyame Sollerets"}
+		back=AMBUFC_BACK,waist="Carrier's Sash",legs="Nyame Flanchard",feet="Nyame Sollerets"}
 		
     sets.defense.MDT_HP = {main="Sakpata's Sword",sub="Aegis",ammo="Staunch Tathlum +1",
         head="Sakpata's Helm",neck="Warder's Charm +1",ear1="Odnowa Earring +1",ear2="Tuisto Earring",
@@ -366,7 +414,7 @@ function init_gear_sets()
 	sets.defense.MEVA = {main="Malignance Sword",sub="Aegis",ammo="Staunch Tathlum +1",
 		head="Nyame Helm",neck="Warder's Charm +1",ear1="Etiolation Earring",ear2="Sanare Earring",
 		body="Nyame Mail",hands="Nyame Gauntlets",ring1="Purity Ring",ring2="Shadow Ring",
-		back=gear.fastcast_jse_back,waist="Asklepian Belt",legs="Nyame Flanchard",feet="Nyame Sollerets"}
+		back=AMBUFC_BACK,waist="Asklepian Belt",legs="Nyame Flanchard",feet="Nyame Sollerets"}
 		
     sets.defense.MEVA_HP = {main="Malignance Sword",sub="Aegis",ammo="Staunch Tathlum +1",
         head="Sakpata's Helm",neck="Warder's Charm +1",ear1="Odnowa Earring +1",ear2="Tuisto Earring",
