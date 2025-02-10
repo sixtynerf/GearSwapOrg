@@ -541,7 +541,7 @@ function init_gear_sets()
 			hands="Souv. Handsch. +1",		--Path C
 			ring1="Supershear Ring",
 			ring2="Eihwaz Ring",
-		        back="Moonlight Cape",
+		        back=AMBUFC_BACK,
 			waist="Creed Baudrier",
 			legs="Souv. Diechlings +1",		--Path C
 			feet="Carmine Greaves +1"		--Path D
