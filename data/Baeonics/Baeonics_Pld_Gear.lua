@@ -730,7 +730,7 @@ function init_gear_sets()
 			sub="Forfend +1",
 			hands="Souv. Handsch. +1",
 			back="Weard Mantle",
-			legs=KALUNGA_LEGS",
+			legs=KALUNGA_LEGS,
 			feet="Souveran Schuhs +1"
 		})
 	
@@ -749,7 +749,7 @@ function init_gear_sets()
 		main="Sakpata's Sword",
 		hands="Souv. Handsch. +1",
 		back="Weard Mantle",
-		legs=KALUNGA_LEGS",
+		legs=KALUNGA_LEGS,
 		feet="Souveran Schuhs +1"
 	}
 	--------------------------------------
@@ -800,7 +800,7 @@ function init_gear_sets()
 		ring2="Warden's Ring",
 		back="Moonlight Cape",
 		waist="Flume Belt +1",
-		legs=KALUNGA_LEGS",
+		legs=KALUNGA_LEGS,
 		feet=KALUNGA_FEET
 	}
 	
@@ -819,7 +819,7 @@ function init_gear_sets()
 		ring2=MOONLIGHTRING_2,
 		back="Shadow Mantle",
 		waist="Flume Belt +1",
-		legs=KALUNGA_LEGS",
+		legs=KALUNGA_LEGS,
 		feet="Souveran Schuhs +1"
 	}
 	
@@ -928,7 +928,7 @@ function init_gear_sets()
 		main="Sakpata's Sword",sub="Duban",ammo="Eluder's Sachet",
 		head=EMPY_HEAD,neck="Diemer Gorget",ear1="Creed Earring",ear2="Thureous Earring",
 		body=KALUNGA_BODY,hands="Souv. Handsch. +1",ring1="Defending Ring",ring2="Warden's Ring",
-		back="Shadow Mantle",waist="Flume Belt +1",legs=KALUNGA_LEGS",feet="Souveran Schuhs +1"
+		back="Shadow Mantle",waist="Flume Belt +1",legs=KALUNGA_LEGS,feet="Souveran Schuhs +1"
 	}
 		
 	sets.defense.PDT = 
@@ -936,7 +936,7 @@ function init_gear_sets()
 		main="Sakpata's Sword",sub="Duban",ammo="Eluder's Sachet",
 		head=KALUNGA_HEAD,neck="Unmoving Collar +1",ear1="Odnowa Earring +1",ear2="Tuisto Earring",
 		body=KALUNGA_BODY,hands=KALUNGA_HANDS,ring1="Gelatinous Ring +1",ring2="Warden's Ring",
-		back="Shadow Mantle",waist="Flume Belt +1",legs=KALUNGA_LEGS",feet=KALUNGA_FEET
+		back="Shadow Mantle",waist="Flume Belt +1",legs=KALUNGA_LEGS,feet=KALUNGA_FEET
 	}
 		
 	sets.defense.PDT_HP = 
@@ -960,7 +960,7 @@ function init_gear_sets()
 		main="Sakpata's Sword",sub="Aegis",ammo="Staunch Tathlum +1",
 	        head=KALUNGA_HEAD,neck="Warder's Charm +1",ear1="Odnowa Earring +1",ear2="Tuisto Earring",
 	        body="Sakpata's Plate",hands=KALUNGA_HANDS,ring1="Gelatinous Ring +1",ring2=MOONLIGHTRING_2,
-	        back="Moonlight Cape",waist="Carrier's Sash",legs=KALUNGA_LEGS",feet=KALUNGA_FEET
+	        back="Moonlight Cape",waist="Carrier's Sash",legs=KALUNGA_LEGS,feet=KALUNGA_FEET
 	}
 
 	sets.defense.MEVA = 
@@ -976,7 +976,7 @@ function init_gear_sets()
 		main="Malignance Sword",sub="Aegis",ammo="Staunch Tathlum +1",
         head=KALUNGA_HEAD,neck="Warder's Charm +1",ear1="Odnowa Earring +1",ear2="Tuisto Earring",
         body="Sakpata's Plate",hands=KALUNGA_HANDS,ring1="Gelatinous Ring +1",ring2=MOONLIGHTRING_2,
-        back="Moonlight Cape",waist="Asklepian Belt",legs=KALUNGA_LEGS",feet=KALUNGA_FEET
+        back="Moonlight Cape",waist="Asklepian Belt",legs=KALUNGA_LEGS,feet=KALUNGA_FEET
 	}
 	
 	sets.defense.PDT_Reraise = set_combine(sets.defense.PDT_HP,{head="Twilight Helm",body="Twilight Mail"})
@@ -1020,7 +1020,7 @@ function init_gear_sets()
 		ammo="Hasty Pinion +1",
 		head=KALUNGA_HEAD,neck="Loricate Torque +1",ear1="Brutal Earring",ear2="Cessance Earring",
 		body="Tartarus Platemail",hands=KALUNGA_HANDS,ring1="Defending Ring",ring2="Patricius Ring",
-		back="Weard Mantle",waist="Sailfi Belt +1",legs=KALUNGA_LEGS",feet=KALUNGA_FEET
+		back="Weard Mantle",waist="Sailfi Belt +1",legs=KALUNGA_LEGS,feet=KALUNGA_FEET
 	}
 		
 	sets.engaged.Acc.DDTank = 
@@ -1028,7 +1028,7 @@ function init_gear_sets()
 		ammo="Hasty Pinion +1",
 		head=KALUNGA_HEAD,neck="Loricate Torque +1",ear1="Mache Earring +1",ear2="Telos Earring",
 		body="Tartarus Platemail",hands=KALUNGA_HANDS,ring1="Defending Ring",ring2="Patricius Ring",
-		back="Weard Mantle",waist="Sailfi Belt +1",legs=KALUNGA_LEGS",feet=KALUNGA_FEET
+		back="Weard Mantle",waist="Sailfi Belt +1",legs=KALUNGA_LEGS,feet=KALUNGA_FEET
 	
 		
 	sets.engaged.NoShellTank =
