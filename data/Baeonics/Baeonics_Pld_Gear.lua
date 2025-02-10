@@ -1047,7 +1047,7 @@ function init_gear_sets()
 	--------------------------------------
 	sets.buff.Doom = set_combine(sets.buff.Doom, {})
 	sets.buff.Sleep = {neck="Vim Torque +1"}
-    sets.buff.Cover = {body=RELIC_BODY}
+	sets.buff.Cover = {body=RELIC_BODY}
 end
 
 -- Select default macro book on initial load or subjob change.
