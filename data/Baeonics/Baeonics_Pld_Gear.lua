@@ -99,18 +99,18 @@ function init_gear_sets()
 	{
 		main="Sakpata's Sword",
 		sub="Duban",
-		ammo="Paeapua",
-	        head="Loess Barbuta +1",
+		ammo="Sapience Orb",
+	        head="Souv. Schaller +1",		--Path C
 		neck="Moonlight Necklace",
-		ear1="Friomisi Earring",
+		ear1="Cryptic Earring",
 		ear2="Trux Earring",
-	        body="Souv. Cuirass +1",
-		hands="Macabre Gaunt. +1",
-		ring1="Apeile Ring +1",
-		ring2="Apeile Ring",
+	        body="Souv. Cuirass +1",		--Path C
+		hands="Souv. Handsch. +1",		--Path C
+		ring1="Supershear Ring",
+		ring2="Eihwaz Ring",
 	        back=AMBUENMITY_BACK,
 		waist="Creed Baudrier",
-		legs="Souv. Diechlings +1",
+		legs="Souv. Diechlings +1",		--Path C
 		feet="Eschite Greaves"
 	}
 	
