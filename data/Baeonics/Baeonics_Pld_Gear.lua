@@ -286,7 +286,7 @@ function init_gear_sets()
 	{
 		main="Sakpata's Sword",
 		sub="Chanter's Shield",
-		ammo="Impatiens",
+		ammo="Sapience Orb",
 		head="Carmine Mask +1",
 		neck="Voltsurge Torque",
 		ear1="Enchntr. Earring +1",
@@ -297,8 +297,8 @@ function init_gear_sets()
 		ring2="Kishar Ring",
 		back=AMBUFC_BACK,
 		waist="Creed Baudrier",
-		legs=gear.odyssean_fc_legs,
-		feet="Odyssean Greaves"
+		legs="Enif Cosciales",
+		feet=EMPY_FEET
 	}
 	
 	sets.precast.FC.DT = 
