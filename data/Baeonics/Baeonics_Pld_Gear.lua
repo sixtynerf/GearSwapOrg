@@ -118,16 +118,16 @@ function init_gear_sets()
 	{
 		main="Sakpata's Sword",
 		sub="Sacro Bulwark",
-		ammo="Staunch Tathlum +1",
-		head="Loess Barbuta +1",
-		neck="Moonlight Necklace",
-		ear1="Friomisi Earring",
-		ear2="Trux Earring",
-		body="Souv. Cuirass +1",
-		hands="Macabre Gaunt. +1",
+		ammo="Staunch Tathlum +1",		--11 SIRD
+		head="Souv. Schaller +1",		--20 SIRD
+		neck="Moonlight Necklace",		--15 SIRD
+		ear1="Knightly Earring",		--09 SIRD
+		ear2="Nourish. Earring +1",		--05 SIRD
+		body=EMPY_BODY,				--20 SIRD
+		hands="Yorium Gauntlets",		--10 SIRD
 		ring1="Apeile Ring +1",
 		ring2=MOONLIGHTRING_2,
-		back=AMBUENMITY_BACK,
+		back=AMBUSIRD_BACK,			
 		waist="Rumination Sash",
 		legs="Founder's Hose",
 		feet="Odyssean Greaves"
