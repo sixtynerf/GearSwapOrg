@@ -612,21 +612,40 @@ function init_gear_sets()
 	
 	sets.midcast.Reprisal = 
 	{
-		main="Sakpata's Sword",
-		sub="Forfend +1",
+		main="Nixxer",
+		sub="Priwen",
 		ammo="Staunch Tathlum +1",
-		head="Loess Barbuta +1",
-		neck="Unmoving Collar +1",
-		ear1="Odnowa Earring +1",
-		ear2="Tuisto Earring",
-	        body=AF_BODY,
-		hands="Souv. Handsch. +1",
-		ring1="Gelatinous Ring +1",
-		ring2=MOONLIGHTRING_2,
-	        back="Moonlight Cape",
+		head="Carmine Mask +1",
+		neck="Moonlight Necklace",
+		ear1="Trux Earring",
+		ear2="Cryptic Earring",
+	        body="Shab. Cuirass +1",
+		hands="Souv. Handsch. +1",		--Path C
+		ring1="Supershear Ring",
+		ring2="Eihwaz Ring",
+	        back=AMBUFC_BACK,
 		waist="Creed Baudrier",
-		legs="Arke Cosc. +1",
-		feet="Souveran Schuhs +1"
+		legs="Souv. Diechlings +1",		--Path C
+		feet="Eschite Greaves"
+	}
+
+	sets.midcast.Enlight = 
+	{
+		main="Brilliance",
+		sub="Priwen",
+		ammo="Staunch Tathlum +1",
+		head="Jumalik Helm",
+		neck="Incanter's Torque",
+		ear1="Knight's Earring",
+		ear2="Saxnot Earring",
+	        body=AF_BODY,
+		hands="Eschite Gauntlets",
+		ring1=StikiniRing_Ring1,
+		ring2=StikiniRing_Ring2,
+	        back="Altruistic Cape",
+		waist="Asklepian Belt",
+		legs="Souv. Diechlings +1",		--Path C
+		feet="Eschite Greaves"
 	}
 
 	sets.Self_Healing = 
@@ -744,21 +763,21 @@ function init_gear_sets()
 	
 	sets.midcast.Phalanx = set_combine(sets.midcast['Enhancing Magic'], 
 		{
-			main="Colada",
-			sub="Duban",
+			main="Sakpata's Sword",
+			sub="Priwen",
 			ammo="Staunch Tathlum +1",
-			head="Souv. Schaller +1",
+			head="Yorium Barbuta",
 			neck="Incanter's Torque",
 			ear1="Mimir Earring",
-			ear2="Tuisto Earring",
-			body="Shab. Cuirass +1",
-			hands="Souv. Handsch. +1",
-			ring1="Defending Ring",
-			ring2=MOONLIGHTRING_2,
-			back="Merciful Cape",
+			ear2="Andoaa Earring",
+			body="Yorium Cuirass",
+			hands="Souv. Handsch. +1",		--Path D
+			ring1=StikiniRing_Ring1,
+			ring2="Defending Ring",
+			back=ADL_BACK,
 			waist="Olympus Sash",
-			legs=AF_LEGS,
-			feet="Odyssean Greaves"
+			legs=KALUNGA_LEGS,
+			feet="Souveran Schuhs +1"		--Path D
 		})
 	
 	sets.midcast.Phalanx.SIRD = set_combine(sets.midcast['Enhancing Magic'].SIRD, 
