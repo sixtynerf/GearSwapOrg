@@ -554,21 +554,38 @@ function init_gear_sets()
 		{
 			main="Sakpata's Sword",
 			sub="Duban",
-			ammo="Staunch Tathlum +1",
-			head="Carmine Mask +1",			--Path D
+			ammo="Sapience Orb",
+			head="Loess Barbuta +1",
 			neck="Moonlight Necklace",
 			ear1="Cryptic Earring",
-			ear2="Trux Earring",
-		        body="Souv. Cuirass +1",		--Path C
-			hands="Souv. Handsch. +1",		--Path C
-			ring1="Supershear Ring",
+			ear2="Odnowa Earring +1",
+		        body=AF_BODY,	
+			hands=SOUVERANHANDS_PATHC,		
+			ring1=VEXERRING_1,
 			ring2="Eihwaz Ring",
 		        back=AMBUFC_BACK,
 			waist="Creed Baudrier",
-			legs="Souv. Diechlings +1",		--Path C
-			feet="Carmine Greaves +1"		--Path D
+			legs=SOUVERANLEGS_PATHC,		
+			feet=EMPY_FEET		
 		})
-	sets.midcast.Flash.SIRD = set_combine(sets.Enmity.SIRD, {})
+	sets.midcast.Flash.SIRD = set_combine(sets.Enmity.SIRD, 
+		{
+			main="Sakpata's Sword",
+			sub="Duban",
+			ammo="Staunch Tathlum +1",
+			head=SOUVERANHEAD_PATHC,
+			neck="Moonlight Necklace",
+			ear1="Cryptic Earring",
+			ear2="Odnowa Earring +1",
+		        body=AF_BODY,	
+			hands=SOUVERANHANDS_PATHC,		
+			ring1=VEXERRING_1,
+			ring2="Eihwaz Ring",
+		        back=AMBUFC_BACK,
+			waist="Audumbla Sash",
+			legs="Founder's Hose",		
+			feet="Odyssean Greaves"	
+		})
 	sets.midcast.Stun = set_combine(sets.Enmity, {})
 	sets.midcast.Stun.SIRD = set_combine(sets.Enmity.SIRD, {})
 	sets.midcast['Blue Magic'] = set_combine(sets.Enmity, {})
