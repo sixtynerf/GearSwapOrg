@@ -307,15 +307,15 @@ function init_gear_sets()
 	{
 		main="Sakpata's Sword",
 		sub="Chanter's Shield",
-		ammo="Sapience Orb",
-		head="Carmine Mask +1",
-		neck="Voltsurge Torque",
-		ear1="Enchntr. Earring +1",
-		ear2="Loquac. Earring",
-		body=AF_BODY,
-		hands="Leyline Gloves",
+		ammo="Sapience Orb",		--02 FC
+		head="Carmine Mask +1",		--14 FC
+		neck="Voltsurge Torque",	--04 FC
+		ear1="Enchntr. Earring +1",	--02 FC
+		ear2="Loquac. Earring",		--02 FC
+		body=AF_BODY,			--10 FC
+		hands="Leyline Gloves",		--08 FC
 		ring1="Lebeche Ring",
-		ring2="Kishar Ring",
+		ring2="Kishar Ring",		--04FC
 		back=AMBUFC_BACK,
 		waist="Creed Baudrier",
 		legs="Enif Cosciales",
