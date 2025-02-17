@@ -804,27 +804,30 @@ function init_gear_sets()
 		{
 			main="Sakpata's Sword",
 			sub="Priwen",
-			ammo="Staunch Tathlum +1",
+			ammo="Sapience Orb",
 			head="Yorium Barbuta",
-			neck="Incanter's Torque",
+			neck="Unmoving Collar +1",
 			ear1="Mimir Earring",
-			ear2="Andoaa Earring",
+			ear2="Odnowa Earring +1",
 			body="Yorium Cuirass",
-			hands="Souv. Handsch. +1",		--Path D
-			ring1=StikiniRing_Ring1,
-			ring2="Defending Ring",
+			hands=SOUVERANHANDS_PATHD,	
+			ring1=MOONLIGHTRING_1,
+			ring2=MOONLIGHTRING_2,
 			back=ADL_BACK,
-			waist="Olympus Sash",
+			waist="Creed Baudrier",
 			legs=KALUNGA_LEGS,
-			feet="Souveran Schuhs +1"		--Path D
+			feet=SOUVERANFEET_PATHD		
 		})
 	
 	sets.midcast.Phalanx.SIRD = set_combine(sets.midcast['Enhancing Magic'].SIRD, 
 		{
-			main="Sakpata's Sword",
-			sub="Duban",hands="Souv. Handsch. +1",
-			back="Weard Mantle",
-			feet="Souveran Schuhs +1"
+			ammo="Staunch Tathlum +1",
+			head=SOUVERANHEAD_PATHC,
+			neck="Moonlight Necklace",
+			hands=SOUVERANHANDS_PATHC,	
+			waist="Audumbla Sash",
+			legs="Founder's Hose",
+			feet="Odyssean Greaves"		--make phalanx feet
 		})
 	
 	sets.midcast.Phalanx.DT = set_combine(sets.midcast.Phalanx.SIRD, {})
