@@ -603,31 +603,31 @@ function init_gear_sets()
 		ear2="Tuisto Earring",
 		body=SOUVERANBODY_PATHC,
 		hands="Macabre Gaunt. +1",
-		ring1="Defending Ring",
-		ring2=MOONLIGHTRING_2,
-		back=AMBUENMITY_BACK,
+		ring1=VEXERRING_1,
+		ring2="Eihwaz Ring",
+		back=AMBUENMITY_BACK,		--make cure recieved cape
 		waist="Creed Baudrier",
-		legs="Carmine Cuisses +1",
-		feet="Odyssean Greaves"
+		legs=SOUVERANLEGS_PATHC,
+		feet=EMPY_FEET
 	}
 	
 	sets.midcast.Cure.SIRD = 
 	{
-		main="Deacon Sword",
+		main="Sakpata's Sword",
 		sub="Sacro Bulwark",
 		ammo="Staunch Tathlum +1",
-		head="Souveran Schaller +1",
-		neck="Loricate Torque +1",
-		ear1="Nourish. Earring",
-		ear2="Nourish. Earring +1",
-		body="Jumalik Mail",
+		head="Loess Barbuta +1",
+		neck="Moonlight Necklace",
+		ear1="Nourish. Earring +1",
+		ear2="Tuisto Earring",
+		body=SOUVERANBODY_PATHC,
 		hands="Macabre Gaunt. +1",
-		ring1="Defending Ring",
-		ring2=MOONLIGHTRING_2,
-		back=AMBUENMITY_BACK,
-		waist="Creed Baudrier",
+		ring1="Gelatinous Ring +1",
+		ring2="Eihwaz Ring",
+		back=AMBUENMITY_BACK,		--make cure recieved cape
+		waist="Audumbla Sash",
 		legs="Founder's Hose",
-		feet="Odyssean Greaves"
+		feet="Odyssean Greaves"		--make cure recieved
 	}
 	
 	sets.midcast.Cure.DT = 
