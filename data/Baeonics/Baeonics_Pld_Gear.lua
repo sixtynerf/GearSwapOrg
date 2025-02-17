@@ -971,58 +971,135 @@ function init_gear_sets()
 	
 	sets.defense.Block = 
 	{
-		main="Sakpata's Sword",sub="Duban",ammo="Eluder's Sachet",
-		head=EMPY_HEAD,neck="Diemer Gorget",ear1="Creed Earring",ear2="Thureous Earring",
-		body=KALUNGA_BODY,hands="Souv. Handsch. +1",ring1="Defending Ring",ring2="Warden's Ring",
-		back="Shadow Mantle",waist="Flume Belt +1",legs=KALUNGA_LEGS,feet="Souveran Schuhs +1"
+		main="Sakpata's Sword",
+		sub="Duban",
+		ammo="Eluder's Sachet",
+		head=EMPY_HEAD,
+		neck="Diemer Gorget",
+		ear1="Creed Earring",
+		ear2="Thureous Earring",
+		body=KALUNGA_BODY,
+		hands="Souv. Handsch. +1",
+		ring1="Defending Ring",
+		ring2="Warden's Ring",
+		back="Shadow Mantle",
+		waist="Flume Belt +1",
+		legs=KALUNGA_LEGS,
+		feet="Souveran Schuhs +1"
 	}
 		
 	sets.defense.PDT = 
 	{
-		main="Sakpata's Sword",sub="Duban",ammo="Eluder's Sachet",
-		head=KALUNGA_HEAD,neck="Unmoving Collar +1",ear1="Odnowa Earring +1",ear2="Tuisto Earring",
-		body=KALUNGA_BODY,hands=KALUNGA_HANDS,ring1="Gelatinous Ring +1",ring2="Warden's Ring",
-		back="Shadow Mantle",waist="Flume Belt +1",legs=KALUNGA_LEGS,feet=KALUNGA_FEET
+		main="Sakpata's Sword",
+		sub="Duban",
+		ammo="Eluder's Sachet",
+		head=KALUNGA_HEAD,
+		neck="Unmoving Collar +1",
+		ear1="Odnowa Earring +1",
+		ear2="Tuisto Earring",
+		body=KALUNGA_BODY,
+		hands=KALUNGA_HANDS,
+		ring1="Gelatinous Ring +1",
+		ring2="Warden's Ring",
+		back="Shadow Mantle",
+		waist="Flume Belt +1",
+		legs=KALUNGA_LEGS,
+		feet=KALUNGA_FEET
 	}
 		
 	sets.defense.PDT_HP = 
 	{
-		main="Sakpata's Sword",sub="Duban",ammo="Eluder's Sachet",
-	        head="Souv. Schaller +1",neck="Unmoving Collar +1",ear1="Odnowa Earring +1",ear2="Tuisto Earring",
-	        body=AF_BODY,hands="Souv. Handsch. +1",ring1="Gelatinous Ring +1",ring2=MOONLIGHTRING_2,
-	        back="Moonlight Cape",waist="Creed Baudrier",legs="Arke Cosc. +1",feet="Souveran Schuhs +1"
+		main="Sakpata's Sword",
+		sub="Duban",
+		ammo="Eluder's Sachet",
+	        head="Souv. Schaller +1",
+		neck="Unmoving Collar +1",
+		ear1="Odnowa Earring +1",
+		ear2="Tuisto Earring",
+	        body=AF_BODY,
+		hands="Souv. Handsch. +1",
+		ring1="Gelatinous Ring +1",
+		ring2=MOONLIGHTRING_2,
+	        back="Moonlight Cape",
+		waist="Creed Baudrier",
+		legs="Arke Cosc. +1",
+		feet="Souveran Schuhs +1"
 	}
 		
 	sets.defense.MDT = 
 	{
-		main="Malignance Sword",sub="Aegis",ammo="Staunch Tathlum +1",
-		head=BUMBA_HEAD,neck="Warder's Charm +1",ear1="Odnowa Earring +1",ear2="Sanare Earring",
-		body=BUMBA_BODY,hands=BUMBA_HANDS,ring1="Archon Ring",ring2="Shadow Ring",
-		back=AMBUFC_BACK,waist="Carrier's Sash",legs=BUMBA_LEGS,feet=BUMBA_FEET
+		main="Malignance Sword",
+		sub="Aegis",
+		ammo="Staunch Tathlum +1",
+		head=BUMBA_HEAD,
+		neck="Warder's Charm +1",
+		ear1="Odnowa Earring +1",
+		ear2="Sanare Earring",
+		body=BUMBA_BODY,
+		hands=BUMBA_HANDS,
+		ring1="Archon Ring",
+		ring2="Shadow Ring",
+		back=AMBUFC_BACK,
+		waist="Carrier's Sash",
+		legs=BUMBA_LEGS,
+		feet=BUMBA_FEET
 	}
 	
 	sets.defense.MDT_HP = 
 	{
-		main="Sakpata's Sword",sub="Aegis",ammo="Staunch Tathlum +1",
-	        head=KALUNGA_HEAD,neck="Warder's Charm +1",ear1="Odnowa Earring +1",ear2="Tuisto Earring",
-	        body="Sakpata's Plate",hands=KALUNGA_HANDS,ring1="Gelatinous Ring +1",ring2=MOONLIGHTRING_2,
-	        back="Moonlight Cape",waist="Carrier's Sash",legs=KALUNGA_LEGS,feet=KALUNGA_FEET
+		main="Sakpata's Sword",
+		sub="Aegis",
+		ammo="Staunch Tathlum +1",
+	        head=KALUNGA_HEAD,
+		neck="Warder's Charm +1",
+		ear1="Odnowa Earring +1",
+		ear2="Tuisto Earring",
+	        body=KALUNGA_BODY,
+		hands=KALUNGA_HANDS,
+		ring1="Gelatinous Ring +1",
+		ring2=MOONLIGHTRING_2,
+	        back="Moonlight Cape",
+		waist="Carrier's Sash",
+		legs=KALUNGA_LEGS,
+		feet=KALUNGA_FEET
 	}
 
 	sets.defense.MEVA = 
 	{
-		main="Malignance Sword",sub="Aegis",ammo="Staunch Tathlum +1",
-		head=BUMBA_HEAD,neck="Warder's Charm +1",ear1="Etiolation Earring",ear2="Sanare Earring",
-		body=BUMBA_BODY,hands=BUMBA_HANDS,ring1="Purity Ring",ring2="Shadow Ring",
-		back=AMBUFC_BACK,waist="Asklepian Belt",legs=BUMBA_LEGS,feet=BUMBA_FEET
+		main="Malignance Sword",
+		sub="Aegis",
+		ammo="Staunch Tathlum +1",
+		head=BUMBA_HEAD,
+		neck="Warder's Charm +1",
+		ear1="Etiolation Earring",
+		ear2="Sanare Earring",
+		body=BUMBA_BODY,
+		hands=BUMBA_HANDS,
+		ring1="Purity Ring",
+		ring2="Shadow Ring",
+		back=AMBUFC_BACK,
+		waist="Asklepian Belt",
+		legs=BUMBA_LEGS,
+		feet=BUMBA_FEET
 	}
 	
 	sets.defense.MEVA_HP = 
 	{
-		main="Malignance Sword",sub="Aegis",ammo="Staunch Tathlum +1",
-        head=KALUNGA_HEAD,neck="Warder's Charm +1",ear1="Odnowa Earring +1",ear2="Tuisto Earring",
-        body="Sakpata's Plate",hands=KALUNGA_HANDS,ring1="Gelatinous Ring +1",ring2=MOONLIGHTRING_2,
-        back="Moonlight Cape",waist="Asklepian Belt",legs=KALUNGA_LEGS,feet=KALUNGA_FEET
+		main="Malignance Sword",
+		sub="Aegis",
+		ammo="Staunch Tathlum +1",
+	        head=KALUNGA_HEAD,
+		neck="Warder's Charm +1",
+		ear1="Odnowa Earring +1",
+		ear2="Tuisto Earring",
+	        body=KALUNGA_BODY,
+		hands=KALUNGA_HANDS,
+		ring1="Gelatinous Ring +1",
+		ring2=MOONLIGHTRING_2,
+	        back="Moonlight Cape",
+		waist="Asklepian Belt",
+		legs=KALUNGA_LEGS,
+		feet=KALUNGA_FEET
 	}
 	
 	sets.defense.PDT_Reraise = set_combine(sets.defense.PDT_HP,{head="Twilight Helm",body="Twilight Mail"})
@@ -1075,25 +1152,54 @@ function init_gear_sets()
 	sets.engaged.DDTank = 
 	{
 		ammo="Hasty Pinion +1",
-		head=KALUNGA_HEAD,neck="Loricate Torque +1",ear1="Brutal Earring",ear2="Cessance Earring",
-		body="Tartarus Platemail",hands=KALUNGA_HANDS,ring1="Defending Ring",ring2="Patricius Ring",
-		back="Weard Mantle",waist="Sailfi Belt +1",legs=KALUNGA_LEGS,feet=KALUNGA_FEET
+		head=KALUNGA_HEAD,
+		neck="Loricate Torque +1",
+		ear1="Brutal Earring",
+		ear2="Cessance Earring",
+		body="Tartarus Platemail",
+		hands=KALUNGA_HANDS,
+		ring1="Defending Ring",
+		ring2="Patricius Ring",
+		back="Weard Mantle",
+		waist="Sailfi Belt +1",
+		legs=KALUNGA_LEGS,
+		feet=KALUNGA_FEET
 	}
 		
 	sets.engaged.Acc.DDTank = 
 	{
 		ammo="Hasty Pinion +1",
-		head=KALUNGA_HEAD,neck="Loricate Torque +1",ear1="Mache Earring +1",ear2="Telos Earring",
-		body="Tartarus Platemail",hands=KALUNGA_HANDS,ring1="Defending Ring",ring2="Patricius Ring",
-		back="Weard Mantle",waist="Sailfi Belt +1",legs=KALUNGA_LEGS,feet=KALUNGA_FEET
+		head=KALUNGA_HEAD,
+		neck="Loricate Torque +1",
+		ear1="Mache Earring +1",
+		ear2="Telos Earring",
+		body="Tartarus Platemail",
+		hands=KALUNGA_HANDS,
+		ring1="Defending Ring",
+		ring2="Patricius Ring",
+		back="Weard Mantle",
+		waist="Sailfi Belt +1",
+		legs=KALUNGA_LEGS,
+		feet=KALUNGA_FEET
 	
 		
 	sets.engaged.NoShellTank =
 	{
-		main="Sakpata's Sword",sub="Duban",ammo="Staunch Tathlum +1",
-	        head="Jumalik Helm",neck="Loricate Torque +1",ear1="Thureous Earring",ear2="Etiolation Earring",
-	        body=AF_BODY,hands=KALUNGA_HANDS,ring1="Defending Ring",ring2=MOONLIGHTRING_2,
-	        back="Moonlight Cape",waist="Flume Belt +1",legs=gear.odyssean_fc_legs,feet=RELIC_FEET
+		main="Sakpata's Sword",
+		sub="Duban",
+		ammo="Staunch Tathlum +1",
+	        head="Jumalik Helm",
+		neck="Loricate Torque +1",
+		ear1="Thureous Earring",
+		ear2="Etiolation Earring",
+	        body=AF_BODY,
+		hands=KALUNGA_HANDS,
+		ring1="Defending Ring",
+		ring2=MOONLIGHTRING_2,
+	        back="Moonlight Cape",
+		waist="Flume Belt +1",
+		legs=gear.odyssean_fc_legs,
+		feet=RELIC_FEET
 	}
 		
 	sets.engaged.Reraise = set_combine(sets.engaged.Tank, sets.Reraise)
