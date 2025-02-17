@@ -113,9 +113,10 @@ function init_gear_sets()
 	--------------------------------------
 	-- Precast sets
 	--------------------------------------
-
+	
 	sets.Enmity = 
 	{
+		--84 ENM
 		main="Sakpata's Sword",
 		sub="Duban",
 		ammo="Sapience Orb",			--02 ENM
@@ -123,7 +124,7 @@ function init_gear_sets()
 		neck="Moonlight Necklace",
 		ear1="Tuisto Earring",
 		ear2="Odnowa Earring +1",
-	        body="Obviat. Cuirass +1",		--05 ENM
+	        body="Obviat. Cuirass +1",		--13 ENM ~
 		hands="Macabre Gaunt. +1",		--07 ENM
 		ring1=VEXERRING_1,			--04 ENM
 		ring2="Apeile Ring +1",			--09 ENM ~
