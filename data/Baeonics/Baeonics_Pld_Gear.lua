@@ -636,13 +636,13 @@ function init_gear_sets()
 	{
 		main="Nixxer",
 		sub="Priwen",
-		ammo="Staunch Tathlum +1",
-		head="Carmine Mask +1",
+		ammo="Sapience Orb",
+		head="Loess Barbuta +1",
 		neck="Moonlight Necklace",
-		ear1="Trux Earring",
-		ear2="Cryptic Earring",
+		ear1="Cryptic Earring",
+		ear2="Odnowa Earring +1",
 	        body="Shab. Cuirass +1",
-		hands="Souv. Handsch. +1",		--Path C
+		hands="Regal Gauntlets",		--Path C
 		ring1="Supershear Ring",
 		ring2="Eihwaz Ring",
 	        back=AMBUFC_BACK,
