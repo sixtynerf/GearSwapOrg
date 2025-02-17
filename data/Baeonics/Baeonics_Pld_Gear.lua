@@ -35,7 +35,21 @@ function user_job_setup()
 	EMPY_BODY 		= {name="Chev. Cuirass +3"}		--yes		
 	EMPY_HANDS 		= {name="Chev. Gauntlets +3"}		--maybe		
 	EMPY_LEGS 		= {name="Chev. Cuisses +3"}		--yes!		
-	EMPY_FEET 		= {name="Chev. Sabatons +3"}		--yes	
+	EMPY_FEET 		= {name="Chev. Sabatons +3"}		--yes
+
+--Cursed Gears
+	--pathC
+	SOUVERANHEAD_PATHC	= {name="Souv. Schaller +1"}
+	SOUVERANBODY_PATHC	= {name="Souv. Cuirass +1"}
+	SOUVERANHANDS_PATHC	= {name="Souv. Handsch. +1"}
+	SOUVERANLEGS_PATHC	= {name="Souv. Diechlings +1"}
+	SOUVERANFEET_PATHC	= {name="Souveran Schuhs +1"}
+	--pathD
+	SOUVERAN_HEAD_PATHD	= {name="Souv. Schaller +1"}
+	SOUVERAN_BODY_PATHD	= {name="Souv. Cuirass +1"}
+	SOUVERANHANDS_PATHD	= {name="Souv. Handsch. +1"}
+	SOUVERANLEGS_PATHD	= {name="Souv. Diechlings +1"}
+	SOUVERANFEET_PATHD	= {name="Souveran Schuhs +1"}
 
 --EMPY EAR
 	EMPY_EAR 		= {name="Chev. Earring +1"}
