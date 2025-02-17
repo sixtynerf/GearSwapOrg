@@ -1,3 +1,5 @@
+--gears taken from community pld guide on https://www.bg-wiki.com/ffxi/Community_Paladin_Guide
+
 function user_job_setup()
 
     -- Options: Override default values
@@ -15,25 +17,25 @@ function user_job_setup()
 	state.ExtraDefenseMode = M{['description']='Extra Defense Mode','None','MP','Twilight'}
 
 --Artifact Gear
-	AF_HEAD 		= {name="Rev. Coronet +1"}			
-	AF_BODY 		= {name="Rev. Surcoat +1"}		
-	AF_HANDS 		= {name="Rev. Gauntlets +1"}		
-	AF_LEGS 		= {name="Rev. Breeches +1"}			
-	AF_FEET 		= {name="Rev. Leggings +1"}
+	AF_HEAD 		= {name="Rev. Coronet +1"}		--no			
+	AF_BODY 		= {name="Rev. Surcoat +1"}		--yes	
+	AF_HANDS 		= {name="Rev. Gauntlets +1"}		--yes		
+	AF_LEGS 		= {name="Rev. Breeches +1"}		--yes			
+	AF_FEET 		= {name="Rev. Leggings +1"}		--yes
 
 --Relic Gear
-	RELIC_HEAD 		= {name="Cab. Coronet +1"}		
-	RELIC_BODY 		= {name="Cab. Surcoat +1"}		
-	RELIC_HANDS 		= {name="Cab. Gauntlets +1"}
-	RELIC_LEGS 		= {name="Cab. Breeches +1"}
-	RELIC_FEET 		= {name="Cab. Leggings +1"}	
+	RELIC_HEAD 		= {name="Cab. Coronet +1"}		--yes		
+	RELIC_BODY 		= {name="Cab. Surcoat +1"}		--yes		
+	RELIC_HANDS 		= {name="Cab. Gauntlets +1"}		--yes
+	RELIC_LEGS 		= {name="Cab. Breeches +1"}		--YMMV
+	RELIC_FEET 		= {name="Cab. Leggings +1"}		--yes	
 
 --Empyrean Gear
-	EMPY_HEAD 		= {name="Chev. Armet +3"}		
-	EMPY_BODY 		= {name="Chev. Cuirass +3"}		
-	EMPY_HANDS 		= {name="Chev. Gauntlets +3"}		
-	EMPY_LEGS 		= {name="Chev. Cuisses +3"}		
-	EMPY_FEET 		= {name="Chev. Sabatons +3"}	
+	EMPY_HEAD 		= {name="Chev. Armet +3"}		--yes!		
+	EMPY_BODY 		= {name="Chev. Cuirass +3"}		--yes		
+	EMPY_HANDS 		= {name="Chev. Gauntlets +3"}		--maybe		
+	EMPY_LEGS 		= {name="Chev. Cuisses +3"}		--yes!		
+	EMPY_FEET 		= {name="Chev. Sabatons +3"}		--yes	
 
 --EMPY EAR
 	EMPY_EAR 		= {name="Chev. Earring +1"}
