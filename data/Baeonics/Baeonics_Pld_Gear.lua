@@ -64,6 +64,9 @@ function user_job_setup()
 	MOONLIGHTRING_1 	= {name = "Moonlight Ring", bag = "wardrobe2"}
 	MOONLIGHTRING_2 	= {name = "Moonlight Ring", bag = "wardrobe3"}
 
+	VEXERRING_1		= {name = "Vexer Ring +1", bag = "wardrobe2"}
+	VEXERRING_2		= {name = "Vexer Ring +1", bag = "wardrobe3"}
+
 --CAPES
 	AMBUFC_BACK 		= {name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','"Fast Cast"+10','Damage taken-5%',}}
 	AMBUENMITY_BACK 	= {name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity+10','Damage taken-5%',}}
@@ -115,19 +118,19 @@ function init_gear_sets()
 	{
 		main="Sakpata's Sword",
 		sub="Duban",
-		ammo="Sapience Orb",
-	        head="Souv. Schaller +1",		--Path C
+		ammo="Sapience Orb",			--02 ENM
+	        head="Yorium Barbuta",			--10 ENM
 		neck="Moonlight Necklace",
-		ear1="Cryptic Earring",
-		ear2="Trux Earring",
-	        body="Souv. Cuirass +1",		--Path C
-		hands="Souv. Handsch. +1",		--Path C
-		ring1="Supershear Ring",
-		ring2="Eihwaz Ring",
-	        back=AMBUENMITY_BACK,
-		waist="Creed Baudrier",
-		legs="Souv. Diechlings +1",		--Path C
-		feet="Eschite Greaves"
+		ear1="Tuisto Earring",
+		ear2="Odnowa Earring +1",
+	        body="Obviat. Cuirass +1",		--05 ENM
+		hands="Macabre Gaunt. +1",		--07 ENM
+		ring1=VEXERRING_1,			--04 ENM
+		ring2="Apeile Ring +1",			--09 ENM ~
+	        back=AMBUENMITY_BACK,			--10 ENM
+		waist="Creed Baudrier",			--05 ENM
+		legs=SOUVERANLEGS_PATHC,		--09 ENM
+		feet=EMPY_FEET				--15 ENM
 	}
 	
 	sets.Enmity.SIRD = 
