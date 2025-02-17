@@ -305,8 +305,9 @@ function init_gear_sets()
 	
 	sets.precast.FC = 
 	{
-		main="Sakpata's Sword",
-		sub="Chanter's Shield",
+		--92 FC
+		main="Sakpata's Sword",		--10 FC
+		sub="Chanter's Shield",		--03 FC
 		ammo="Sapience Orb",		--02 FC
 		head="Carmine Mask +1",		--14 FC
 		neck="Voltsurge Torque",	--04 FC
@@ -314,12 +315,12 @@ function init_gear_sets()
 		ear2="Loquac. Earring",		--02 FC
 		body=AF_BODY,			--10 FC
 		hands="Leyline Gloves",		--08 FC
-		ring1="Lebeche Ring",
-		ring2="Kishar Ring",		--04FC
-		back=AMBUFC_BACK,
+		ring1="Rahab Ring",		--02 FC
+		ring2="Kishar Ring",		--04 FC
+		back=AMBUFC_BACK,		--10 FC
 		waist="Creed Baudrier",
-		legs="Enif Cosciales",
-		feet=EMPY_FEET
+		legs="Enif Cosciales",		--08 FC need to get
+		feet=EMPY_FEET			--13 FC
 	}
 	
 	sets.precast.FC.DT = 
