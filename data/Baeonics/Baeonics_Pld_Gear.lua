@@ -570,19 +570,10 @@ function init_gear_sets()
 		})
 	sets.midcast.Flash.SIRD = set_combine(sets.Enmity.SIRD, 
 		{
-			main="Sakpata's Sword",
-			sub="Duban",
 			ammo="Staunch Tathlum +1",
 			head=SOUVERANHEAD_PATHC,
 			neck="Moonlight Necklace",
-			ear1="Cryptic Earring",
-			ear2="Odnowa Earring +1",
-		        body=AF_BODY,	
-			hands=SOUVERANHANDS_PATHC,		
-			ring1=VEXERRING_1,
-			ring2="Eihwaz Ring",
-		        back=AMBUFC_BACK,
-			waist="Audumbla Sash",
+		 	waist="Audumbla Sash",
 			legs="Founder's Hose",		
 			feet="Odyssean Greaves"	
 		})
@@ -613,18 +604,10 @@ function init_gear_sets()
 	
 	sets.midcast.Cure.SIRD = 
 	{
-		main="Sakpata's Sword",
-		sub="Sacro Bulwark",
 		ammo="Staunch Tathlum +1",
-		head="Loess Barbuta +1",
 		neck="Moonlight Necklace",
 		ear1="Nourish. Earring +1",
-		ear2="Tuisto Earring",
-		body=SOUVERANBODY_PATHC,
-		hands="Macabre Gaunt. +1",
 		ring1="Gelatinous Ring +1",
-		ring2="Eihwaz Ring",
-		back=AMBUENMITY_BACK,		--make cure recieved cape
 		waist="Audumbla Sash",
 		legs="Founder's Hose",
 		feet="Odyssean Greaves"		--make cure recieved
