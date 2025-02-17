@@ -136,21 +136,22 @@ function init_gear_sets()
 	
 	sets.Enmity.SIRD = 
 	{
+		--84 ENM
 		main="Sakpata's Sword",
-		sub="Sacro Bulwark",
-		ammo="Staunch Tathlum +1",		--11 SIRD
-		head="Souv. Schaller +1",		--20 SIRD
-		neck="Moonlight Necklace",		--15 SIRD
-		ear1="Knightly Earring",		--09 SIRD
-		ear2="Nourish. Earring +1",		--05 SIRD
-		body=EMPY_BODY,				--20 SIRD
-		hands="Yorium Gauntlets",		--10 SIRD
-		ring1="Apeile Ring +1",
-		ring2=MOONLIGHTRING_2,
-		back=AMBUSIRD_BACK,			
-		waist="Rumination Sash",
-		legs="Founder's Hose",
-		feet="Odyssean Greaves"
+		sub="Duban",
+		ammo="Sapience Orb",			--02 ENM
+	        head="Yorium Barbuta",			--10 ENM
+		neck="Moonlight Necklace",
+		ear1="Tuisto Earring",
+		ear2="Odnowa Earring +1",
+	        body="Obviat. Cuirass +1",		--13 ENM ~
+		hands="Macabre Gaunt. +1",		--07 ENM
+		ring1=VEXERRING_1,			--04 ENM
+		ring2="Apeile Ring +1",			--09 ENM ~
+	        back=AMBUENMITY_BACK,			--10 ENM
+		waist="Creed Baudrier",			--05 ENM
+		legs=SOUVERANLEGS_PATHC,		--09 ENM
+		feet=EMPY_FEET				--15 ENM
 	}
 	
 	sets.Enmity.DT = 
