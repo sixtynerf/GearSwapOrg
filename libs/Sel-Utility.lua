@@ -332,38 +332,6 @@ end
 -- Environment utility functions.
 -------------------------------------------------------------------------------------------------------------------
 
--- Returns true if you're in a party solely comprised of Trust NPCs.
--- TODO: Do we need a check to see if we're in a party partly comprised of Trust NPCs?
-function is_trust_party()
-    -- Check if we're solo
-    if party.count == 1 then
-        return false
-    end
-
-    -- If we're in an alliance, can't be a Trust party.
-    if alliance[2].count > 0 or alliance[3].count > 0 then
-        return false
-    end
-    
-    -- Check that, for each party position aside from our own, the party
-    -- member has one of the Trust NPC names, and that those party members
-    -- are flagged is_npc.
-    for i = 2,6 do
-        if party[i] then
-            if not data.npcs.trusts:contains(party[i].name) then
-                return false
-            end
-            if party[i].mob and party[i].mob.is_npc == false then
-                return false
-            end
-        end
-    end
-    
-    -- If it didn't fail any of the above checks, return true.
-    return true
-end
-
-
 -- Call these function with a list of equipment slots to check ('head', 'neck', 'body', etc)
 -- Returns true if any of the specified slots are currently encumbered.
 -- Returns false if all specified slots are unencumbered.
@@ -601,28 +569,47 @@ function get_weaponskill_id_by_name(spell_name)
 	return gearswap.validabils.english['/ws'][spell_name:lower()] or false
 end
 
-function get_spell_table_by_name(spell_name)
-	for k in pairs(res.spells) do
-		if res.spells[k][language] == spell_name then
-			return res.spells[k]
-		end
-	end
-	return false
+function get_ability_id_by_name(spell_name)
+	return gearswap.validabils.english['/ja'][spell_name:lower()] or false
 end
 
-function silent_can_use(spellid)
+function silent_can_use(spell_id)
 	local available_spells = windower.ffxi.get_spells()
-	local spell_jobs = copy_entry(res.spells[spellid].levels)
+	local spell_jobs = copy_entry(res.spells[spell_id].levels)
         
-	-- Filter for spells that you do not know. Exclude Impact, Honor March,  Dispelga and Aria of Passion.
-	if not available_spells[spellid] and not (spellid == 503 or spellid == 417 or spellid == 360 or spellid == 418) then
+	--Check Impact, Honor March, Dispelga and Aria of Passion and if we have the relevant equipment.
+	if spell_id == 503 then --Impact
+		if item_equippable('Twilight Cloak') or item_equippable('Crepuscular Cloak') then
+			return true
+		else
+			return false
+		end
+	elseif spell_id == 417 then --Honor March
+		if item_equippable('Marsyas') then
+			return true
+		else
+			return false
+		end
+	elseif spell_id == 360 then --Dispelga
+		if item_equippable('Daybreak') then
+			return true
+		else
+			return false
+		end
+	elseif spell_id == 418 then --Aria of Passion
+		if item_equippable('Loughnashade') then
+			return true
+		else
+			return false
+		end
+	elseif not available_spells[spell_id] then -- Filter for spells that you do not know.
 		return false
 	-- Filter for spells that you know, but do not currently have access to
 	elseif (not spell_jobs[player.main_job_id] or not (spell_jobs[player.main_job_id] <= player.main_job_level or
 		(spell_jobs[player.main_job_id] >= 100 and number_of_jps(player.job_points[(res.jobs[player.main_job_id].ens):lower()]) >= spell_jobs[player.main_job_id]) ) ) and
 		(not spell_jobs[player.sub_job_id] or not (spell_jobs[player.sub_job_id] <= player.sub_job_level)) then
 		return false
-	elseif res.spells[spellid].type == 'BlueMagic' and not ((player.main_job_id == 16 and (data.spells.unbridled:contains(res.spells[spellid].en) or table.contains(windower.ffxi.get_mjob_data().spells,spellid))) or (player.sub_job_id == 16 and table.contains(windower.ffxi.get_sjob_data().spells,spellid))) then	
+	elseif res.spells[spell_id].type == 'BlueMagic' and not ((player.main_job_id == 16 and (data.spells.unbridled:contains(res.spells[spell_id].en) or table.contains(windower.ffxi.get_mjob_data().spells,spell_id))) or (player.sub_job_id == 16 and table.contains(windower.ffxi.get_sjob_data().spells,spell_id))) then	
 		return false
 	else
 		return true
@@ -638,7 +625,35 @@ function can_use(spell)
         local spell_jobs = copy_entry(res.spells[spell.id].levels)
         
         -- Filter for spells that you do not know. Exclude Impact.
-        if not available_spells[spell.id] and not (spell.id == 503 or spell.id == 417 or spell.id == 360 or spell.id == 418 ) then
+		if spell.id == 503 then --Impact
+			if item_equippable('Twilight Cloak') or item_equippable('Crepuscular Cloak') then
+				return true
+			else
+				add_to_chat(123,"Abort: [Impact] requires Twilight Cloak or Crepuscular Cloak.")
+				return false
+			end
+		elseif spell.id == 417 then --Honor March
+			if item_equippable('Marsyas') then
+				return true
+			else
+				add_to_chat(123,"Abort: [Honor March] requires Marsyas.")
+				return false
+			end
+		elseif spell.id == 360 then --Dispelga
+			if item_equippable('Daybreak') then
+				return true
+			else
+				add_to_chat(123,"Abort: [Dispelga] requires Daybreak.")
+				return false
+			end
+		elseif spell.id == 418 then --Aria of Passion
+			if item_equippable('Loughnashade') then
+				return true
+			else
+				add_to_chat(123,"Abort: [Aria of Passion] requires Loughnashade.")
+				return false
+			end
+		elseif not available_spells[spell.id] then
             add_to_chat(123,"Abort: You haven't learned ["..(res.spells[spell.id][language] or spell.id).."].")
             return false
         elseif spell.type == 'Ninjutsu'  then
@@ -864,8 +879,9 @@ end
 --
 -- Variables it sets: classes.Daytime, and classes.DuskToDawn.  They are set to true
 
+--Find out if an item is equippable by item name.
 function item_equippable(item)
-	local item_id = item_name_to_id(item)
+	local item_id = get_item_id_by_name(item)
 	if item_id and res.items[item_id].jobs:contains(player.main_job_id) then
 		return true	
 	else
@@ -1451,35 +1467,17 @@ end
 function check_trust()
 	if not moving and state.AutoTrustMode.value and not data.areas.cities:contains(world.area) and (buffactive['Reive Mark'] or buffactive['Elvorseal'] or not in_combat) then
 		local party = windower.ffxi.get_party()
-		if party.p5 == nil then
-			local spell_recasts = windower.ffxi.get_spell_recasts()
+		if party.p5 ~= nil then return end
+		local spell_recasts = windower.ffxi.get_spell_recasts()
 		
-			if spell_recasts[979] < spell_latency and not have_trust("Selh'teus") then
-				windower.chat.input('/ma "Selh\'teus" <me>')
-				add_tick_delay()
+		for k, trust_name in ipairs(trust_list) do
+			local spell_id = get_spell_id_by_name(trust_name)
+			local party_name = res.spells[spell_id].party_name
+		
+			if spell_recasts[spell_id] < spell_latency and not have_trust(party_name) then
+				windower.chat.input('/ma "'..trust_name..'" <me>')
+				add_tick_delay(1.5)
 				return true
-			elseif spell_recasts[1012] < spell_latency and not have_trust("Nashmeira") then
-				windower.chat.input('/ma "Nashmeira II" <me>')
-				add_tick_delay()
-				return true
-			elseif spell_recasts[1018] < spell_latency and not have_trust("Iroha") then
-				windower.chat.input('/ma "Iroha II" <me>')
-				add_tick_delay()
-				return true
-			elseif spell_recasts[1017] < spell_latency and not have_trust("Arciela") then
-				windower.chat.input('/ma "Arciela II" <me>')
-				add_tick_delay()
-				return true
-			elseif spell_recasts[947] < spell_latency and not have_trust("UkaTotlihn") then
-				windower.chat.input('/ma "Uka Totlihn" <me>')
-				add_tick_delay()
-				return true
-			elseif spell_recasts[1013] < spell_latency and not have_trust("Lilisette") then
-				windower.chat.input('/ma "Lilisette II" <me>')
-				add_tick_delay()
-				return true
-			else
-				return false
 			end
 		end
 	end
@@ -1667,13 +1665,13 @@ function check_ws()
 	end
 end
 
-function have_trust(trustname)
+function have_trust(trust_name)
 	local party = windower.ffxi.get_party()
 
 	for i = 1,5 do
 		local member = party['p' .. i]
 		if member then
-			if member.name:lower() == trustname:lower() then return true end
+			if member.name:lower() == trust_name:lower() then return true end
 		end
 		
 	end
@@ -1681,13 +1679,13 @@ function have_trust(trustname)
 	return false
 end
 
-function is_party_member(playerid)
+function is_party_member(player_id)
 	local party = windower.ffxi.get_party()
 
 	for i = 1,5 do
 		local member = party['p' .. i]
 		if member.mob.id then
-			if member.mob.id == playerid then return true end
+			if member.mob.id == player_id then return true end
 		end
 		
 	end
@@ -2294,12 +2292,12 @@ function wielding()
 	
 	--Guess I have to resort to player.equipment as a backup, can't think of anything better for being situation agnostic.
 	if state.Weapons.value ~= 'None' and sets.weapons[state.Weapons.value] then
-		main_id = item_name_to_id(sets.weapons[state.Weapons.value].main) or item_name_to_id(player.equipment.main) or nil
-		sub_id = item_name_to_id(sets.weapons[state.Weapons.value].sub) or item_name_to_id(player.equipment.sub) or nil
+		main_id = get_item_id_by_name(sets.weapons[state.Weapons.value].main) or get_item_id_by_name(player.equipment.main) or nil
+		sub_id = get_item_id_by_name(sets.weapons[state.Weapons.value].sub) or get_item_id_by_name(player.equipment.sub) or nil
 	end
 		
-	main_id = main_id or item_name_to_id(player.equipment.main) or 'empty'
-	sub_id = sub_id or item_name_to_id(player.equipment.sub) or 'empty'
+	main_id = main_id or get_item_id_by_name(player.equipment.main) or 'empty'
+	sub_id = sub_id or get_item_id_by_name(player.equipment.sub) or 'empty'
 	
 	if main_id == 'empty' and sub_id ~= 'empty' then
 		return 'Unarmed'
@@ -2335,7 +2333,7 @@ function update_combat_form()
 	end
 end
 
-function item_name_to_id(name)
+function get_item_id_by_name(name)
 	if name == nil or name == 'empty' then
 		return nil
 	else
@@ -2348,9 +2346,9 @@ function get_item_table(item)
 		local item_type = type(item)
 			
 		if item_type == 'string' then
-			return res.items[item_name_to_id(item)] or nil
+			return res.items[get_item_id_by_name(item)] or nil
 		elseif item_type == 'table' then
-			return res.items[item_name_to_id(item.name)] or nil
+			return res.items[get_item_id_by_name(item.name)] or nil
 		end
 	else
 		return nil
@@ -2417,8 +2415,10 @@ function get_current_stratagem_count()
 end
 
 function arts_active()
-	if state.Buff['Light Arts'] or state.Buff['Addendum: White'] or state.Buff['Dark Arts'] or state.Buff['Addendum: Black'] then
-		return true
+	if state.Buff['Light Arts'] or state.Buff['Addendum: White'] then
+		return 'White'
+	elseif state.Buff['Dark Arts'] or state.Buff['Addendum: Black'] then
+		return 'Black'
 	else
 		return false
 	end
