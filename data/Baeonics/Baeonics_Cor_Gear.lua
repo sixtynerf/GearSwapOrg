@@ -17,6 +17,7 @@ function user_job_setup()
 	options.ammo_warning_limit = 15
 --Ikenga_vest_bonus = 190  -- It is 190 at R20. Uncomment if you need to manually adjust because you are using below R20
 
+--Capes
 	AMBUTPRA_BACK = {name="Camulus's Mantle",augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','Rng.Acc.+10','"Store TP"+10',}}				--make this
 	AMBUSNAPSHOT_BACK = {name="Camulus's Mantle",augments={'"Snapshot"+10',}}									--make this
 	AMBUTP_BACK = {name="Camulus's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Store TP"+10','Phys. dmg. taken-10%',}}	
@@ -31,25 +32,37 @@ function user_job_setup()
 	AF_LEGS = {name="Laksa. Trews +2"}
 	AF_FEET = {name="Laksa. Bottes +2"}
 
-	--Relic Gear
+--Relic Gear
 	RELIC_HEAD = {name="Lanun Tricorne +1"}
 	RELIC_BODY = {name="Lanun Frac +3"}
 	RELIC_HANDS = {name="Lanun Gants +1"}
 	RELIC_LEGS = {name="Lanun Trews +1"}
 	RELIC_FEET = {name="Lanun Bottes +3"}
 
-	--Empyrean Gear
+--Empyrean Gear
 	EMPY_HEAD = {name="Chass. Tricorne +3"}
 	EMPY_BODY = {name="Chasseur's Frac +3"}
 	EMPY_HANDS = {name="Chasseur's Gants +3"}
 	EMPY_LEGS = {name="Chas. Culottes +3"}
 	EMPY_FEET = {name="Chass. Bottes +3"}
-	
+
+--Empy Ear
 	EMPY_EAR = {name="Chas. Earring +1"}
 
+--Dynamis Neck
 	JSE_NECK = {name="Comm. Charm +2"}
 
-    -- Additional local binds
+--Rings
+	StikiniRing_Ring1	= {name = "Stikini Ring +1", bag = "wardrobe2"}
+	StikiniRing_Ring2	= {name = "Stikini Ring +1", bag = "wardrobe3"}
+
+	ChirichRing_Ring1	= {name = "Chirich Ring +1", bag = "wardrobe2"}
+	ChirichRing_Ring2	= {name = "Chirich Ring +1", bag = "wardrobe3"}
+
+	MOONLIGHTRING_1 	= {name = "Moonlight Ring", bag = "wardrobe2"}
+	MOONLIGHTRING_2 	= {name = "Moonlight Ring", bag = "wardrobe3"}
+
+-- Additional local binds
 	send_command('bind ^` gs c cycle ElementalMode')
 	send_command('bind !` gs c elemental quickdraw')
 	
@@ -103,73 +116,176 @@ function init_gear_sets()
 		legs="Desultor Tassets",
 		feet="Malignance Boots"
 	}
-
-    sets.precast.LuzafRing = {ring2="Luzaf's Ring"}
-    
-    sets.precast.CorsairRoll["Caster's Roll"] = set_combine(sets.precast.CorsairRoll, {legs=EMPY_LEGS})
-    sets.precast.CorsairRoll["Courser's Roll"] = set_combine(sets.precast.CorsairRoll, {feet=EMPY_FEET})
-    sets.precast.CorsairRoll["Blitzer's Roll"] = set_combine(sets.precast.CorsairRoll, {head=EMPY_HEAD})
-    sets.precast.CorsairRoll["Tactician's Roll"] = set_combine(sets.precast.CorsairRoll, {body=EMPY_BODY})
-    sets.precast.CorsairRoll["Allies' Roll"] = set_combine(sets.precast.CorsairRoll, {hands=EMPY_HANDS})
-    
-    sets.precast.CorsairShot = {ammo=gear.QDbullet,
-        head=gear.herculean_nuke_head,neck="Iskur Gorget",ear1="Dedition Earring",ear2="Telos Earring",
-        body="Mummu Jacket +2",hands="Adhemar Wristbands +1",ring1="Crepuscular Ring",ring2="Dingir Ring",
-        back=AMBUTPRA_BACK,waist="Goading Belt",legs=EMPY_LEGS,feet="Carmine Greaves +1"}
-		
-	sets.precast.CorsairShot.Damage = {ammo=gear.QDbullet,
-        head=gear.herculean_nuke_head,neck="Sanctity Necklace",ear1="Friomisi Earring",ear2="Crematio Earring",
-        body="Samnuha Coat",hands="Leyline Gloves",ring1="Shiva Ring +1",ring2="Dingir Ring",
-        back=AMBUWSDRA_BACK,waist="Eschan Stone",legs="Malignance Tights",feet=EMPY_FEET}
 	
-    sets.precast.CorsairShot.Proc = {ammo=gear.RAbullet,
-        head="Wh. Rarab Cap +1",neck="Loricate Torque +1",ear1="Genmei Earring",ear2="Sanare Earring",
-        body="Emet Harness +1",hands="Malignance Gloves",ring1="Defending Ring",ring2="Dark Ring",
-        back="Moonlight Cape",waist="Flume Belt +1",legs="Carmine Cuisses +1",feet=EMPY_FEET}
-
-    sets.precast.CorsairShot['Light Shot'] = {ammo=gear.QDbullet,
-        head="Carmine Mask +1",neck="Sanctity Necklace",ear1="Digni. Earring",ear2="Telos Earring",
-        body="Mummu Jacket +2",hands="Leyline Gloves",ring1="Metamor. Ring +1",ring2="Stikini Ring +1",
-        back=AMBUWSDRA_BACK,waist="Eschan Stone",legs="Malignance Tights",feet="Mummu Gamash. +2"}
-
-    sets.precast.CorsairShot['Dark Shot'] = set_combine(sets.precast.CorsairShot['Light Shot'], {feet=EMPY_FEET})
-
-    -- Waltz set (chr and vit)
-    sets.precast.Waltz = {
-        head="Carmine Mask +1",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Sanare Earring",
-        body=gear.herculean_waltz_body,hands=gear.herculean_waltz_hands,ring1="Defending Ring",ring2="Valseur's Ring",
-        back="Moonlight Cape",waist="Flume Belt +1",legs="Dashing Subligar",feet=gear.herculean_waltz_feet}
+	sets.precast.LuzafRing = {ring2="Luzaf's Ring"}
+    
+	sets.precast.CorsairRoll["Caster's Roll"] = set_combine(sets.precast.CorsairRoll, {legs=EMPY_LEGS})
+	sets.precast.CorsairRoll["Courser's Roll"] = set_combine(sets.precast.CorsairRoll, {feet=EMPY_FEET})
+	sets.precast.CorsairRoll["Blitzer's Roll"] = set_combine(sets.precast.CorsairRoll, {head=EMPY_HEAD})
+	sets.precast.CorsairRoll["Tactician's Roll"] = set_combine(sets.precast.CorsairRoll, {body=EMPY_BODY})
+	sets.precast.CorsairRoll["Allies' Roll"] = set_combine(sets.precast.CorsairRoll, {hands=EMPY_HANDS})
+    
+	sets.precast.CorsairShot = 
+	{
+		ammo=gear.QDbullet,
+		head=gear.herculean_nuke_head,
+		neck="Iskur Gorget",
+		ear1="Dedition Earring",
+		ear2="Telos Earring",
+		body=MUMMU_BODY,
+		hands="Adhemar Wristbands +1",
+		ring1="Crepuscular Ring",
+		ring2="Dingir Ring",
+		back=AMBUTPRA_BACK,
+		waist="Goading Belt",
+		legs=EMPY_LEGS,
+		feet="Carmine Greaves +1"
+	}
 		
-	sets.Self_Waltz = {head="Mummu Bonnet +2",body="Passion Jacket",ring1="Asklepian Ring"}
+	sets.precast.CorsairShot.Damage = 
+	{
+		ammo=gear.QDbullet,
+	        head=gear.herculean_nuke_head,
+		neck="Sanctity Necklace",
+		ear1="Friomisi Earring",
+		ear2="Crematio Earring",
+	        body="Samnuha Coat",
+		hands="Leyline Gloves",
+		ring1="Shiva Ring +1",
+		ring2="Dingir Ring",
+	        back=AMBUWSDRA_BACK,
+		waist="Eschan Stone",
+		legs="Malignance Tights",
+		feet=EMPY_FEET
+	}
+	
+	sets.precast.CorsairShot.Proc = 
+	{
+		ammo=gear.RAbullet,
+		head="Wh. Rarab Cap +1",
+		neck="Loricate Torque +1",
+		ear1="Genmei Earring",
+		ear2="Sanare Earring",
+		body="Emet Harness +1",
+		hands="Malignance Gloves",
+		ring1="Defending Ring",
+		ring2="Dark Ring",
+		back="Moonlight Cape",
+		waist="Flume Belt +1",
+		legs="Carmine Cuisses +1",
+		feet=EMPY_FEET
+	}
+	
+	sets.precast.CorsairShot['Light Shot'] = 
+	{
+		ammo=gear.QDbullet,
+		head="Carmine Mask +1",
+		neck="Sanctity Necklace",
+		ear1="Digni. Earring",
+		ear2="Telos Earring",
+		body=MUMMU_BODY,
+		hands="Leyline Gloves",
+		ring1="Metamor. Ring +1",
+		ring2=StikiniRing_Ring2,
+		back=AMBUWSDRA_BACK,
+		waist="Eschan Stone",
+		legs="Malignance Tights",
+		feet=MUMMU_FEET
+	}
+
+	sets.precast.CorsairShot['Dark Shot'] = set_combine(sets.precast.CorsairShot['Light Shot'], 
+		{
+			feet=EMPY_FEET
+		})
+
+-- Waltz set (chr and vit)
+	sets.precast.Waltz = 
+	{
+		head="Carmine Mask +1",
+		neck="Loricate Torque +1",
+		ear1="Etiolation Earring",
+		ear2="Sanare Earring",
+		body=gear.herculean_waltz_body,
+		hands=gear.herculean_waltz_hands,
+		ring1="Defending Ring",
+		ring2="Valseur's Ring",
+		back="Moonlight Cape",
+		waist="Flume Belt +1",
+		legs="Dashing Subligar",
+		feet=gear.herculean_waltz_feet
+	}
+		
+	sets.Self_Waltz = 
+	{
+		head=MUMMU_HEAD,
+		body="Passion Jacket",
+		ring1="Asklepian Ring"
+	}
         
     -- Don't need any special gear for Healing Waltz.
-    sets.precast.Waltz['Healing Waltz'] = {}
+	sets.precast.Waltz['Healing Waltz'] = {}
 
     -- Fast cast sets for spells
     
-    sets.precast.FC = {
-        head="Carmine Mask +1",neck="Baetyl Pendant",ear1="Enchntr. Earring +1",ear2="Loquac. Earring",
-        body="Dread Jupon",hands="Leyline Gloves",ring1="Kishar Ring",ring2="Lebeche Ring",
-        back="Moonlight Cape",waist="Flume Belt +1",legs="Rawhide Trousers",feet="Carmine Greaves +1"}
+	sets.precast.FC = 
+	{
+		head="Carmine Mask +1",
+		neck="Baetyl Pendant",
+		ear1="Enchntr. Earring +1",
+		ear2="Loquac. Earring",
+		body="Dread Jupon",
+		hands="Leyline Gloves",
+		ring1="Kishar Ring",
+		ring2="Lebeche Ring",
+		back="Moonlight Cape",
+		waist="Flume Belt +1",
+		legs="Rawhide Trousers",
+		feet="Carmine Greaves +1"
+	}
 
-    sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {neck="Magoraga Beads",body="Passion Jacket"})
+	sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, 
+		{
+			neck="Magoraga Beads",
+			body="Passion Jacket"
+		})
 	
-	sets.precast.FC.Cure = set_combine(sets.precast.FC, {ear2="Mendi. Earring"})
-
-    sets.precast.RA = {ammo=gear.RAbullet,
-        head=EMPY_HEAD,neck=JSE_NECK,
-        body="Laksa. Frac +3",hands="Carmine Fin. Ga. +1",ring1="Crepuscular Ring",
-        back=AMBUSNAPSHOT_BACK,waist="Impulse Belt",legs="Laksa. Trews +3",feet="Meg. Jam. +2"}
+	sets.precast.FC.Cure = set_combine(sets.precast.FC, 
+		{
+			ear2="Mendi. Earring"
+		})
+	
+	sets.precast.RA = 
+	{
+		ammo=gear.RAbullet,
+		head=EMPY_HEAD,
+		neck=JSE_NECK,
+		body=AF_BODY,
+		hands="Carmine Fin. Ga. +1",
+		ring1="Crepuscular Ring",
+		back=AMBUSNAPSHOT_BACK,
+		waist="Impulse Belt",
+		legs=AF_LEGS,
+		feet=MEGHANADA_FEET
+	}
 		
-	sets.precast.RA.Flurry = set_combine(sets.precast.RA, {waist="Yemaya Belt",legs="Adhemar Kecks +1"})
-	sets.precast.RA.Flurry2 = set_combine(sets.precast.RA, {waist="Yemaya Belt",legs="Adhemar Kecks +1"})
+	sets.precast.RA.Flurry = set_combine(sets.precast.RA, 
+		{
+			waist="Yemaya Belt",
+			legs="Adhemar Kecks +1"
+		})
+	
+	sets.precast.RA.Flurry2 = set_combine(sets.precast.RA, 
+		{
+			waist="Yemaya Belt",
+			legs="Adhemar Kecks +1"
+		})
 
        
     -- Weaponskill sets
     -- Default set for any weaponskill that isn't any more specifically defined
     sets.precast.WS = {
         head="Meghanada Visor +2",neck="Fotia Gorget",ear1="Moonshade Earring",ear2="Telos Earring",
-        body="Laksa. Frac +3",hands="Meg. Gloves +2",ring1="Regal Ring",ring2="Ifrit Ring +1",
+        body=AF_BODY,hands="Meg. Gloves +2",ring1="Regal Ring",ring2="Ifrit Ring +1",
         back=AMBUWSDSTR_BACK,waist="Fotia Belt",legs="Meg. Chausses +2",feet=RELIC_FEET}
 		
     sets.precast.WS.Acc = {
@@ -179,7 +295,7 @@ function init_gear_sets()
 		
     sets.precast.WS.Proc = {
         head="Carmine Mask +1",neck="Combatant's Torque",ear1="Digni. Earring",ear2="Mache Earring +1",
-        body="Mummu Jacket +2",hands="Floral Gauntlets",ring1="Ramuh Ring +1",ring2="Ramuh Ring +1",
+        body=MUMMU_BODY,hands="Floral Gauntlets",ring1="Ramuh Ring +1",ring2="Ramuh Ring +1",
         back=AMBUTP_BACK,waist="Olseni Belt",legs="Carmine Cuisses +1",feet="Malignance Boots"}
 		
     -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
@@ -187,18 +303,18 @@ function init_gear_sets()
     sets.precast.WS['Requiescat'] = set_combine(sets.precast.WS, {head="Carmine Mask +1",ring2="Rufescent Ring",legs="Carmine Cuisses +1",feet="Carmine Greaves +1"})
 
 	sets.precast.WS['Evisceration'] = {ammo=gear.WSbullet,
-        head="Mummu Bonnet +2",neck="Fotia Gorget",ear1="Odr Earring",ear2="Moonshade Earring",
-        body="Mummu Jacket +2",hands="Mummu Wrists +2",ring1="Mummu Ring",ring2="Begrudging Ring",
-        back=AMBUTP_BACK,waist="Fotia Belt",legs="Mummu Kecks +2",feet="Mummu Gamash. +2"}
+        head=MUMMU_HEAD,neck="Fotia Gorget",ear1="Odr Earring",ear2="Moonshade Earring",
+        body=MUMMU_BODY,hands="Mummu Wrists +2",ring1="Mummu Ring",ring2="Begrudging Ring",
+        back=AMBUTP_BACK,waist="Fotia Belt",legs="Mummu Kecks +2",feet=MUMMU_FEET}
 		
 	sets.precast.WS['Evisceration'].Acc = {ammo=gear.WSbullet,
-        head="Mummu Bonnet +2",neck="Fotia Gorget",ear1="Odr Earring",ear2="Moonshade Earring",
-        body="Mummu Jacket +2",hands="Mummu Wrists +2",ring1="Regal Ring",ring2="Begrudging Ring",
-        back=AMBUTP_BACK,waist="Fotia Belt",legs="Mummu Kecks +2",feet="Mummu Gamash. +2"}
+        head=MUMMU_HEAD,neck="Fotia Gorget",ear1="Odr Earring",ear2="Moonshade Earring",
+        body=MUMMU_BODY,hands="Mummu Wrists +2",ring1="Regal Ring",ring2="Begrudging Ring",
+        back=AMBUTP_BACK,waist="Fotia Belt",legs="Mummu Kecks +2",feet=MUMMU_FEET}
 
 	sets.precast.WS['Savage Blade'] = {ammo=gear.WSbullet,
         head="Lilitu Headpiece",neck=JSE_NECK,ear1="Moonshade Earring",ear2="Ishvara Earring",
-        body="Laksa. Frac +3",hands="Meg. Gloves +2",ring1="Regal Ring",ring2="Rufescent Ring",
+        body=AF_BODY,hands="Meg. Gloves +2",ring1="Regal Ring",ring2="Rufescent Ring",
         back=AMBUWSDSTR_BACK,waist="Sailfi Belt +1",legs=gear.herculean_wsd_legs,feet=RELIC_FEET}
 
     sets.precast.WS['Savage Blade'].Acc = {ammo=gear.WSbullet,
@@ -208,12 +324,12 @@ function init_gear_sets()
 	
     sets.precast.WS['Last Stand'] = {ammo=gear.WSbullet,
         head="Meghanada Visor +2",neck="Fotia Gorget",ear1="Moonshade Earring",ear2="Telos Earring",
-        body="Laksa. Frac +3",hands="Meg. Gloves +2",ring1="Regal Ring",ring2="Dingir Ring",
+        body=AF_BODY,hands="Meg. Gloves +2",ring1="Regal Ring",ring2="Dingir Ring",
         back=AMBUWSDRA_BACK,waist="Fotia Belt",legs="Meg. Chausses +2",feet=RELIC_FEET}
 
     sets.precast.WS['Last Stand'].Acc = {ammo=gear.WSbullet,
         head="Meghanada Visor +2",neck="Iskur Gorget",ear1="Moonshade Earring",ear2="Telos Earring",
-        body="Laksa. Frac +3",hands="Meg. Gloves +2",ring1="Regal Ring",ring2="Dingir Ring",
+        body=AF_BODY,hands="Meg. Gloves +2",ring1="Regal Ring",ring2="Dingir Ring",
         back=AMBUWSDRA_BACK,waist="Fotia Belt",legs="Meg. Chausses +2",feet=RELIC_FEET}
 		
     sets.precast.WS['Detonator'] = sets.precast.WS['Last Stand']
@@ -229,27 +345,27 @@ function init_gear_sets()
 	
     sets.precast.WS['Leaden Salute'] = {ammo=gear.MAbullet,
         head="Pixie Hairpin +1",neck=JSE_NECK,ear1="Moonshade Earring",ear2="Friomisi Earring",
-        body="Laksa. Frac +3",hands="Carmine Fin. Ga. +1",ring1="Archon Ring",ring2="Dingir Ring",
+        body=AF_BODY,hands="Carmine Fin. Ga. +1",ring1="Archon Ring",ring2="Dingir Ring",
         back=AMBUWSMB_BACK,waist="Eschan Stone",legs="Nyame Flanchard",feet=RELIC_FEET}
 		
     sets.precast.WS['Leaden Salute'].Acc = {ammo=gear.MAbullet,
         head="Pixie Hairpin +1",neck=JSE_NECK,ear1="Moonshade Earring",ear2="Friomisi Earring",
-        body="Laksa. Frac +3",hands="Carmine Fin. Ga. +1",ring1="Archon Ring",ring2="Dingir Ring",
+        body=AF_BODY,hands="Carmine Fin. Ga. +1",ring1="Archon Ring",ring2="Dingir Ring",
         back=AMBUWSMB_BACK,waist="Eschan Stone",legs="Nyame Flanchard",feet=RELIC_FEET}
 
     sets.precast.WS['Aeolian Edge'] = {ammo="Animikii Bullet",
         head=gear.herculean_nuke_head,neck="Baetyl Pendant",ear1="Moonshade Earring",ear2="Friomisi Earring",
-        body="Laksa. Frac +3",hands="Carmine Fin. Ga. +1",ring1="Metamor. Ring +1",ring2="Dingir Ring",
+        body=AF_BODY,hands="Carmine Fin. Ga. +1",ring1="Metamor. Ring +1",ring2="Dingir Ring",
         back=AMBUWSMB_BACK,waist="Eschan Stone",legs="Nyame Flanchard",feet=RELIC_FEET}
 
     sets.precast.WS['Wildfire'] = {ammo=gear.MAbullet,
         head=gear.herculean_nuke_head,neck=JSE_NECK,ear1="Crematio Earring",ear2="Friomisi Earring",
-        body="Laksa. Frac +3",hands="Carmine Fin. Ga. +1",ring1="Regal Ring",ring2="Dingir Ring",
+        body=AF_BODY,hands="Carmine Fin. Ga. +1",ring1="Regal Ring",ring2="Dingir Ring",
         back=AMBUWSMB_BACK,waist="Eschan Stone",legs="Nyame Flanchard",feet=RELIC_FEET}
 
     sets.precast.WS['Wildfire'].Acc = {ammo=gear.MAbullet,
         head=gear.herculean_nuke_head,neck=JSE_NECK,ear1="Crematio Earring",ear2="Friomisi Earring",
-        body="Laksa. Frac +3",hands="Leyline Gloves",ring1="Regal Ring",ring2="Dingir Ring",
+        body=AF_BODY,hands="Leyline Gloves",ring1="Regal Ring",ring2="Dingir Ring",
         back=AMBUWSMB_BACK,waist="Eschan Stone",legs="Nyame Flanchard",feet=RELIC_FEET}
 		
     sets.precast.WS['Hot Shot'] = sets.precast.WS['Wildfire']
@@ -259,7 +375,7 @@ function init_gear_sets()
     sets.precast.WS['Burning Blade'] = {ammo=gear.RAbullet,
         head="Meghanada Visor +2",neck="Loricate Torque +1",ear1="Genmei Earring",ear2="Sanare Earring",
         body="Meg. Cuirie +2",hands="Malignance Gloves",ring1="Defending Ring",ring2="Dark Ring",
-        back="Moonlight Cape",waist="Flume Belt +1",legs="Meg. Chausses +2",feet="Meg. Jam. +2"}
+        back="Moonlight Cape",waist="Flume Belt +1",legs="Meg. Chausses +2",feet=MEGHANADA_FEET}
 
 	-- Swap to these on Moonshade using WS if at 3000 TP
 	sets.MaxTP = {}
@@ -292,8 +408,8 @@ function init_gear_sets()
 
     sets.midcast.RA.Acc = {ammo=gear.RAbullet,
         head="Malignance Chapeau",neck="Iskur Gorget",ear1="Enervating Earring",ear2="Telos Earring",
-        body="Laksa. Frac +3",hands="Malignance Gloves",ring1="Regal Ring",ring2="Ilabrat Ring",
-        back=AMBUTPRA_BACK,waist="Yemaya Belt",legs="Laksa. Trews +3",feet="Malignance Boots"}
+        body=AF_BODY,hands="Malignance Gloves",ring1="Regal Ring",ring2="Ilabrat Ring",
+        back=AMBUTPRA_BACK,waist="Yemaya Belt",legs=AF_LEGS,feet="Malignance Boots"}
 		
 	sets.buff['Triple Shot'] = {body=EMPY_BODY}
     
