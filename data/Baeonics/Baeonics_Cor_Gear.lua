@@ -7,7 +7,7 @@ function user_job_setup()
 	state.IdleMode:options('Normal', 'PDT', 'Refresh')
 	state.HybridMode:options('Normal','DT')
 	state.ExtraMeleeMode = M{['description']='Extra Melee Mode', 'None', 'DWMax'}
-	state.Weapons:options('Default','Ranged','Savage','Evisceration','DualWeapons','DualSavageWeapons','DualEvisceration','DualLeadenRanged','DualLeadenMelee','DualAeolian','DualLeadenMeleeAcc','DualRanged','DualProcWeapons','None')
+	state.Weapons:options('Default','Ranged','Savage','Evisceration','DualWeapons','DualSavageWeapons','DualEvisceration','DualLeadenRanged','DualWFRanged','DualLeadenMelee','DualAeolian','DualLeadenMeleeAcc','DualRanged','DualProcWeapons','None')
 	state.CompensatorMode:options('Always','300','1000','Never')
 	state.PWUnlock = M(true, 'PWUnlock')
 	
@@ -515,16 +515,17 @@ function init_gear_sets()
 	sets.precast.WS['Wildfire'] = 
 	{
 		ammo=gear.MAbullet,
-		head=gear.herculean_nuke_head,
+		head=BUMBA_HEAD,
 		neck=JSE_NECK,
 		ear1="Crematio Earring",
 		ear2="Friomisi Earring",
-		body=AF_BODY,
-		hands="Carmine Fin. Ga. +1",
-		ring1="Regal Ring",
+		body=RELIC_BODY,
+		hands=BUMBA_HANDS,
+		ring1="Epaminondas's Ring",
 		ring2="Dingir Ring",
 		back=AMBUWSMB_BACK,
 		waist="Eschan Stone",
+		--waist="Skrymir Cord +1",
 		legs=BUMBA_LEGS,
 		feet=RELIC_FEET
 	}
@@ -791,6 +792,7 @@ function init_gear_sets()
 	sets.weapons.DualSavageWeapons = {main="Naegling",sub="Blurred Knife +1",range="Ataktos"}
 	sets.weapons.DualEvisceration = {main="Tauret",sub="Blurred Knife +1",range="Ataktos"}
 	sets.weapons.DualLeadenRanged = {main="Rostam",sub="Tauret",range="Death Penalty"}
+	sets.weapons.DualWFRanged = {main="Naegling",sub="Tauret",range="Armageddon"}
 	sets.weapons.DualLeadenMelee = {main="Naegling",sub="Atoyac",range="Fomalhaut"}
 	sets.weapons.DualAeolian = {main="Rostam",sub="Tauret",range="Ataktos"}
 	sets.weapons.DualLeadenMeleeAcc = {main="Naegling",sub="Blurred Knife +1",range="Fomalhaut"}
@@ -958,6 +960,7 @@ autows_list =
 	['DualSavageWeapons']='Savage Blade',
 	['DualEvisceration']='Evisceration',
 	['DualLeadenRanged']='Leaden Salute',
+	['DualWFRanged']='Wildfire',
 	['DualLeadenMelee']='Leaden Salute',
 	['DualAeolian']='Aeolian Edge',
 	['DualRanged']='Last Stand'
