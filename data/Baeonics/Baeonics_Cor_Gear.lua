@@ -835,16 +835,34 @@ function init_gear_sets()
 		
 	sets.engaged.DT = 
 	{
-		head="Malignance Chapeau",neck="Loricate Torque +1",ear1="Cessance Earring",ear2="Brutal Earring",
-		body="Malignance Tabard",hands="Malignance Gloves",ring1="Defending Ring",ring2="Petrov Ring",
-		back=AMBUTP_BACK,waist="Windbuffet Belt +1",legs="Malignance Tights",feet="Malignance Boots"
+		head="Malignance Chapeau",
+		neck="Loricate Torque +1",
+		ear1="Cessance Earring",
+		ear2="Brutal Earring",
+		body="Malignance Tabard",
+		hands="Malignance Gloves",
+		ring1="Defending Ring",
+		ring2="Petrov Ring",
+		back=AMBUTP_BACK,
+		waist="Windbuffet Belt +1",
+		legs="Malignance Tights",
+		feet="Malignance Boots"
 	}
 	
 	sets.engaged.Acc.DT = 
 	{
-		head="Malignance Chapeau",neck="Loricate Torque +1",ear1="Cessance Earring",ear2="Telos Earring",
-		body="Malignance Tabard",hands="Malignance Gloves",ring1="Defending Ring",ring2="Ramuh Ring +1",
-		back=AMBUTP_BACK,waist="Olseni Belt",legs="Malignance Tights",feet="Malignance Boots"
+		head="Malignance Chapeau",
+		neck="Loricate Torque +1",
+		ear1="Cessance Earring",
+		ear2="Telos Earring",
+		body="Malignance Tabard",
+		hands="Malignance Gloves",
+		ring1="Defending Ring",
+		ring2="Ramuh Ring +1",
+		back=AMBUTP_BACK,
+		waist="Olseni Belt",
+		legs="Malignance Tights",
+		feet="Malignance Boots"
 	}
 	
 	sets.engaged.DW = 
@@ -865,23 +883,50 @@ function init_gear_sets()
 	
 	sets.engaged.DW.Acc = 
 	{
-		head="Carmine Mask +1",neck="Combatant's Torque",ear1="Odr Earring",ear2="Telos Earring",
-		body="Malignance Tabard",hands="Floral Gauntlets",ring1="Ramuh Ring +1",ring2="Ramuh Ring +1",
-		back=AMBUTP_BACK,waist="Olseni Belt",legs="Carmine Cuisses +1",feet="Malignance Boots"
+		head="Carmine Mask +1",
+		neck="Combatant's Torque",
+		ear1="Odr Earring",
+		ear2="Telos Earring",
+		body="Malignance Tabard",
+		hands="Floral Gauntlets",
+		ring1="Ramuh Ring +1",
+		ring2="Ramuh Ring +1",
+		back=AMBUTP_BACK,
+		waist="Olseni Belt",
+		legs="Carmine Cuisses +1",
+		feet="Malignance Boots"
 	}
 		
 	sets.engaged.DW.DT = 
 	{
-		head="Malignance Chapeau",neck="Loricate Torque +1",ear1="Suppanomimi",ear2="Brutal Earring",
-		body="Malignance Tabard",hands="Malignance Gloves",ring1="Defending Ring",ring2="Epona's Ring",
-		back=AMBUTP_BACK,waist="Reiki Yotai",legs="Malignance Tights",feet="Malignance Boots"
+		head="Malignance Chapeau",
+		neck="Loricate Torque +1",
+		ear1="Suppanomimi",
+		ear2="Brutal Earring",
+		body="Malignance Tabard",
+		hands="Malignance Gloves",
+		ring1="Defending Ring",
+		ring2="Epona's Ring",
+		back=AMBUTP_BACK,
+		waist="Reiki Yotai",
+		legs="Malignance Tights",
+		feet="Malignance Boots"
 	}
 	
 	sets.engaged.DW.Acc.DT = 
 	{
-		head="Malignance Chapeau",neck="Loricate Torque +1",ear1="Suppanomimi",ear2="Telos Earring",
-		body="Malignance Tabard",hands="Malignance Gloves",ring1="Defending Ring",ring2="Ramuh Ring +1",
-		back=AMBUTP_BACK,waist="Reiki Yotai",legs="Malignance Tights",feet="Malignance Boots"
+		head="Malignance Chapeau",
+		neck="Loricate Torque +1",
+		ear1="Suppanomimi",
+		ear2="Telos Earring",
+		body="Malignance Tabard",
+		hands="Malignance Gloves",
+		ring1="Defending Ring",
+		ring2="Ramuh Ring +1",
+		back=AMBUTP_BACK,
+		waist="Reiki Yotai",
+		legs="Malignance Tights",
+		feet="Malignance Boots"
 	}
 end
 
