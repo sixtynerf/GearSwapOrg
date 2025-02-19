@@ -13,7 +13,7 @@ function user_job_setup()
 	
 	gear.RAbullet = "Chrono Bullet"
 	gear.WSbullet = "Chrono Bullet"
-	gear.MAbullet = "Orichalc. Bullet" --For MAB WS, do not put single-use bullets here.
+	gear.MAbullet = "Living Bullet" --For MAB WS, do not put single-use bullets here.
 	gear.QDbullet = "Animikii Bullet"
 	options.ammo_warning_limit = 15
 --Ikenga_vest_bonus = 190  -- It is 190 at R20. Uncomment if you need to manually adjust because you are using below R20
@@ -469,8 +469,8 @@ function init_gear_sets()
 		ring2="Dingir Ring",
 		back=AMBUWSMB_BACK,
 		--waist="Eschan Stone",
-		waist="Orpheus's Sash",
-		--waist="Svelt. Gouriz +1",
+		--waist="Orpheus's Sash",
+		waist="Svelt. Gouriz +1",
 		legs=BUMBA_LEGS,
 		feet=RELIC_FEET
 	}
@@ -482,12 +482,14 @@ function init_gear_sets()
 		neck=JSE_NECK,
 		ear1="Moonshade Earring",
 		ear2="Friomisi Earring",
-		body=AF_BODY,
-		hands="Carmine Fin. Ga. +1",
+		body=RELIC_BODY,
+		hands=EMPY_HANDS,
 		ring1="Archon Ring",
 		ring2="Dingir Ring",
 		back=AMBUWSMB_BACK,
-		waist="Eschan Stone",
+		--waist="Eschan Stone",
+		--waist="Orpheus's Sash",
+		waist="Svelt. Gouriz +1",
 		legs=BUMBA_LEGS,
 		feet=RELIC_FEET
 	}
@@ -787,7 +789,7 @@ function init_gear_sets()
 	sets.weapons.DualSavageWeapons = {main="Naegling",sub="Blurred Knife +1",range="Ataktos"}
 	sets.weapons.DualEvisceration = {main="Tauret",sub="Blurred Knife +1",range="Ataktos"}
 	sets.weapons.Savage = {main="Naegling",sub="Nusku Shield",range="Ataktos"}
-	sets.weapons.DualLeadenRanged = {main="Rostam",sub="Tauret",range="Fomalhaut"}
+	sets.weapons.DualLeadenRanged = {main="Rostam",sub="Tauret",range="Death Penalty"}
 	sets.weapons.DualLeadenMelee = {main="Naegling",sub="Atoyac",range="Fomalhaut"}
 	sets.weapons.DualAeolian = {main="Rostam",sub="Tauret",range="Ataktos"}
 	sets.weapons.DualLeadenMeleeAcc = {main="Naegling",sub="Blurred Knife +1",range="Fomalhaut"}
