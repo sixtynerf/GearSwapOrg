@@ -511,17 +511,35 @@ function init_gear_sets()
 	sets.precast.WS['Wildfire'] = 
 	{
 		ammo=gear.MAbullet,
-		head=gear.herculean_nuke_head,neck=JSE_NECK,ear1="Crematio Earring",ear2="Friomisi Earring",
-		body=AF_BODY,hands="Carmine Fin. Ga. +1",ring1="Regal Ring",ring2="Dingir Ring",
-		back=AMBUWSMB_BACK,waist="Eschan Stone",legs=BUMBA_LEGS,feet=RELIC_FEET
+		head=gear.herculean_nuke_head,
+		neck=JSE_NECK,
+		ear1="Crematio Earring",
+		ear2="Friomisi Earring",
+		body=AF_BODY,
+		hands="Carmine Fin. Ga. +1",
+		ring1="Regal Ring",
+		ring2="Dingir Ring",
+		back=AMBUWSMB_BACK,
+		waist="Eschan Stone",
+		legs=BUMBA_LEGS,
+		feet=RELIC_FEET
 	}
 	
 	sets.precast.WS['Wildfire'].Acc = 
 	{
 		ammo=gear.MAbullet,
-		head=gear.herculean_nuke_head,neck=JSE_NECK,ear1="Crematio Earring",ear2="Friomisi Earring",
-		body=AF_BODY,hands="Leyline Gloves",ring1="Regal Ring",ring2="Dingir Ring",
-		back=AMBUWSMB_BACK,waist="Eschan Stone",legs=BUMBA_LEGS,feet=RELIC_FEET
+		head=gear.herculean_nuke_head,
+		neck=JSE_NECK,
+		ear1="Crematio Earring",
+		ear2="Friomisi Earring",
+		body=AF_BODY,
+		hands="Leyline Gloves",
+		ring1="Regal Ring",
+		ring2="Dingir Ring",
+		back=AMBUWSMB_BACK,
+		waist="Eschan Stone",
+		legs=BUMBA_LEGS,
+		feet=RELIC_FEET
 	}
 		
 	sets.precast.WS['Hot Shot'] = sets.precast.WS['Wildfire']
@@ -532,9 +550,18 @@ function init_gear_sets()
 	sets.precast.WS['Burning Blade'] = 
 	{
 		ammo=gear.RAbullet,
-		head=MEGHANADA_HEAD",neck="Loricate Torque +1",ear1="Genmei Earring",ear2="Sanare Earring",
-		body=MEGHANADA_BODY,hands="Malignance Gloves",ring1="Defending Ring",ring2="Dark Ring",
-		back="Moonlight Cape",waist="Flume Belt +1",legs=MEGHANADA_LEGS,feet=MEGHANADA_FEET
+		head=MEGHANADA_HEAD",
+		neck="Loricate Torque +1",
+		ear1="Genmei Earring",
+		ear2="Sanare Earring",
+		body=MEGHANADA_BODY,
+		hands="Malignance Gloves",
+		ring1="Defending Ring",
+		ring2="Dark Ring",
+		back="Moonlight Cape"
+		waist="Flume Belt +1",
+		legs=MEGHANADA_LEGS,
+		feet=MEGHANADA_FEET
 	}
 	
 	-- Swap to these on Moonshade using WS if at 3000 TP
@@ -544,18 +571,36 @@ function init_gear_sets()
     -- Midcast Sets
 	sets.midcast.FastRecast = 
 	{
-		head="Carmine Mask +1",neck="Baetyl Pendant",ear1="Enchntr. Earring +1",ear2="Loquac. Earring",
-		body="Dread Jupon",hands="Leyline Gloves",ring1="Kishar Ring",ring2="Lebeche Ring",
-		back="Moonlight Cape",waist="Flume Belt +1",legs="Rawhide Trousers",feet="Carmine Greaves +1"
+		head="Carmine Mask +1",
+		neck="Baetyl Pendant",
+		ear1="Enchntr. Earring +1",
+		ear2="Loquac. Earring",
+		body="Dread Jupon",
+		hands="Leyline Gloves",
+		ring1="Kishar Ring",
+		ring2="Lebeche Ring",
+		back="Moonlight Cape",
+		waist="Flume Belt +1",
+		legs="Rawhide Trousers",
+		feet="Carmine Greaves +1"
 	}
         
     -- Specific spells
 
 	sets.midcast.Cure = 
 	{
-		head="Carmine Mask +1",neck="Phalaina Locket",ear1="Enchntr. Earring +1",ear2="Mendi. Earring",
-	        body="Dread Jupon",hands="Leyline Gloves",ring1="Janniston Ring",ring2="Lebeche Ring",
-	        back="Solemnity Cape",waist="Flume Belt +1",legs="Carmine Cuisses +1",feet="Carmine Greaves +1"
+		head="Carmine Mask +1",
+		neck="Phalaina Locket",
+		ear1="Enchntr. Earring +1",
+		ear2="Mendi. Earring",
+	        body="Dread Jupon",
+		hands="Leyline Gloves",
+		ring1="Janniston Ring",
+		ring2="Lebeche Ring",
+	        back="Solemnity Cape",
+		waist="Flume Belt +1",
+		legs="Carmine Cuisses +1",
+		feet="Carmine Greaves +1"
 	}
 	
 	sets.Self_Healing = {neck="Phalaina Locket",hands="Buremte Gloves",ring2="Kunaji Ring",waist="Gishdubar Sash"}
@@ -568,17 +613,35 @@ function init_gear_sets()
 	sets.midcast.RA = 
 	{
 		ammo=gear.RAbullet,
-		head="Malignance Chapeau",neck="Iskur Gorget",ear1="Enervating Earring",ear2="Telos Earring",
-		body="Malignance Tabard",hands="Malignance Gloves",ring1="Crepuscular Ring",ring2="Ilabrat Ring",
-		back=AMBUTPRA_BACK,waist="Yemaya Belt",legs="Malignance Tights",feet="Malignance Boots"
+		head="Malignance Chapeau",
+		neck="Iskur Gorget",
+		ear1="Enervating Earring",
+		ear2="Telos Earring",
+		body="Malignance Tabard",
+		hands="Malignance Gloves",
+		ring1="Crepuscular Ring",
+		ring2="Ilabrat Ring",
+		back=AMBUTPRA_BACK,
+		waist="Yemaya Belt",
+		legs="Malignance Tights",
+		feet="Malignance Boots"
 	}
 	
 	sets.midcast.RA.Acc = 
 	{
 		ammo=gear.RAbullet,
-		head="Malignance Chapeau",neck="Iskur Gorget",ear1="Enervating Earring",ear2="Telos Earring",
-		body=AF_BODY,hands="Malignance Gloves",ring1="Regal Ring",ring2="Ilabrat Ring",
-		back=AMBUTPRA_BACK,waist="Yemaya Belt",legs=AF_LEGS,feet="Malignance Boots"
+		head="Malignance Chapeau"
+		,neck="Iskur Gorget",
+		ear1="Enervating Earring",
+		ear2="Telos Earring",
+		body=AF_BODY,
+		hands="Malignance Gloves",
+		ring1="Regal Ring",
+		ring2="Ilabrat Ring",
+		back=AMBUTPRA_BACK,
+		waist="Yemaya Belt",
+		legs=AF_LEGS,
+		feet="Malignance Boots"
 	}
 		
 	sets.buff['Triple Shot'] = {body=EMPY_BODY}
@@ -594,40 +657,124 @@ function init_gear_sets()
 	sets.resting = {}
 	
 	-- Idle sets
-	sets.idle = {ammo=gear.RAbullet,
-	head="Nyame Helm",neck="Loricate Torque +1",ear1="Genmei Earring",ear2="Sanare Earring",
-	body="Nyame Mail",hands="Nyame Gauntlets",ring1="Defending Ring",ring2="Shadow Ring",
-	back="Moonlight Cape",waist="Carrier's Sash",legs="Carmine Cuisses +1",feet="Nyame Sollerets"}
+	sets.idle = 
+	{
+		ammo=gear.RAbullet,
+		head=BUMBA_HEAD,
+		neck="Loricate Torque +1",
+		ear1="Genmei Earring",
+		ear2="Sanare Earring",
+		body=BUMBA_BODY",
+		hands=BUMBA_HANDS,
+		ring1="Defending Ring",
+		ring2="Shadow Ring",
+		back="Moonlight Cape",
+		waist="Carrier's Sash",
+		legs="Carmine Cuisses +1",
+		feet=BUMBA_FEET
+	}
 		
-	sets.idle.PDT = {ammo=gear.RAbullet,
-	head="Nyame Helm",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Sanare Earring",
-	body="Nyame Mail",hands="Nyame Gauntlets",ring1="Defending Ring",ring2="Dark Ring",
-	back="Shadow Mantle",waist="Flume Belt +1",legs=BUMBA_LEGS,feet="Malignance Boots"}
+	sets.idle.PDT = 
+	{
+		ammo=gear.RAbullet,
+		head=BUMBA_HEAD,
+		neck="Loricate Torque +1",
+		ear1="Etiolation Earring",
+		ear2="Sanare Earring",
+		body=BUMBA_BODY",
+		hands=BUMBA_HANDS,
+		ring1="Defending Ring",
+		ring2="Dark Ring",
+		back="Shadow Mantle",
+		waist="Flume Belt +1",
+		legs=BUMBA_LEGS,
+		feet="Malignance Boots"
+	}
 		
-	sets.idle.Refresh = {ammo=gear.RAbullet,
-	head="Rawhide Mask",neck="Loricate Torque +1",ear1="Genmei Earring",ear2="Ethereal Earring",
-	body="Mekosu. Harness",hands=gear.herculean_refresh_hands,ring1="Defending Ring",ring2="Dark Ring",
-	back="Moonlight Cape",waist="Flume Belt +1",legs="Rawhide Trousers",feet="Malignance Boots"}
+	sets.idle.Refresh = 
+	{ammo=gear.RAbullet,
+		head="Rawhide Mask",
+		neck="Loricate Torque +1",
+		ear1="Genmei Earring",
+		ear2="Ethereal Earring",
+		body="Mekosu. Harness",
+		hands=gear.herculean_refresh_hands,
+		ring1="Defending Ring",
+		ring2="Dark Ring",
+		back="Moonlight Cape",
+		waist="Flume Belt +1",
+		legs="Rawhide Trousers",
+		feet="Malignance Boots"
+	}
 	
 	-- Defense sets
-	sets.defense.PDT = {ammo=gear.RAbullet,
-	head="Nyame Helm",neck="Loricate Torque +1",ear1="Genmei Earring",ear2="Tuisto Earring",
-	body="Nyame Mail",hands="Nyame Gauntlets",ring1="Defending Ring",ring2="Warden's Ring",
-	back="Shadow Mantle",waist="Flume Belt +1",legs=BUMBA_LEGS,feet="Nyame Sollerets"}
+	sets.defense.PDT = 
+	{
+		ammo=gear.RAbullet,
+		head=BUMBA_HEAD,
+		neck="Loricate Torque +1",
+		ear1="Genmei Earring",
+		ear2="Tuisto Earring",
+		body=BUMBA_BODY",
+		hands=BUMBA_HANDS,
+		ring1="Defending Ring",
+		ring2="Warden's Ring",
+		back="Shadow Mantle",
+		waist="Flume Belt +1",
+		legs=BUMBA_LEGS,
+		feet=BUMBA_FEET
+	}
 	
-	sets.defense.MDT = {ammo=gear.RAbullet,
-	head="Nyame Helm",neck="Warder's Charm +1",ear1="Etiolation Earring",ear2="Sanare Earring",
-	body="Nyame Mail",hands="Nyame Gauntlets",ring1="Defending Ring",ring2="Shadow Ring",
-	back="Moonlight Cape",waist="Carrier's Sash",legs=BUMBA_LEGS,feet="Nyame Sollerets"}
+	sets.defense.MDT = 
+	{
+		ammo=gear.RAbullet,
+		head=BUMBA_HEAD,
+		neck="Warder's Charm +1",
+		ear1="Etiolation Earring",
+		ear2="Sanare Earring",
+		body=BUMBA_BODY",
+		hands=BUMBA_HANDS,
+		ring1="Defending Ring",
+		ring2="Shadow Ring",
+		back="Moonlight Cape",
+		waist="Carrier's Sash",
+		legs=BUMBA_LEGS,
+		feet=BUMBA_FEET
+	}
 		
-	sets.defense.MEVA = {ammo=gear.RAbullet,
-	head="Nyame Helm",neck="Warder's Charm +1",ear1="Etiolation Earring",ear2="Sanare Earring",
-	body="Nyame Mail",hands="Nyame Gauntlets",ring1="Defending Ring",ring2="Shadow Ring",
-	back="Moonlight Cape",waist="Carrier's Sash",legs=BUMBA_LEGS,feet="Nyame Sollerets"}
+	sets.defense.MEVA = 
+	{
+		ammo=gear.RAbullet,
+		head=BUMBA_HEAD,
+		neck="Warder's Charm +1",
+		ear1="Etiolation Earring",
+		ear2="Sanare Earring",
+		body=BUMBA_BODY",
+		hands=BUMBA_HANDS,
+		ring1="Defending Ring",
+		ring2="Shadow Ring",
+		back="Moonlight Cape",
+		waist="Carrier's Sash",
+		legs=BUMBA_LEGS,
+		feet=BUMBA_FEET
+	}
 	
-	sets.Kiting = {legs="Carmine Cuisses +1"}
+	sets.Kiting = 
+	{
+		ring2="Shneddick Ring",
+		--legs="Carmine Cuisses +1"
+	}
+	
 	sets.TreasureHunter = set_combine(sets.TreasureHunter, {})
-	sets.DWMax = {ear1="Dudgeon Earring",ear2="Heartseeker Earring",body="Adhemar Jacket +1",hands="Floral Gauntlets",waist="Reiki Yotai"}
+	
+	sets.DWMax = 
+	{
+		ear1="Dudgeon Earring",
+		ear2="Heartseeker Earring",
+		body="Adhemar Jacket +1",
+		hands="Floral Gauntlets",
+		waist="Reiki Yotai"
+	}
 
 	-- Weapons sets
 	sets.weapons.Default = {main="Naegling",sub="Nusku Shield",range="Fomalhaut"}
@@ -651,88 +798,116 @@ function init_gear_sets()
     -- EG: sets.engaged.Dagger.Accuracy.Evasion
     
     -- Normal melee group
-    sets.engaged = {
-		head="Dampening Tam",neck="Iskur Gorget",ear1="Cessance Earring",ear2="Brutal Earring",
-		body=MEGHANADA_BODY,hands="Adhemar Wrist. +1",ring1="Petrov Ring",ring2="Epona's Ring",
-		back=AMBUTP_BACK,waist="Windbuffet Belt +1",legs="Samnuha Tights",feet=gear.herculean_ta_feet}
-    
-    sets.engaged.Acc = {
-		head="Carmine Mask +1",neck="Combatant's Torque",ear1="Cessance Earring",ear2="Telos Earring",
-		body=MEGHANADA_BODY,hands="Adhemar Wrist. +1",ring1="Ramuh Ring +1",ring2="Epona's Ring",
-		back=AMBUTP_BACK,waist="Olseni Belt",legs="Carmine Cuisses +1",feet="Malignance Boots"}
+	sets.engaged = 
+	{
+		head="Dampening Tam",
+		neck="Iskur Gorget",
+		ear1="Cessance Earring",
+		ear2="Brutal Earring",
+		body=MEGHANADA_BODY,
+		hands="Adhemar Wrist. +1",
+		ring1="Petrov Ring",
+		ring2="Epona's Ring",
+		back=AMBUTP_BACK,
+		waist="Windbuffet Belt +1",
+		legs="Samnuha Tights",
+		feet=gear.herculean_ta_feet
+	}
+	
+	sets.engaged.Acc = 
+	{
+		head="Carmine Mask +1",
+		neck="Combatant's Torque",
+		ear1="Cessance Earring",
+		ear2="Telos Earring",
+		body=MEGHANADA_BODY,
+		hands="Adhemar Wrist. +1",
+		ring1="Ramuh Ring +1",
+		ring2="Epona's Ring",
+		back=AMBUTP_BACK,
+		waist="Olseni Belt",
+		legs="Carmine Cuisses +1",
+		feet="Malignance Boots"
+	}
 		
-    sets.engaged.DT = {
-        head="Malignance Chapeau",neck="Loricate Torque +1",ear1="Cessance Earring",ear2="Brutal Earring",
-        body="Malignance Tabard",hands="Malignance Gloves",ring1="Defending Ring",ring2="Petrov Ring",
-        back=AMBUTP_BACK,waist="Windbuffet Belt +1",legs="Malignance Tights",feet="Malignance Boots"}
-    
-    sets.engaged.Acc.DT = {
-        head="Malignance Chapeau",neck="Loricate Torque +1",ear1="Cessance Earring",ear2="Telos Earring",
-        body="Malignance Tabard",hands="Malignance Gloves",ring1="Defending Ring",ring2="Ramuh Ring +1",
-        back=AMBUTP_BACK,waist="Olseni Belt",legs="Malignance Tights",feet="Malignance Boots"}
-
-    sets.engaged.DW = {
-		head="Dampening Tam",neck="Iskur Gorget",ear1="Suppanomimi",ear2="Brutal Earring",
-		body="Adhemar Jacket +1",hands="Adhemar Wrist. +1",ring1="Petrov Ring",ring2="Epona's Ring",
-		back=AMBUTP_BACK,waist="Windbuffet Belt +1",legs="Samnuha Tights",feet=gear.herculean_ta_feet}
-    
-    sets.engaged.DW.Acc = {
+	sets.engaged.DT = 
+	{
+		head="Malignance Chapeau",neck="Loricate Torque +1",ear1="Cessance Earring",ear2="Brutal Earring",
+		body="Malignance Tabard",hands="Malignance Gloves",ring1="Defending Ring",ring2="Petrov Ring",
+		back=AMBUTP_BACK,waist="Windbuffet Belt +1",legs="Malignance Tights",feet="Malignance Boots"
+	}
+	
+	sets.engaged.Acc.DT = 
+	{
+		head="Malignance Chapeau",neck="Loricate Torque +1",ear1="Cessance Earring",ear2="Telos Earring",
+		body="Malignance Tabard",hands="Malignance Gloves",ring1="Defending Ring",ring2="Ramuh Ring +1",
+		back=AMBUTP_BACK,waist="Olseni Belt",legs="Malignance Tights",feet="Malignance Boots"
+	}
+	
+	sets.engaged.DW = 
+	{
+		head="Dampening Tam",
+		neck="Iskur Gorget",
+		ear1="Suppanomimi",
+		ear2="Brutal Earring",
+		body="Adhemar Jacket +1",
+		hands="Adhemar Wrist. +1",
+		ring1="Petrov Ring",
+		ring2="Epona's Ring",
+		back=AMBUTP_BACK,
+		waist="Windbuffet Belt +1",
+		legs="Samnuha Tights",
+		feet=gear.herculean_ta_feet
+	}
+	
+	sets.engaged.DW.Acc = 
+	{
 		head="Carmine Mask +1",neck="Combatant's Torque",ear1="Odr Earring",ear2="Telos Earring",
 		body="Malignance Tabard",hands="Floral Gauntlets",ring1="Ramuh Ring +1",ring2="Ramuh Ring +1",
-		back=AMBUTP_BACK,waist="Olseni Belt",legs="Carmine Cuisses +1",feet="Malignance Boots"}
+		back=AMBUTP_BACK,waist="Olseni Belt",legs="Carmine Cuisses +1",feet="Malignance Boots"
+	}
 		
-    sets.engaged.DW.DT = {
-        head="Malignance Chapeau",neck="Loricate Torque +1",ear1="Suppanomimi",ear2="Brutal Earring",
-        body="Malignance Tabard",hands="Malignance Gloves",ring1="Defending Ring",ring2="Epona's Ring",
-        back=AMBUTP_BACK,waist="Reiki Yotai",legs="Malignance Tights",feet="Malignance Boots"}
-    
-    sets.engaged.DW.Acc.DT = {
-        head="Malignance Chapeau",neck="Loricate Torque +1",ear1="Suppanomimi",ear2="Telos Earring",
-        body="Malignance Tabard",hands="Malignance Gloves",ring1="Defending Ring",ring2="Ramuh Ring +1",
-        back=AMBUTP_BACK,waist="Reiki Yotai",legs="Malignance Tights",feet="Malignance Boots"}
+	sets.engaged.DW.DT = 
+	{
+		head="Malignance Chapeau",neck="Loricate Torque +1",ear1="Suppanomimi",ear2="Brutal Earring",
+		body="Malignance Tabard",hands="Malignance Gloves",ring1="Defending Ring",ring2="Epona's Ring",
+		back=AMBUTP_BACK,waist="Reiki Yotai",legs="Malignance Tights",feet="Malignance Boots"
+	}
+	
+	sets.engaged.DW.Acc.DT = 
+	{
+		head="Malignance Chapeau",neck="Loricate Torque +1",ear1="Suppanomimi",ear2="Telos Earring",
+		body="Malignance Tabard",hands="Malignance Gloves",ring1="Defending Ring",ring2="Ramuh Ring +1",
+		back=AMBUTP_BACK,waist="Reiki Yotai",legs="Malignance Tights",feet="Malignance Boots"
+	}
 end
 
 -- Select default macro book on initial load or subjob change.
 function select_default_macro_book()
     if player.sub_job == 'NIN' then
-        set_macro_page(2, 11)
+        set_macro_page(1, 8)
     elseif player.sub_job == 'DNC' then
-		set_macro_page(1, 11)
+		set_macro_page(3, 8)
     elseif player.sub_job == 'RNG' then
-        set_macro_page(9, 11)
+        set_macro_page(5, 8)
     elseif player.sub_job == 'DRG' then
-        set_macro_page(5, 11)
+        set_macro_page(9, 8)
     else
-        set_macro_page(2, 11)
+        set_macro_page(1, 8)
     end
 end
 
-function user_job_lockstyle()
-	if player.equipment.main == nil or player.equipment.main == 'empty' then
-		windower.chat.input('/lockstyleset 001')
-	elseif res.items[get_item_id_by_name(player.equipment.main)].skill == 3 then --Sword in main hand.
-		if player.equipment.sub == nil or player.equipment.sub == 'empty' then --Sword/Nothing.
-				windower.chat.input('/lockstyleset 001')
-		elseif res.items[get_item_id_by_name(player.equipment.sub)].shield_size then --Sword/Shield
-				windower.chat.input('/lockstyleset 002')
-		elseif res.items[get_item_id_by_name(player.equipment.sub)].skill == 3 then --Sword/Sword.
-			windower.chat.input('/lockstyleset 003')
-		elseif res.items[get_item_id_by_name(player.equipment.sub)].skill == 2 then --Sword/Dagger.
-			windower.chat.input('/lockstyleset 001')
-		else
-			windower.chat.input('/lockstyleset 001') --Catchall just in case something's weird.
-		end
-	elseif res.items[get_item_id_by_name(player.equipment.main)].skill == 2 then --Dagger in main hand.
-		if player.equipment.sub == nil or player.equipment.sub == 'empty' then --Dagger/Nothing.
-			windower.chat.input('/lockstyleset 001')
-		elseif res.items[get_item_id_by_name(player.equipment.sub)].shield_size then --Dagger/Shield
-				windower.chat.input('/lockstyleset 002')
-		elseif res.items[get_item_id_by_name(player.equipment.sub)].skill == 2 then --Dagger/Dagger.
-			windower.chat.input('/lockstyleset 004')
-		else
-			windower.chat.input('/lockstyleset 001') --Catchall just in case something's weird.
-		end
-	end
-end
-
-autows_list = {['Default']='Savage Blade',['Evisceration']='Evisceration',['Savage']='Savage Blade',['Ranged']='Last Stand',['DualWeapons']='Savage Blade',['DualSavageWeapons']='Savage Blade',['DualEvisceration']='Evisceration',['DualLeadenRanged']='Leaden Salute',['DualLeadenMelee']='Leaden Salute',['DualAeolian']='Aeolian Edge',['DualRanged']='Last Stand'}
+autows_list = 
+{
+	['Default']='Savage Blade',
+	['Evisceration']='Evisceration',
+	['Savage']='Savage Blade',
+	['Ranged']='Last Stand',
+	['DualWeapons']='Savage Blade',
+	['DualSavageWeapons']='Savage Blade',
+	['DualEvisceration']='Evisceration',
+	['DualLeadenRanged']='Leaden Salute',
+	['DualLeadenMelee']='Leaden Salute',
+	['DualAeolian']='Aeolian Edge',
+	['DualRanged']='Last Stand'
+}
