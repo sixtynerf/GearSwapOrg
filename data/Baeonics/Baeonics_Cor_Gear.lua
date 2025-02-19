@@ -9,6 +9,7 @@ function user_job_setup()
 	state.ExtraMeleeMode = M{['description']='Extra Melee Mode', 'None', 'DWMax'}
 	state.Weapons:options('Default','Ranged','Savage','Evisceration','DualWeapons','DualSavageWeapons','DualEvisceration','DualLeadenRanged','DualLeadenMelee','DualAeolian','DualLeadenMeleeAcc','DualRanged','DualProcWeapons','None')
 	state.CompensatorMode:options('Always','300','1000','Never')
+	state.PWUnlock = M(true, 'PWUnlock')
 	
 	gear.RAbullet = "Chrono Bullet"
 	gear.WSbullet = "Chrono Bullet"
@@ -652,6 +653,8 @@ function init_gear_sets()
 	sets.NightIdle = {}
 	
 	sets.buff.Doom = set_combine(sets.buff.Doom, {})
+	sets.IdleWakeUp = {range="Earp"}
+	sets.buff.Sleep = {range="Earp"}
     
     -- Resting sets
 	sets.resting = {}
