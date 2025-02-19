@@ -103,7 +103,8 @@ function init_gear_sets()
 	
 	sets.precast.CorsairRoll = 
 	{
-		main="Rostam",range="Compensator",
+		main="Rostam",
+		range="Compensator",
 	        head=RELIC_HEAD,
 		neck="Regal Necklace",
 		ear1="Etiolation Earring",
@@ -114,7 +115,7 @@ function init_gear_sets()
 		ring2="Dark Ring",
 	        back=AMBUTP_BACK,
 		waist="Flume Belt +1",
-		legs="Desultor Tassets",
+		--legs="Desultor Tassets",		--acquire this from Shantotto Mission 15
 		feet="Malignance Boots"
 	}
 	
@@ -785,10 +786,10 @@ function init_gear_sets()
 	sets.weapons.Default = {main="Naegling",sub="Nusku Shield",range="Fomalhaut"}
 	sets.weapons.Ranged = {main="Rostam",sub="Nusku Shield",range="Fomalhaut"}
 	sets.weapons.Evisceration = {main="Tauret",sub="Nusku Shield",range="Ataktos"}
+	sets.weapons.Savage = {main="Naegling",sub="Nusku Shield",range="Ataktos"}
 	sets.weapons.DualWeapons = {main="Naegling",sub="Blurred Knife +1",range="Fomalhaut"}
 	sets.weapons.DualSavageWeapons = {main="Naegling",sub="Blurred Knife +1",range="Ataktos"}
 	sets.weapons.DualEvisceration = {main="Tauret",sub="Blurred Knife +1",range="Ataktos"}
-	sets.weapons.Savage = {main="Naegling",sub="Nusku Shield",range="Ataktos"}
 	sets.weapons.DualLeadenRanged = {main="Rostam",sub="Tauret",range="Death Penalty"}
 	sets.weapons.DualLeadenMelee = {main="Naegling",sub="Atoyac",range="Fomalhaut"}
 	sets.weapons.DualAeolian = {main="Rostam",sub="Tauret",range="Ataktos"}
