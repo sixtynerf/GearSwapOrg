@@ -518,21 +518,22 @@ function init_gear_sets()
 -- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
 	sets.idle = 
 	{
-		main="Malignance Pole",
-		sub="Mensch Strap +1",
-		ammo="Homiliary",
-		head=BUMBA_HEAD,
-		neck="Loricate Torque +1",
-		ear1="Sanare Earring",
-		ear2="Ethereal Earring",
-		body=EMPY_BODY,
-		hands="Chronic Gloves",
-		ring1=StikiniRing_Ring1,
-		ring2=StikiniRing_Ring2,
-		back="Null Shawl",
-		waist="Null Belt",
-		legs="Assid. Pants +1",
-		feet=gear.chironic_refresh_feet
+		main="Malignance Pole",		--20 DT
+		sub="Mensch Strap +1",		--	05 PDT	03 REGEN
+		ammo="Homiliary",		--				01 REFRESH		
+		head=BUMBA_HEAD,		--07 DT						91 EVA	123 MEVA	05 MDB				
+		neck="Loricate Torque +1",	--06 DT
+		ear1="Etiolation Earring",	--										03 MDT
+		ear2="Eabani Earring",		--						15 EVA	08 MEVA		
+		body=EMPY_BODY,			--		05 REGEN	04 REFRESH	91 EVA	130 MEVA	11 MDB
+		hands="Chironic Gloves",	--				02 REFRESH	19 EVA	48 MEVA		03 MDB
+		ring1=StikiniRing_Ring1,	--		02 REGEN	02 REFRESH		20 MEVA
+		ring2=StikiniRing_Ring2,	--				01 REFRESH
+		back="Null Shawl",		--						50 EVA	50 MEVA				
+		waist="Null Belt",		--		03 REGEN			30 EVA	30 MEVA		03 MDB
+		legs="Chironic Hose",		--				02 REFRESH	24 EVA	118 MEVA	06 MDB
+		feet=BUMBA_FEET			--07 DT						119 EVA	150 MEVA	05 MDB
+						--40 DT	05 PDT	13 REGEN	12 REFRESH	439 EVA	677 MEVA	33 MDB	03 MDT
 	}
 	
 	sets.idle.PDT = {main="Daybreak",sub="Genmei Shield",ammo="Staunch Tathlum +1",
