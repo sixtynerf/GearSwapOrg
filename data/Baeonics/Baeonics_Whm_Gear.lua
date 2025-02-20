@@ -37,7 +37,7 @@ function user_job_setup()
 	EMPY_FEET 	= {name="Ebers Duckbills +3"}		--yes
 
 --Empyrean Ear
-	EMPY_EAR = {name=EMPY_EAR}
+	EMPY_EAR = {name="Ebers Earring +1"}
 
 --DD Neck
 	JSE_NECK = {name="Clr. Torque +2"}
@@ -523,14 +523,16 @@ function init_gear_sets()
 		ammo="Homiliary",		--				01 REFRESH		
 		head=BUMBA_HEAD,		--07 DT						91 EVA	123 MEVA	05 MDB				
 		neck="Loricate Torque +1",	--06 DT
-		ear1="Etiolation Earring",	--										03 MDT
-		ear2="Eabani Earring",		--						15 EVA	08 MEVA		
+		ear1="Eabani Earring",		--						15 EVA	08 MEVA
+		ear2=EMPY_EAR,			--										
 		body=EMPY_BODY,			--		05 REGEN	04 REFRESH	91 EVA	130 MEVA	11 MDB
 		hands="Chironic Gloves",	--				02 REFRESH	19 EVA	48 MEVA		03 MDB
 		ring1=StikiniRing_Ring1,	--		02 REGEN	02 REFRESH		20 MEVA
 		ring2=StikiniRing_Ring2,	--				01 REFRESH
-		back="Null Shawl",		--						50 EVA	50 MEVA				
+		back="Null Shawl",		--						50 EVA	50 MEVA
+		--back=AMBUIDLE_BACK,
 		waist="Null Belt",		--		03 REGEN			30 EVA	30 MEVA		03 MDB
+		--waist="Carrier's Sash",
 		legs="Chironic Hose",		--				02 REFRESH	24 EVA	118 MEVA	06 MDB
 		feet=BUMBA_FEET			--07 DT						119 EVA	150 MEVA	05 MDB
 						--40 DT	05 PDT	13 REGEN	12 REFRESH	439 EVA	677 MEVA	33 MDB	03 MDT
