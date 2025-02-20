@@ -8,11 +8,61 @@ function user_job_setup()
 	state.ResistDefenseMode:options('MEVA')
 	state.Weapons:options('None','DualWeapons','Maxentius')
 	state.WeaponskillMode:options('Normal','Fodder')
+	state.PWUnlock = M(true, 'PWUnlock')
 	
 	default_weapons = 'Maxentius'
 	default_dual_weapons = 'DualWeapons'
 	
 	autows_list = {['DualWeapons']='Black Halo',['Maxentius']='Black Halo'}
+
+--Artifact Gear
+	AF_HEAD 	= {name="Theophany Cap +3"}		--low 
+	AF_BODY 	= {name="Theo. Bliaut +3"}		--Upgrade
+	AF_HANDS 	= {name="Theophany Mitts +3"}		--Upgrade
+	AF_LEGS 	= {name="Th. Pant. +3"}			--Upgrade
+	AF_FEET 	= {name="Theo. Duckbills +3"}		--Upgrade
+
+--Relic Gear
+	RELIC_HEAD 	= {name="Piety Cap +1"}			--low
+	RELIC_BODY 	= {name="Piety Bliaut +3"}		--low	
+	RELIC_HANDS 	= {name="Piety Mitts +1"}		--low
+	RELIC_LEGS 	= {name="Piety Pantaln. +3"}		--Upgrade
+	RELIC_FEET 	= {name="Piety Duckbills +1"}		--Upgrade
+
+--Empyrean Gear
+	EMPY_HEAD 	= {name="Ebers Cap +3"}			--yes		
+	EMPY_BODY 	= {name="Ebers Bliaut +3"}		--yes		
+	EMPY_HANDS 	= {name="Ebers Mitts +3"}		--yes		
+	EMPY_LEGS 	= {name="Ebers Pant. +3"}		--yes		
+	EMPY_FEET 	= {name="Ebers Duckbills +3"}		--yes
+
+--Empyrean Ear
+	EMPY_EAR = {name="Ebers Earring +1"}
+
+--DD Neck
+	JSE_NECK = {name="Clr. Torque +2"}
+
+--Adoulin Gears
+
+	TELCHINE_ENH_HEAD = {name="Telchine Cap", augments={'"Cure" potency +8%','Enh. Mag. eff. dur. +8',}}
+	TELCHINE_ENH_BODY = {name="Telchine Chas.", augments={'"Cure" potency +7%','Enh. Mag. eff. dur. +10',}}
+	TELCHINE_ENH_HANDS = {name="Telchine Gloves", augments={'"Cure" potency +8%','Enh. Mag. eff. dur. +10',}}
+	TELCHINE_ENH_LEGS = {name="Telchine Braconi", augments={'"Cure" potency +7%','Enh. Mag. eff. dur. +9',}}
+	TELCHINE_ENH_FEET = {name="Telchine Pigaches", augments={'"Cure" potency +7%','Enh. Mag. eff. dur. +9',}}
+	
+	TelchineHead_EMD_CP	= { name="Telchine Cap", augments={'"Cure" potency +8%','Enh. Mag. eff. dur. +8',}}
+	TelchineBody_EMD_CP	= { name="Telchine Chas.", augments={'"Cure" potency +7%','Enh. Mag. eff. dur. +10',}}
+	TelchineHand_EMD_CP	= { name="Telchine Gloves", augments={'"Cure" potency +8%','Enh. Mag. eff. dur. +10',}}
+	TelchineLegs_EMD_CP	= { name="Telchine Braconi", augments={'"Cure" potency +7%','Enh. Mag. eff. dur. +9',}}
+	TelchineFeet_EMD_CP	= { name="Telchine Pigaches", augments={'"Cure" potency +7%','Enh. Mag. eff. dur. +9',}}
+
+--Capes
+	AMBUIDLE_BACK = {name="Alaunus's Cape", augments={'MND+20','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Phys. dmg. taken-10%',}}
+	AMBUCURE_BACK = {name="Alaunus's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','MND+10','Enmity-10','Spell interruption rate down-10%',}}
+
+--Oseem
+	GADA_FC = {name="Gada", augments={'"Fast Cast"+5','Potency of "Cure" effect received+2%','INT+9 MND+9 CHR+9',}}
+	GADA_ENHANCE = {name="Gada"}
 
 		-- Additional local binds
 	send_command('bind @` gs c cycle ElementalMode')
