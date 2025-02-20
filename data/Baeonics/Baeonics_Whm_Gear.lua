@@ -1,7 +1,7 @@
 -- Setup vars that are user-dependent.  Can override this in a sidecar file.
 function user_job_setup()
 	state.OffenseMode:options('Normal','Acc')
-	state.CastingMode:options('Normal','Resistant')
+	state.CastingMode:options('Normal','SIRD','Resistant')
 	state.IdleMode:options('Normal','PDT','MDT','MEVA')
 	state.PhysicalDefenseMode:options('PDT')
 	state.MagicalDefenseMode:options('MDT')
@@ -50,11 +50,11 @@ function user_job_setup()
 	TELCHINE_ENH_LEGS = {name="Telchine Braconi", augments={'"Cure" potency +7%','Enh. Mag. eff. dur. +9',}}
 	TELCHINE_ENH_FEET = {name="Telchine Pigaches", augments={'"Cure" potency +7%','Enh. Mag. eff. dur. +9',}}
 	
-	TelchineHead_EMD_CP	= { name="Telchine Cap", augments={'"Cure" potency +8%','Enh. Mag. eff. dur. +8',}}
-	TelchineBody_EMD_CP	= { name="Telchine Chas.", augments={'"Cure" potency +7%','Enh. Mag. eff. dur. +10',}}
-	TelchineHand_EMD_CP	= { name="Telchine Gloves", augments={'"Cure" potency +8%','Enh. Mag. eff. dur. +10',}}
-	TelchineLegs_EMD_CP	= { name="Telchine Braconi", augments={'"Cure" potency +7%','Enh. Mag. eff. dur. +9',}}
-	TelchineFeet_EMD_CP	= { name="Telchine Pigaches", augments={'"Cure" potency +7%','Enh. Mag. eff. dur. +9',}}
+	--TelchineHead_EMD_CP	= { name="Telchine Cap", augments={'"Cure" potency +8%','Enh. Mag. eff. dur. +8',}}
+	--TelchineBody_EMD_CP	= { name="Telchine Chas.", augments={'"Cure" potency +7%','Enh. Mag. eff. dur. +10',}}
+	--TelchineHand_EMD_CP	= { name="Telchine Gloves", augments={'"Cure" potency +8%','Enh. Mag. eff. dur. +10',}}
+	--TelchineLegs_EMD_CP	= { name="Telchine Braconi", augments={'"Cure" potency +7%','Enh. Mag. eff. dur. +9',}}
+	--TelchineFeet_EMD_CP	= { name="Telchine Pigaches", augments={'"Cure" potency +7%','Enh. Mag. eff. dur. +9',}}
 
 --Capes
 	AMBUIDLE_BACK = {name="Alaunus's Cape", augments={'MND+20','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Phys. dmg. taken-10%',}}
@@ -129,34 +129,94 @@ function init_gear_sets()
 		back="Perimede Cape",		--	04 QM	
 		waist="Witful Belt",		--03 FC	03 QM
 		legs="Chironic Hose",
-		feet=BUMBA_FEET			--			-07 DR
+		feet=BUMBA_FEET			--			-07 DT
 	}
 		
-	sets.precast.FC.DT = {main="Hvergelmir",sub="Clerisy Strap +1",ammo="Impatiens",
-		head="Bunzi's Hat",neck=JSE_NECK,ear1="Loquac. Earring",ear2="Malignance Earring",
-		body=INYANGA_BODY,hands="Fanatic Gloves",ring1="Kishar Ring",ring2="Lebeche Ring",
-		back="Perimede Cape",waist="Witful Belt",legs=AYANMO_LEGS,feet="Regal Pumps +1"}
+	sets.precast.FC.DT = 
+	{
+		--82 FC
+		main="Hvergelmir",		--50 FC
+		sub="Clerisy Strap +1",		--03 FC	
+		ammo="Impatiens",		--	02 QM	10 SIRD		
+		head=MBOZE_HEAD,		--10 FC			07 DT		
+		neck=JSE_NECK,			--10 FC
+		ear1="Loquac. Earring",		--02 FC
+		ear2="Malignance Earring",	--04 FC
+		body=EMPY_BODY,
+		hands="Chironic Gloves",	--		20 SIRD
+		ring1="Lebeche Ring",		--	02 QM
+		ring2=StikiniRing_Ring2,
+		back="Perimede Cape",		--	04 QM	
+		waist="Witful Belt",		--03 FC	03 QM
+		legs="Chironic Hose",
+		feet=BUMBA_FEET			--			07 DT
+	}
 	
-	sets.precast.FC['Healing Magic'] = set_combine(sets.precast.FC, {legs=EMPY_LEGS})
+	sets.precast.FC['Healing Magic'] = set_combine(sets.precast.FC, 
+		{
+			legs=EMPY_LEGS
+		})
+	
 	sets.precast.FC.StatusRemoval = sets.precast.FC['Healing Magic']
-	sets.precast.FC.Cure = set_combine(sets.precast.FC['Healing Magic'], {})
+	
+	sets.precast.FC.Cure = set_combine(sets.precast.FC['Healing Magic'], 
+		{
+			--feet="Hygieia Clogs +1"
+		})
+	
 	sets.precast.FC.Curaga = sets.precast.FC.Cure
+	
 	sets.precast.FC.CureSolace = sets.precast.FC.Cure
-	sets.precast.FC.Impact =  set_combine(sets.precast.FC, {head=empty,body="Crepuscular Cloak"})
-	sets.precast.FC.Dispelga = set_combine(sets.precast.FC, {main="Daybreak",sub="Genmei Shield"})
+	
+	sets.precast.FC.Impact =  set_combine(sets.precast.FC, 
+		{
+			head=empty,
+			body="Crepuscular Cloak"
+		})
+	
+	sets.precast.FC.Dispelga = set_combine(sets.precast.FC, 
+		{
+			main="Daybreak",
+			sub="Genmei Shield"
+		})
 
     -- Weaponskill sets
 
     -- Default set for any weaponskill that isn't any more specifically defined
-	sets.precast.WS = {ammo="Oshasha's Treatise",
-		head=BUMBA_HEAD,neck="Fotia Gorget",ear1="Brutal Earring",ear2="Moonshade Earring",
-		body=BUMBA_BODY,hands=BUMBA_HANDS,ring1="Epaminondas's Ring",ring2="Cornelia's Ring",
-		back="Null Shawl",waist="Fotia Belt",legs=BUMBA_LEGS,feet=BUMBA_FEET}
+	sets.precast.WS = 
+	{
+		ammo="Oshasha's Treatise",
+		head=BUMBA_HEAD,
+		neck="Fotia Gorget",
+		ear1="Brutal Earring",
+		ear2="Moonshade Earring",
+		body=BUMBA_BODY,
+		hands=BUMBA_HANDS,
+		--ring1="Epaminondas's Ring",
+		--ring2="Cornelia's Ring",
+		back="Null Shawl",
+		waist="Fotia Belt",
+		legs=BUMBA_LEGS,
+		feet=BUMBA_FEET
+	}
 
-	sets.precast.WS['Flash Nova'] = {ammo="Oshasha's Treatise",
-		head=BUMBA_HEAD,neck="Null Loop",ear1="Brutal Earring",ear2="Moonshade Earring",
-		body=BUMBA_BODY,hands=BUMBA_HANDS,ring1="Epaminondas's Ring",ring2="Cornelia's Ring",
-		back="Null Shawl",waist="Orpheus's Sash",legs=BUMBA_LEGS,feet=BUMBA_FEET}
+	sets.precast.WS['Flash Nova'] = 
+	{
+		ammo="Oshasha's Treatise",
+		head=BUMBA_HEAD,
+		neck="Null Loop",
+		ear1="Brutal Earring",
+		ear2="Moonshade Earring",
+		body=BUMBA_BODY,
+		hands=BUMBA_HANDS,
+		--ring1="Epaminondas's Ring",
+		--ring2="Cornelia's Ring",
+		back="Null Shawl",
+		waist="Orpheus's Sash",
+		legs=BUMBA_LEGS,
+		feet=BUMBA_FEET
+	}
+	
 	sets.precast.WS['Mystic Boon'] = {}
 		
 	sets.MaxTP = {}
@@ -361,7 +421,7 @@ function init_gear_sets()
 	sets.midcast.Cure.DT = 
 	{
 		main="Daybreak",sub="Culminus",range=empty,ammo="Staunch Tathlum +1",
-		head="Bunzi's Hat",neck="Loricate Torque +1",ear1="Mendi. Earring",ear2="Glorious Earring",
+		head=MBOZE_HEAD,neck="Loricate Torque +1",ear1="Mendi. Earring",ear2="Glorious Earring",
 		body="Bunzi's Robe",hands=gear.chironic_aspir_gloves,ring1="Defending Ring",ring2="Freke Ring",
 		back="Alaunus's Cape",waist="Emphatikos Rope",legs=EMPY_LEGS,feet=AF_FEET
 	}
@@ -604,7 +664,7 @@ function init_gear_sets()
 	}
 	
 	sets.midcast['Elemental Magic'].Resistant = {main="Bunzi's Rod",sub="Ammurapi Shield",ammo="Ghastly Tathlum +1",
-		head="Bunzi's Hat",neck="Null Loop",ear1="Friomisi Earring",ear2="Malignance Earring",
+		head=MBOZE_HEAD,neck="Null Loop",ear1="Friomisi Earring",ear2="Malignance Earring",
 		body="Bunzi's Robe",hands="Bunzi's Gloves",ring1="Freke Ring",ring2="Metamor. Ring +1",
 		back="Null Shawl",waist="Null Belt",legs="Bunzi's Pants",feet="Bunzi's Sabots"}
 		
@@ -659,7 +719,7 @@ function init_gear_sets()
 	sets.midcast.Aspir.Resistant = sets.midcast.Drain.Resistant
 	
 	sets.midcast.Stun = {main="Hvergelmir",sub="Clerisy Strap +1",ammo="Hasty Pinion +1",
-		head="Bunzi's Hat",neck=JSE_NECK,ear1="Gwati Earring",ear2="Malignance Earring",
+		head=MBOZE_HEAD,neck=JSE_NECK,ear1="Gwati Earring",ear2="Malignance Earring",
 		body=INYANGA_BODY,hands="Fanatic Gloves",ring1="Kishar Ring",ring2="Prolix Ring",
 		back="Alaunus's Cape",waist="Embla Sash",legs=AYANMO_LEGS,feet="Regal Pumps +1"}
 	
@@ -732,12 +792,12 @@ function init_gear_sets()
 		back="Shadow Mantle",waist="Null Belt",legs=BUMBA_LEGS,feet=BUMBA_FEET}
 		
 	sets.idle.MDT = {main="Daybreak",sub="Genmei Shield",ammo="Staunch Tathlum +1",
-		head="Bunzi's Hat",neck="Warder's Charm +1",ear1="Sanare Earring",ear2="Ethereal Earring",
+		head=MBOZE_HEAD,neck="Warder's Charm +1",ear1="Sanare Earring",ear2="Ethereal Earring",
 		body="Bunzi's Robe",hands="Bunzi's Gloves",ring1="Defending Ring",ring2="Shadow Ring",
 		back="Null Shawl",waist="Null Belt",legs=EMPY_LEGS,feet=EMPY_FEET}
 		
 	sets.idle.MEVA = {main="Daybreak",sub="Genmei Shield",ammo="Staunch Tathlum +1",
-		head="Bunzi's Hat",neck="Warder's Charm +1",ear1="Sanare Earring",ear2="Ethereal Earring",
+		head=MBOZE_HEAD,neck="Warder's Charm +1",ear1="Sanare Earring",ear2="Ethereal Earring",
 		body="Bunzi's Robe",hands="Bunzi's Gloves",ring1="Defending Ring",ring2="Shadow Ring",
 		back="Null Shawl",waist="Null Belt",legs=EMPY_LEGS,feet=EMPY_FEET}
 		
@@ -756,12 +816,12 @@ function init_gear_sets()
 		back="Shadow Mantle",waist="Null Belt",legs=BUMBA_LEGS,feet=BUMBA_FEET}
 	
 	sets.defense.MDT = {main="Daybreak",sub="Genmei Shield",ammo="Staunch Tathlum +1",
-		head="Bunzi's Hat",neck="Warder's Charm +1",ear1="Sanare Earring",ear2="Ethereal Earring",
+		head=MBOZE_HEAD,neck="Warder's Charm +1",ear1="Sanare Earring",ear2="Ethereal Earring",
 		body="Bunzi's Robe",hands="Bunzi's Gloves",ring1="Defending Ring",ring2="Shadow Ring",
 		back="Null Shawl",waist="Null Belt",legs=EMPY_LEGS,feet=EMPY_FEET}
 	
 	sets.defense.MEVA = {main="Daybreak",sub="Genmei Shield",ammo="Staunch Tathlum +1",
-		head="Bunzi's Hat",neck="Warder's Charm +1",ear1="Sanare Earring",ear2="Ethereal Earring",
+		head=MBOZE_HEAD,neck="Warder's Charm +1",ear1="Sanare Earring",ear2="Ethereal Earring",
 		body="Bunzi's Robe",hands="Bunzi's Gloves",ring1="Defending Ring",ring2="Shadow Ring",
 		back="Null Shawl",waist="Null Belt",legs=EMPY_LEGS,feet=EMPY_FEET}
 		
