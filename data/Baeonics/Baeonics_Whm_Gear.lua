@@ -512,14 +512,28 @@ function init_gear_sets()
 -- Resting sets
 	sets.resting = {main="Mpaca's Staff",sub="Oneiros Grip",ammo="Homiliary",
 		head="Null Masque",neck="Sibyl Scarf",ear1="Sanare Earring",ear2="Ethereal Earring",
-		body=EMPY_BODY,hands=gear.chironic_refresh_hands,ring1=StikiniRing_Ring1,ring2=StikiniRing_Ring2,
+		body=EMPY_BODY,hands="Chronic Gloves",ring1=StikiniRing_Ring1,ring2=StikiniRing_Ring2,
 		back="Null Shawl",waist="Null Belt",legs="Assid. Pants +1",feet=gear.chironic_refresh_feet}
 
 -- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
-	sets.idle = {main="Mpaca's Staff",sub="Oneiros Grip",ammo="Homiliary",
-		head="Null Masque",neck="Sibyl Scarf",ear1="Sanare Earring",ear2="Ethereal Earring",
-		body=EMPY_BODY,hands=gear.chironic_refresh_hands,ring1=StikiniRing_Ring1,ring2=StikiniRing_Ring2,
-		back="Null Shawl",waist="Null Belt",legs="Assid. Pants +1",feet=gear.chironic_refresh_feet}
+	sets.idle = 
+	{
+		main="Malignance Pole",
+		sub="Mensch Strap +1",
+		ammo="Homiliary",
+		head="Null Masque",
+		neck="Sibyl Scarf",
+		ear1="Sanare Earring",
+		ear2="Ethereal Earring",
+		body=EMPY_BODY,
+		hands="Chronic Gloves",
+		ring1=StikiniRing_Ring1,
+		ring2=StikiniRing_Ring2,
+		back="Null Shawl",
+		waist="Null Belt",
+		legs="Assid. Pants +1",
+		feet=gear.chironic_refresh_feet
+	}
 	
 	sets.idle.PDT = {main="Daybreak",sub="Genmei Shield",ammo="Staunch Tathlum +1",
 		head="Nyame Helm",neck="Loricate Torque +1",ear1="Sanare Earring",ear2="Ethereal Earring",
