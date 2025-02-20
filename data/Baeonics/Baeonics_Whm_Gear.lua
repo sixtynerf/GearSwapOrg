@@ -65,7 +65,7 @@ function user_job_setup()
 	GADA_ENHANCE = {name="Gada"}
 
 --Rings
-	StikiniRing_Ring1	= {name = "Stikini Ring +1", bag = "wardrobe2"}
+	StikiniRing_Ring1	= {name = "Gurebu's Ring"}
 	StikiniRing_Ring2	= {name = "Stikini Ring +1", bag = "wardrobe3"}
 
 	ChirichRing_Ring1	= {name = "Chirich Ring +1", bag = "wardrobe2"}
