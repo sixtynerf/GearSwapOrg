@@ -450,64 +450,186 @@ function init_gear_sets()
 -- 110 total Enhancing Magic Skill; caps even without Light Arts
 	sets.midcast['Enhancing Magic'] = 
 	{
-		main="Gada",
+		main=GADA_ENHANCE, 		--need to be Enhancing Magic Effect Duration+6%
 		sub="Ammurapi Shield",
 		ammo="Pemphredo Tathlum",
-		head="Telchine Cap",
-		neck="Incanter's Torque",
-		ear1="Mimir Earring",
-		ear2="Andoaa Earring",
-		body="Telchine Chas.",
-		hands="Telchine Gloves",
+		head=TELCHINE_ENH_HEAD,
+		--neck="Incanter's Torque", 	--make this
+		ear1="Andoaa Earring",
+		ear2="Mimir Earring",
+		body=TELCHINE_ENH_BODY,
+		hands=TELCHINE_ENH_HANDS,
 		ring1=StikiniRing_Ring1,
 		ring2=StikiniRing_Ring2,
-		back="Mending Cape",
+		back="Solemnity Cape",
 		waist="Embla Sash",
-		legs="Telchine Braconi",
-		feet="Telchine Pigaches"
+		legs=TELCHINE_ENH_LEGS,
+		feet=AF_FEET
 	}
 	
-	sets.midcast.Stoneskin = set_combine(sets.midcast['Enhancing Magic'], {neck="Nodens Gorget",waist="Siegel Sash"})
-	sets.midcast.Auspice = set_combine(sets.midcast['Enhancing Magic'], {feet=EMPY_FEET})
-	sets.midcast.Aquaveil = set_combine(sets.midcast['Enhancing Magic'], {main="Vadose Rod",sub="Ammurapi Shield",head=gear.chironic_nuke_head,waist="Emphatikos Rope"})
-	sets.midcast.Regen = set_combine(sets.midcast['Enhancing Magic'], {main="Bolelabunga",sub="Ammurapi Shield",head="Inyanga Tiara +2",body=RELIC_BODY,hands="Ebers Mitts +3",legs=AF_LEGS})
-	sets.midcast.Protect = set_combine(sets.midcast['Enhancing Magic'], {})
-	sets.midcast.Protectra = set_combine(sets.midcast['Enhancing Magic'], {ring2="Sheltered Ring"})
-	sets.midcast.Shell = set_combine(sets.midcast['Enhancing Magic'], {})
-	sets.midcast.Shellra = set_combine(sets.midcast['Enhancing Magic'], {ring2="Sheltered Ring"})
-	sets.midcast.BarElement = {main="Beneficus",sub="Ammurapi Shield",ammo="Pemphredo Tathlum",
-		head=EMPY_HEAD,neck="Incanter's Torque",ear1="Mimir Earring",ear2="Andoaa Earring",
-		body=EMPY_BODY,hands="Ebers Mitts +3",ring1=StikiniRing_Ring1,ring2=StikiniRing_Ring2,
-		back="Alaunus's Cape",waist="Embla Sash",legs="Piety Pantaln. +3",feet=EMPY_FEET}
+	sets.midcast.Stoneskin = set_combine(sets.midcast['Enhancing Magic'], 
+		{
+			neck="Nodens Gorget",
+			ear1="Earthcry Earring",
+			waist="Siegel Sash",
+			--legs="Shedir Seraweels"
+		})
 	
-	sets.midcast.BarStatus = set_combine(sets.midcast['Enhancing Magic'], {neck="Sroda Necklace"})
+	sets.midcast.Auspice = set_combine(sets.midcast['Enhancing Magic'], 
+		{
+			feet=EMPY_FEET
+		})
+	
+	sets.midcast.Aquaveil = set_combine(sets.midcast['Enhancing Magic'], 
+		{
+			main="Vadose Rod",
+			--head="Chironic Hat",
+			ear1="Gifted Earring",
+			--hands="Regal Cuffs",
+			ring1="Mephitas's Ring +1",
+			waist="Emphatikos Rope",
+			--legs="Shedir Seraweels"
+		})
+	
+	sets.midcast.Regen = set_combine(sets.midcast['Enhancing Magic'], 
+		{
+			main="Bolelabunga",
+			head=INYANGA_HEAD,
+			ear1="Gifted Earring",
+			ear2="Magnetic Earring",
+			body=RELIC_BODY,
+			hands=EMPY_HANDS,
+			ring1="Mephitas's Ring +1",
+			legs=AF_LEGS,
+			feet=MBOZE_FEET
+		})
+	
+	sets.midcast.Protect = set_combine(sets.midcast['Enhancing Magic'], 
+		{
+			ring2="Sheltered Ring",
+			ear1="Gifted Earring",
+			--waist="Sekhmet Corset",
+			feet=RELIC_FEET,
+		})
+	
+	sets.midcast.Protectra = set_combine(sets.midcast['Enhancing Magic'], 
+		{
+			ring2="Sheltered Ring",
+			ear1="Gifted Earring",
+			--waist="Sekhmet Corset",
+			feet=RELIC_FEET,
+		})
+	
+	sets.midcast.Shell = set_combine(sets.midcast['Enhancing Magic'], 
+		{
+			ring2="Sheltered Ring",
+			ear1="Gifted Earring",
+			--waist="Sekhmet Corset",
+			legs=RELIC_LEGS,
+		})
+	
+	sets.midcast.Shellra = set_combine(sets.midcast['Enhancing Magic'], 
+		{
+			ring2="Sheltered Ring",
+			ear1="Gifted Earring",
+			--waist="Sekhmet Corset",
+			legs=RELIC_LEGS,
+		})
+	
+	sets.midcast.BarElement = 
+	{
+		main="Beneficus",
+		sub="Ammurapi Shield",
+		ammo="Pemphredo Tathlum",
+		head=EMPY_HEAD,
+		--neck="Incanter's Torque",
+		ear1="Andoaa Earring",
+		ear2="Mimir Earring",
+		body=EMPY_BODY,
+		hands=EMPY_HANDS,
+		ring1=StikiniRing_Ring1,
+		ring2=StikiniRing_Ring2,
+		back=AMBUCURE_BACK,
+		waist="Embla Sash",
+		legs=RELIC_LEGS,
+		feet=EMPY_FEET
+	}
+
+	sets.midcast.BarStatus = set_combine(sets.midcast['Enhancing Magic'], 
+		{
+			neck="Sroda Necklace"
+		})
 	
 	sets.Self_Refresh = {back="Grapevine Cape",waist="Gishdubar Sash",feet="Inspirited Boots"}
 	sets.Refresh_Received = {back="Grapevine Cape",waist="Gishdubar Sash",feet="Inspirited Boots"}
 	
-	sets.midcast.Impact = {main="Bunzi's Rod",sub="Ammurapi Shield",ammo="Pemphredo Tathlum",
-		head=empty,neck="Null Loop",ear1="Gwati Earring",ear2="Malignance Earring",
-		body="Crepuscular Cloak",hands="Ebers Mitts +3",ring1=StikiniRing_Ring1,ring2="Metamor. Ring +1",
-		back="Null Shawl",waist="Null Belt",legs=EMPY_LEGS,feet=EMPY_FEET}
+	sets.midcast.Impact = 
+	{
+		main="Daybreak",
+		sub="Ammurapi Shield",
+		ammo="Pemphredo Tathlum",
+		head=empty,
+		neck="Erra Pendant",
+		ear1="Regal Earring",
+		ear2="Digni. Earring",
+		body="Crepuscular Cloak",
+		hands="Chironic Gloves", 	--augment for enfeebles
+		ring1="Metamor. Ring +1",
+		ring2=StikiniRing_Ring2,
+		back="Toro Cape",
+		waist="Acuity Belt +1",
+		legs="Chironic Hose",
+		--feet="Chironic Slippers"
+	}
 		
-	sets.midcast['Elemental Magic'] = {main="Bunzi's Rod",sub="Culminus",ammo="Ghastly Tathlum +1",
-		head="Bunzi's Hat",neck="Saevus Pendant +1",ear1="Friomisi Earring",ear2="Malignance Earring",
-		body="Bunzi's Robe",hands="Bunzi's Gloves",ring1="Freke Ring",ring2="Metamor. Ring +1",
-		back="Null Shawl",waist="Sacro Cord",legs="Bunzi's Pants",feet="Bunzi's Sabots"}
+	sets.midcast['Elemental Magic'] = 
+	{
+		main="Bunzi's Rod",
+		sub="Ammurapi Shield",
+		ammo="Ghastly Tathlum +1",
+		head=MBOZE_HEAD,
+		--neck="Baetyl Pendant",
+		neck="Sibyl Scarf",
+		ear1="Regal Earring",
+		ear1="Malignance Earring",
+		ear2="Friomisi Earring",
+		body=MBOZE_BODY,
+		hands=MBOZE_HANDS,
+		ring1="Shiva Ring +1",
+		ring2="Freke Ring",
+		back="Toro Cape",
+		waist="Sacro Cord",
+		legs="Chironic Hose",
+		feet=MBOZE_FEET
+	}
 	
 	sets.midcast['Elemental Magic'].Resistant = {main="Bunzi's Rod",sub="Ammurapi Shield",ammo="Ghastly Tathlum +1",
 		head="Bunzi's Hat",neck="Null Loop",ear1="Friomisi Earring",ear2="Malignance Earring",
 		body="Bunzi's Robe",hands="Bunzi's Gloves",ring1="Freke Ring",ring2="Metamor. Ring +1",
 		back="Null Shawl",waist="Null Belt",legs="Bunzi's Pants",feet="Bunzi's Sabots"}
 		
-	sets.midcast['Divine Magic'] = {main="Daybreak",sub="Ammurapi Shield",ammo="Pemphredo Tathlum",
-		head=EMPY_HEAD,neck="Null Loop",ear1="Gwati Earring",ear2="Malignance Earring",
-		body=EMPY_BODY,hands="Ebers Mitts +3",ring1=StikiniRing_Ring1,ring2="Metamor. Ring +1",
-		back="Null Shawl",waist="Null Belt",legs=EMPY_LEGS,feet=EMPY_FEET}
+	sets.midcast['Divine Magic'] = 
+	{
+		main="Daybreak",
+		sub="Ammurapi Shield",
+		ammo="Pemphredo Tathlum",
+		head="C. Palug Crown",
+		--neck="Incanter's Torque",
+		ear1="Regal Earring",
+		ear2="Digni. Earring",
+		body=INYANGA_BODY,
+		--hands="Fanatic Gloves",
+		ring1=BMSRING_1,
+		ring2=BMSRING_2,
+		back="Aurist's Cape +1",
+		--waist="Hachirin-no-obi",
+		legs="Chironic Hose",
+		feet=MBOZE_FEET
+	}
 		
 	sets.midcast.Repose = {main="Daybreak",sub="Ammurapi Shield",ammo="Pemphredo Tathlum",
 		head=EMPY_HEAD,neck="Null Loop",ear1="Gwati Earring",ear2="Malignance Earring",
-		body=EMPY_BODY,hands="Ebers Mitts +3",ring1=StikiniRing_Ring1,ring2="Metamor. Ring +1",
+		body=EMPY_BODY,hands=EMPY_HANDS,ring1=StikiniRing_Ring1,ring2="Metamor. Ring +1",
 		back="Null Shawl",waist="Null Belt",legs=EMPY_LEGS,feet=EMPY_FEET}
 		
 	sets.midcast.Holy = {main="Daybreak",sub="Ammurapi Shield",ammo="Pemphredo Tathlum",
@@ -520,7 +642,7 @@ function init_gear_sets()
 	
 	sets.midcast['Dark Magic'] = {main="Bunzi's Rod",sub="Ammurapi Shield",ammo="Pemphredo Tathlum",
 		head=EMPY_HEAD,neck="Null Loop",ear1="Gwati Earring",ear2="Malignance Earring",
-		body=EMPY_BODY,hands="Ebers Mitts +3",ring1=StikiniRing_Ring1,ring2="Metamor. Ring +1",
+		body=EMPY_BODY,hands=EMPY_HANDS,ring1=StikiniRing_Ring1,ring2="Metamor. Ring +1",
 		back="Null Shawl",waist="Null Belt",legs=EMPY_LEGS,feet=EMPY_FEET}
 	
 	sets.midcast.Drain = {main="Rubicundity",sub="Ammurapi Shield",ammo="Pemphredo Tathlum",
@@ -530,7 +652,7 @@ function init_gear_sets()
 	
 	sets.midcast.Drain.Resistant = {main="Bunzi's Rod",sub="Ammurapi Shield",ammo="Pemphredo Tathlum",
 		head=EMPY_HEAD,neck="Null Loop",ear1="Gwati Earring",ear2="Malignance Earring",
-		body=EMPY_BODY,hands="Ebers Mitts +3",ring1=StikiniRing_Ring1,ring2="Metamor. Ring +1",
+		body=EMPY_BODY,hands=EMPY_HANDS,ring1=StikiniRing_Ring1,ring2="Metamor. Ring +1",
 		back="Null Shawl",waist="Null Belt",legs=EMPY_LEGS,feet=EMPY_FEET}
 	
 	sets.midcast.Aspir = sets.midcast.Drain
@@ -543,24 +665,24 @@ function init_gear_sets()
 	
 	sets.midcast.Stun.Resistant = {main="Bunzi's Rod",sub="Ammurapi Shield",ammo="Pemphredo Tathlum",
 		head=EMPY_HEAD,neck="Null Loop",ear1="Gwati Earring",ear2="Malignance Earring",
-		body=EMPY_BODY,hands="Ebers Mitts +3",ring1=StikiniRing_Ring1,ring2="Metamor. Ring +1",
+		body=EMPY_BODY,hands=EMPY_HANDS,ring1=StikiniRing_Ring1,ring2="Metamor. Ring +1",
 		back="Null Shawl",waist="Null Belt",legs=EMPY_LEGS,feet=EMPY_FEET}
 		
 	sets.midcast.Dispel = {main="Bunzi's Rod",sub="Ammurapi Shield",ammo="Pemphredo Tathlum",
 		head=EMPY_HEAD,neck="Null Loop",ear1="Gwati Earring",ear2="Malignance Earring",
-		body=EMPY_BODY,hands="Ebers Mitts +3",ring1=StikiniRing_Ring1,ring2="Metamor. Ring +1",
+		body=EMPY_BODY,hands=EMPY_HANDS,ring1=StikiniRing_Ring1,ring2="Metamor. Ring +1",
 		back="Null Shawl",waist="Null Belt",legs=EMPY_LEGS,feet=EMPY_FEET}
 		
 	sets.midcast.Dispelga = set_combine(sets.midcast.Dispel, {main="Daybreak",sub="Ammurapi Shield"})
 
 	sets.midcast['Enfeebling Magic'] = {main="Daybreak",sub="Ammurapi Shield",ammo="Pemphredo Tathlum",
 		head=EMPY_HEAD,neck="Null Loop",ear1="Gwati Earring",ear2="Malignance Earring",
-		body=AF_BODY,hands="Ebers Mitts +3",ring1="Kishar Ring",ring2=StikiniRing_Ring2,
+		body=AF_BODY,hands=EMPY_HANDS,ring1="Kishar Ring",ring2=StikiniRing_Ring2,
 		back="Alaunus's Cape",waist="Obstinate Sash",legs=gear.chironic_macc_legs,feet="Theo Duckbills +2"}
 	
 	sets.midcast['Enfeebling Magic'].Resistant = {main="Daybreak",sub="Ammurapi Shield",ammo="Pemphredo Tathlum",
 		head=EMPY_HEAD,neck="Null Loop",ear1="Gwati Earring",ear2="Malignance Earring",
-		body=EMPY_BODY,hands="Ebers Mitts +3",ring1=StikiniRing_Ring1,ring2="Metamor. Ring +1",
+		body=EMPY_BODY,hands=EMPY_HANDS,ring1=StikiniRing_Ring1,ring2="Metamor. Ring +1",
 		back="Null Shawl",waist="Null Belt",legs=gear.chironic_macc_legs,feet=EMPY_FEET}
 		
 	sets.TreasureHunter = set_combine(sets.TreasureHunter, {feet=gear.chironic_treasure_feet})
@@ -672,7 +794,7 @@ function init_gear_sets()
 		back="Null Shawl",waist="Null Belt",legs=BUMBA_LEGS,feet=BUMBA_FEET}
 
 -- Buff sets: Gear that needs to be worn to actively enhance a current player buff.
-	sets.buff['Divine Caress'] = {hands="Ebers Mitts +3",back="Mending Cape"}
+	sets.buff['Divine Caress'] = {hands=EMPY_HANDS,back="Mending Cape"}
 	sets.buff.Sublimation = {waist="Embla Sash"}
 	sets.buff.DTSublimation = {waist="Embla Sash"}
 	
