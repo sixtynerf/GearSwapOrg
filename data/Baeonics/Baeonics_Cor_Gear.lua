@@ -547,9 +547,40 @@ function init_gear_sets()
 		feet=RELIC_FEET
 	}
 		
-	sets.precast.WS['Hot Shot'] = sets.precast.WS['Wildfire']
+	sets.precast.WS['Hot Shot'] = 
+	{
+		ammo=gear.MAbullet,
+		head=BUMBA_HEAD,
+		neck="Fotia Gorget",
+		ear1="Moonshade Earring",
+		ear2="Friomisi Earring",
+		body=RELIC_BODY,
+		hands=EMPY_HANDS,
+		ring1="Epaminondas's Ring",
+		ring2="Dingir Ring",
+		back=AMBUWSMB_BACK,
+		waist="Fotia Belt",
+		legs=BUMBA_LEGS,
+		feet=RELIC_FEET
+	}
 	
-	sets.precast.WS['Hot Shot'].Acc = sets.precast.WS['Wildfire'].Acc
+	sets.precast.WS['Hot Shot'].Acc = 
+
+	{
+		ammo=gear.MAbullet,
+		head=BUMBA_HEAD,
+		neck="Fotia Gorget",
+		ear1="Moonshade Earring",
+		ear2="Friomisi Earring",
+		body=RELIC_BODY,
+		hands=EMPY_HANDS,
+		ring1="Epaminondas's Ring",
+		ring2="Dingir Ring",
+		back=AMBUWSMB_BACK,
+		waist="Fotia Belt",
+		legs=BUMBA_LEGS,
+		feet=RELIC_FEET
+	}
 		
 		--Because omen skillchains.
 	sets.precast.WS['Burning Blade'] = 
