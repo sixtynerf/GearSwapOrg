@@ -237,7 +237,7 @@ function init_gear_sets()
 		hands="Fanatic Gloves",
 		ring1="Defending Ring",
 		ring2="Freke Ring",
-		back="Alaunus's Cape",
+		back=AMBUCURE_BACK,
 		waist="Cornelia's Belt",
 		legs=AYANMO_LEGS,
 		feet="Regal Pumps +1"
@@ -422,7 +422,7 @@ function init_gear_sets()
 	{
 		main="Daybreak",sub="Culminus",range=empty,ammo="Staunch Tathlum +1",
 		head=MBOZE_HEAD,neck="Loricate Torque +1",ear1="Mendi. Earring",ear2="Glorious Earring",
-		body="Bunzi's Robe",hands=gear.chironic_aspir_gloves,ring1="Defending Ring",ring2="Freke Ring",
+		body=MBOZE_BODY,hands=gear.chironic_aspir_gloves,ring1="Defending Ring",ring2="Freke Ring",
 		back="Alaunus's Cape",waist="Emphatikos Rope",legs=EMPY_LEGS,feet=AF_FEET
 	}
 		
@@ -663,10 +663,13 @@ function init_gear_sets()
 		feet=MBOZE_FEET
 	}
 	
-	sets.midcast['Elemental Magic'].Resistant = {main="Bunzi's Rod",sub="Ammurapi Shield",ammo="Ghastly Tathlum +1",
+	sets.midcast['Elemental Magic'].Resistant = 
+	{
+		main="Bunzi's Rod",sub="Ammurapi Shield",ammo="Ghastly Tathlum +1",
 		head=MBOZE_HEAD,neck="Null Loop",ear1="Friomisi Earring",ear2="Malignance Earring",
-		body="Bunzi's Robe",hands="Bunzi's Gloves",ring1="Freke Ring",ring2="Metamor. Ring +1",
-		back="Null Shawl",waist="Null Belt",legs="Bunzi's Pants",feet="Bunzi's Sabots"}
+		body=MBOZE_BODY,hands=MBOZE_HANDS,ring1="Freke Ring",ring2="Metamor. Ring +1",
+		back="Null Shawl",waist="Null Belt",legs=MBOZE_LEGS,feet=MBOZE_FEET
+	}
 		
 	sets.midcast['Divine Magic'] = 
 	{
@@ -687,23 +690,51 @@ function init_gear_sets()
 		feet=MBOZE_FEET
 	}
 		
-	sets.midcast.Repose = {main="Daybreak",sub="Ammurapi Shield",ammo="Pemphredo Tathlum",
+	sets.midcast.Repose = 
+	{
+		main="Daybreak",sub="Ammurapi Shield",ammo="Pemphredo Tathlum",
 		head=EMPY_HEAD,neck="Null Loop",ear1="Gwati Earring",ear2="Malignance Earring",
 		body=EMPY_BODY,hands=EMPY_HANDS,ring1=StikiniRing_Ring1,ring2="Metamor. Ring +1",
-		back="Null Shawl",waist="Null Belt",legs=EMPY_LEGS,feet=EMPY_FEET}
+		back="Null Shawl",waist="Null Belt",legs=EMPY_LEGS,feet=EMPY_FEET
+	}
 		
-	sets.midcast.Holy = {main="Daybreak",sub="Ammurapi Shield",ammo="Pemphredo Tathlum",
+	sets.midcast.Holy = 
+	{
+		main="Daybreak",sub="Ammurapi Shield",ammo="Pemphredo Tathlum",
 		head="C. Palug Crown",neck="Saevus Pendant +1",ear1="Gwati Earring",ear2="Malignance Earring",
-		body="Shamash Robe",hands="Bunzi's Gloves",ring1="Freke Ring",ring2="Metamor. Ring +1",
-		back="Null Shawl",waist="Sacro Cord",legs="Bunzi's Pants",feet="Bunzi's Sabots"}
+		body="Shamash Robe",hands=MBOZE_HANDS,ring1="Freke Ring",ring2="Metamor. Ring +1",
+		back="Null Shawl",waist="Sacro Cord",legs=MBOZE_LEGS,feet=MBOZE_FEET
+	}
 		
 	-- Gear for Magic Burst mode.
-	sets.MagicBurst = {neck="Mizu. Kubikazari",body="Bunzi's Robe",hands="Bunzi's Gloves",ring2="Mujin Band",legs="Bunzi's Pants",feet="Bunzi's Sabots"}
+	sets.MagicBurst = 
+	{
+		neck="Mizu. Kubikazari",
+		body=MBOZE_BODY,
+		hands=MBOZE_HANDS,
+		ring2="Mujin Band",
+		legs=MBOZE_LEGS,
+		feet=MBOZE_FEET
+	}
 	
-	sets.midcast['Dark Magic'] = {main="Bunzi's Rod",sub="Ammurapi Shield",ammo="Pemphredo Tathlum",
-		head=EMPY_HEAD,neck="Null Loop",ear1="Gwati Earring",ear2="Malignance Earring",
-		body=EMPY_BODY,hands=EMPY_HANDS,ring1=StikiniRing_Ring1,ring2="Metamor. Ring +1",
-		back="Null Shawl",waist="Null Belt",legs=EMPY_LEGS,feet=EMPY_FEET}
+	sets.midcast['Dark Magic'] = 
+	{
+		main="Bunzi's Rod",
+		sub="Ammurapi Shield",
+		ammo="Pemphredo Tathlum",
+		head=EMPY_HEAD,
+		neck="Null Loop",
+		ear1="Gwati Earring",
+		ear2="Malignance Earring",
+		body=EMPY_BODY,
+		hands=EMPY_HANDS,
+		ring1=StikiniRing_Ring1,
+		ring2="Metamor. Ring +1",
+		back="Null Shawl",
+		waist="Null Belt",
+		legs=EMPY_LEGS,
+		feet=EMPY_FEET
+	}
 	
 	sets.midcast.Drain = {main="Rubicundity",sub="Ammurapi Shield",ammo="Pemphredo Tathlum",
 		head="Pixie Hairpin +1",neck="Erra Pendant",ear1="Gwati Earring",ear2="Malignance Earring",
@@ -735,10 +766,24 @@ function init_gear_sets()
 		
 	sets.midcast.Dispelga = set_combine(sets.midcast.Dispel, {main="Daybreak",sub="Ammurapi Shield"})
 
-	sets.midcast['Enfeebling Magic'] = {main="Daybreak",sub="Ammurapi Shield",ammo="Pemphredo Tathlum",
-		head=EMPY_HEAD,neck="Null Loop",ear1="Gwati Earring",ear2="Malignance Earring",
-		body=AF_BODY,hands=EMPY_HANDS,ring1="Kishar Ring",ring2=StikiniRing_Ring2,
-		back="Alaunus's Cape",waist="Obstinate Sash",legs=gear.chironic_macc_legs,feet="Theo Duckbills +2"}
+	sets.midcast['Enfeebling Magic'] = 
+	{
+		main="Daybreak",
+		sub="Ammurapi Shield",
+		ammo="Pemphredo Tathlum",
+		head=EMPY_HEAD,
+		neck="Null Loop",
+		ear1="Gwati Earring",
+		ear2="Malignance Earring",
+		body=AF_BODY,
+		hands=EMPY_HANDS,
+		ring1="Kishar Ring",
+		ring2=StikiniRing_Ring2,
+		back="Alaunus's Cape",
+		waist="Obstinate Sash",
+		legs=gear.chironic_macc_legs,
+		feet=AF_FEET
+	}
 	
 	sets.midcast['Enfeebling Magic'].Resistant = {main="Daybreak",sub="Ammurapi Shield",ammo="Pemphredo Tathlum",
 		head=EMPY_HEAD,neck="Null Loop",ear1="Gwati Earring",ear2="Malignance Earring",
@@ -758,10 +803,24 @@ function init_gear_sets()
 -- Sets to return to when not performing an action.
 
 -- Resting sets
-	sets.resting = {main="Mpaca's Staff",sub="Oneiros Grip",ammo="Homiliary",
-		head="Null Masque",neck="Sibyl Scarf",ear1="Sanare Earring",ear2="Ethereal Earring",
-		body=EMPY_BODY,hands="Chronic Gloves",ring1=StikiniRing_Ring1,ring2=StikiniRing_Ring2,
-		back="Null Shawl",waist="Null Belt",legs="Assid. Pants +1",feet=gear.chironic_refresh_feet}
+	sets.resting = 
+	{
+		main="Mpaca's Staff",
+		sub="Oneiros Grip",
+		ammo="Homiliary",
+		head="Null Masque",
+		neck="Sibyl Scarf",
+		ear1="Sanare Earring",
+		ear2="Ethereal Earring",
+		body=EMPY_BODY,
+		hands="Chronic Gloves",
+		ring1=StikiniRing_Ring1,
+		ring2=StikiniRing_Ring2,
+		back="Null Shawl",
+		waist="Null Belt",
+		legs="Assid. Pants +1",
+		feet=gear.chironic_refresh_feet
+	}
 
 -- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
 	sets.idle = 
@@ -793,12 +852,12 @@ function init_gear_sets()
 		
 	sets.idle.MDT = {main="Daybreak",sub="Genmei Shield",ammo="Staunch Tathlum +1",
 		head=MBOZE_HEAD,neck="Warder's Charm +1",ear1="Sanare Earring",ear2="Ethereal Earring",
-		body="Bunzi's Robe",hands="Bunzi's Gloves",ring1="Defending Ring",ring2="Shadow Ring",
+		body=MBOZE_BODY,hands=MBOZE_HANDS,ring1="Defending Ring",ring2="Shadow Ring",
 		back="Null Shawl",waist="Null Belt",legs=EMPY_LEGS,feet=EMPY_FEET}
 		
 	sets.idle.MEVA = {main="Daybreak",sub="Genmei Shield",ammo="Staunch Tathlum +1",
 		head=MBOZE_HEAD,neck="Warder's Charm +1",ear1="Sanare Earring",ear2="Ethereal Earring",
-		body="Bunzi's Robe",hands="Bunzi's Gloves",ring1="Defending Ring",ring2="Shadow Ring",
+		body=MBOZE_BODY,hands=MBOZE_HANDS,ring1="Defending Ring",ring2="Shadow Ring",
 		back="Null Shawl",waist="Null Belt",legs=EMPY_LEGS,feet=EMPY_FEET}
 		
 	-- Situational Idle sets
@@ -817,12 +876,12 @@ function init_gear_sets()
 	
 	sets.defense.MDT = {main="Daybreak",sub="Genmei Shield",ammo="Staunch Tathlum +1",
 		head=MBOZE_HEAD,neck="Warder's Charm +1",ear1="Sanare Earring",ear2="Ethereal Earring",
-		body="Bunzi's Robe",hands="Bunzi's Gloves",ring1="Defending Ring",ring2="Shadow Ring",
+		body=MBOZE_BODY,hands=MBOZE_HANDS,ring1="Defending Ring",ring2="Shadow Ring",
 		back="Null Shawl",waist="Null Belt",legs=EMPY_LEGS,feet=EMPY_FEET}
 	
 	sets.defense.MEVA = {main="Daybreak",sub="Genmei Shield",ammo="Staunch Tathlum +1",
 		head=MBOZE_HEAD,neck="Warder's Charm +1",ear1="Sanare Earring",ear2="Ethereal Earring",
-		body="Bunzi's Robe",hands="Bunzi's Gloves",ring1="Defending Ring",ring2="Shadow Ring",
+		body=MBOZE_BODY,hands=MBOZE_HANDS,ring1="Defending Ring",ring2="Shadow Ring",
 		back="Null Shawl",waist="Null Belt",legs=EMPY_LEGS,feet=EMPY_FEET}
 		
 -- Engaged sets
