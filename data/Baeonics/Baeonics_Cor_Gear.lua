@@ -415,24 +415,24 @@ function init_gear_sets()
 	sets.precast.WS['Last Stand'] = 
 	{
 		ammo=gear.WSbullet,
-		head=BUMBA_HEAD,
+		head=RELIC_HEAD,
 		neck="Fotia Gorget",
 		ear1="Moonshade Earring",
-		ear2="Telos Earring",
-		body=AF_BODY,
-		hands=MEGHANADA_HANDS,
-		ring1="Regal Ring",
+		ear2="Ishvara Earring",
+		body=XEVIOSO_BODY,
+		hands=EMPY_HANDS,
+		ring1="Epaminondas's Ring",
 		ring2="Dingir Ring",
 		back=AMBUWSDRA_BACK,
 		waist="Fotia Belt",
-		legs=MEGHANADA_LEGS,
+		legs=BUMBA_LEGS,
 		feet=RELIC_FEET
 	}
 	
 	sets.precast.WS['Last Stand'].Acc = 
 	{
 		ammo=gear.WSbullet,
-		head=MEGHANADA_HEAD",
+		head=RELIC_HEAD",
 		neck="Iskur Gorget",
 		ear1="Moonshade Earring",
 		ear2="Telos Earring",
