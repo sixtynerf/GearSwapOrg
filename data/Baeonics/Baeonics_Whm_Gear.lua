@@ -189,40 +189,40 @@ function init_gear_sets()
 	
 	sets.midcast.Cure = 
 	{
-		main="Queller Rod",
-		sub="Ammurapi Shield",
+		main="Raetic Rod +1",
+		sub="Thuellaic Ecu +1",
 		ammo="Pemphredo Tathlum",
-		head=EMPY_HEAD,
+		head="Kaykaus mitra +1",
 		neck=JSE_NECK,
-		ear1="Mendi. Earring",
-		ear2="Glorious Earring",
-		body=AF_BODY,
+		ear1="Glorious Earring",
+		ear2="Magnetic Earring",
+		body=EMPY_BODY,
 		hands=AF_HANDS,
-		ring1="Sirona's Ring",
+		ring1="Mephitas's Ring +1",
 		ring2="Lebeche Ring",
-		back="Alaunus's Cape",
-		waist="Luminary Sash",
+		back=AMBUCURE_BACK,
+		waist="Hachirin-no-obi",
 		legs=EMPY_LEGS,
-		feet=RELIC_FEET
+		feet="Kaykaus boots +1"
 	}
 		
 	sets.midcast.CureSolace = 
 	{
-		main="Queller Rod",
-		sub="Ammurapi Shield",
+		main="Raetic Rod +1",
+		sub="Thuellaic Ecu +1",
 		ammo="Pemphredo Tathlum",
-		head=EMPY_HEAD,
+		head="Kaykaus mitra +1",
 		neck=JSE_NECK,
-		ear1="Mendi. Earring",
-		ear2="Glorious Earring",
+		ear1="Glorious Earring",
+		ear2="Magnetic Earring",
 		body=EMPY_BODY,
 		hands=AF_HANDS,
-		ring1="Sirona's Ring",
+		ring1="Mephitas's Ring +1",
 		ring2="Lebeche Ring",
-		back="Alaunus's Cape",
-		waist="Luminary Sash",
+		back=AMBUCURE_BACK,
+		waist="Hachirin-no-obi",
 		legs=EMPY_LEGS,
-		feet=RELIC_FEET
+		feet="Kaykaus boots +1"
 	}
 	
 	sets.midcast.LightWeatherCure = 
@@ -246,50 +246,116 @@ function init_gear_sets()
 	
 	sets.midcast.LightWeatherCureSolace = 
 	{
-		main="Chatoyant Staff",sub="Enki Strap",ammo="Pemphredo Tathlum",
-		head=EMPY_HEAD,neck=JSE_NECK,ear1="Mendi. Earring",ear2="Glorious Earring",
-		body=EMPY_BODY,hands=AF_HANDS,ring1="Sirona's Ring",ring2="Lebeche Ring",
-		back="Alaunus's Cape",waist="Hachirin-no-Obi",legs=EMPY_LEGS,feet=RELIC_FEET
+		main="Chatoyant Staff",
+		sub="Enki Strap",
+		ammo="Pemphredo Tathlum",
+		head=EMPY_HEAD,
+		neck=JSE_NECK,
+		ear1="Mendi. Earring",
+		ear2="Glorious Earring",
+		body=AF_BODY,
+		hands=AF_HANDS,
+		ring1="Sirona's Ring",
+		ring2="Lebeche Ring",
+		back=AMBUCURE_BACK,
+		waist="Hachirin-no-Obi",
+		legs=EMPY_LEGS,
+		feet=RELIC_FEET
 	}
 		
 	sets.midcast.LightDayCureSolace = 
 	{
-		main="Queller Rod",sub="Ammurapi Shield",ammo="Pemphredo Tathlum",
-		head=EMPY_HEAD,neck=JSE_NECK,ear1="Mendi. Earring",ear2="Glorious Earring",
-		body=EMPY_BODY,hands=AF_HANDS,ring1="Sirona's Ring",ring2="Lebeche Ring",
-		back="Alaunus's Cape",waist="Hachirin-no-Obi",legs=EMPY_LEGS,feet=RELIC_FEET
+		main="Chatoyant Staff",
+		sub="Enki Strap",
+		ammo="Pemphredo Tathlum",
+		head=EMPY_HEAD,
+		neck=JSE_NECK,
+		ear1="Mendi. Earring",
+		ear2="Glorious Earring",
+		body=AF_BODY,
+		hands=AF_HANDS,
+		ring1="Sirona's Ring",
+		ring2="Lebeche Ring",
+		back=AMBUCURE_BACK,
+		waist="Hachirin-no-Obi",
+		legs=EMPY_LEGS,
+		feet=RELIC_FEET
 	}
 	
 	sets.midcast.LightDayCure = 
 	{
-		main="Queller Rod",sub="Ammurapi Shield",ammo="Pemphredo Tathlum",
-		head=EMPY_HEAD,neck=JSE_NECK,ear1="Mendi. Earring",ear2="Glorious Earring",
-		body=EMPY_BODY,hands=AF_HANDS,ring1="Sirona's Ring",ring2="Lebeche Ring",
-		back="Twilight Cape",waist="Hachirin-no-Obi",legs=EMPY_LEGS,feet=RELIC_FEET
+		main="Chatoyant Staff",
+		sub="Enki Strap",
+		ammo="Pemphredo Tathlum",
+		head=EMPY_HEAD,
+		neck=JSE_NECK,
+		ear1="Mendi. Earring",
+		ear2="Glorious Earring",
+		body=AF_BODY,
+		hands=AF_HANDS,
+		ring1="Sirona's Ring",
+		ring2="Lebeche Ring",
+		back="Twilight Cape",
+		waist="Hachirin-no-Obi",
+		legs=EMPY_LEGS,
+		feet=RELIC_FEET
 	}
 	
 	sets.midcast.Curaga = 
 	{
-		main="Queller Rod",sub="Ammurapi Shield",ammo="Pemphredo Tathlum",
-		head=EMPY_HEAD,neck=JSE_NECK,ear1="Mendi. Earring",ear2="Glorious Earring",
-		body=AF_BODY,hands=AF_HANDS,ring1="Sirona's Ring",ring2="Lebeche Ring",
-		back="Mending Cape",waist="Luminary Sash",legs=EMPY_LEGS,feet=RELIC_FEET
+		main="Raetic Rod +1",
+		sub="Thuellaic Ecu +1",
+		ammo="Pemphredo Tathlum",
+		head="Kaykaus mitra +1",
+		neck=JSE_NECK,
+		ear1="Glorious Earring",
+		ear2="Magnetic Earring",
+		body=EMPY_BODY,
+		hands=AF_HANDS,
+		ring1="Mephitas's Ring +1",
+		ring2="Lebeche Ring",
+		back=AMBUCURE_BACK,
+		waist="Hachirin-no-obi",
+		legs=EMPY_LEGS,
+		feet="Kaykaus boots +1"
 	}
 		
 	sets.midcast.LightWeatherCuraga = 
 	{
-		main="Chatoyant Staff",sub="Enki Strap",ammo="Pemphredo Tathlum",
-		head=EMPY_HEAD,neck=JSE_NECK,ear1="Mendi. Earring",ear2="Glorious Earring",
-		body=AF_BODY,hands=AF_HANDS,ring1="Sirona's Ring",ring2="Lebeche Ring",
-		back="Twilight Cape",waist="Hachirin-no-Obi",legs=EMPY_LEGS,feet=RELIC_FEET
+		main="Chatoyant Staff",
+		sub="Enki Strap",
+		ammo="Pemphredo Tathlum",
+		head=EMPY_HEAD,
+		neck=JSE_NECK,
+		ear1="Mendi. Earring",
+		ear2="Glorious Earring",
+		body=AF_BODY,
+		hands=AF_HANDS,
+		ring1="Sirona's Ring",
+		ring2="Lebeche Ring",
+		back="Twilight Cape",
+		waist="Hachirin-no-Obi",
+		legs=EMPY_LEGS,
+		feet=RELIC_FEET
 	}
 		
 	sets.midcast.LightDayCuraga = 
 	{
-		main="Queller Rod",sub="Ammurapi Shield",ammo="Pemphredo Tathlum",
-		head=EMPY_HEAD,neck=JSE_NECK,ear1="Mendi. Earring",ear2="Glorious Earring",
-		body=EMPY_BODY,hands=AF_HANDS,ring1="Sirona's Ring",ring2="Lebeche Ring",
-		back="Twilight Cape",waist="Hachirin-no-Obi",legs=EMPY_LEGS,feet=RELIC_FEET
+		main="Chatoyant Staff",
+		sub="Enki Strap",
+		ammo="Pemphredo Tathlum",
+		head=EMPY_HEAD,
+		neck=JSE_NECK,
+		ear1="Mendi. Earring",
+		ear2="Glorious Earring",
+		body=AF_BODY,
+		hands=AF_HANDS,
+		ring1="Sirona's Ring",
+		ring2="Lebeche Ring",
+		back="Twilight Cape",
+		waist="Hachirin-no-Obi",
+		legs=EMPY_LEGS,
+		feet=RELIC_FEET
 	}
 	
 	sets.midcast.Cure.DT = 
