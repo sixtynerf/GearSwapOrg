@@ -424,10 +424,21 @@ function init_gear_sets()
 	
 	sets.midcast.Cure.DT = 
 	{
-		main="Daybreak",sub="Culminus",range=empty,ammo="Staunch Tathlum +1",
-		head=MBOZE_HEAD,neck="Loricate Torque +1",ear1="Mendi. Earring",ear2="Glorious Earring",
-		body=MBOZE_BODY,hands=gear.chironic_aspir_gloves,ring1="Defending Ring",ring2="Freke Ring",
-		back="Alaunus's Cape",waist="Emphatikos Rope",legs=EMPY_LEGS,feet=AF_FEET
+		main="Daybreak",
+		sub="Culminus",
+		range=empty,
+		ammo="Staunch Tathlum +1",
+		head=MBOZE_HEAD,
+		neck="Loricate Torque +1",
+		ear1="Mendi. Earring",
+		ear2="Glorious Earring",
+		body=MBOZE_BODY,
+		hands=gear.chironic_aspir_gloves,
+		ring1="Defending Ring",
+		ring2="Freke Ring",
+		back="Alaunus's Cape",
+		waist="Emphatikos Rope",
+		legs=EMPY_LEGS,feet=AF_FEET
 	}
 		
 	--Melee Curesets are used whenever your Weapons state is set to anything but None.
