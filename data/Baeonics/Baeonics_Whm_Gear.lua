@@ -13,7 +13,11 @@ function user_job_setup()
 	default_weapons = 'Maxentius'
 	default_dual_weapons = 'DualWeapons'
 	
-	autows_list = {['DualWeapons']='Black Halo',['Maxentius']='Black Halo'}
+	autows_list = 
+	{
+		['DualWeapons']='Black Halo',
+		['Maxentius']='Black Halo'
+	}
 
 --Artifact Gear
 	AF_HEAD 	= {name="Theophany Cap +3"}		--low 
@@ -469,38 +473,40 @@ function init_gear_sets()
 	
 	sets.midcast.Cursna = 
 	{
-		main="Hvergelmir",
-		sub="Clemency Grip",
-		ammo="Hasty Pinion +1",
+		main="Yagrush",
+		--sub="Clemency Grip",
+		sub="Ammurapi Shield",
+		ammo="Pemphredo Tathlum",
+		--head="Vanya Hood", --Healing magic skill +20
 		head=EMPY_HEAD,
 		neck="Debilis Medallion",
 		ear1="Meili Earring",
 		ear2=EMPY_EAR,
 		body=EMPY_BODY,
-		hands="Fanatic Gloves",
+		--hands="Fanatic Gloves", --Healing magic skill +20
 		ring1="Haoma's Ring",
 		ring2="Menelaus's Ring",
-		back="Alaunus's Cape",
-		waist="Bishop's Sash",
+		back=AMBUCURE_BACK,
+		waist="Witful Belt",
 		legs=AF_LEGS,
-		feet="Regal Pumps +1"
+		--feet="Vanya Clogs" --Healing magic skill +20
 	}
 	
 	sets.midcast.StatusRemoval = 
 	{
-		main="Hvergelmir",
-		sub="Clemency Grip",
+		main="Yagrush",
+		sub="Ammurapi Shield",
 		ammo="Pemphredo Tathlum",
 		head=EMPY_HEAD,
-		neck=JSE_NECK,
-		ear1="Loquac. Earring",
+		neck="Voltsurge Torque",
+		ear1="Enchntr. Earring +1",
 		ear2="Malignance Earring",
 		body=INYANGA_BODY,
-		hands="Fanatic Gloves",
+		--hands="Fanatic Gloves",
 		ring1="Kishar Ring",
-		ring2="Lebeche Ring",
-		back="Perimede Cape",
-		waist="Embla Sash",
+		ring2="Prolix Ring",
+		--back="Swith Cape +1",
+		waist="Witful Belt",
 		legs=EMPY_LEGS,
 		feet="Regal Pumps +1"
 	}
@@ -665,10 +671,21 @@ function init_gear_sets()
 	
 	sets.midcast['Elemental Magic'].Resistant = 
 	{
-		main="Bunzi's Rod",sub="Ammurapi Shield",ammo="Ghastly Tathlum +1",
-		head=MBOZE_HEAD,neck="Null Loop",ear1="Friomisi Earring",ear2="Malignance Earring",
-		body=MBOZE_BODY,hands=MBOZE_HANDS,ring1="Freke Ring",ring2="Metamor. Ring +1",
-		back="Null Shawl",waist="Null Belt",legs=MBOZE_LEGS,feet=MBOZE_FEET
+		main="Daybreak",
+		sub="Ammurapi Shield",
+		ammo="Ghastly Tathlum +1",
+		head="C. Palug Crown",
+		neck="Sanctity Necklace",
+		ear1="Regal Earring",
+		--ear2="Crematio Earring",
+		--body="Witching Robe",
+		--hands=gear.chironic_enfeeble_hands,
+		ring1="Metamor. Ring +1",
+		ring2="Freke Ring",
+		back="Toro Cape",
+		--waist="Yamabuki-no-Obi",
+		legs="Chironic Hose",
+		feet=MBOZE_FEET
 	}
 		
 	sets.midcast['Divine Magic'] = 
@@ -692,18 +709,62 @@ function init_gear_sets()
 		
 	sets.midcast.Repose = 
 	{
-		main="Daybreak",sub="Ammurapi Shield",ammo="Pemphredo Tathlum",
-		head=EMPY_HEAD,neck="Null Loop",ear1="Gwati Earring",ear2="Malignance Earring",
-		body=EMPY_BODY,hands=EMPY_HANDS,ring1=StikiniRing_Ring1,ring2="Metamor. Ring +1",
-		back="Null Shawl",waist="Null Belt",legs=EMPY_LEGS,feet=EMPY_FEET
+		main="Daybreak",
+		sub="Ammurapi Shield",
+		ammo="Hydrocera",
+		head=AF_HEAD,
+		--neck="Jokushu Chain",
+		neck="Null Loop",
+		ear1="Regal Earring",
+		ear2="Malignance Earring",
+		body=AF_BODY,
+		hands=RELIC_HANDS,
+		ring1=StikiniRing_Ring1,
+		ring2=StikiniRing_Ring2,
+		back="Null Shawl",
+		waist="Null Belt",
+		legs=AF_LEGS,
+		feet=AF_FEET
 	}
 		
 	sets.midcast.Holy = 
 	{
-		main="Daybreak",sub="Ammurapi Shield",ammo="Pemphredo Tathlum",
-		head="C. Palug Crown",neck="Saevus Pendant +1",ear1="Gwati Earring",ear2="Malignance Earring",
-		body="Shamash Robe",hands=MBOZE_HANDS,ring1="Freke Ring",ring2="Metamor. Ring +1",
-		back="Null Shawl",waist="Sacro Cord",legs=MBOZE_LEGS,feet=MBOZE_FEET
+		main="Daybreak",
+		sub="Ammurapi Shield",
+		ammo="Ghastly Tathlum +1",
+		head=empty,
+		--neck="Jokushu Chain",
+		neck="Null Loop",
+		ear1="Regal Earring",
+		ear2="Malignance Earring",
+		--body="Cohort Cloak +1",
+		hands=MBOZE_HANDS,
+		ring1="Freke Ring",
+		ring2=StikiniRing_Ring2,
+		back="Null Shawl",
+		waist="Luminary Sash",
+		legs=MBOZE_LEGS,
+		feet=MBOZE_FEET
+	}
+
+	sets.midcast.Banish = 
+	{
+		main="Daybreak",
+		sub="Ammurapi Shield",
+		ammo="Ghastly Tathlum +1",
+		head=empty,
+		--neck="Jokushu Chain",
+		neck="Null Loop",
+		ear1="Regal Earring",
+		ear2="Malignance Earring",
+		--body="Cohort Cloak +1",
+		hands=MBOZE_HANDS,
+		ring1="Freke Ring",
+		ring2=StikiniRing_Ring2,
+		back="Null Shawl",
+		waist="Luminary Sash",
+		legs=MBOZE_LEGS,
+		feet=MBOZE_FEET
 	}
 		
 	-- Gear for Magic Burst mode.
@@ -768,16 +829,16 @@ function init_gear_sets()
 
 	sets.midcast['Enfeebling Magic'] = 
 	{
-		main="Daybreak",
+		main="Bunzi's Rod",
 		sub="Ammurapi Shield",
 		ammo="Pemphredo Tathlum",
-		head=EMPY_HEAD,
+		head=AF_HEAD,
 		neck="Null Loop",
-		ear1="Gwati Earring",
-		ear2="Malignance Earring",
+		ear1="Regal Earring",
+		ear2=EMPY_EAR,
 		body=AF_BODY,
 		hands=EMPY_HANDS,
-		ring1="Kishar Ring",
+		ring1=StikiniRing_Ring1,
 		ring2=StikiniRing_Ring2,
 		back="Alaunus's Cape",
 		waist="Obstinate Sash",
