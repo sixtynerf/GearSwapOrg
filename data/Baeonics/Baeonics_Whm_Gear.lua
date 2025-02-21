@@ -928,6 +928,12 @@ function init_gear_sets()
 		back="Twilight Cape",waist="Eschan Stone",legs="Piety Pantaln. +3",feet=EMPY_FEET}
 	
 	sets.buff.Doom = set_combine(sets.buff.Doom, {})
+	sets.IdleWakeUp =
+	{
+		main="Lorg Mor"
+	}
+	
+	sets.buff.Sleep = {}
 
 end
 
