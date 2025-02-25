@@ -15,8 +15,8 @@ function user_job_setup()
 	
 	autows_list = 
 	{
-		['DualWeapons']='Black Halo',
-		['Maxentius']='Black Halo'
+		['DualWeapons']	='Black Halo',
+		['Maxentius']	='Black Halo'
 	}
 
 --Artifact Gear
