@@ -10,8 +10,8 @@ function user_job_setup()
 	state.WeaponskillMode:options('Normal','Fodder')
 	state.PWUnlock = M(true, 'PWUnlock')
 	
-	default_weapons = 'Maxentius'
-	default_dual_weapons = 'DualWeapons'
+	default_weapons 	='Maxentius'
+	default_dual_weapons 	='DualWeapons'
 	
 	autows_list = 
 	{
