@@ -101,8 +101,8 @@ function init_gear_sets()
 --------------------------------------
 
 -- Weapons sets
-	sets.weapons.Maxentius = {main="Maxentius",sub="Genmei Shield"}
-	sets.weapons.DualWeapons = {main="Maxentius",sub="Daybreak"}
+	sets.weapons.Maxentius 		= {main="Maxentius",sub="Genmei Shield"}
+	sets.weapons.DualWeapons 	= {main="Maxentius",sub="Daybreak"}
 
 -- Precast Sets
 	
@@ -118,14 +118,15 @@ function init_gear_sets()
 	-- Fast cast sets for spells
 	sets.precast.FC = 
 	{
-		--82 FC
+		--80 FC
 		main="Hvergelmir",		--50 FC
 		sub="Clerisy Strap +1",		--03 FC	
 		ammo="Impatiens",		--	02 QM	10 SIRD		
-		head=MBOZE_HEAD,		--10 FC			-07 DT		
+		head=MBOZE_HEAD,		--10 FC			07 DT		
 		neck=JSE_NECK,			--10 FC
-		ear1="Loquac. Earring",		--02 FC
-		ear2="Malignance Earring",	--04 FC
+		--ear1="Loquac. Earring",		--02 FC
+		ear1="Malignance Earring",	--04 FC
+		ear2=EMPY_EAR,			--			~05 DT
 		body=EMPY_BODY,
 		hands="Chironic Gloves",	--		20 SIRD
 		ring1="Lebeche Ring",		--	02 QM
@@ -133,19 +134,20 @@ function init_gear_sets()
 		back="Perimede Cape",		--	04 QM	
 		waist="Witful Belt",		--03 FC	03 QM
 		legs="Chironic Hose",
-		feet=BUMBA_FEET			--			-07 DT
+		feet=BUMBA_FEET			--			07 DT
 	}
 		
 	sets.precast.FC.DT = 
 	{
-		--82 FC
+		--80 FC
 		main="Hvergelmir",		--50 FC
 		sub="Clerisy Strap +1",		--03 FC	
 		ammo="Impatiens",		--	02 QM	10 SIRD		
 		head=MBOZE_HEAD,		--10 FC			07 DT		
 		neck=JSE_NECK,			--10 FC
-		ear1="Loquac. Earring",		--02 FC
-		ear2="Malignance Earring",	--04 FC
+		--ear1="Loquac. Earring",		--02 FC
+		ear1="Malignance Earring",	--04 FC
+		ear2=EMPY_EAR,			--			~05 DT
 		body=EMPY_BODY,
 		hands="Chironic Gloves",	--		20 SIRD
 		ring1="Lebeche Ring",		--	02 QM
