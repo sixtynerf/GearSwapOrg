@@ -86,14 +86,13 @@ function self_command(commandArgs)
         -- the list (it will be used to determine which function to call), and
         -- send the remaining words as parameters for the function.
         local handleCmd = (table.remove(commandArgs, 1)):lower()
+		local functionName = "handle_" .. handleCmd
 
-        if selfCommandMaps[handleCmd] then
-            selfCommandMaps[handleCmd](commandArgs)
-        end
+		if _G[functionName] then
+			_G[functionName](commandArgs)
+		end
     end
 end
-
-
 -------------------------------------------------------------------------------------------------------------------
 -- Functions for manipulating state vars.
 -------------------------------------------------------------------------------------------------------------------
@@ -370,7 +369,7 @@ function handle_weapons(cmdParams)
 	local weaponSet
 	if type(cmdParams) == 'string' then
 		weaponSet = cmdParams
-	elseif type(cmdParams) == 'table' then
+	elseif type(cmdParams) == 'table' and #cmdParams > 0 then
 		weaponSet = table.concat(cmdParams, ' ')
 	end
 	
@@ -529,11 +528,141 @@ function handle_buffup(cmdParams)
 	local need_delay = false
 	for i in pairs(buff_spell_lists[buffup]) do
 		if buff_spell_lists[buffup][i].Reapply then
-			windower.send_command('cancel '..buff_spell_lists[buffup][i].Buff..'')
+			send_command('cancel '..buff_spell_lists[buffup][i].Buff..'')
 			need_delay = true
 		end
 	end
 	if need_delay then add_tick_delay(.2) end
+end
+
+--Handle elemental commands.
+function handle_elemental(cmdParams)
+    if not cmdParams[1] then
+        add_to_chat(123,'Error: No elemental command given.')
+        return
+    end
+
+    local command = (table.remove(cmdParams, 1)):lower()
+	local target
+
+	if cmdParams[1] then
+		if cmdParams[1] == '<me>' or cmdParams[1] == 'me' then
+			target = player.id
+		elseif cmdParams[1] == '<t>' or cmdParams[1] == 't' then
+			if player.target.type ~= 'NONE' and player.target.id then
+				target = player.target.id
+			else
+				add_to_chat(123, 'Elemental command could not find a valid target.')
+			end
+		elseif tonumber(cmdParams[1]) then
+			target = cmdParams[1]
+		else
+			target = table.concat(cmdParams, ' ')
+			target = get_closest_mob_id_by_name(target)
+		end
+	end
+	
+	if not target then
+		if player.target.type ~= 'NONE' and player.target.id then
+			target = player.target.id
+		else
+			target = player.id
+		end
+	end
+
+	if handle_job_elemental and handle_job_elemental(command, target) then 
+		return 
+	end
+
+	if command == 'spikes' then
+		windower.chat.input('/ma "'..data.elements.spikes_of[state.ElementalMode.value]..' Spikes" <me>')
+	elseif command == 'enspell' then
+		windower.chat.input('/ma "En'..data.elements.enspell_of[state.ElementalMode.value]..'" <me>')
+	elseif command == 'weather' then
+		if player.sub_job == 'SCH' then
+			local spell_recasts = windower.ffxi.get_spell_recasts()
+			if target == player.id and buffactive[data.elements.storm_of[state.ElementalMode.value]] and not buffactive['Klimaform'] and spell_recasts[287] < spell_latency then
+				windower.chat.input('/ma "Klimaform" <me>')
+			else
+				windower.chat.input('/ma "'..data.elements.storm_of[state.ElementalMode.value]..'" '..target)
+			end
+		elseif player.sub_job == 'RDM' then
+			windower.chat.input('/ma "Phalanx" <me>')
+		end
+	elseif command:endswith('nuke') then
+		local spell_recasts = windower.ffxi.get_spell_recasts()
+		
+		if state.ElementalMode.value == 'Light' then
+			local spells = {'Holy','Banish III','Banish II','Banish'}
+			
+			if command == 'smallnuke' then
+				spells = {'Banish II','Banish'}
+			end
+			
+			for k in ipairs(spells) do
+				local spell_name = spells[k]
+				local spell_id = get_spell_id_by_name(spell_name)
+				
+				if spell_recasts[spell_id] < spell_latency and actual_cost(spell_id) < player.mp then
+					windower.chat.input('/ma "'..spell_name..'" '..target)
+					return
+				end
+			end
+		else
+			tiers = {' III',' II',''}
+
+			for k in ipairs(tiers) do
+				local spell_name = data.elements.nuke_of[state.ElementalMode.value]..tiers[k]
+				local spell_id = get_spell_id_by_name(spell_name)
+
+				if silent_can_use(spell_id) and spell_recasts[spell_id] < spell_latency and actual_cost(spell_id) < player.mp then
+					windower.chat.input('/ma "'..data.elements.nuke_of[state.ElementalMode.value]..''..tiers[k]..'" '..target)
+					return
+				end
+			end
+			add_to_chat(123,'Abort: All '..data.elements.nuke_of[state.ElementalMode.value]..' nukes on cooldown or or not enough MP.')
+		end
+	elseif command == 'ninjutsu' then
+		windower.chat.input('/ma "'..data.elements.ninjutsu_nuke_of[state.ElementalMode.value]..': Ni" '..target)
+
+	elseif command == 'ancientmagic' then
+		windower.chat.input('/ma "'..data.elements.ancient_nuke_of[state.ElementalMode.value]..'" '..target)
+
+	elseif command:startswith('tier') then
+		local spell_recasts = windower.ffxi.get_spell_recasts()
+		local tierlist = {['tier1']='',['tier2']=' II',['tier3']=' III',['tier4']=' IV',['tier5']=' V',['tier6']=' VI'}
+		
+		windower.chat.input('/ma "'..data.elements.nuke_of[state.ElementalMode.value]..tierlist[command]..'" '..target)
+		
+	elseif command == 'ara' then
+		windower.chat.input('/ma "'..data.elements.nukera_of[state.ElementalMode.value]..'ra" '..target)
+
+	elseif command == 'aga' or command == 'smallaga' then
+		local spell_recasts = windower.ffxi.get_spell_recasts()
+		local lower_spell = string.lower(data.elements.nukega_of[state.ElementalMode.value]..'ga II')
+		local spell_id = gearswap.validabils.english['/ma'][lower_spell]
+		if silent_can_use(spell_id) and spell_recasts[spell_id] < spell_latency and actual_cost(spell_id) < player.mp then
+			windower.chat.input('/ma "'..data.elements.nukega_of[state.ElementalMode.value]..'ga II'..'" '..target)
+		else
+			windower.chat.input('/ma "'..data.elements.nukega_of[state.ElementalMode.value]..'ga" '..target)
+		end
+
+	elseif command:startswith('aga') then
+		local tierkey = {['aga3']='ga III',['aga2']='ga II',['aga1']='ga'}
+		windower.chat.input('/ma "'..data.elements.nukega_of[state.ElementalMode.value]..tierkey[command]..'" '..target)
+			
+	elseif command == 'helix' then
+		windower.chat.input('/ma "'..data.elements.helix_of[state.ElementalMode.value]..'helix" '..target)
+	
+	elseif command == 'enfeeble' then
+		windower.chat.input('/ma "'..data.elements.elemental_enfeeble_of[state.ElementalMode.value]..'" '..target)
+	
+	elseif command == 'bardsong' then
+		windower.chat.input('/ma "'..data.elements.threnody_of[state.ElementalMode.value]..' Threnody" '..target)
+		
+    else
+        add_to_chat(123,'Unrecognized elemental command.')
+    end
 end
 
 -- General handling of scholar commands in an Arts-agnostic way.
@@ -620,6 +749,12 @@ end
 function handle_smartws(cmdParams)
 	local target
 	local weaponskill = smartws or autows
+
+	local weaponskill_id = get_weaponskill_id_by_name(weaponskill)
+	if res.weapon_skills[weaponskill_id].targets:contains('Self') then
+		send_command(''..weaponskill..' <me>')
+		return
+	end
 	
 	if cmdParams[1] then
 		if cmdParams[1] == 'ws' then
@@ -628,39 +763,37 @@ function handle_smartws(cmdParams)
 				smartws = table.concat(cmdParams, ' '):ucfirst()
 				add_to_chat(122,'SmartWS set to: '..smartws..'.')
 			else
-				add_to_chat(122,'Invalid command, Syntax: //gs c smartws ws Weaponskill Name')
+				add_to_chat(123,'Invalid command, Syntax: //gs c smartws ws Weaponskill Name')
 			end
 			return
 		--elseif tonumber(cmdParams[1]) then
 		--	target = windower.ffxi.get_mob_by_id(tonumber(cmdParams[1]))
 		else
 			target = table.concat(cmdParams, ' ')
-			target = get_closest_mob_by_name(target) 
+			target = get_closest_mob_by_name(target)
 			
-			if not (target.name and target.hpp > 0) then
-				target = player.target or player
+			if not target then
+				target = player.target
 			end
 		end
 	elseif player.target.type == 'MONSTER' then
 		target = player.target
-	elseif player.target.type == "SELF" or player.target.type == 'NONE' then
-		target = player
 	end
 
-	if target == player then
-		windower.send_command(''..weaponskill..' '..player.name..'')
+	if not (target and target.valid_target) then
+		windower.add_to_chat(123,'SmartWS Could not find a target!')
 	elseif math.sqrt(target.distance) < 4 or (data.weaponskills.ranged:contains(weaponskill) and math.sqrt(target.distance) < 21) then
 		local self = windower.ffxi.get_mob_by_id(player.id)
 		local angle = (math.atan2((target.y - self.y), (target.x - self.x))*180/math.pi)*-1
 		local turn = angle:radian()
-		if math.abs(turn - self.facing) < .3 then
-			windower.send_command(''..weaponskill..' '..target.id..'')
-		else
-			windower.send_command:schedule(.3,''..weaponskill..' '..target.id..'')
-		end
 		windower.ffxi.turn(turn)
+		if math.abs(turn - self.facing) < .3 then
+			send_command(''..weaponskill..' '..target.id..'')
+		else
+			send_command:schedule(.3,''..weaponskill..' '..target.id..'')
+		end
 	else
-		windower.add_to_chat(122,'SmartWS Target out of range!')
+		windower.add_to_chat(123,'SmartWS Target out of range!')
 	end
 end
 
@@ -708,10 +841,10 @@ function handle_killstatue()
 					local self_vector = windower.ffxi.get_mob_by_id(player.id)
 					local angle = (math.atan2((mob.y - self_vector.y), (mob.x - self_vector.x))*180/math.pi)*-1
 					windower.ffxi.turn((angle):radian())
-					windower.send_command:schedule(.3,''..data.weaponskills.statue_ws[player.main_job]..' '..mob.id..'')
+					send_command:schedule(.3,''..data.weaponskills.statue_ws[player.main_job]..' '..mob.id..'')
 					return
 				elseif data.jobs.nuke_jobs:contains(player.main_job) then
-					windower.send_command('gs c elemental nuke '..mob.id..'')
+					send_command('gs c elemental nuke '..mob.id..'')
 					return
 				end
 			end
@@ -893,11 +1026,11 @@ function handle_curecheat(cmdParams)
         curecheat = true
 		equip(sets.HPDown)
 		if player.main_job == 'BLU' then
-			send_command('@wait 1;input /ma "Magic Fruit" <me>')
+			windower.chat.input('/ma "Magic Fruit" <me>')
 		elseif player.main_job == 'WHM' or not silent_can_use(4) then
-			send_command('@wait 1;input /ma "Cure III" <me>')
+			windower.chat.input('/ma "Cure III" <me>')
 		else
-			send_command('@wait 1;input /ma "Cure IV" <me>')
+			windower.chat.input('/ma "Cure IV" <me>')
 		end
 	--If we only have an HighHP set, we assume that this is sufficient.
 	elseif sets.HPCure then
@@ -914,15 +1047,75 @@ function handle_curecheat(cmdParams)
     end
 end
 
+function handle_stna(cmdParams)
+	local removalTarget
+	local targetBuffs
+
+	if cmdParams[1] then
+		if tonumber(cmdParams[1]) then
+			removalTarget = get_party_member_by_id(tonumber(cmdParams[1]))
+		else
+			removalTarget = table.concat(cmdParams, ' ')
+			removalTarget = get_closest_party_member_by_name(removalTarget) 
+		end
+	end
+	
+	if not removalTarget then
+		if player.target.type == "SELF" or player.target.type == 'NONE' then
+			removalTarget = get_party_member_by_id(player.id)
+		elseif player.target.type == 'MONSTER' then
+			send_command('gs c stna <stpt>')
+			return
+		elseif player.target.status == 'Dead' or player.target.status == 'Engaged dead' then
+			windower.chat.input('/ma "Arise" '..removalTarget.id..'')
+			return
+		elseif player.target.in_party then
+			removalTarget = get_party_member_by_id(player.target.id) 
+		end
+	end
+
+	if not removalTarget then
+		add_to_chat(123, 'STNA Target not found.')
+		return
+	elseif removalTarget.mob.status == 2 or removalTarget.mob.status == 3 then --Dead or Engaged Dead
+		windower.chat.input('/ma "Arise" '..removalTarget.id..'')
+		return
+	end
+
+	targetBuffs = removalTarget.buffactive
+
+	if not targetBuffs then
+		add_to_chat(123, 'STNA Target not found.')
+		return
+	end
+
+	for i in ipairs(data.status_map) do
+		if targetBuffs[data.status_map[i].buff] and silent_can_use(data.status_map[i].spell) then
+			windower.chat.input('/ma "'..data.status_map[i].spell..'" '..removalTarget.name)
+			return
+		end
+	end
+	if silent_can_use('Erase') then
+		for key in pairs(targetBuffs) do
+			if type(key) == "string" and (data.erasable_statuses:contains(key) or key:endswith(' down')) then
+				windower.chat.input('/ma "Erase" '..removalTarget.name)
+				return
+			end
+		end
+	end
+	add_to_chat(123,'No statuses found that are removable by STNA.')
+end
+
 function handle_smartcure(cmdParams)
+	local cureTarget
 	if cmdParams[1] then
 		if tonumber(cmdParams[1]) then
 			cureTarget = windower.ffxi.get_mob_by_id(tonumber(cmdParams[1]))
 		else
 			cureTarget = table.concat(cmdParams, ' ')
 			cureTarget = get_closest_mob_by_name(cureTarget) 
-			if not cureTarget.name then
-				if player.target then 
+			if not (cureTarget and cureTarget.name) then
+				if player.target.type ~= 'NONE' then 
 					cureTarget = player.target
 				else
 					cureTarget = player
@@ -932,7 +1125,7 @@ function handle_smartcure(cmdParams)
 	elseif player.target.type == "SELF" or player.target.type == 'NONE' then
 		cureTarget = player
 	elseif player.target.type == 'MONSTER' then
-		windower.send_command('gs c smartcure <stal>')
+		send_command('gs c smartcure <stal>')
 		return
 	else
 		cureTarget = player.target
@@ -1156,7 +1349,6 @@ end
 
 -- A function for testing lua code.  Called via "gs c test".
 function handle_test(cmdParams)
-	table.print(rolled_eleven)
     if user_test then
         user_test(cmdParams)
     elseif job_test then
@@ -1167,41 +1359,3 @@ end
 -------------------------------------------------------------------------------------------------------------------
 -- The below table maps text commands to the above handler functions.
 -------------------------------------------------------------------------------------------------------------------
-
-selfCommandMaps = {
-    ['toggle']   		= handle_toggle,
-    ['cycle']    		= handle_cycle,
-    ['cycleback']		= handle_cycleback,
-    ['set']      		= handle_set,
-    ['reset']    		= handle_reset,
-    ['unset']    		= handle_unset,
-    ['update']   		= handle_update,
-    ['showtp']   		= handle_showtp,
-    ['naked']    		= handle_naked,
-	['weapons']  		= handle_weapons,
-	['showset']  		= handle_showset,
-    ['help']     		= handle_help,
-    ['forceequip']  	= handle_forceequip,
-	['useitem']			= handle_useitem,
-    ['quietenable'] 	= handle_quietenable,
-	['quietdisable']	= handle_quietdisable,
-	['autonuke'] 		= handle_autonuke,
-	['autows'] 			= handle_autows,
-	['autofood']		= handle_autofood,
-	['facemob']			= handle_facemob,
-    ['test']        	= handle_test,
-	['displayrune'] 	= handle_displayrune,
-	['displayshot'] 	= handle_displayshot,
-	['displayelement'] 	= handle_displayelement,
-	['curecheat'] 		= handle_curecheat,
-	['smartcure']		= handle_smartcure,
-	['mount'] 			= handle_mount,
-	['shadows']			= handle_shadows,
-	['buffup']			= handle_buffup,
-	['delayedcast']		= handle_delayedcast,
-	['runeelement']		= handle_runeelement,
-	['killstatue']		= handle_killstatue,
-	['smartws']			= handle_smartws,
-	['scholar']			= handle_scholar,
-	['macropage']		= handle_macropage,
-	}
