@@ -930,26 +930,59 @@ function init_gear_sets()
 	
 	sets.idle.PDT = 
 	{
-		main="Daybreak",sub="Genmei Shield",ammo="Staunch Tathlum +1",
-		head=BUMBA_HEAD,neck="Loricate Torque +1",ear1="Sanare Earring",ear2="Ethereal Earring",
-		body=BUMBA_BODY,hands=BUMBA_HANDS,ring1="Defending Ring",ring2="Shadow Ring",
-		back="Shadow Mantle",waist="Null Belt",legs=BUMBA_LEGS,feet=BUMBA_FEET
+		main="Daybreak",
+		sub="Genmei Shield",
+		ammo="Staunch Tathlum +1",
+		head=BUMBA_HEAD,
+		neck="Loricate Torque +1",
+		--ear1="Sanare Earring",
+		--ear2="Ethereal Earring",
+		body=BUMBA_BODY,
+		hands=BUMBA_HANDS,
+		ring1="Defending Ring",
+		ring2="Shadow Ring",
+		back="Shadow Mantle",
+		waist="Null Belt",
+		legs=BUMBA_LEGS,
+		feet=BUMBA_FEET
 	}
 		
 	sets.idle.MDT = 
 	{
-		main="Daybreak",sub="Genmei Shield",ammo="Staunch Tathlum +1",
-		head=MBOZE_HEAD,neck="Warder's Charm +1",ear1="Sanare Earring",ear2="Ethereal Earring",
-		body=MBOZE_BODY,hands=MBOZE_HANDS,ring1="Defending Ring",ring2="Shadow Ring",
-		back="Null Shawl",waist="Null Belt",legs=EMPY_LEGS,feet=EMPY_FEET
+		main="Daybreak",
+		sub="Genmei Shield",
+		ammo="Staunch Tathlum +1",
+		head=MBOZE_HEAD,
+		neck="Warder's Charm +1",
+		--ear1="Sanare Earring",
+		--ear2="Ethereal Earring",
+		body=MBOZE_BODY,
+		hands=MBOZE_HANDS,
+		ring1="Defending Ring",
+		ring2="Shadow Ring",
+		back="Null Shawl",
+		waist="Null Belt",
+		legs=EMPY_LEGS,
+		feet=EMPY_FEET
 	}
 		
 	sets.idle.MEVA = 
 	{
-		main="Daybreak",sub="Genmei Shield",ammo="Staunch Tathlum +1",
-		head=MBOZE_HEAD,neck="Warder's Charm +1",ear1="Sanare Earring",ear2="Ethereal Earring",
-		body=MBOZE_BODY,hands=MBOZE_HANDS,ring1="Defending Ring",ring2="Shadow Ring",
-		back="Null Shawl",waist="Null Belt",legs=EMPY_LEGS,feet=EMPY_FEET
+		main="Daybreak",
+		sub="Genmei Shield",
+		ammo="Staunch Tathlum +1",
+		head=MBOZE_HEAD,
+		neck="Warder's Charm +1",
+		--ear1="Sanare Earring",
+		--ear2="Ethereal Earring",
+		body=MBOZE_BODY
+		hands=MBOZE_HANDS,
+		ring1="Defending Ring",
+		ring2="Shadow Ring",
+		back="Null Shawl",
+		waist="Null Belt",
+		legs=EMPY_LEGS,
+		feet=EMPY_FEET
 	}
 		
 	-- Situational Idle sets
@@ -963,26 +996,59 @@ function init_gear_sets()
 
 	sets.defense.PDT = 
 	{
-		main="Daybreak",sub="Genmei Shield",ammo="Staunch Tathlum +1",
-		head=BUMBA_HEAD,neck="Loricate Torque +1",ear1="Sanare Earring",ear2="Ethereal Earring",
-		body=BUMBA_BODY,hands=BUMBA_HANDS,ring1="Defending Ring",ring2="Shadow Ring",
-		back="Shadow Mantle",waist="Null Belt",legs=BUMBA_LEGS,feet=BUMBA_FEET
+		main="Daybreak",
+		sub="Genmei Shield",
+		ammo="Staunch Tathlum +1",
+		head=BUMBA_HEAD,
+		neck="Loricate Torque +1",
+		--ear1="Sanare Earring",
+		--ear2="Ethereal Earring",
+		body=BUMBA_BODY,
+		hands=BUMBA_HANDS,
+		ring1="Defending Ring",
+		ring2="Shadow Ring",
+		back="Shadow Mantle",
+		waist="Null Belt",
+		legs=BUMBA_LEGS,
+		feet=BUMBA_FEET
 	}
 	
 	sets.defense.MDT = 
 	{
-		main="Daybreak",sub="Genmei Shield",ammo="Staunch Tathlum +1",
-		head=MBOZE_HEAD,neck="Warder's Charm +1",ear1="Sanare Earring",ear2="Ethereal Earring",
-		body=MBOZE_BODY,hands=MBOZE_HANDS,ring1="Defending Ring",ring2="Shadow Ring",
-		back="Null Shawl",waist="Null Belt",legs=EMPY_LEGS,feet=EMPY_FEET
+		main="Daybreak",
+		sub="Genmei Shield",
+		ammo="Staunch Tathlum +1",
+		head=MBOZE_HEAD,
+		neck="Warder's Charm +1",
+		--ear1="Sanare Earring",
+		--ear2="Ethereal Earring",
+		body=MBOZE_BODY,
+		hands=MBOZE_HANDS,
+		ring1="Defending Ring",
+		ring2="Shadow Ring",
+		back="Null Shawl",
+		waist="Null Belt",
+		legs=EMPY_LEGS,
+		feet=EMPY_FEET
 	}
 	
 	sets.defense.MEVA = 
 	{
-		main="Daybreak",sub="Genmei Shield",ammo="Staunch Tathlum +1",
-		head=MBOZE_HEAD,neck="Warder's Charm +1",ear1="Sanare Earring",ear2="Ethereal Earring",
-		body=MBOZE_BODY,hands=MBOZE_HANDS,ring1="Defending Ring",ring2="Shadow Ring",
-		back="Null Shawl",waist="Null Belt",legs=EMPY_LEGS,feet=EMPY_FEET
+		main="Daybreak",
+		sub="Genmei Shield",
+		ammo="Staunch Tathlum +1",
+		head=MBOZE_HEAD,
+		neck="Warder's Charm +1",
+		--ear1="Sanare Earring",
+		--ear2="Ethereal Earring",
+		body=MBOZE_BODY,
+		hands=MBOZE_HANDS,
+		ring1="Defending Ring",
+		ring2="Shadow Ring",
+		back="Null Shawl",
+		waist="Null Belt",
+		legs=EMPY_LEGS,
+		feet=EMPY_FEET
 	}
 		
 -- Engaged sets
