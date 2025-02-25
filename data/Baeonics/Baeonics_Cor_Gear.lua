@@ -10,7 +10,25 @@ function user_job_setup()
 	state.Weapons:options('Default','Ranged','Savage','Evisceration','LeadenSalute','Wildfire','DualWeapons','DualSavageWeapons','DualEvisceration','DualLeadenRanged','DualWFRanged','DualLeadenMelee','DualAeolian','DualLeadenMeleeAcc','DualRanged','DualProcWeapons','None')
 	state.CompensatorMode:options('Always','300','1000','Never')
 	state.PWUnlock = M(true, 'PWUnlock')
-	
+
+	autows_list = 
+	{
+		['Default']='Savage Blade',
+		['Evisceration']='Evisceration',
+		['Wildfire']='Wildfire',
+		['LeadenSalute']='Leaden Salute',
+		['Savage']='Savage Blade',
+		['Ranged']='Last Stand',
+		['DualWeapons']='Savage Blade',
+		['DualSavageWeapons']='Savage Blade',
+		['DualEvisceration']='Evisceration',
+		['DualLeadenRanged']='Leaden Salute',
+		['DualWFRanged']='Wildfire',
+		['DualLeadenMelee']='Leaden Salute',
+		['DualAeolian']='Aeolian Edge',
+		['DualRanged']='Last Stand'
+	}
+
 	gear.RAbullet = "Chrono Bullet"
 	gear.WSbullet = "Chrono Bullet"
 	gear.MAbullet = "Living Bullet" --For MAB WS, do not put single-use bullets here.
@@ -983,20 +1001,3 @@ function select_default_macro_book()
     end
 end
 
-autows_list = 
-{
-	['Default']='Savage Blade',
-	['Evisceration']='Evisceration',
-	['Wildfire']='Wildfire',
-	['LeadenSalute']='Leaden Salute',
-	['Savage']='Savage Blade',
-	['Ranged']='Last Stand',
-	['DualWeapons']='Savage Blade',
-	['DualSavageWeapons']='Savage Blade',
-	['DualEvisceration']='Evisceration',
-	['DualLeadenRanged']='Leaden Salute',
-	['DualWFRanged']='Wildfire',
-	['DualLeadenMelee']='Leaden Salute',
-	['DualAeolian']='Aeolian Edge',
-	['DualRanged']='Last Stand'
-}
