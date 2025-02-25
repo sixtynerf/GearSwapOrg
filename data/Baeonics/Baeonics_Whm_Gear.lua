@@ -444,10 +444,21 @@ function init_gear_sets()
 	--Melee Curesets are used whenever your Weapons state is set to anything but None.
 	sets.midcast.MeleeCure = 
 	{
-		main="Queller Rod",sub="Ammurapi Shield",ammo="Pemphredo Tathlum",
-		head=EMPY_HEAD,neck=JSE_NECK,ear1="Mendi. Earring",ear2="Glorious Earring",
-		body=gear.chironic_nuke_body,hands="Bokwus Gloves",ring1="Sirona's Ring",ring2="Lebeche Ring",
-		back="Mending Cape",waist="Luminary Sash",legs=gear.chironic_macc_legs,feet=RELIC_FEET
+		main="Queller Rod",
+		sub="Ammurapi Shield",
+		ammo="Pemphredo Tathlum",
+		head=EMPY_HEAD,
+		neck=JSE_NECK,
+		ear1="Mendi. Earring",
+		ear2="Glorious Earring",
+		body=gear.chironic_nuke_body,
+		hands="Bokwus Gloves",
+		ring1="Sirona's Ring",
+		ring2="Lebeche Ring",
+		back="Mending Cape",
+		waist="Luminary Sash",
+		legs=gear.chironic_macc_legs,
+		feet=RELIC_FEET
 	}
 		
 	sets.midcast.MeleeCureSolace = set_combine(sets.midcast.MeleeCure, {body=EMPY_BODY,back="Alaunus's Cape",})
@@ -917,20 +928,29 @@ function init_gear_sets()
 						--40 DT	05 PDT	13 REGEN	12 REFRESH	439 EVA	677 MEVA	33 MDB	03 MDT
 	}
 	
-	sets.idle.PDT = {main="Daybreak",sub="Genmei Shield",ammo="Staunch Tathlum +1",
+	sets.idle.PDT = 
+	{
+		main="Daybreak",sub="Genmei Shield",ammo="Staunch Tathlum +1",
 		head=BUMBA_HEAD,neck="Loricate Torque +1",ear1="Sanare Earring",ear2="Ethereal Earring",
 		body=BUMBA_BODY,hands=BUMBA_HANDS,ring1="Defending Ring",ring2="Shadow Ring",
-		back="Shadow Mantle",waist="Null Belt",legs=BUMBA_LEGS,feet=BUMBA_FEET}
+		back="Shadow Mantle",waist="Null Belt",legs=BUMBA_LEGS,feet=BUMBA_FEET
+	}
 		
-	sets.idle.MDT = {main="Daybreak",sub="Genmei Shield",ammo="Staunch Tathlum +1",
+	sets.idle.MDT = 
+	{
+		main="Daybreak",sub="Genmei Shield",ammo="Staunch Tathlum +1",
 		head=MBOZE_HEAD,neck="Warder's Charm +1",ear1="Sanare Earring",ear2="Ethereal Earring",
 		body=MBOZE_BODY,hands=MBOZE_HANDS,ring1="Defending Ring",ring2="Shadow Ring",
-		back="Null Shawl",waist="Null Belt",legs=EMPY_LEGS,feet=EMPY_FEET}
+		back="Null Shawl",waist="Null Belt",legs=EMPY_LEGS,feet=EMPY_FEET
+	}
 		
-	sets.idle.MEVA = {main="Daybreak",sub="Genmei Shield",ammo="Staunch Tathlum +1",
+	sets.idle.MEVA = 
+	{
+		main="Daybreak",sub="Genmei Shield",ammo="Staunch Tathlum +1",
 		head=MBOZE_HEAD,neck="Warder's Charm +1",ear1="Sanare Earring",ear2="Ethereal Earring",
 		body=MBOZE_BODY,hands=MBOZE_HANDS,ring1="Defending Ring",ring2="Shadow Ring",
-		back="Null Shawl",waist="Null Belt",legs=EMPY_LEGS,feet=EMPY_FEET}
+		back="Null Shawl",waist="Null Belt",legs=EMPY_LEGS,feet=EMPY_FEET
+	}
 		
 	-- Situational Idle sets
 	sets.Kiting = {ring2="Shneddick Ring"}
@@ -941,20 +961,29 @@ function init_gear_sets()
 
     -- Defense sets
 
-	sets.defense.PDT = {main="Daybreak",sub="Genmei Shield",ammo="Staunch Tathlum +1",
+	sets.defense.PDT = 
+	{
+		main="Daybreak",sub="Genmei Shield",ammo="Staunch Tathlum +1",
 		head=BUMBA_HEAD,neck="Loricate Torque +1",ear1="Sanare Earring",ear2="Ethereal Earring",
 		body=BUMBA_BODY,hands=BUMBA_HANDS,ring1="Defending Ring",ring2="Shadow Ring",
-		back="Shadow Mantle",waist="Null Belt",legs=BUMBA_LEGS,feet=BUMBA_FEET}
+		back="Shadow Mantle",waist="Null Belt",legs=BUMBA_LEGS,feet=BUMBA_FEET
+	}
 	
-	sets.defense.MDT = {main="Daybreak",sub="Genmei Shield",ammo="Staunch Tathlum +1",
+	sets.defense.MDT = 
+	{
+		main="Daybreak",sub="Genmei Shield",ammo="Staunch Tathlum +1",
 		head=MBOZE_HEAD,neck="Warder's Charm +1",ear1="Sanare Earring",ear2="Ethereal Earring",
 		body=MBOZE_BODY,hands=MBOZE_HANDS,ring1="Defending Ring",ring2="Shadow Ring",
-		back="Null Shawl",waist="Null Belt",legs=EMPY_LEGS,feet=EMPY_FEET}
+		back="Null Shawl",waist="Null Belt",legs=EMPY_LEGS,feet=EMPY_FEET
+	}
 	
-	sets.defense.MEVA = {main="Daybreak",sub="Genmei Shield",ammo="Staunch Tathlum +1",
+	sets.defense.MEVA = 
+	{
+		main="Daybreak",sub="Genmei Shield",ammo="Staunch Tathlum +1",
 		head=MBOZE_HEAD,neck="Warder's Charm +1",ear1="Sanare Earring",ear2="Ethereal Earring",
 		body=MBOZE_BODY,hands=MBOZE_HANDS,ring1="Defending Ring",ring2="Shadow Ring",
-		back="Null Shawl",waist="Null Belt",legs=EMPY_LEGS,feet=EMPY_FEET}
+		back="Null Shawl",waist="Null Belt",legs=EMPY_LEGS,feet=EMPY_FEET
+	}
 		
 -- Engaged sets
 
@@ -964,40 +993,58 @@ function init_gear_sets()
 -- EG: sets.engaged.Dagger.Accuracy.Evasion
 
 -- Basic set for if no TP weapon is defined.
-	sets.engaged = {main="Maxentius",sub="Genmei Shield",ammo="Staunch Tathlum +1",
+	sets.engaged = 
+	{
+		main="Maxentius",sub="Genmei Shield",ammo="Staunch Tathlum +1",
 		head=BUMBA_HEAD,neck="Null Loop",ear1="Brutal Earring",ear2="Dedition Earring",
 		body=BUMBA_BODY,hands=BUMBA_HANDS,ring1="Chirich Ring +1",ring2="Chirich Ring +1",
-		back="Null Shawl",waist="Null Belt",legs=BUMBA_LEGS,feet=BUMBA_FEET}
+		back="Null Shawl",waist="Null Belt",legs=BUMBA_LEGS,feet=BUMBA_FEET
+	}
 		
-	sets.engaged.Acc = {main="Maxentius",sub="Genmei Shield",ammo="Staunch Tathlum +1",
+	sets.engaged.Acc = 
+	{
+		main="Maxentius",sub="Genmei Shield",ammo="Staunch Tathlum +1",
 		head=BUMBA_HEAD,neck="Null Loop",ear1="Crep. Earring",ear2="Telos Earring",
 		body=BUMBA_BODY,hands=BUMBA_HANDS,ring1="Chirich Ring +1",ring2="Chirich Ring +1",
-		back="Null Shawl",waist="Null Belt",legs=BUMBA_LEGS,feet=BUMBA_FEET}
+		back="Null Shawl",waist="Null Belt",legs=BUMBA_LEGS,feet=BUMBA_FEET
+	}
 	
-	sets.engaged.DW = {main="Maxentius",sub="Genmei Shield",ammo="Staunch Tathlum +1",
+	sets.engaged.DW = 
+	{
+		main="Maxentius",sub="Genmei Shield",ammo="Staunch Tathlum +1",
 		head=BUMBA_HEAD,neck="Null Loop",ear1="Suppanomimi",ear2="Dedition Earring",
 		body=BUMBA_BODY,hands=BUMBA_HANDS,ring1="Chirich Ring +1",ring2="Chirich Ring +1",
-		back="Null Shawl",waist="Null Belt",legs=BUMBA_LEGS,feet=BUMBA_FEET}
+		back="Null Shawl",waist="Null Belt",legs=BUMBA_LEGS,feet=BUMBA_FEET
+	}
 	
-	sets.engaged.DW.Acc = {main="Maxentius",sub="Genmei Shield",ammo="Staunch Tathlum +1",
+	sets.engaged.DW.Acc = 
+	{
+		main="Maxentius",sub="Genmei Shield",ammo="Staunch Tathlum +1",
 		head=BUMBA_HEAD,neck="Null Loop",ear1="Suppanomimi",ear2="Telos Earring",
 		body=BUMBA_BODY,hands=BUMBA_HANDS,ring1="Chirich Ring +1",ring2="Chirich Ring +1",
-		back="Null Shawl",waist="Null Belt",legs=BUMBA_LEGS,feet=BUMBA_FEET}
+		back="Null Shawl",waist="Null Belt",legs=BUMBA_LEGS,feet=BUMBA_FEET
+	}
 
 -- Buff sets: Gear that needs to be worn to actively enhance a current player buff.
 	sets.buff['Divine Caress'] = {hands=EMPY_HANDS,back="Mending Cape"}
 	sets.buff.Sublimation = {waist="Embla Sash"}
 	sets.buff.DTSublimation = {waist="Embla Sash"}
 	
-	sets.HPDown = {main="Queller Rod",sub="Genmei Shield",ammo="Homiliary",
+	sets.HPDown = 
+	{
+		main="Queller Rod",sub="Genmei Shield",ammo="Homiliary",
 		head="Pixie Hairpin +1",neck="Loricate Torque +1",ear1="Hirudinea Earring",ear2="Ethereal Earring",
 		body="Councilor's Garb",hands="Hieros Mittens",ring1="Defending Ring",ring2="Persis Ring",
-		back="Null Shawl",waist="Null Belt",legs="",feet=""}
+		back="Null Shawl",waist="Null Belt"
+	}
 	
-	sets.HPCure = {main="Queller Rod",sub="Ammurapi Shield",ammo="Pemphredo Tathlum",
+	sets.HPCure = 
+		{
+		main="Queller Rod",sub="Ammurapi Shield",ammo="Pemphredo Tathlum",
 		head=EMPY_HEAD,neck="Nodens Gorget",ear1="Etiolation Earring",ear2="Odnowa Earring +1",
 		body=EMPY_BODY,hands="Bokwus Gloves",ring1="Sirona's Ring",ring2="Lebeche Ring",
-		back="Twilight Cape",waist="Eschan Stone",legs="Piety Pantaln. +3",feet=EMPY_FEET}
+		back="Twilight Cape",waist="Eschan Stone",legs="Piety Pantaln. +3",feet=EMPY_FEET
+	}
 	
 	sets.buff.Doom = set_combine(sets.buff.Doom, {})
 	sets.IdleWakeUp =
