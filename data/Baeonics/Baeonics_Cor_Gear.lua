@@ -11,6 +11,8 @@ function user_job_setup()
 	state.CompensatorMode:options('Always','300','1000','Never')
 	state.PWUnlock = M(true, 'PWUnlock')
 
+	autowstp = 1250
+	
 	autows_list = 
 	{
 		['Default']='Savage Blade',
