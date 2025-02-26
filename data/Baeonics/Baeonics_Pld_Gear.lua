@@ -75,10 +75,10 @@ function user_job_setup()
 	AMBUSTP_BACK 		= {name="Rudianos's Mantle", augments={'HP+60, Acc/Att+20, Acc+10, STP+10, Resist All+10%',}}
 	AMBUWSD_BACK 		= {name="Rudianos's Mantle", augments={'HP+60, Acc/Att+20, STR+10, WSD+10%, PDT-10%',}}
 	AMBUSIRD_BACK 		= {name="Rudianos's Mantle", augments={'HP+60, Acc/Att+20, STR+10, WSD+10%, PDT-10%',}}
-	ADL_BACK		= {name="Weard Mantle"}
+	ADL_BACK			= {name="Weard Mantle"}
 	
 --NECKS
-	JSE_NECK 		= {name="Kgt. Beads +2"}
+	JSE_NECK 			= {name="Kgt. Beads +2"}
 
 ----ESCHA and REISENJIMA
 	
