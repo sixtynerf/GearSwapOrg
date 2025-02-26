@@ -47,25 +47,25 @@ function user_job_setup()
 	AMBUWSDSTR_BACK = {name="Camulus's Mantle",augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%',}}
 		
 --Artifact Gear
-	AF_HEAD = {name="Laksa. Tricorne +2"}
-	AF_BODY = {name="Laksa. Frac +3"}
-	AF_HANDS = {name="Laksa. Gants +2"}	
-	AF_LEGS = {name="Laksa. Trews +2"}
-	AF_FEET = {name="Laksa. Bottes +2"}
+	AF_HEAD = {name="Laksa. Tricorne +2"}		--probably	
+	AF_BODY = {name="Laksa. Frac +3"}			--must
+	AF_HANDS = {name="Laksa. Gants +2"}			--no	
+	AF_LEGS = {name="Laksa. Trews +2"}			--yes
+	AF_FEET = {name="Laksa. Bottes +2"}			--probably
 
 --Relic Gear
-	RELIC_HEAD = {name="Lanun Tricorne +1"}
-	RELIC_BODY = {name="Lanun Frac +3"}
-	RELIC_HANDS = {name="Lanun Gants +1"}
-	RELIC_LEGS = {name="Lanun Trews +1"}
-	RELIC_FEET = {name="Lanun Bottes +3"}
+	RELIC_HEAD = {name="Lanun Tricorne +1"}		--maybe
+	RELIC_BODY = {name="Lanun Frac +3"}			--must
+	RELIC_HANDS = {name="Lanun Gants +1"}		--probably
+	RELIC_LEGS = {name="Lanun Trews +1"}		--probably not
+	RELIC_FEET = {name="Lanun Bottes +3"}		--must
 
 --Empyrean Gear
-	EMPY_HEAD = {name="Chass. Tricorne +3"}
-	EMPY_BODY = {name="Chasseur's Frac +3"}
-	EMPY_HANDS = {name="Chasseur's Gants +3"}
-	EMPY_LEGS = {name="Chas. Culottes +3"}
-	EMPY_FEET = {name="Chass. Bottes +3"}
+	EMPY_HEAD = {name="Chass. Tricorne +3"}		--yes
+	EMPY_BODY = {name="Chasseur's Frac +3"}		--yes
+	EMPY_HANDS = {name="Chasseur's Gants +3"}	--must	
+	EMPY_LEGS = {name="Chas. Culottes +3"}		--yes
+	EMPY_FEET = {name="Chass. Bottes +3"}		--yes
 
 --Empy Ear
 	EMPY_EAR = {name="Chas. Earring +1"}
@@ -125,15 +125,15 @@ function init_gear_sets()
 	{
 		main="Rostam",
 		range="Compensator",
-	        head=RELIC_HEAD,
+		head=RELIC_HEAD,
 		neck="Regal Necklace",
 		ear1="Etiolation Earring",
 		ear2="Sanare Earring",
-	        body=RELIC_BODY,
+		body=RELIC_BODY,
 		hands=EMPY_HANDS,
 		ring1="Defending Ring",
 		ring2="Dark Ring",
-	        back=AMBUTP_BACK,
+		back=AMBUTP_BACK,
 		waist="Flume Belt +1",
 		--legs="Desultor Tassets",		--acquire this from Shantotto Mission 15
 		feet="Malignance Boots"
