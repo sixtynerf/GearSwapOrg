@@ -39,9 +39,9 @@ function user_job_setup()
 
 --Cursed Gears
 	--pathC
-	SOUVERANHEAD_PATHC	= {name="Souv. Schaller +1"}
+	SOUVERANHEAD_PATHC	= {name="Souv. Schaller +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}}
 	SOUVERANBODY_PATHC	= {name="Souv. Cuirass +1"}
-	SOUVERANHANDS_PATHC	= {name="Souv. Handsch. +1"}
+	SOUVERANHANDS_PATHC	= {name="Souv. Handsch. +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}}
 	SOUVERANLEGS_PATHC	= {name="Souv. Diechlings +1"}
 	SOUVERANFEET_PATHC	= {name="Souveran Schuhs +1"}
 	--pathD
