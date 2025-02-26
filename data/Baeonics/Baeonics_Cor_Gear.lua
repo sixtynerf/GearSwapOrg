@@ -307,7 +307,7 @@ function init_gear_sets()
     -- Default set for any weaponskill that isn't any more specifically defined
 	sets.precast.WS = 
 	{
-		head=MEGHANADA_HEAD",
+		head=MEGHANADA_HEAD,
 		neck="Fotia Gorget",
 		ear1="Moonshade Earring",
 		ear2="Telos Earring",
@@ -452,7 +452,7 @@ function init_gear_sets()
 	sets.precast.WS['Last Stand'].Acc = 
 	{
 		ammo=gear.WSbullet,
-		head=RELIC_HEAD",
+		head=RELIC_HEAD,
 		neck="Iskur Gorget",
 		ear1="Moonshade Earring",
 		ear2="Telos Earring",
@@ -606,7 +606,7 @@ function init_gear_sets()
 	sets.precast.WS['Burning Blade'] = 
 	{
 		ammo=gear.RAbullet,
-		head=MEGHANADA_HEAD",
+		head=MEGHANADA_HEAD,
 		neck="Loricate Torque +1",
 		ear1="Genmei Earring",
 		ear2="Sanare Earring",
@@ -614,7 +614,7 @@ function init_gear_sets()
 		hands="Malignance Gloves",
 		ring1="Defending Ring",
 		ring2="Dark Ring",
-		back="Moonlight Cape"
+		back="Moonlight Cape",
 		waist="Flume Belt +1",
 		legs=MEGHANADA_LEGS,
 		feet=MEGHANADA_FEET
@@ -722,7 +722,7 @@ function init_gear_sets()
 		neck="Loricate Torque +1",
 		ear1="Genmei Earring",
 		ear2="Sanare Earring",
-		body=BUMBA_BODY",
+		body=BUMBA_BODY,
 		hands=BUMBA_HANDS,
 		ring1="Defending Ring",
 		ring2="Shadow Ring",
@@ -739,7 +739,7 @@ function init_gear_sets()
 		neck="Loricate Torque +1",
 		ear1="Etiolation Earring",
 		ear2="Sanare Earring",
-		body=BUMBA_BODY",
+		body=BUMBA_BODY,
 		hands=BUMBA_HANDS,
 		ring1="Defending Ring",
 		ring2="Dark Ring",
@@ -773,7 +773,7 @@ function init_gear_sets()
 		neck="Loricate Torque +1",
 		ear1="Genmei Earring",
 		ear2="Tuisto Earring",
-		body=BUMBA_BODY",
+		body=BUMBA_BODY,
 		hands=BUMBA_HANDS,
 		ring1="Defending Ring",
 		ring2="Warden's Ring",
@@ -790,7 +790,7 @@ function init_gear_sets()
 		neck="Warder's Charm +1",
 		ear1="Etiolation Earring",
 		ear2="Sanare Earring",
-		body=BUMBA_BODY",
+		body=BUMBA_BODY,
 		hands=BUMBA_HANDS,
 		ring1="Defending Ring",
 		ring2="Shadow Ring",
@@ -807,7 +807,7 @@ function init_gear_sets()
 		neck="Warder's Charm +1",
 		ear1="Etiolation Earring",
 		ear2="Sanare Earring",
-		body=BUMBA_BODY",
+		body=BUMBA_BODY,
 		hands=BUMBA_HANDS,
 		ring1="Defending Ring",
 		ring2="Shadow Ring",
