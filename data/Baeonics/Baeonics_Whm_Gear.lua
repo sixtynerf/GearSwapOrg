@@ -48,11 +48,11 @@ function user_job_setup()
 
 --Adoulin Gears
 
-	TELCHINE_ENH_HEAD = {name="Telchine Cap", augments={'"Cure" potency +8%','Enh. Mag. eff. dur. +8',}}
-	TELCHINE_ENH_BODY = {name="Telchine Chas.", augments={'"Cure" potency +7%','Enh. Mag. eff. dur. +10',}}
-	TELCHINE_ENH_HANDS = {name="Telchine Gloves", augments={'"Cure" potency +8%','Enh. Mag. eff. dur. +10',}}
-	TELCHINE_ENH_LEGS = {name="Telchine Braconi", augments={'"Cure" potency +7%','Enh. Mag. eff. dur. +9',}}
-	TELCHINE_ENH_FEET = {name="Telchine Pigaches", augments={'"Cure" potency +7%','Enh. Mag. eff. dur. +9',}}
+	TELCHINE_ENH_HEAD 	= {name="Telchine Cap", augments={'"Cure" potency +8%','Enh. Mag. eff. dur. +8',}}
+	TELCHINE_ENH_BODY 	= {name="Telchine Chas.", augments={'"Cure" potency +7%','Enh. Mag. eff. dur. +10',}}
+	TELCHINE_ENH_HANDS 	= {name="Telchine Gloves", augments={'"Cure" potency +8%','Enh. Mag. eff. dur. +10',}}
+	TELCHINE_ENH_LEGS 	= {name="Telchine Braconi", augments={'"Cure" potency +7%','Enh. Mag. eff. dur. +9',}}
+	TELCHINE_ENH_FEET 	= {name="Telchine Pigaches", augments={'"Cure" potency +7%','Enh. Mag. eff. dur. +9',}}
 	
 	--TelchineHead_EMD_CP	= { name="Telchine Cap", augments={'"Cure" potency +8%','Enh. Mag. eff. dur. +8',}}
 	--TelchineBody_EMD_CP	= { name="Telchine Chas.", augments={'"Cure" potency +7%','Enh. Mag. eff. dur. +10',}}
@@ -67,6 +67,9 @@ function user_job_setup()
 --Oseem
 	GADA_FC = {name="Gada", augments={'"Fast Cast"+5','Potency of "Cure" effect received+2%','INT+9 MND+9 CHR+9',}}
 	GADA_ENHANCE = {name="Gada"}
+
+--Adoulin
+	FANATIC_GLOVE_FC	= {name="Fanatic Gloves", augments={'MP+50','Healing magic skill +10','"Conserve MP"+7','"Fast Cast"+7',}}
 
 --Rings
 	StikiniRing_Ring1	= {name = "Gurebu's Ring"}
@@ -233,21 +236,21 @@ function init_gear_sets()
 	-- Midcast Sets
 	sets.midcast.FastRecast = 
 	{
-		main="Hvergelmir",
-		sub="Clerisy Strap +1",
-		ammo="Pemphredo Tathlum",
-		head=EMPY_HEAD,
-		neck=JSE_NECK,
-		ear1="Loquac. Earring",
-		ear2="Malignance Earring",
-		body=INYANGA_BODY,
-		hands="Fanatic Gloves",
+		main="Hvergelmir",		--50FC
+		sub="Clerisy Strap +1",		--03FC
+		ammo="Pemphredo Tathlum",	--	04MP
+		head=EMPY_HEAD,			--13FC		06HS
+		neck=JSE_NECK,			--10FC
+		ear1="Loquac. Earring",		--02FC
+		ear2="Malignance Earring",	--04FC
+		body=INYANGA_BODY,		--14FC		02HS
+		hands=FANATIC_GLOVE_FC,		--07FC	07MP
 		ring1="Defending Ring",
-		ring2="Freke Ring",
-		back=AMBUCURE_BACK,
-		waist="Cornelia's Belt",
-		legs=AYANMO_LEGS,
-		feet="Regal Pumps +1"
+		ring2="Freke Ring",		--			10SIRD
+		back=AMBUCURE_BACK,		--			10SIRD
+		waist="Cornelia's Belt",	--		10HS
+		legs=AYANMO_LEGS,		--06FC		09HS
+		feet="Regal Pumps +1"		--04FC		03HS
 	}
 
 -- Cure sets
