@@ -243,9 +243,11 @@ function init_gear_sets()
 		neck=JSE_NECK,			--10FC
 		ear1="Loquac. Earring",		--02FC
 		ear2="Malignance Earring",	--04FC
-		body=INYANGA_BODY,		--14FC		02HS
+		--body=INYANGA_BODY,		--14FC		02HS
+		body="Vedic Coat",		--	10MP	03HS
 		hands=FANATIC_GLOVE_FC,		--07FC	07MP
-		ring1="Defending Ring",
+		--ring1="Defending Ring",
+		ring1="Mephitas's Ring +1",	--	15MP
 		ring2="Freke Ring",		--			10SIRD
 		back=AMBUCURE_BACK,		--			10SIRD
 		waist="Cornelia's Belt",	--		10HS
