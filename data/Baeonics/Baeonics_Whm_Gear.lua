@@ -119,22 +119,23 @@ function init_gear_sets()
 	sets.precast.FC = 
 	{
 		--80 FC
-		main="Hvergelmir",		--50 FC
-		sub="Clerisy Strap +1",		--03 FC	
-		ammo="Impatiens",		--	02 QM	10 SIRD		
-		head=MBOZE_HEAD,		--10 FC			07 DT		
-		neck=JSE_NECK,			--10 FC
-		--ear1="Loquac. Earring",		--02 FC
-		ear1="Malignance Earring",	--04 FC
-		ear2=EMPY_EAR,			--			~05 DT
+		main="Hvergelmir",		--50FC
+		sub="Clerisy Strap +1",		--03FC	
+		ammo="Impatiens",		--	02QM	10SIRD		
+		head=MBOZE_HEAD,		--10FC			07DT		
+		neck=JSE_NECK,			--10FC
+		--ear1="Loquac. Earring",		--02FC
+		ear1="Malignance Earring",	--04FC
+		ear2=EMPY_EAR,			--			~05DT
 		body=EMPY_BODY,
-		hands="Chironic Gloves",	--		20 SIRD
-		ring1="Lebeche Ring",		--	02 QM
+		hands="Chironic Gloves",	--		20SIRD
+		ring1="Lebeche Ring",		--	02QM
 		ring2=StikiniRing_Ring2,
-		back="Perimede Cape",		--	04 QM	
-		waist="Witful Belt",		--03 FC	03 QM
+		back="Perimede Cape",		--	04QM	
+		waist="Witful Belt",		--03FC	03QM
 		legs="Chironic Hose",
-		feet=BUMBA_FEET			--			07 DT
+		feet=BUMBA_FEET			--			07DT
+						--80FC	11QM	30SIRD	19DT
 	}
 		
 	sets.precast.FC.DT = 
