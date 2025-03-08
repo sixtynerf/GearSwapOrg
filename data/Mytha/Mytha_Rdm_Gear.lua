@@ -62,7 +62,7 @@ function init_gear_sets()
 	sets.weapons.DualAeolian = {main="Gleti's Knife",sub="Maxentius",range=empty}
 	sets.weapons.DualProcSword = {main="Demers. Degen +1",sub="Blurred Knife +1",range=empty}
 	sets.weapons.EnspellOnly = {main="Qutrub Knife",sub="Sacro Bulwark"}
-	sets.weapons.DualEnspellOnly = {main="Qutrub Knife",sub="Ceremonial Dagger"}
+	sets.weapons.DualEnspellOnly = {main="Qutrub Knife",sub="Ethereal Dagger"}
 	sets.weapons.DualBow = {}
 	sets.weapons.BowMacc = {}
 	sets.weapons.DualMaxentius = {main="Maxentius",sub="Thibron",range=empty}
@@ -78,12 +78,12 @@ function init_gear_sets()
 		head="Malignance Chapeau",neck="Null Loop",ear1="Zennaroi Earring",ear2="Crepuscular Earring",
 		body="Malignance Tabard",hands="Malignance Gloves",ring1="Cacoethic Ring +1",ring2="Chirich Ring +1",
 		back="Null Shawl",waist="Null Belt",legs="Malignance Tights",feet="Malignance Boots"}
-		
+
 	-- Violent Flourish (Macc & Acc)
-    sets.precast.JA['Violent Flourish'] = {ammo="Hasty Pinion +1",
-		head="Malignance Chapeau",neck="Null Loop",ear1="Zennaroi Earring",ear2="Crepuscular Earring",
-		body="Malignance Tabard",hands="Malignance Gloves",ring1="Cacoethic Ring +1",ring2="Chirich Ring +1",
-		back="Null Shawl",waist="Null Belt",legs="Malignance Tights",feet="Malignance Boots"}
+    sets.precast.JA['Violent Flourish'] = {ammo="Regal Gem",--Or range="Ullr" but swapping to this makes you lose TP.
+		head="Leth. Chappel +3",neck="Null Loop",ear1="Malignance Earring",ear2="Crepuscular Earring",
+		body="Malignance Tabard",hands="Leth. Ganth. +3",ring1="Stikini Ring +1",ring2="Metamorph Ring +1",
+		back="Null Shawl",waist="Null Belt",legs="Leth. Fuseau +3",feet="Leth. Houseaux +3"}
 
 	-- Waltz set (chr and vit)
 	sets.precast.Waltz = {}
