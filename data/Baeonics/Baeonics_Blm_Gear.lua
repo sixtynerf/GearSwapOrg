@@ -93,7 +93,7 @@ function init_gear_sets()
 -- Weapons sets
 	sets.weapons.MarinStaff = {main="Marin Staff +1",sub="Enki Strap"}
 	sets.weapons.Bunzi = {main="Bunzi's Rod",sub="Ammurapi Shield"}
-	sets.weapons.Hvergelmir = {main="Hvergelmir",sub="Enki Strap"}
+	sets.weapons.Hvergelmir = {main="Hvergelmir",sub="Khonsu"}
 
 	sets.buff.Sublimation = {waist="Embla Sash"}
 	sets.buff.DTSublimation = {waist="Embla Sash"}	
@@ -127,21 +127,28 @@ function init_gear_sets()
 	{
 		--103FC + 7QM + 20SIRD + 16DT
 		main="Hvergelmir",		--50FC
-		sub="Khonsu",			--			6DT	
-		ammo="Impatiens",		--	2QM	10SIRD
-		head=ONGO_HEAD,			--5FC		10SIRD
-		neck="Null Loop",		--			5DT		
-		ear1="Malignance Earring",	--4FC
-		ear2="Loquac. Earring",		--2FC
-		body=ONGO_BODY,			--8FC
-		hands=ONGO_HANDS,		--6FC			
-		ring1="Kishar Ring",		--4FC
-		ring2="Lebeche Ring",		--	2QM
-		back=AMBUFC_BACK,		--10FC
-		waist="Witful Belt",		--3FC	3QM
-		legs=PsyclothLegs_FC,		--7FC
-		--legs=ONGO_LEGS,		--7FC			5DT
-		feet=ONGO_FEET			--4FC
+		sub="Khonsu",			--			06DT	
+		ammo="Impatiens",		--	02QM	10SIRD
+		head=ONGO_HEAD,			--05FC		10SIRD
+		neck="Null Loop",		--			05DT		
+		ear1="Malignance Earring",	--04FC
+		ear2="Loquac. Earring",		--02FC
+		--body=ONGO_BODY,			--08FC
+		body="Shamash Robe",		--				10PDT
+		--hands=ONGO_HANDS,		--06FC
+		hands=BUMBA_HANDS,		--			07DT
+		--ring1="Kishar Ring",		--04FC
+		ring1="Defending Ring",		--			10DT
+		ring2="Lebeche Ring",		--	02QM
+		--back=AMBUFC_BACK,		--10FC
+		back="Perimede Cape",		--	04QM
+		waist="Witful Belt",		--03FC	03QM
+		--legs=PsyclothLegs_FC,		--07FC
+		--legs=ONGO_LEGS,		--07FC			05DT
+		legs=BUMBA_LEGS,		--			08DT
+		--feet=ONGO_FEET		--04FC
+		feet=BUMBA_FEET			--			07DT
+						--64FC+38FC	11QM	20SIRD	48DT	10PDT
 	}
 	
 	sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, 
@@ -445,7 +452,7 @@ function init_gear_sets()
 		hands="Regal Cuffs",
 		ring1="Kishar Ring",
 		ring2=StikiniRing_Ring2,
-		back"Aurist Cape +1",
+		back="Aurist Cape +1",
 		waist="Acuity Belt +1",
 		legs=EMPY_LEGS,
 		feet=EMPY_FEET
@@ -954,7 +961,7 @@ function init_gear_sets()
 		legs=BUMBA_LEGS,feet=BUMBA_FEET
 	}
 
-	sets.Kiting = {ring2="Shneddick Ring +1"}
+	sets.Kiting = {ring2="Shneddick Ring"}
 	sets.latent_refresh = {waist="Fucho-no-obi"}
 	sets.latent_refresh_grip = {sub="Oneiros Grip"}
 	sets.TPEat = {neck="Chrys. Torque"}
@@ -1027,7 +1034,9 @@ function init_gear_sets()
 	
 	sets.engaged = 
 	{
-		ammo="Amar Cluster",
+		main="Hvergelmir",
+		sub="Khonsu",
+		ammo="Oshasha's Treatise",
 		head=BUMBA_HEAD,
 		--neck="Combatant's Torque",
 		neck="Null Loop",
