@@ -484,32 +484,51 @@ function init_gear_sets()
     	sets.engaged = 
 	{
 		ammo="Aurgelmir Orb +1",
-	        head=FLAMMA_HEAD,
+	        head=EMPY_HEAD,
 		neck="Moonlight Nodowa",
-		ear1="Cessance Earring",
-		ear2="Brutal Earring",
+		ear1="Dedition Earring",
+		--ear2="Brutal Earring",
+		ear2=EMPY_EAR,
 	        body=EMPY_BODY,
-		hands=gear.valorous_acc_hands,
+		hands="Tatena. Gote +1",
 		ring1="Niqmaddu Ring",
-		ring2="Petrov Ring",
-	        back=AMBUSTP_BACK,
-		waist="Ioskeha Belt",
-		legs=AF_LEGS,
-		feet=FLAMMA_FEET
+		ring2=CHIRING_2,
+	        back=JSESTP_BACK,
+		waist="Sweordfaetels +1",
+		legs=EMPY_LEGS,
+		feet=RYUO_C
 	}
     	sets.engaged.SomeAcc = 
 	{
-		ammo="Aurgelmir Orb +1",
-	        head=FLAMMA_HEAD,neck="Moonlight Nodowa",ear1="Cessance Earring",ear2="Telos Earring",
-	        body="Ken. Samue",hands=AF_HANDS,ring1="Niqmaddu Ring",ring2="Flamma Ring",
-	        back=AMBUSTP_BACK,waist="Ioskeha Belt",legs=AF_LEGS,feet=FLAMMA_FEET
+		ammo="Coiste Bodhar",
+	        head=FLAMMA_HEAD,
+		neck=JSE_NECK,
+		ear1="Schere Earring",
+		ear2=EMPY_EAR,
+	        body="Ken. Samue",
+		hands=AF_HANDS,
+		ring1="Niqmaddu Ring",
+		ring2="Flamma Ring",
+	        back=AMBUSTP_BACK,
+		waist="Sweordfaetels +1",
+		legs=AF_LEGS,
+		feet=RYUO_A
 	}
     	sets.engaged.Acc = 
 	{
-		ammo="Aurgelmir Orb +1",
-	        head=AF_HEAD,neck="Moonlight Nodowa",ear1="Digni. Earring",ear2="Telos Earring",
-	        body="Ken. Samue",hands=AF_HANDS,ring1="Niqmaddu Ring",ring2="Regal Ring",
-	        back=AMBUSTP_BACK,waist="Ioskeha Belt",legs=AF_LEGS,feet=FLAMMA_FEET
+		ammo="Coiste Bodhar",
+	        head=FLAMMA_HEAD,
+		neck=JSE_NECK,
+		ear1="Schere Earring",
+		ear2=EMPY_EAR,
+	        body="Ken. Samue",
+		hands=AF_HANDS,
+		ring1="Niqmaddu Ring",
+		ring2="Flamma Ring",
+	        back=AMBUSTP_BACK,
+		waist="Ioskeha Belt",
+		legs=AF_LEGS,
+		feet="Tatena. Sune. +1"
 	}
     	sets.engaged.FullAcc = 
 	{
@@ -522,7 +541,7 @@ function init_gear_sets()
 	{
 		ammo="Aurgelmir Orb +1",
 	        head=FLAMMA_HEAD,neck="Moonlight Nodowa",ear1="Dedition Earring",ear2="Brutal Earring",
-	        body=EMPY_BODY,hands=gear.valorous_acc_hands,ring1="Niqmaddu Ring",ring2="Petrov Ring",
+	        body=EMPY_BODY,hands="Tatena. Gote +1",ring1="Niqmaddu Ring",ring2=CHIRING_2,
 	        back=AMBUSTP_BACK,waist="Ioskeha Belt",legs="Ryuo Hakama",feet=FLAMMA_FEET
 	}
     	sets.engaged.PDT = 
