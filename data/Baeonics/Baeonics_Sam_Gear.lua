@@ -506,7 +506,7 @@ function init_gear_sets()
 		ear1="Schere Earring",
 		ear2=EMPY_EAR,
 	        body="Ken. Samue",
-		hands=AF_HANDS,
+		hands="Tatena. Gote +1",
 		ring1="Niqmaddu Ring",
 		ring2="Flamma Ring",
 	        back=AMBUSTP_BACK,
@@ -522,7 +522,7 @@ function init_gear_sets()
 		ear1="Schere Earring",
 		ear2=EMPY_EAR,
 	        body="Ken. Samue",
-		hands=AF_HANDS,
+		hands="Tatena. Gote +1",
 		ring1="Niqmaddu Ring",
 		ring2="Flamma Ring",
 	        back=AMBUSTP_BACK,
@@ -532,10 +532,19 @@ function init_gear_sets()
 	}
     	sets.engaged.FullAcc = 
 	{
-		ammo="Aurgelmir Orb +1",
-	        head=AF_HEAD,neck="Moonlight Nodowa",ear1="Mache Earring +1",ear2="Telos Earring",
-	        body="Ken. Samue",hands=AF_HANDS,ring1=RAMUHRING_1,ring2="Regal Ring",
-	        back=AMBUSTP_BACK,waist="Olseni Belt",legs=AF_LEGS,feet=AF_FEET
+		ammo="Coiste Bodhar",
+	        head=FLAMMA_HEAD,
+		neck=JSE_NECK,
+		ear1="Schere Earring",
+		ear2=EMPY_EAR,
+	        body="Ken. Samue",
+		hands=AF_HANDS,
+		ring1="Niqmaddu Ring",
+		ring2="Flamma Ring",
+	        back=AMBUSTP_BACK,
+		waist="Ioskeha Belt",
+		legs=AF_LEGS,
+		feet="Tatena. Sune. +1"
 	}
     	sets.engaged.Fodder = 
 	{
