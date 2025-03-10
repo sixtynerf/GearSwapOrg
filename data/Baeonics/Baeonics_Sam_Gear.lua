@@ -388,13 +388,12 @@ function init_gear_sets()
 		ammo="Staunch Tathlum +1",
 		head=AF_HEAD,
 		neck="Bathy Choker +1",
-		ear1="Odnowa Earring +1",
+		ear1="Dawn Earring",
 		ear2="Infused Earring",
 		body="Sacro Breastplate",
 		hands="Rao Kote +1",
-		ring1="Chirich Ring +1",
+		ring1=CHIRING_1,
 		ring2="Warden's Ring",
-		--back="Moonlight Cape",
 		waist="Flume Belt +1",
 		legs="Rao Haidate +1",
 		feet="Rao Sune-Ate +1"
@@ -426,15 +425,15 @@ function init_gear_sets()
 		ammo="Staunch Tathlum +1",
 	        head=BUMBA_HEAD,
 		neck="Loricate Torque +1",
-		ear1="Etiolation Earring",
-		ear2="Sanare Earring",
+		ear1="Odnowa Earring +1",
+		ear2="Tuisto Earring",
 	        body=BUMBA_BODY,
 		hands=AF_HANDS,
-		ring1="Defending Ring",
-		ring2="Patricius Ring",
-	        back="Moonlight Cape",
+		ring1="Gelatinous Ring +1",
+		ring2="Warden's Ring",
+	        back="Null Shawl",
 		waist="Ioskeha Belt",
-		legs=AF_LEGS,
+		legs=BUMBA_LEGS,
 		feet=BUMBA_FEET
 	}
 
@@ -457,18 +456,18 @@ function init_gear_sets()
 		
     	sets.defense.MEVA = 
 	{
-		ammo="Aurgelmir Orb +1",
-	        head=EMPY_HEAD,
-		neck=JSE_NECK,
-		ear1="Dedition Earring",
-		ear2=EMPY_EAR,
-	        body=EMPY_BODY,
+		ammo="Staunch Tathlum +1",
+	        head=BUMBA_HEAD,
+		neck="Warder's Charm +1",
+		ear1="Flashward Earring",
+		ear2="Eabani Earring",
+	        body=BUMBA_BODY,
 		hands=BUMBA_HANDS,
-		ring1="Niqmaddu Ring",
-		ring2=CHIRING_2,
+		ring1="Defending Ring",
+		ring2="Purity Ring",
 	        back="Null Shawl",
-		waist="Sweordfaetels +1",
-		legs=EMPY_LEGS,
+		waist="Carrier's Sash",
+		legs=BUMBA_LEGS,
 		feet=BUMBA_FEET
 	}
 
