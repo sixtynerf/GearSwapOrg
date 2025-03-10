@@ -1,6 +1,6 @@
 -- Setup vars that are user-dependent.
 function user_job_setup()
-	state.OffenseMode:options('Normal','SomeAcc','Acc','FullAcc','MaxAcc','Fodder')
+	state.OffenseMode:options('Normal','SomeAcc','Acc','FullAcc','MaxAcc','Fodder')		--Normal is currently HYBRID		
 	state.HybridMode:options('Normal','DTLite','PDT')
 	state.WeaponskillMode:options('Match','Normal','SomeAcc','Acc','FullAcc','Fodder','Proc')
 	state.RangedMode:options('Normal', 'Acc')
@@ -482,18 +482,21 @@ function init_gear_sets()
 -- Normal melee group
 -- Delay 450 GK, 25 Save TP => 65 Store TP for a 5-hit (25 Store TP in gear)
     	sets.engaged = 
-	{
-		ammo="Aurgelmir Orb +1",
+	{	
+		--UNCOMMENT IF HYBRID IS NOT NEEDED
+		--ammo="Aurgelmir Orb +1",
+		ammo="Coiste Bodhar",
 	        head=EMPY_HEAD,
-		neck="Moonlight Nodowa",
+		--neck="Moonlight Nodowa",
+		neck=JSE_NECK,
 		ear1="Dedition Earring",
-		--ear2="Brutal Earring",
 		ear2=EMPY_EAR,
 	        body=EMPY_BODY,
 		hands="Tatena. Gote +1",
 		ring1="Niqmaddu Ring",
 		ring2=CHIRING_2,
-	        back=JSESTP_BACK,
+	        --back=JSESTP_BACK,
+		back=AMBUSTP_BACK,
 		waist="Sweordfaetels +1",
 		legs=EMPY_LEGS,
 		feet=RYUO_C
