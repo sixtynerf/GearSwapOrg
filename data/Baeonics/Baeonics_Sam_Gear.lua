@@ -457,18 +457,18 @@ function init_gear_sets()
 		
     	sets.defense.MEVA = 
 	{
-		ammo="Staunch Tathlum +1",
-	        head=BUMBA_HEAD,
-		neck="Warder's Charm +1",
-		ear1="Etiolation Earring",
-		ear2="Sanare Earring",
-	        body=BUMBA_BODY,
+		ammo="Aurgelmir Orb +1",
+	        head=EMPY_HEAD,
+		neck=JSE_NECK,
+		ear1="Dedition Earring",
+		ear2=EMPY_EAR,
+	        body=EMPY_BODY,
 		hands=BUMBA_HANDS,
-		ring1="Defending Ring",
-		ring2="Shadow Ring",
-	        back="Moonlight Cape",
-		waist="Carrier's Sash",
-		legs=BUMBA_LEGS,
+		ring1="Niqmaddu Ring",
+		ring2=CHIRING_2,
+	        back="Null Shawl",
+		waist="Sweordfaetels +1",
+		legs=EMPY_LEGS,
 		feet=BUMBA_FEET
 	}
 
