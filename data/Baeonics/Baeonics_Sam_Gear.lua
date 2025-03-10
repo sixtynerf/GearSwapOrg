@@ -1,6 +1,6 @@
 -- Setup vars that are user-dependent.
 function user_job_setup()
-	state.OffenseMode:options('Normal','SomeAcc','Acc','FullAcc','MaxAcc','Fodder')		--Normal is currently HYBRID		
+	state.OffenseMode:options('Normal','SomeAcc','Acc','FullAcc','MaxAcc','SBAnyWeapon','SBAnyAuspice','Fodder')		--Normal is currently HYBRID		
 	state.HybridMode:options('Normal','DTLite','PDT')
 	state.WeaponskillMode:options('Match','Normal','SomeAcc','Acc','FullAcc','Fodder','Proc')
 	state.RangedMode:options('Normal', 'Acc')
@@ -572,6 +572,40 @@ function init_gear_sets()
 		waist="Ioskeha Belt +1",
 		legs=EMPY_LEGS,
 		feet=EMPY_FEET
+	}
+
+	sets.engaged.SBAnyWeapon = 
+	{
+		ammo="Aurgelmir Orb +1",
+	        head="Ken. Jinpachi +1",
+		neck="Bathy Choker +1",
+		ear1="Schere Earring",
+		ear2="Digni. Earring",
+	        body="Dagon Breast.",
+		hands=AF_HANDS,
+		ring1="Niqmaddu Ring",
+		ring2=CHIRING_2,
+	        back=AMBUSTP_BACK,
+		waist="Sarissapho. Belt",
+		legs=MPACA_LEGS,
+		feet=RYUO_C
+	}
+
+	sets.engaged.SBAnyAuspice = 
+	{
+		ammo="Aurgelmir Orb +1",
+	        head="Ken. Jinpachi +1",
+		neck=JSE_NECK,
+		ear1="Dedition Earring",
+		ear2="Telos Earring",
+	        body="Dagon Breast.",
+		hands=AF_HANDS,
+		ring1="Niqmaddu Ring",
+		ring2=CHIRING_2,
+	        back=AMBUSTP_BACK,
+		waist="Ioskeha Belt +1",
+		legs=MPACA_LEGS,
+		feet=RYUO_C
 	}
 	
     	sets.engaged.Fodder = 
