@@ -1,6 +1,6 @@
 -- Setup vars that are user-dependent.
 function user_job_setup()
-	state.OffenseMode:options('Normal','SomeAcc','Acc','FullAcc','Fodder')
+	state.OffenseMode:options('Normal','SomeAcc','Acc','FullAcc','MaxAcc','Fodder')
 	state.HybridMode:options('Normal','DTLite','PDT')
 	state.WeaponskillMode:options('Match','Normal','SomeAcc','Acc','FullAcc','Fodder','Proc')
 	state.RangedMode:options('Normal', 'Acc')
@@ -498,54 +498,79 @@ function init_gear_sets()
 		legs=EMPY_LEGS,
 		feet=RYUO_C
 	}
+	
     	sets.engaged.SomeAcc = 
 	{
 		ammo="Coiste Bodhar",
-	        head=FLAMMA_HEAD,
+	        head=EMPY_HEAD,
 		neck=JSE_NECK,
-		ear1="Schere Earring",
+		ear1="Schere Earringg",
+		--ear2="Brutal Earring",
 		ear2=EMPY_EAR,
-	        body="Ken. Samue",
+	        body=EMPY_BODY,
 		hands="Tatena. Gote +1",
 		ring1="Niqmaddu Ring",
-		ring2="Flamma Ring",
+		ring2=CHIRING_2,
 	        back=AMBUSTP_BACK,
 		waist="Sweordfaetels +1",
-		legs=AF_LEGS,
+		legs=EMPY_LEGS,
 		feet=RYUO_A
 	}
+	
     	sets.engaged.Acc = 
 	{
 		ammo="Coiste Bodhar",
-	        head=FLAMMA_HEAD,
+	        head=EMPY_HEAD,
 		neck=JSE_NECK,
-		ear1="Schere Earring",
+		ear1="Schere Earringg",
+		--ear2="Brutal Earring",
 		ear2=EMPY_EAR,
-	        body="Ken. Samue",
+	        body=EMPY_BODY,
 		hands="Tatena. Gote +1",
 		ring1="Niqmaddu Ring",
-		ring2="Flamma Ring",
+		ring2=CHIRING_2,
 	        back=AMBUSTP_BACK,
-		waist="Ioskeha Belt",
-		legs=AF_LEGS,
+		waist="Ioskeha Belt +1",
+		legs=EMPY_LEGS,
 		feet="Tatena. Sune. +1"
 	}
+	
     	sets.engaged.FullAcc = 
 	{
 		ammo="Coiste Bodhar",
-	        head=FLAMMA_HEAD,
+	        head=EMPY_HEAD,
 		neck=JSE_NECK,
-		ear1="Schere Earring",
+		ear1="Schere Earringg",
+		--ear2="Brutal Earring",
 		ear2=EMPY_EAR,
-	        body="Ken. Samue",
+	        body=EMPY_BODY,
 		hands=AF_HANDS,
 		ring1="Niqmaddu Ring",
-		ring2="Flamma Ring",
+		ring2=CHIRING_2,
 	        back=AMBUSTP_BACK,
-		waist="Ioskeha Belt",
-		legs=AF_LEGS,
+		waist="Ioskeha Belt +1",
+		legs=EMPY_LEGS,
 		feet="Tatena. Sune. +1"
 	}
+
+	sets.engaged.MaxAcc = 
+	{
+		ammo="Amar Cluster",
+	        head=EMPY_HEAD,
+		neck=JSE_NECK,
+		ear1="Schere Earringg",
+		--ear2="Brutal Earring",
+		ear2=EMPY_EAR,
+	        body=EMPY_BODY,
+		hands=AF_HANDS,
+		ring1="Niqmaddu Ring",
+		ring2=CHIRING_2,
+	        back=AMBUSTP_BACK,
+		waist="Ioskeha Belt +1",
+		legs=EMPY_LEGS,
+		feet=EMPY_FEET
+	}
+	
     	sets.engaged.Fodder = 
 	{
 		ammo="Aurgelmir Orb +1",
