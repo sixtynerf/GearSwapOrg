@@ -649,14 +649,14 @@ function init_gear_sets()
 		neck="Loricate Torque +1",
 		ear1="Odnowa Earring +1",
 		ear2="Tuisto Earring",
-	        body=BUMBA_BODY,
+	        body=EMPY_BODY,
 		hands=BUMBA_HANDS,
 		ring1="Gelatinous Ring +1",
 		ring2=MOONLIGHTRING_2, 
-	        back="Shadow Mantle",
-		waist="Flume Belt +1",
+	        back=AMBUENMITY_BACK,
+		waist="Engraved Belt",
 		legs=BUMBA_LEGS,
-		feet=BUMBA_FEET
+		feet=EMPY_FEET
 	}
 
 	sets.idle.KiteTank = 
