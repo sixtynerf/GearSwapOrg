@@ -31,6 +31,28 @@ gear.merlinic_refresh_feet = {name="Merlinic Crackows",augments={'STR+8','Rng.At
 gear.merlinic_treasure_legs = {name="Merlinic Shalwar",augments={'Accuracy+25 Attack+25','Magic dmg. taken -1%','"Treasure Hunter"+2',}}
 gear.merlinic_refresh_legs = {name="Merlinic Shalwar",augments={'Rng.Acc.+19','Pet: INT+4','"Refresh"+1',}}
 
+--Taeon Gears
+TAEON_PHALANX_HEAD = {name="Taeon Chapeau", augments={'Phalanx +3',}}
+TAEON_PHALANX_BODY = {name="Taeon Tabard", augments={'Phalanx +3',}}
+TAEON_PHALANX_HANDS = {name="Taeon Gloves", augments={'Phalanx +3',}}
+TAEON_PHALANX_LEGS = {name="Taeon Tights", augments={'Phalanx +3',}}
+TAEON_PHALANX_FEET = {name="Taeon Boots", augments={'Phalanx +3',}}
+
+TAEON_PET_HEAD = {name="Taeon Chapeau", augments={'Pet: Accuracy+24 Pet: Rng. Acc.+24','Pet: "Dbl. Atk."+5','Pet: Damage taken -4%',}}
+TAEON_PET_BODY = {name="Taeon Tabard", augments={'Pet: Accuracy+24 Pet: Rng. Acc.+24','Pet: "Dbl. Atk."+5','Pet: Damage taken -4%',}}
+TAEON_PET_HANDS = {name="Taeon Gloves", augments={'Pet: Accuracy+25 Pet: Rng. Acc.+25','Pet: "Dbl. Atk."+5','Pet: Damage taken -4%',}}
+TAEON_PET_LEGS = {name="Taeon Tights", augments={'Pet: Accuracy+24 Pet: Rng. Acc.+24','Pet: "Dbl. Atk."+5','Pet: Damage taken -4%',}}
+TAEON_PET_FEET = {name="Taeon Boots", augments={'Pet: Accuracy+24 Pet: Rng. Acc.+24','Pet: "Dbl. Atk."+5','Pet: Damage taken -4%',}}
+
+--Herculean
+HERCULEAN_TP_FEET = {name="Herculean Boots", augments={'Mag. Acc.+2 "Mag.Atk.Bns."+2','"Triple Atk."+1','Quadruple Attack +2','Accuracy+15 Attack+15',}}
+
+--Valorous Gears
+VALOROUS_WSD_HEAD = {name="Valorous Mask", augments={'Mag. Acc.+19','Pet: VIT+6','Weapon skill damage +10%','Mag. Acc.+10 "Mag.Atk.Bns."+10',}}
+VALOROUS_WSD_BODY = {name="Valorous Mail", augments={'Attack+1','Sklchn.dmg.+5%','STR+10','Accuracy+13',}}
+VALOROUS_WSD_LEGS = {name="Valorous Hose", augments={'Weapon skill damage +3%','STR+4','Accuracy+11 Attack+11','Mag. Acc.+2 "Mag.Atk.Bns."+2',}}
+VALOROUS_WSD_FEET = {name="Valorous Greaves", augments={'STR+10','Pet: DEX+6','Weapon skill damage +8%','Accuracy+10 Attack+10',}}
+
 --Odyssey Gear
 BUMBA_HEAD = {name="Nyame Helm"}
 BUMBA_BODY = {name="Nyame Mail"}
