@@ -6,7 +6,7 @@ function user_job_setup()
 	state.PhysicalDefenseMode:options('PDT_HP','PDT')
 	state.MagicalDefenseMode:options('MDT_HP','MDT')
 	state.ResistDefenseMode:options('MEVA','MEVA_HP')
-	state.IdleMode:options('Tank','KiteTank') --,'Normal','Sphere'
+	state.IdleMode:options('Tank','ParryTank') --,'Normal','Sphere'
 	state.Weapons:options('None','EpeoUtu','EpeoParry','Naegling','DualWeapons')
 	
 	state.ExtraDefenseMode = M{['description']='Extra Defense Mode','None','MP'}
@@ -45,6 +45,9 @@ function user_job_setup()
 
 --EMPY EAR
 	EMPY_EAR = {name="Erilaz Earring +1"}
+
+--DYNA NECK
+	JSE_NECK = {name="Futhark Torque +2"}
 
 --RINGS
 	StikiniRing_Ring1	= {name = "Stikini Ring +1", bag = "wardrobe2"}
@@ -659,23 +662,23 @@ function init_gear_sets()
 		feet=EMPY_FEET
 	}
 
-	sets.idle.KiteTank = 
+	sets.idle.ParryTank = 
 	{
 		main="Epeolatry",
-		sub="Utu Grip",
+		sub="Refined Grip +1",
 		ammo="Staunch Tathlum +1",
         	head=BUMBA_BODY,
-		neck="Loricate Torque +1",
+		neck=JSE_NECK,
 		ear1="Odnowa Earring +1",
-		ear2="Tuisto Earring",
-	        body=BUMBA_BODY,
-		hands=BUMBA_HANDS,
-		ring1="Defending Ring",
+		ear2=EMPY_EAR,
+	        body=RELIC_BODY,
+		hands="Turms Mittens +1",
+		ring1="Gelatinous Ring +1",
 		ring2=MOONLIGHTRING_2, 
-	        back="Moonlight Cape",
-		waist="Flume Belt +1",
-		legs="Carmine Cuisses +1",
-		feet="Hippo. Socks +1"
+	        back=AMBUPARRY_BACK,
+		waist="Engraved Belt",
+		legs=EMPY_LEGS,
+		feet="Turms Leggings +1"
 	}
 
 	sets.Kiting = 
