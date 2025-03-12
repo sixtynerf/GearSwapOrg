@@ -92,7 +92,7 @@ function init_gear_sets()
 		main="Epeolatry",
 		sub="Utu Grip",
 		ammo="Staunch Tathlum +1",
-		head=BUMBA_BODY,
+		head=BUMBA_HEAD,
 		neck="Moonlight Necklace",
 		ear1="Friomisi Earring",
 		ear2="Trux Earring",
@@ -111,7 +111,7 @@ function init_gear_sets()
 		main="Epeolatry",
 		sub="Utu Grip",
 		ammo="Staunch Tathlum +1",
-		head=BUMBA_BODY,
+		head=BUMBA_HEAD,
 		neck="Moonlight Necklace",
 		ear1="Genmei Earring",
 		ear2="Trux Earring",
@@ -130,7 +130,7 @@ function init_gear_sets()
 		main="Epeolatry",
 		sub="Utu Grip",
 		ammo="Staunch Tathlum +1",
-		head=BUMBA_BODY,
+		head=BUMBA_HEAD,
 		neck="Unmoving Collar +1",
 		ear1="Odnowa Earring +1",
 		ear2="Tuisto Earring",
@@ -497,7 +497,7 @@ function init_gear_sets()
 		main="Epeolatry",
 		sub="Utu Grip",
 		ammo="Staunch Tathlum +1",
-		head=BUMBA_BODY,
+		head=BUMBA_HEAD,
 		neck="Loricate Torque +1",
 		ear1="Odnowa Earring +1",
 		ear2="Tuisto Earring",
@@ -593,18 +593,18 @@ function init_gear_sets()
 	sets.midcast.Cure = 
 	{
 		ammo="Staunch Tathlum +1",
-		head="Carmine Mask +1",
-		neck="Sacro Gorget",
+		head=BUMBA_HEAD,
+		neck=JSE_NECK,
 		ear1="Mendi. Earring",
-		ear2="Roundel Earring",
-		body="Vrikodara Jupon",
-		hands="Buremte Gloves",
-		ring1="Lebeche Ring",
-		ring2="Janniston Ring",
-		back="Tempered Cape +1",
-		waist="Luminary Sash",
-		legs="Carmine Cuisses +1",
-		feet="Skaoi Boots"
+		ear2=EMPY_EAR,
+		body=BUMBA_BODY,
+		hands=BUMBA_HANDS,
+		ring1="Defending Ring",
+		ring2=MOONLIGHTRING_2,
+		back=AMBUIDLE_BACK,
+		waist="Sroda Belt",
+		legs=EMPY_LEGS,
+		feet=EMPY_FEET
 	}
 		
 	sets.midcast['Wild Carrot'] = set_combine(sets.midcast.Cure, {})
@@ -612,7 +612,22 @@ function init_gear_sets()
 	sets.Self_Healing = {hands="Buremte Gloves",ring2="Kunaji Ring",waist="Gishdubar Sash"}
 	sets.Cure_Received = {hands="Buremte Gloves",ring2="Kunaji Ring",waist="Gishdubar Sash"}
 	sets.Self_Refresh = {waist="Gishdubar Sash"}
-	sets.Phalanx_Received = {main="Deacon Sword",hands=TAEON_PHALANX_HANDS,feet=TAEON_PHALANX_FEET}
+	sets.Phalanx_Received = 
+	{
+		ammo="Staunch Tathlum +1",
+		head=RELIC_HEAD,
+		neck=JSE_NECK,
+		ear1="Mimir Earring",
+		ear2=EMPY_EAR,
+		body=TAEON_PHALANX_BODY,
+		hands=TAEON_PHALANX_HANDS,
+		ring1="Defending Ring",
+		ring2=MOONLIGHTRING_2,
+		back=AMBUIDLE_BACK,
+		waist="Plat. Mog. Belt",
+		legs=TAEON_PHALANX_LEGS,
+		feet=TAEON_PHALANX_FEET
+	}
 	
 	sets.midcast.Protect = set_combine(sets.midcast['Enhancing Magic'], {ring2="Sheltered Ring"})
 	sets.midcast.Shell = set_combine(sets.midcast['Enhancing Magic'], {ring2="Sheltered Ring"})
@@ -648,7 +663,7 @@ function init_gear_sets()
 		main="Epeolatry",
 		sub="Utu Grip",
 		ammo="Staunch Tathlum +1",
-	        head=BUMBA_BODY,
+	        head=BUMBA_HEAD,
 		neck="Loricate Torque +1",
 		ear1="Odnowa Earring +1",
 		ear2="Tuisto Earring",
@@ -667,7 +682,7 @@ function init_gear_sets()
 		main="Epeolatry",
 		sub="Refined Grip +1",
 		ammo="Staunch Tathlum +1",
-        	head=BUMBA_BODY,
+        	head=BUMBA_HEAD,
 		neck=JSE_NECK,
 		ear1="Odnowa Earring +1",
 		ear2=EMPY_EAR,
@@ -715,7 +730,7 @@ function init_gear_sets()
 		main="Epeolatry",
 		sub="Utu Grip",
 		ammo="Staunch Tathlum +1",
-	        head=BUMBA_BODY,
+	        head=BUMBA_HEAD,
 		neck="Loricate Torque +1",
 		ear1="Genmei Earring",
 		ear2="Ethereal Earring",
@@ -734,7 +749,7 @@ function init_gear_sets()
 		main="Epeolatry",
 		sub="Utu Grip",
 		ammo="Staunch Tathlum +1",
-	        head=BUMBA_BODY,
+	        head=BUMBA_HEAD,
 		neck="Unmoving Collar +1",
 		ear1="Odnowa Earring +1",
 		ear2="Tuisto Earring",
@@ -753,7 +768,7 @@ function init_gear_sets()
 		main="Epeolatry",
 		sub="Utu Grip",
 		ammo="Yamarang",
-		head=BUMBA_BODY,
+		head=BUMBA_HEAD,
 		neck="Warder's Charm +1",
 		ear1="Odnowa Earring +1",
 		ear2="Sanare Earring",
@@ -772,7 +787,7 @@ function init_gear_sets()
 		main="Epeolatry",
 		sub="Utu Grip",
 		ammo="Yamarang",
-		head=BUMBA_BODY,
+		head=BUMBA_HEAD,
 		neck="Warder's Charm +1",
 		ear1="Odnowa Earring +1",
 		ear2="Tuisto Earring",
@@ -791,7 +806,7 @@ function init_gear_sets()
 		main="Epeolatry",
 		sub="Utu Grip",
 		ammo="Yamarang",
-		head=BUMBA_BODY,
+		head=BUMBA_HEAD,
 		neck="Warder's Charm +1",
 		ear1="Odnowa Earring +1",
 		ear2="Sanare Earring",
@@ -810,7 +825,7 @@ function init_gear_sets()
 		main="Epeolatry",
 		sub="Utu Grip",
 		ammo="Yamarang",
-		head=BUMBA_BODY,
+		head=BUMBA_HEAD,
 		neck="Warder's Charm +1",
 		ear1="Odnowa Earring +1",
 		ear2="Tuisto Earring",
@@ -951,18 +966,18 @@ function init_gear_sets()
 		main="Epeolatry",
 		sub="Utu Grip",
 		ammo="Staunch Tathlum +1",
-		head=BUMBA_BODY,
+		head=EMPY_HEAD,
 		neck="Warder's Charm +1",
 		ear1="Odnowa Earring +1",
-		ear2="Tuisto Earring",
-		body=BUMBA_BODY,
-		hands=BUMBA_HANDS,
-		ring1="Gelatinous Ring +1",
+		ear2=EMPY_EAR,
+		body=EMPY_BODY,
+		hands=EMPY_HANDS,
+		ring1=MOONLIGHTRING_1,
 		ring2="Shadow Ring",
-		back="Shadow Mantle",
-		waist="Engraved Belt",
-		legs=BUMBA_LEGS,
-		feet=BUMBA_FEET
+		back=AMBUPARRY_BACK,
+		waist="Plat. Mog. Belt",
+		legs=EMPY_LEGS,
+		feet=EMPY_FEET
 	}
 	
 	sets.engaged.Tank_HP = 
@@ -970,7 +985,7 @@ function init_gear_sets()
 		main="Epeolatry",
 		sub="Utu Grip",
 		ammo="Staunch Tathlum +1",
-		head=BUMBA_BODY,
+		head=BUMBA_HEAD,
 		neck="Unmoving Collar +1",
 		ear1="Odnowa Earring +1",
 		ear2="Tuisto Earring",
