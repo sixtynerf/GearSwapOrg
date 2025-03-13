@@ -610,79 +610,177 @@ function init_gear_sets()
     	sets.engaged.Fodder = 
 	{
 		ammo="Aurgelmir Orb +1",
-	        head=FLAMMA_HEAD,neck="Moonlight Nodowa",ear1="Dedition Earring",ear2="Brutal Earring",
-	        body=EMPY_BODY,hands="Tatena. Gote +1",ring1="Niqmaddu Ring",ring2=CHIRING_2,
-	        back=AMBUSTP_BACK,waist="Ioskeha Belt",legs="Ryuo Hakama",feet=FLAMMA_FEET
+	        head=FLAMMA_HEAD,
+		neck="Moonlight Nodowa",
+		ear1="Dedition Earring",
+		ear2="Brutal Earring",
+	        body=EMPY_BODY,
+		hands="Tatena. Gote +1",
+		ring1="Niqmaddu Ring",ring2=CHIRING_2,
+	        back=AMBUSTP_BACK,
+		waist="Ioskeha Belt",
+		legs="Ryuo Hakama",
+		feet=FLAMMA_FEET
 	}
     	sets.engaged.PDT = 
 	{
 		ammo="Staunch Tathlum +1",
-	        head=BUMBA_HEAD,neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Sanare Earring",
-	        body=BUMBA_BODY,hands=AF_HANDS,ring1="Defending Ring",ring2="Patricius Ring",
-	        back="Moonlight Cape",waist="Ioskeha Belt",legs=AF_LEGS,feet=BUMBA_FEET
+	        head=BUMBA_HEAD,
+		neck="Loricate Torque +1",
+		ear1="Etiolation Earring",
+		ear2="Sanare Earring",
+	        body=BUMBA_BODY,
+		hands=AF_HANDS,
+		ring1="Defending Ring",
+		ring2="Patricius Ring",
+	        back="Moonlight Cape",
+		waist="Ioskeha Belt",
+		legs=AF_LEGS,
+		feet=BUMBA_FEET
 	}
     	sets.engaged.SomeAcc.PDT = 
 	{
 		ammo="Staunch Tathlum +1",
-	        head=BUMBA_HEAD,neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Sanare Earring",
-	        body=BUMBA_BODY,hands=AF_HANDS,ring1="Defending Ring",ring2="Patricius Ring",
-	        back="Moonlight Cape",waist="Ioskeha Belt",legs=AF_LEGS,feet=BUMBA_FEET
+	        head=BUMBA_HEAD,
+		neck="Loricate Torque +1",
+		ear1="Etiolation Earring",
+		ear2="Sanare Earring",
+	        body=BUMBA_BODY,
+		hands=AF_HANDS,
+		ring1="Defending Ring",
+		ring2="Patricius Ring",
+	        back="Moonlight Cape",
+		waist="Ioskeha Belt",
+		legs=AF_LEGS,
+		feet=BUMBA_FEET
 	}
     	sets.engaged.Acc.PDT = 
 	{
 		ammo="Staunch Tathlum +1",
-	        head=BUMBA_HEAD,neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Sanare Earring",
-	        body=BUMBA_BODY,hands=AF_HANDS,ring1="Defending Ring",ring2="Patricius Ring",
-	        back="Moonlight Cape",waist="Ioskeha Belt",legs=AF_LEGS,feet=BUMBA_FEET
+	        head=BUMBA_HEAD,
+		neck="Loricate Torque +1",
+		ear1="Etiolation Earring",
+		ear2="Sanare Earring",
+	        body=BUMBA_BODY,
+		hands=AF_HANDS,
+		ring1="Defending Ring",
+		ring2="Patricius Ring",
+	        back="Moonlight Cape",
+		waist="Ioskeha Belt",
+		legs=AF_LEGS,
+		feet=BUMBA_FEET
 	}
     	sets.engaged.FullAcc.PDT = 
 	{
 		ammo="Staunch Tathlum +1",
-	        head=BUMBA_HEAD,neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Sanare Earring",
-	        body=BUMBA_BODY,hands=AF_HANDS,ring1="Defending Ring",ring2="Patricius Ring",
-	        back="Moonlight Cape",waist="Ioskeha Belt",legs=AF_LEGS,feet=BUMBA_FEET
+	        head=BUMBA_HEAD,
+		neck="Loricate Torque +1",
+		ear1="Etiolation Earring",
+		ear2="Sanare Earring",
+	        body=BUMBA_BODY,
+		hands=AF_HANDS,
+		ring1="Defending Ring",
+		ring2="Patricius Ring",
+	        back="Moonlight Cape",
+		waist="Ioskeha Belt",
+		legs=AF_LEGS,
+		feet=BUMBA_FEET
 	}
     	sets.engaged.Fodder.PDT = 
 	{
 		ammo="Staunch Tathlum +1",
-	        head=BUMBA_HEAD,neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Sanare Earring",
-	        body=BUMBA_BODY,hands=AF_HANDS,ring1="Defending Ring",ring2="Patricius Ring",
-	        back="Moonlight Cape",waist="Ioskeha Belt",legs=AF_LEGS,feet=BUMBA_FEET
+	        head=BUMBA_HEAD,
+		neck="Loricate Torque +1",
+		ear1="Etiolation Earring",
+		ear2="Sanare Earring",
+	        body=BUMBA_BODY,
+		hands=AF_HANDS,
+		ring1="Defending Ring",
+		ring2="Patricius Ring",
+	        back="Moonlight Cape",
+		waist="Ioskeha Belt",
+		legs=AF_LEGS,
+		feet=BUMBA_FEET
 	}
 	sets.engaged.DTLite = 
 	{
 		ammo="Staunch Tathlum +1",
-	        head=BUMBA_HEAD,neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Sanare Earring",
-	        body=BUMBA_BODY,hands=AF_HANDS,ring1="Defending Ring",ring2="Patricius Ring",
-	        back="Moonlight Cape",waist="Ioskeha Belt",legs=AF_LEGS,feet=BUMBA_FEET
+	        head=BUMBA_HEAD,
+		neck="Loricate Torque +1",
+		ear1="Etiolation Earring",
+		ear2="Sanare Earring",
+	        body=BUMBA_BODY,
+		hands=AF_HANDS,
+		ring1="Defending Ring",
+		ring2="Patricius Ring",
+	        back="Moonlight Cape",
+		waist="Ioskeha Belt",
+		legs=AF_LEGS,
+		feet=BUMBA_FEET
 	}
     	sets.engaged.SomeAcc.DTLite = 
 	{
 		ammo="Staunch Tathlum +1",
-	        head=BUMBA_HEAD,neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Sanare Earring",
-	        body=BUMBA_BODY,hands=AF_HANDS,ring1="Defending Ring",ring2="Patricius Ring",
-	        back="Moonlight Cape",waist="Ioskeha Belt",legs=AF_LEGS,feet=BUMBA_FEET
+	        head=BUMBA_HEAD,
+		neck="Loricate Torque +1",
+		ear1="Etiolation Earring",
+		ear2="Sanare Earring",
+	        body=BUMBA_BODY,
+		hands=AF_HANDS,
+		ring1="Defending Ring",
+		ring2="Patricius Ring",
+	        back="Moonlight Cape",
+		waist="Ioskeha Belt",
+		legs=AF_LEGS,
+		feet=BUMBA_FEET
 	}
     	sets.engaged.Acc.DTLite = 
 	{
 		ammo="Staunch Tathlum +1",
-	        head=BUMBA_HEAD,neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Sanare Earring",
-	        body=BUMBA_BODY,hands=AF_HANDS,ring1="Defending Ring",ring2="Patricius Ring",
-	        back="Moonlight Cape",waist="Ioskeha Belt",legs=AF_LEGS,feet=BUMBA_FEET
+	        head=BUMBA_HEAD,
+		neck="Loricate Torque +1",
+		ear1="Etiolation Earring",
+		ear2="Sanare Earring",
+	        body=BUMBA_BODY,
+		hands=AF_HANDS,
+		ring1="Defending Ring",
+		ring2="Patricius Ring",
+	        back="Moonlight Cape",
+		waist="Ioskeha Belt",
+		legs=AF_LEGS,
+		feet=BUMBA_FEET
 	}
     	sets.engaged.FullAcc.DTLite = 
 	{
 		ammo="Staunch Tathlum +1",
-	        head=BUMBA_HEAD,neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Sanare Earring",
-	        body=BUMBA_BODY,hands=AF_HANDS,ring1="Defending Ring",ring2="Patricius Ring",
-	        back="Moonlight Cape",waist="Ioskeha Belt",legs=AF_LEGS,feet=BUMBA_FEET
+	        head=BUMBA_HEAD,
+		neck="Loricate Torque +1",
+		ear1="Etiolation Earring",
+		ear2="Sanare Earring",
+	        body=BUMBA_BODY,
+		hands=AF_HANDS,
+		ring1="Defending Ring",
+		ring2="Patricius Ring",
+	        back="Moonlight Cape",
+		waist="Ioskeha Belt",
+		legs=AF_LEGS,
+		feet=BUMBA_FEET
 	}
     	sets.engaged.Fodder.DTLite = 
 	{
 		ammo="Staunch Tathlum +1",
-	        head=BUMBA_HEAD,neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Sanare Earring",
-	        body=BUMBA_BODY,hands=AF_HANDS,ring1="Defending Ring",ring2="Patricius Ring",
-	        back="Moonlight Cape",waist="Ioskeha Belt",legs=AF_LEGS,feet=BUMBA_FEET
+	        head=BUMBA_HEAD,
+		neck="Loricate Torque +1",
+		ear1="Etiolation Earring",
+		ear2="Sanare Earring",
+	        body=BUMBA_BODY,
+		hands=AF_HANDS,
+		ring1="Defending Ring",
+		ring2="Patricius Ring",
+	        back="Moonlight Cape",
+		waist="Ioskeha Belt",
+		legs=AF_LEGS,
+		feet=BUMBA_FEET
 	}
         
     -- Melee sets for in Adoulin, which has an extra 10 Save TP for weaponskills.
