@@ -944,7 +944,7 @@ end
 function item_equippable(item)
 	for bag in res.bags:it() do
 		if bag.equippable and player[bag.api][item] then
-			if player[bag.api][item].jobs:contains(player.main_job_id) then
+			if res.items[player[bag.api][item].id].jobs:contains(player.main_job_id) then
 				return true
 			else
 				return false
@@ -2501,6 +2501,24 @@ function item_equipped(item)
 		end
 	end
 	return false
+end
+
+function has_finishing_moves()
+	if buffactive['Finishing Move 1'] then
+		return 1
+	elseif buffactive['Finishing Move 2'] then
+		return 2
+	elseif buffactive['Finishing Move 3'] then
+		return 3
+	elseif buffactive['Finishing Move 4'] then
+		return 4
+	elseif buffactive['Finishing Move 5'] then
+		return 5
+	elseif buffactive['Finishing Move (6+)'] then
+		return 6
+	else
+		return false
+	end
 end
 
 function get_current_stratagem_count()
