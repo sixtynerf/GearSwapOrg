@@ -808,16 +808,16 @@ function init_gear_sets()
 		sub="Utu Grip",
 		ammo="Yamarang",
 		head=BUMBA_HEAD,
-		neck="Warder's Charm +1",
-		ear1="Odnowa Earring +1",
-		ear2="Sanare Earring",
+		neck=JSE_NECK,
+		ear1="Eabani Earring",
+		ear2="Hearty Earring",
 		body=BUMBA_BODY,
 		hands=BUMBA_HANDS,
 		ring1="Purity Ring",
-		ring2="Vengeful Ring",
+		ring2="Defending Ring",
 		back=AMBUENMITY_BACK,
 		waist="Engraved Belt",
-		legs=BUMBA_LEGS,
+		legs=ONGO_LEGS,
 		feet=BUMBA_FEET
 	}
 	
