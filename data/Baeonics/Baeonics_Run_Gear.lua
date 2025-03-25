@@ -662,7 +662,7 @@ function init_gear_sets()
 	sets.idle.Tank = 
 	{
 		main="Epeolatry",
-		sub="Utu Grip",
+		sub="Refined Grip +1",
 		ammo="Staunch Tathlum +1",
 	        head=BUMBA_HEAD,
 		neck="Loricate Torque +1",
