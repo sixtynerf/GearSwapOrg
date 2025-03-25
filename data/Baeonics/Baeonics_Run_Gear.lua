@@ -640,7 +640,8 @@ function init_gear_sets()
 
 	sets.idle = 
 	{
-		main="Epeolatry",sub="Utu Grip",
+		main="Epeolatry",
+		sub="Utu Grip",
 		ammo="Homiliary",
 		head="Rawhide Mask",
 		neck="Loricate Torque +1",
