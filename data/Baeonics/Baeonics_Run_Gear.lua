@@ -853,18 +853,18 @@ function init_gear_sets()
 		main="Epeolatry",
 		sub="Utu Grip",
 		ammo="Aurgelmir Orb +1",
-		head="Dampening Tam",
+		head=BUMBA_HEAD,
 		neck="Anu Torque",
-		ear1="Brutal Earring",
+		ear1="Cessance Earring",
 		ear2="Sherida Earring",
-		body="Adhemar Jacket +1",
+		body="Ashera Harness",
 		hands="Adhemar Wrist. +1",
 		ring1="Niqmaddu Ring",
-		ring2="Epona's Ring",
+		ring2=MOONLIGHTRING_2,
 		back=AMBUSTP_BACK,
-		waist="Windbuffet Belt +1",
+		waist="Ioskeha Belt +1",
 		legs="Samnuha Tights",
-		feet=gear.herculean_ta_feet
+		feet="Herculean Boots"
 	}
 	
 	sets.engaged.Acc = 
