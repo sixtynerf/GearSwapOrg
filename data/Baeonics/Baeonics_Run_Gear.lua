@@ -965,7 +965,7 @@ function init_gear_sets()
 	sets.engaged.Tank = 
 	{
 		main="Epeolatry",
-		sub="Utu Grip",
+		sub="Refined Grip +1",
 		ammo="Staunch Tathlum +1",
 		head=EMPY_HEAD,
 		neck="Warder's Charm +1",
