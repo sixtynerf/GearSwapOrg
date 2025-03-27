@@ -47,30 +47,30 @@ function user_job_setup()
 	GIGELORUM_EARRING = {name="Schere Earring"}
 	GOGMAGOG_AMMO = {name="Coiste Bodhar"}
 
-	-- Additional local binds
+-- Additional local binds
 	send_command('bind ^` input /ja "Hasso" <me>')
 	send_command('bind !` input /ja "Seigan" <me>')
 	send_command('bind @` gs c cycle SkillchainMode')
 	send_command('bind !r gs c weapons Greatsword;gs c update')
 
-	--Ikenga_axe_bonus = 300  -- It is 300 at R25. Uncomment if you need to manually adjust because you are using below R25 or above
+--Ikenga_axe_bonus = 300  -- It is 300 at R25. Uncomment if you need to manually adjust because you are using below R25 or above
 	
 	select_default_macro_book()
 end
 
 -- Define sets and vars used by this job file.
 function init_gear_sets()
-	--------------------------------------
-	-- Start defining the sets
-	--------------------------------------
-	-- Precast Sets
+--------------------------------------
+-- Start defining the sets
+--------------------------------------
+-- Precast Sets
 	
-    sets.Enmity = {}
+	sets.Enmity = {}
 	sets.Knockback = {}
 	sets.passive.Twilight = {head="Twilight Helm",body="Twilight Mail"}
 	
 	-- Precast sets to enhance JAs
-	sets.precast.JA['Berserk'] = {}
+	sets.precast.JA['Berserk'] = {back=AMBUTP_BACK}
 	sets.precast.JA['Warcry'] = {}
 	sets.precast.JA['Defender'] = {}
 	sets.precast.JA['Aggressor'] = {}
@@ -83,23 +83,23 @@ function init_gear_sets()
 	sets.precast.JA['Brazen Rush'] = {}
 	sets.precast.JA['Provoke'] = set_combine(sets.Enmity,{})
                    
-	-- Waltz set (chr and vit)
+-- Waltz set (chr and vit)
 	sets.precast.Waltz = {}
                    
-	-- Don't need any special gear for Healing Waltz.
+-- Don't need any special gear for Healing Waltz.
 	sets.precast.Waltz['Healing Waltz'] = {}
            
 	sets.precast.Step = {}
 	
 	sets.precast.Flourish1 = {}
 		   
-	-- Fast cast sets for spells
+-- Fast cast sets for spells
 
 	sets.precast.FC = {}
 	
 	sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {})
 
-	-- Midcast Sets
+-- Midcast Sets
 	sets.midcast.FastRecast = {}
 	
 	sets.midcast.Utsusemi = set_combine(sets.midcast.FastRecast, {})
@@ -109,17 +109,41 @@ function init_gear_sets()
 	sets.Self_Healing = {}
 	sets.Cure_Received = {neck="Phalaina Locket",ring2="Kunaji Ring",waist="Gishdubar Sash"}
 						                   
-	-- Weaponskill sets
-	-- Default set for any weaponskill that isn't any more specifically defined
-    sets.precast.WS = {ammo="Oshasha's Treatise",
-		head="Nyame Helm",neck="Rep. Plat. Medal",ear1="Moonshade Earring",ear2="Boii Earring +1",
-		body="Nyame Mail",hands="Nyame Gauntlets",ring1="Sroda Ring",ring2="Cornelia's Ring",
-		back="Null Shawl",waist="Sailfi Belt +1",legs="Nyame Flanchard",feet="Nyame Sollerets"}
+-- Weaponskill sets
+-- Default set for any weaponskill that isn't any more specifically defined
+	sets.precast.WS = 
+	{
+		ammo="Oshasha's Treatise",
+		head=BUMBA_HEAD,
+		neck="Rep. Plat. Medal",
+		ear1="Moonshade Earring",
+		ear2="Boii Earring +1",
+		body=BUMBA_BODY,
+		hands=BUMBA_HANDS,
+		ring1="Sroda Ring",
+		ring2="Cornelia's Ring",
+		back="Null Shawl",
+		waist="Sailfi Belt +1",
+		legs=BUMBA_LEGS,
+		feet=BUMBA_FEET
+	}
 		
-    sets.precast.WS.Proc = {ammo="Staunch Tathlum +1",
-		head="Volte Cap",neck="Combatant's Torque",ear1="Zennaroi Earring",ear2="Boii Earring +1",
-		body="Volte Harness",hands="Volte Bracers",ring1="Chirich Ring +1",ring2="Chirich Ring +1",
-		back="Null Shawl",waist="Null Belt",legs="Valorous Hose",feet="Valorous Greaves"}
+	sets.precast.WS.Proc = 
+	{
+		ammo="Staunch Tathlum +1",
+		head="Volte Cap",
+		neck="Combatant's Torque",
+		ear1="Zennaroi Earring",
+		ear2="Boii Earring +1",
+		body="Volte Harness",
+		hands="Volte Bracers",
+		ring1="Chirich Ring +1",
+		ring2="Chirich Ring +1",
+		back="Null Shawl",
+		waist="Null Belt",
+		legs="Valorous Hose",
+		feet="Valorous Greaves"
+	}
 	
 --[[WS set examples.
 	sets.precast.WS.SomeAcc = set_combine(sets.precast.WS, {back="Letalis Mantle",})
@@ -127,54 +151,54 @@ function init_gear_sets()
 	sets.precast.WS.FullAcc = set_combine(sets.precast.WS, {neck="Combatant's Torque"})
 	sets.precast.WS.Fodder = set_combine(sets.precast.WS, {})
 
-    -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.	
-    sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS, {})
-    sets.precast.WS['Savage Blade'].SomeAcc = set_combine(sets.precast.WS.SomeAcc, {})
-    sets.precast.WS['Savage Blade'].Acc = set_combine(sets.precast.WS.Acc, {})
-    sets.precast.WS['Savage Blade'].FullAcc = set_combine(sets.precast.WS.FullAcc, {})
-    sets.precast.WS['Savage Blade'].Fodder = set_combine(sets.precast.WS.Fodder, {})
+-- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.	
+	sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS, {})
+	sets.precast.WS['Savage Blade'].SomeAcc = set_combine(sets.precast.WS.SomeAcc, {})
+	sets.precast.WS['Savage Blade'].Acc = set_combine(sets.precast.WS.Acc, {})
+	sets.precast.WS['Savage Blade'].FullAcc = set_combine(sets.precast.WS.FullAcc, {})
+	sets.precast.WS['Savage Blade'].Fodder = set_combine(sets.precast.WS.Fodder, {})
 
-    sets.precast.WS['Upheaval'] = set_combine(sets.precast.WS, {})
-    sets.precast.WS['Upheaval'].SomeAcc = set_combine(sets.precast.WS.SomeAcc, {})
-    sets.precast.WS['Upheaval'].Acc = set_combine(sets.precast.WS.Acc, {})
-    sets.precast.WS['Upheaval'].FullAcc = set_combine(sets.precast.WS.FullAcc, {})
-    sets.precast.WS['Upheaval'].Fodder = set_combine(sets.precast.WS.Fodder, {})
+	sets.precast.WS['Upheaval'] = set_combine(sets.precast.WS, {})
+	sets.precast.WS['Upheaval'].SomeAcc = set_combine(sets.precast.WS.SomeAcc, {})
+	sets.precast.WS['Upheaval'].Acc = set_combine(sets.precast.WS.Acc, {})
+	sets.precast.WS['Upheaval'].FullAcc = set_combine(sets.precast.WS.FullAcc, {})
+	sets.precast.WS['Upheaval'].Fodder = set_combine(sets.precast.WS.Fodder, {})
      
-    sets.precast.WS['Resolution'] = set_combine(sets.precast.WS, {})
-    sets.precast.WS['Resolution'].SomeAcc = set_combine(sets.precast.WS.SomeAcc, {})
-    sets.precast.WS['Resolution'].Acc = set_combine(sets.precast.WS.Acc, {})
-    sets.precast.WS['Resolution'].FullAcc = set_combine(sets.precast.WS.FullAcc, {})
-    sets.precast.WS['Resolution'].Fodder = set_combine(sets.precast.WS.Fodder, {})
+	sets.precast.WS['Resolution'] = set_combine(sets.precast.WS, {})
+	sets.precast.WS['Resolution'].SomeAcc = set_combine(sets.precast.WS.SomeAcc, {})
+	sets.precast.WS['Resolution'].Acc = set_combine(sets.precast.WS.Acc, {})
+	sets.precast.WS['Resolution'].FullAcc = set_combine(sets.precast.WS.FullAcc, {})
+	sets.precast.WS['Resolution'].Fodder = set_combine(sets.precast.WS.Fodder, {})
 	
-    sets.precast.WS['Ruinator'] = set_combine(sets.precast.WS, {})
-    sets.precast.WS['Ruinator'].SomeAcc = set_combine(sets.precast.WS.SomeAcc, {})
-    sets.precast.WS['Ruinator'].Acc = set_combine(sets.precast.WS.Acc, {})
-    sets.precast.WS['Ruinator'].FullAcc = set_combine(sets.precast.WS.FullAcc, {})
-    sets.precast.WS['Ruinator'].Fodder = set_combine(sets.precast.WS.Fodder, {})
+	sets.precast.WS['Ruinator'] = set_combine(sets.precast.WS, {})
+	sets.precast.WS['Ruinator'].SomeAcc = set_combine(sets.precast.WS.SomeAcc, {})
+	sets.precast.WS['Ruinator'].Acc = set_combine(sets.precast.WS.Acc, {})
+	sets.precast.WS['Ruinator'].FullAcc = set_combine(sets.precast.WS.FullAcc, {})
+	sets.precast.WS['Ruinator'].Fodder = set_combine(sets.precast.WS.Fodder, {})
 	
-    sets.precast.WS['Rampage'] = set_combine(sets.precast.WS, {})
-    sets.precast.WS['Rampage'].SomeAcc = set_combine(sets.precast.WS.SomeAcc, {})
-    sets.precast.WS['Rampage'].Acc = set_combine(sets.precast.WS.Acc, {})
-    sets.precast.WS['Rampage'].FullAcc = set_combine(sets.precast.WS.FullAcc, {})
-    sets.precast.WS['Rampage'].Fodder = set_combine(sets.precast.WS.Fodder, {})
+	sets.precast.WS['Rampage'] = set_combine(sets.precast.WS, {})
+	sets.precast.WS['Rampage'].SomeAcc = set_combine(sets.precast.WS.SomeAcc, {})
+	sets.precast.WS['Rampage'].Acc = set_combine(sets.precast.WS.Acc, {})
+	sets.precast.WS['Rampage'].FullAcc = set_combine(sets.precast.WS.FullAcc, {})
+	sets.precast.WS['Rampage'].Fodder = set_combine(sets.precast.WS.Fodder, {})
 	
-    sets.precast.WS['Raging Rush'] = set_combine(sets.precast.WS, {})
-    sets.precast.WS['Raging Rush'].SomeAcc = set_combine(sets.precast.WS.SomeAcc, {})
-    sets.precast.WS['Raging Rush'].Acc = set_combine(sets.precast.WS.Acc, {})
-    sets.precast.WS['Raging Rush'].FullAcc = set_combine(sets.precast.WS.FullAcc, {})
-    sets.precast.WS['Raging Rush'].Fodder = set_combine(sets.precast.WS.Fodder, {})
+	sets.precast.WS['Raging Rush'] = set_combine(sets.precast.WS, {})
+	sets.precast.WS['Raging Rush'].SomeAcc = set_combine(sets.precast.WS.SomeAcc, {})
+	sets.precast.WS['Raging Rush'].Acc = set_combine(sets.precast.WS.Acc, {})
+	sets.precast.WS['Raging Rush'].FullAcc = set_combine(sets.precast.WS.FullAcc, {})
+	sets.precast.WS['Raging Rush'].Fodder = set_combine(sets.precast.WS.Fodder, {})
 	
-    sets.precast.WS["Ukko's Fury"] = set_combine(sets.precast.WS, {})
-    sets.precast.WS["Ukko's Fury"].SomeAcc = set_combine(sets.precast.WS.SomeAcc, {})
-    sets.precast.WS["Ukko's Fury"].Acc = set_combine(sets.precast.WS.Acc, {})
-    sets.precast.WS["Ukko's Fury"].FullAcc = set_combine(sets.precast.WS.FullAcc, {})
-    sets.precast.WS["Ukko's Fury"].Fodder = set_combine(sets.precast.WS.Fodder, {})
+	sets.precast.WS["Ukko's Fury"] = set_combine(sets.precast.WS, {})
+	sets.precast.WS["Ukko's Fury"].SomeAcc = set_combine(sets.precast.WS.SomeAcc, {})
+	sets.precast.WS["Ukko's Fury"].Acc = set_combine(sets.precast.WS.Acc, {})
+	sets.precast.WS["Ukko's Fury"].FullAcc = set_combine(sets.precast.WS.FullAcc, {})
+	sets.precast.WS["Ukko's Fury"].Fodder = set_combine(sets.precast.WS.Fodder, {})
 	
-    sets.precast.WS["King's Justice"] = set_combine(sets.precast.WS, {})
-    sets.precast.WS["King's Justice"].SomeAcc = set_combine(sets.precast.WS.SomeAcc, {})
-    sets.precast.WS["King's Justice"].Acc = set_combine(sets.precast.WS.Acc, {})
-    sets.precast.WS["King's Justice"].FullAcc = set_combine(sets.precast.WS.FullAcc, {})
-    sets.precast.WS["King's Justice"].Fodder = set_combine(sets.precast.WS.Fodder, {})
+	sets.precast.WS["King's Justice"] = set_combine(sets.precast.WS, {})
+	sets.precast.WS["King's Justice"].SomeAcc = set_combine(sets.precast.WS.SomeAcc, {})
+	sets.precast.WS["King's Justice"].Acc = set_combine(sets.precast.WS.Acc, {})
+	sets.precast.WS["King's Justice"].FullAcc = set_combine(sets.precast.WS.FullAcc, {})
+	sets.precast.WS["King's Justice"].Fodder = set_combine(sets.precast.WS.Fodder, {})
 ]]
 
 	-- Swap to these on Moonshade using WS if at 3000 TP
@@ -201,24 +225,24 @@ function init_gear_sets()
 	-- Idle sets
 	sets.idle = {ammo="Staunch Tathlum +1",
 		head="Null Masque",neck="Null Loop",ear1="Genmei Earring",ear2="Sanare Earring",
-		body="Hjarrandi Breast.",hands="Nyame Gauntlets",ring1="Defending Ring",ring2="Shadow Ring",
-		back="Shadow Mantle",waist="Null Belt",legs="Nyame Flanchard",feet="Nyame Sollerets"}
+		body="Hjarrandi Breast.",hands=BUMBA_HANDS,ring1="Defending Ring",ring2="Shadow Ring",
+		back="Shadow Mantle",waist="Null Belt",legs=BUMBA_LEGS,feet=BUMBA_FEET}
 		
 	-- Defense sets
 	sets.defense.PDT = {ammo="Staunch Tathlum +1",
 		head="Hjarrandi Helm",neck="Null Loop",ear1="Dedition Earring",ear2="Boii Earring +1",
-		body="Hjarrandi Breast.",hands="Nyame Gauntlets",ring1="Chirich Ring +1",ring2="Chirich Ring +1",
-		back="Null Shawl",waist="Null Belt",legs="Nyame Flanchard",feet="Nyame Sollerets"}
+		body="Hjarrandi Breast.",hands=BUMBA_HANDS,ring1="Chirich Ring +1",ring2="Chirich Ring +1",
+		back="Null Shawl",waist="Null Belt",legs=BUMBA_LEGS,feet=BUMBA_FEET}
 		
 	sets.defense.MDT = {ammo="Staunch Tathlum +1",
 		head="Hjarrandi Helm",neck="Null Loop",ear1="Dedition Earring",ear2="Boii Earring +1",
-		body="Hjarrandi Breast.",hands="Nyame Gauntlets",ring1="Chirich Ring +1",ring2="Chirich Ring +1",
-		back="Null Shawl",waist="Null Belt",legs="Nyame Flanchard",feet="Nyame Sollerets"}
+		body="Hjarrandi Breast.",hands=BUMBA_HANDS,ring1="Chirich Ring +1",ring2="Chirich Ring +1",
+		back="Null Shawl",waist="Null Belt",legs=BUMBA_LEGS,feet=BUMBA_FEET}
 		
 	sets.defense.MEVA = {ammo="Staunch Tathlum +1",
 		head="Hjarrandi Helm",neck="Null Loop",ear1="Dedition Earring",ear2="Boii Earring +1",
-		body="Hjarrandi Breast.",hands="Nyame Gauntlets",ring1="Chirich Ring +1",ring2="Chirich Ring +1",
-		back="Null Shawl",waist="Null Belt",legs="Nyame Flanchard",feet="Nyame Sollerets"}
+		body="Hjarrandi Breast.",hands=BUMBA_HANDS,ring1="Chirich Ring +1",ring2="Chirich Ring +1",
+		back="Null Shawl",waist="Null Belt",legs=BUMBA_LEGS,feet=BUMBA_FEET}
 
 	sets.Kiting = {ring2="Shneddick Ring"}
 	sets.Reraise = {}
@@ -228,13 +252,13 @@ function init_gear_sets()
 	-- Engaged sets
 	sets.engaged = {ammo="Ginsen",
 		head="Hjarrandi Helm",neck="Combatant's Torque",ear1="Dedition Earring",ear2="Boii Earring +1",
-		body="Hjarrandi Breast.",hands="Nyame Gauntlets",ring1="Chirich Ring +1",ring2="Chirich Ring +1",
-		back="Null Shawl",waist="Windbuffet Belt +1",legs="Nyame Flanchard",feet="Nyame Sollerets"}
+		body="Hjarrandi Breast.",hands=BUMBA_HANDS,ring1="Chirich Ring +1",ring2="Chirich Ring +1",
+		back="Null Shawl",waist="Windbuffet Belt +1",legs=BUMBA_LEGS,feet=BUMBA_FEET}
 		
 	sets.engaged.Acc = {ammo="Ginsen",
 		head="Hjarrandi Helm",neck="Null Loop",ear1="Telos Earring",ear2="Boii Earring +1",
-		body="Hjarrandi Breast.",hands="Nyame Gauntlets",ring1="Chirich Ring +1",ring2="Chirich Ring +1",
-		back="Null Shawl",waist="Null Belt",legs="Nyame Flanchard",feet="Nyame Sollerets"}
+		body="Hjarrandi Breast.",hands=BUMBA_HANDS,ring1="Chirich Ring +1",ring2="Chirich Ring +1",
+		back="Null Shawl",waist="Null Belt",legs=BUMBA_LEGS,feet=BUMBA_FEET}
 		
 --[[Engaged set examples
     sets.engaged.Charge = {}
