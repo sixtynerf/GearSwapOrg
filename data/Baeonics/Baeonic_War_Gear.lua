@@ -162,6 +162,23 @@ function init_gear_sets()
 			feet=BUMBA_FEET	
 		})
 
+	sets.precast.WS['Impulse Drive'] = set_combine(sets.precast.WS, 
+		{
+			ammo="Knobkierrie",
+			head=RELIC_HEAD,
+			neck=JSE_NECK,
+			ear1="Moonshade Earring",
+			ear2="Thrud Earring",
+			body=KALUNGA_BODY,
+			hands=KALUNGA_HANDS,
+			ring1="Regal Ring",
+			ring2="Epaminondas's Ring",
+			back=AMBUWSD_BACK,
+			waist="Sailfi Belt +1",
+			legs=EMPY_LEGS,
+			feet=BUMBA_FEET	
+		})
+
 	sets.precast.WS['Upheaval'] = set_combine(sets.precast.WS, 
 		{
 			ammo="Yetshila +1",
@@ -395,6 +412,23 @@ function init_gear_sets()
 	}
 
 	sets.engaged.Chango = 
+	{
+		ammo="Coiste Bodhar",
+		head=KALUNGA_HEAD,
+		neck=JSE_NECK,
+		ear1="Schere Earring",
+		ear2=EMPY_EAR,
+		body=KALUNGA_BODY,
+		hands=KALUNGA_HANDS,
+		ring1="Chirich Ring +1",
+		ring2="Niqmaddu Ring",
+		back=AMBUTP_BACK,
+		waist="Sailfi Belt +1",
+		legs=KALUNGA_LEGS,
+		feet=KALUNGA_FEET
+	}
+
+	sets.engaged.Polearm = 
 	{
 		ammo="Coiste Bodhar",
 		head=KALUNGA_HEAD,
