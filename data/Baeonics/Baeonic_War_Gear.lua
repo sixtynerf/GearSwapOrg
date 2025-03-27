@@ -14,7 +14,7 @@ function user_job_setup()
 --Ambuscade Cape
 	AMBUTP_BACK 	= {name="Cichol's Mantle",augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Damage taken-5%',}}  --Add DT and ACC
 	AMBUCRIT_BACK 	= {name="Cichol's Mantle",augments={'STR+20','Accuracy+20 Attack+20','Crit.hit rate+10'}}
-	AMBUWS_BACK 	= {name="Cichol's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%','Damage taken-5%',}}
+	AMBUWSD_BACK 	= {name="Cichol's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%','Damage taken-5%',}}
 
 --Artifact Gear
 	AF_HEAD = {name="Pumm. Mask +1"}		--Yes 
@@ -38,7 +38,7 @@ function user_job_setup()
 	EMPY_FEET = {name="Boii Calligae +1"}		--Yes
 
 --Empyrean Ear
-	EMPY_EAR = {name="Boii Earring +1"}
+	EMPY_EAR = {name=EMPY_EAR}
 
 --Relic Neck
 	JSE_NECK = {name="War. Beads +2"}
@@ -117,7 +117,7 @@ function init_gear_sets()
 		head=BUMBA_HEAD,
 		neck="Rep. Plat. Medal",
 		ear1="Moonshade Earring",
-		ear2="Boii Earring +1",
+		ear2=EMPY_EAR,
 		body=BUMBA_BODY,
 		hands=BUMBA_HANDS,
 		ring1="Sroda Ring",
@@ -134,7 +134,7 @@ function init_gear_sets()
 		head="Volte Cap",
 		neck="Combatant's Torque",
 		ear1="Zennaroi Earring",
-		ear2="Boii Earring +1",
+		ear2=EMPY_EAR,
 		body="Volte Harness",
 		hands="Volte Bracers",
 		ring1="Chirich Ring +1",
@@ -148,18 +148,18 @@ function init_gear_sets()
 	sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS, 
 		{
 			ammo="Knobkierrie",
-			head="Flam. Zucchetto +2",
-			neck="Fotia Gorget",
-			ear1="Lugra Earring +1",
-			ear2="Moonshade Earring",
-			body=gear.valorous_wsd_body,
-			hands="Sulev. Gauntlets +2",
+			head=RELIC_HEAD,
+			neck=JSE_NECK,
+			ear1="Moonshade Earring",
+			ear2="Thrud Earring",
+			body=KALUNGA_BODY,
+			hands=KALUNGA_HANDS,
 			ring1="Regal Ring",
-			ring2="Niqmaddu Ring",
-			back="Cichol's Mantle",
-			waist="Fotia Belt",
-			legs="Sulev. Cuisses +2",
-			feet="Flam. Gambieras +2"	
+			ring2="Epaminondas's Ring",
+			back=AMBUWSD_BACK,
+			waist="Sailfi Belt +1",
+			legs=EMPY_LEGS,
+			feet=BUMBA_FEET	
 		})
 
 	sets.precast.WS['Upheaval'] = set_combine(sets.precast.WS, 
@@ -303,7 +303,7 @@ function init_gear_sets()
 	sets.defense.PDT = 
 	{
 		ammo="Staunch Tathlum +1",
-		head="Hjarrandi Helm",neck="Null Loop",ear1="Dedition Earring",ear2="Boii Earring +1",
+		head="Hjarrandi Helm",neck="Null Loop",ear1="Dedition Earring",ear2=EMPY_EAR,
 		body="Hjarrandi Breast.",hands=BUMBA_HANDS,ring1="Chirich Ring +1",ring2="Chirich Ring +1",
 		back="Null Shawl",waist="Null Belt",legs=BUMBA_LEGS,feet=BUMBA_FEET
 	}
@@ -311,7 +311,7 @@ function init_gear_sets()
 	sets.defense.MDT = 
 	{
 		ammo="Staunch Tathlum +1",
-		head="Hjarrandi Helm",neck="Null Loop",ear1="Dedition Earring",ear2="Boii Earring +1",
+		head="Hjarrandi Helm",neck="Null Loop",ear1="Dedition Earring",ear2=EMPY_EAR,
 		body="Hjarrandi Breast.",hands=BUMBA_HANDS,ring1="Chirich Ring +1",ring2="Chirich Ring +1",
 		back="Null Shawl",waist="Null Belt",legs=BUMBA_LEGS,feet=BUMBA_FEET
 	}
@@ -319,7 +319,7 @@ function init_gear_sets()
 	sets.defense.MEVA = 
 	{
 		ammo="Staunch Tathlum +1",
-		head="Hjarrandi Helm",neck="Null Loop",ear1="Dedition Earring",ear2="Boii Earring +1",
+		head="Hjarrandi Helm",neck="Null Loop",ear1="Dedition Earring",ear2=EMPY_EAR,
 		body="Hjarrandi Breast.",hands=BUMBA_HANDS,ring1="Chirich Ring +1",ring2="Chirich Ring +1",
 		back="Null Shawl",waist="Null Belt",legs=BUMBA_LEGS,feet=BUMBA_FEET
 	}
@@ -333,7 +333,7 @@ function init_gear_sets()
 	sets.engaged = 
 	{
 		ammo="Ginsen",
-		head="Hjarrandi Helm",neck="Combatant's Torque",ear1="Dedition Earring",ear2="Boii Earring +1",
+		head="Hjarrandi Helm",neck="Combatant's Torque",ear1="Dedition Earring",ear2=EMPY_EAR,
 		body="Hjarrandi Breast.",hands=BUMBA_HANDS,ring1="Chirich Ring +1",ring2="Chirich Ring +1",
 		back="Null Shawl",waist="Windbuffet Belt +1",legs=BUMBA_LEGS,feet=BUMBA_FEET
 	}
@@ -341,7 +341,7 @@ function init_gear_sets()
 	sets.engaged.Acc = 
 	{
 		ammo="Ginsen",
-		head="Hjarrandi Helm",neck="Null Loop",ear1="Telos Earring",ear2="Boii Earring +1",
+		head="Hjarrandi Helm",neck="Null Loop",ear1="Telos Earring",ear2=EMPY_EAR,
 		body="Hjarrandi Breast.",hands=BUMBA_HANDS,ring1="Chirich Ring +1",ring2="Chirich Ring +1",
 		back="Null Shawl",waist="Null Belt",legs=BUMBA_LEGS,feet=BUMBA_FEET
 	}
