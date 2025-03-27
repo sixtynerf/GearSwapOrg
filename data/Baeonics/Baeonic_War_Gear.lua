@@ -315,8 +315,8 @@ function init_gear_sets()
 	{
 		ammo="Staunch Tathlum +1",
 		head="Null Masque",
-		neck="Null Loop",
-		ear1="Genmei Earring",
+		neck="Vim Torque +1",
+		ear1="Infused Earring",
 		ear2="Sanare Earring",
 		body="Hjarrandi Breast.",
 		hands=BUMBA_HANDS,
@@ -361,10 +361,19 @@ function init_gear_sets()
 -- Engaged sets
 	sets.engaged = 
 	{
-		ammo="Ginsen",
-		head="Hjarrandi Helm",neck="Combatant's Torque",ear1="Dedition Earring",ear2=EMPY_EAR,
-		body="Hjarrandi Breast.",hands=BUMBA_HANDS,ring1="Chirich Ring +1",ring2="Chirich Ring +1",
-		back="Null Shawl",waist="Windbuffet Belt +1",legs=BUMBA_LEGS,feet=BUMBA_FEET
+		ammo="Coiste Bodhar",
+		head=EMPY_HEAD,
+		neck=JSE_NECK,
+		ear1="Schere Earring",
+		ear2=EMPY_EAR,
+		body="Hjarrandi Breast.",
+		hands=KALUNGA_HANDS,
+		ring1="Petrov Ring",
+		ring2="Niqmaddu Ring",
+		back=AMBUTP_BACK,
+		waist="Sailfi Belt +1",
+		legs=AF_LEGS,
+		feet=AF_FEET
 	}
 	
 	sets.engaged.Acc = 
