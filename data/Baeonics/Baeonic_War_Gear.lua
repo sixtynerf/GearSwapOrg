@@ -164,53 +164,73 @@ function init_gear_sets()
 
 	sets.precast.WS['Upheaval'] = set_combine(sets.precast.WS, 
 		{
-			ammo="Knobkierrie",
-			head="Flam. Zucchetto +2",
+			ammo="Yetshila +1",
+			head=RELIC_HEAD,
 			neck="Fotia Gorget",
-			ear1="Lugra Earring +1",
-			ear2="Moonshade Earring",
-			body=gear.valorous_wsd_body,
-			hands="Sulev. Gauntlets +2",
-			ring1="Regal Ring",
-			ring2="Niqmaddu Ring",
-			back="Cichol's Mantle",
-			waist="Fotia Belt",
-			legs="Sulev. Cuisses +2",
-			feet="Flam. Gambieras +2"		
+			ear1="Moonshade Earring",
+			ear2="Thrud Earring",
+			body=KALUNGA_BODY,
+			hands=KALUNGA_HANDS,
+			ring1="Niqmaddu Ring",
+			ring2="Epaminondas's Ring",
+			back=AMBUWSD_BACK,
+			waist="Sailfi Belt +1",
+			--waist="Fatality belt",
+			legs=KALUNGA_LEGS,
+			feet=EMPY_FEET	
 		})
+
+	sets.precast.WS['Ukko's Fury'] = set_combine(sets.precast.WS, 
+		{
+			ammo="Yetshila +1",
+			head=EMPY_HEAD,
+			neck=JSE_NECK,
+			ear1="Moonshade Earring",
+			ear2=EMPY_EAR,
+			body="Hjarrandi Breast.",
+			hands="FLAMMA_HANDS",
+			ring1="Niqmaddu Ring",
+			ring2="Regal Ring",
+			back=AMBUWSD_BACK,
+			waist="Sailfi Belt +1",
+			--waist="Fatality belt",
+			legs=EMPY_LEGS,
+			feet=EMPY_FEET	
+		})
+
 
 	sets.precast.WS['Resolution'] = set_combine(sets.precast.WS, 
 		{
-			ammo="Knobkierrie",
-			head="Flam. Zucchetto +2",
+			ammo="Coiste Bodhar",
+			head=KALUNGA_HEAD,
 			neck="Fotia Gorget",
-			ear1="Lugra Earring +1",
-			ear2="Moonshade Earring",
-			body=gear.valorous_wsd_body,
-			hands="Sulev. Gauntlets +2",
+			ear1="Moonshade Earring",
+			ear2=EMPY_EAR,
+			body=KALUNGA_BODY,
+			hands=KALUNGA_HANDS,
 			ring1="Regal Ring",
 			ring2="Niqmaddu Ring",
-			back="Cichol's Mantle",
+			back=AMBUWSD_BACK,
 			waist="Fotia Belt",
-			legs="Sulev. Cuisses +2",
-			feet="Flam. Gambieras +2"
+			legs=EMPY_LEGS,
+			feet=KALUNGA_FEET
 		})
 
 	sets.precast.WS['Judgement'] = set_combine(sets.precast.WS, 
 		{
 			ammo="Knobkierrie",
-			head="Flam. Zucchetto +2",
-			neck="Fotia Gorget",
-			ear1="Lugra Earring +1",
-			ear2="Moonshade Earring",
-			body=gear.valorous_wsd_body,
-			hands="Sulev. Gauntlets +2",
+			head=RELIC_HEAD,
+			neck=JSE_NECK,
+			ear1="Moonshade Earring",
+			ear2="Thrud Earring",
+			body=KALUNGA_BODY,
+			hands=KALUNGA_HANDS,
 			ring1="Regal Ring",
-			ring2="Niqmaddu Ring",
-			back="Cichol's Mantle",
-			waist="Fotia Belt",
-			legs="Sulev. Cuisses +2",
-			feet="Flam. Gambieras +2"
+			ring2="Epaminondas's Ring",
+			back=AMBUWSD_BACK,
+			waist="Sailfi Belt +1",
+			legs=EMPY_LEGS,
+			feet=BUMBA_FEET
 		})
 	
 --[[WS set examples.
