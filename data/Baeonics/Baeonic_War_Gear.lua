@@ -9,7 +9,7 @@ function user_job_setup()
 	state.IdleMode:options('Normal', 'PDT')
 	state.ExtraMeleeMode = M{['description']='Extra Melee Mode','None'}
 	state.Passive = M{['description'] = 'Passive Mode','None','Twilight'}
-	state.Weapons:options('GreatAxe','Sword','PoleArm','Club','Staff','GreatSword','DualWeapons','ProcDagger','ProcSword','ProcGreatSword','ProcScythe','ProcPolearm','ProcKatana','ProcGreatKatana','ProcClub','ProcStaff')
+	state.Weapons:options('GreatAxe','PoleArm','GreatSword','Sword','Club','Staff','DualWeapons','ProcDagger','ProcSword','ProcGreatSword','ProcScythe','ProcPolearm','ProcKatana','ProcGreatKatana','ProcClub','ProcStaff')
 
 --Ambuscade Cape
 	AMBUTP_BACK = {name="Cichol's Mantle",augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Damage taken-5%',}}  --Add DT and ACC
@@ -144,6 +144,74 @@ function init_gear_sets()
 		legs="Valorous Hose",
 		feet="Valorous Greaves"
 	}
+
+	sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS, 
+		{
+			ammo="Knobkierrie",
+			head="Flam. Zucchetto +2",
+			neck="Fotia Gorget",
+			ear1="Lugra Earring +1",
+			ear2="Moonshade Earring",
+			body=gear.valorous_wsd_body,
+			hands="Sulev. Gauntlets +2",
+			ring1="Regal Ring",
+			ring2="Niqmaddu Ring",
+			back="Cichol's Mantle",
+			waist="Fotia Belt",
+			legs="Sulev. Cuisses +2",
+			feet="Flam. Gambieras +2"	
+		})
+
+	sets.precast.WS['Upheaval'] = set_combine(sets.precast.WS, 
+		{
+			ammo="Knobkierrie",
+			head="Flam. Zucchetto +2",
+			neck="Fotia Gorget",
+			ear1="Lugra Earring +1",
+			ear2="Moonshade Earring",
+			body=gear.valorous_wsd_body,
+			hands="Sulev. Gauntlets +2",
+			ring1="Regal Ring",
+			ring2="Niqmaddu Ring",
+			back="Cichol's Mantle",
+			waist="Fotia Belt",
+			legs="Sulev. Cuisses +2",
+			feet="Flam. Gambieras +2"		
+		})
+
+	sets.precast.WS['Resolution'] = set_combine(sets.precast.WS, 
+		{
+			ammo="Knobkierrie",
+			head="Flam. Zucchetto +2",
+			neck="Fotia Gorget",
+			ear1="Lugra Earring +1",
+			ear2="Moonshade Earring",
+			body=gear.valorous_wsd_body,
+			hands="Sulev. Gauntlets +2",
+			ring1="Regal Ring",
+			ring2="Niqmaddu Ring",
+			back="Cichol's Mantle",
+			waist="Fotia Belt",
+			legs="Sulev. Cuisses +2",
+			feet="Flam. Gambieras +2"
+		})
+
+	sets.precast.WS['Judgement'] = set_combine(sets.precast.WS, 
+		{
+			ammo="Knobkierrie",
+			head="Flam. Zucchetto +2",
+			neck="Fotia Gorget",
+			ear1="Lugra Earring +1",
+			ear2="Moonshade Earring",
+			body=gear.valorous_wsd_body,
+			hands="Sulev. Gauntlets +2",
+			ring1="Regal Ring",
+			ring2="Niqmaddu Ring",
+			back="Cichol's Mantle",
+			waist="Fotia Belt",
+			legs="Sulev. Cuisses +2",
+			feet="Flam. Gambieras +2"
+		})
 	
 --[[WS set examples.
 	sets.precast.WS.SomeAcc = set_combine(sets.precast.WS, {back="Letalis Mantle",})
@@ -201,7 +269,7 @@ function init_gear_sets()
 	sets.precast.WS["King's Justice"].Fodder = set_combine(sets.precast.WS.Fodder, {})
 ]]
 
-	-- Swap to these on Moonshade using WS if at 3000 TP
+-- Swap to these on Moonshade using WS if at 3000 TP
 	sets.MaxTP = {}
 	sets.AccMaxTP = {}
 	sets.AccDayMaxTPWSEars = {}
@@ -217,242 +285,260 @@ function init_gear_sets()
 	sets.WSCharge = {}
 	sets.WSMighty = {}
 
-     -- Sets to return to when not performing an action.
+-- Sets to return to when not performing an action.
            
-     -- Resting sets
-     sets.resting = {}
+-- Resting sets
+	sets.resting = {}
            
-	-- Idle sets
-	sets.idle = {ammo="Staunch Tathlum +1",
+-- Idle sets
+	sets.idle = 
+	{
+		ammo="Staunch Tathlum +1",
 		head="Null Masque",neck="Null Loop",ear1="Genmei Earring",ear2="Sanare Earring",
 		body="Hjarrandi Breast.",hands=BUMBA_HANDS,ring1="Defending Ring",ring2="Shadow Ring",
-		back="Shadow Mantle",waist="Null Belt",legs=BUMBA_LEGS,feet=BUMBA_FEET}
-		
-	-- Defense sets
-	sets.defense.PDT = {ammo="Staunch Tathlum +1",
+		back="Shadow Mantle",waist="Null Belt",legs=BUMBA_LEGS,feet=BUMBA_FEET
+	}
+	
+-- Defense sets
+	sets.defense.PDT = 
+	{
+		ammo="Staunch Tathlum +1",
 		head="Hjarrandi Helm",neck="Null Loop",ear1="Dedition Earring",ear2="Boii Earring +1",
 		body="Hjarrandi Breast.",hands=BUMBA_HANDS,ring1="Chirich Ring +1",ring2="Chirich Ring +1",
-		back="Null Shawl",waist="Null Belt",legs=BUMBA_LEGS,feet=BUMBA_FEET}
-		
-	sets.defense.MDT = {ammo="Staunch Tathlum +1",
+		back="Null Shawl",waist="Null Belt",legs=BUMBA_LEGS,feet=BUMBA_FEET
+	}
+	
+	sets.defense.MDT = 
+	{
+		ammo="Staunch Tathlum +1",
 		head="Hjarrandi Helm",neck="Null Loop",ear1="Dedition Earring",ear2="Boii Earring +1",
 		body="Hjarrandi Breast.",hands=BUMBA_HANDS,ring1="Chirich Ring +1",ring2="Chirich Ring +1",
-		back="Null Shawl",waist="Null Belt",legs=BUMBA_LEGS,feet=BUMBA_FEET}
-		
-	sets.defense.MEVA = {ammo="Staunch Tathlum +1",
+		back="Null Shawl",waist="Null Belt",legs=BUMBA_LEGS,feet=BUMBA_FEET
+	}
+	
+	sets.defense.MEVA = 
+	{
+		ammo="Staunch Tathlum +1",
 		head="Hjarrandi Helm",neck="Null Loop",ear1="Dedition Earring",ear2="Boii Earring +1",
 		body="Hjarrandi Breast.",hands=BUMBA_HANDS,ring1="Chirich Ring +1",ring2="Chirich Ring +1",
-		back="Null Shawl",waist="Null Belt",legs=BUMBA_LEGS,feet=BUMBA_FEET}
+		back="Null Shawl",waist="Null Belt",legs=BUMBA_LEGS,feet=BUMBA_FEET
+	}
 
 	sets.Kiting = {ring2="Shneddick Ring"}
 	sets.Reraise = {}
 	sets.buff.Doom = set_combine(sets.buff.Doom, {})
 	sets.buff.Sleep = {}
      
-	-- Engaged sets
-	sets.engaged = {ammo="Ginsen",
+-- Engaged sets
+	sets.engaged = 
+	{
+		ammo="Ginsen",
 		head="Hjarrandi Helm",neck="Combatant's Torque",ear1="Dedition Earring",ear2="Boii Earring +1",
 		body="Hjarrandi Breast.",hands=BUMBA_HANDS,ring1="Chirich Ring +1",ring2="Chirich Ring +1",
-		back="Null Shawl",waist="Windbuffet Belt +1",legs=BUMBA_LEGS,feet=BUMBA_FEET}
-		
-	sets.engaged.Acc = {ammo="Ginsen",
+		back="Null Shawl",waist="Windbuffet Belt +1",legs=BUMBA_LEGS,feet=BUMBA_FEET
+	}
+	
+	sets.engaged.Acc = 
+	{
+		ammo="Ginsen",
 		head="Hjarrandi Helm",neck="Null Loop",ear1="Telos Earring",ear2="Boii Earring +1",
 		body="Hjarrandi Breast.",hands=BUMBA_HANDS,ring1="Chirich Ring +1",ring2="Chirich Ring +1",
-		back="Null Shawl",waist="Null Belt",legs=BUMBA_LEGS,feet=BUMBA_FEET}
+		back="Null Shawl",waist="Null Belt",legs=BUMBA_LEGS,feet=BUMBA_FEET
+	}
 		
 --[[Engaged set examples
-    sets.engaged.Charge = {}
+	sets.engaged.Charge = {}
 	sets.engaged.SomeAcc.Charge = {}
 	sets.engaged.Acc.Charge = {}
 	sets.engaged.FullAcc.Charge = {}
 	sets.engaged.Fodder.Charge = {}
 	
-    sets.engaged.Mighty = {}
+	sets.engaged.Mighty = {}
 	sets.engaged.SomeAcc.Mighty = {}
 	sets.engaged.Acc.Mighty = {}
 	sets.engaged.FullAcc.Mighty = {}
 	sets.engaged.Fodder.Mighty = {}
 
-    sets.engaged.Charge.Mighty = {}
+	sets.engaged.Charge.Mighty = {}
 	sets.engaged.SomeAcc.Charge.Mighty = {}
 	sets.engaged.Acc.Charge.Mighty = {}
 	sets.engaged.FullAcc.Charge.Mighty = {}
 	sets.engaged.Fodder.Charge.Mighty = {}
 	
-    sets.engaged.Adoulin = {}
+	sets.engaged.Adoulin = {}
 	sets.engaged.SomeAcc.Adoulin = {}
 	sets.engaged.Acc.Adoulin = {}
 	sets.engaged.FullAcc.Adoulin = {}
 	sets.engaged.Fodder.Adoulin = {}
 	
-    sets.engaged.Adoulin.Charge = {}
+	sets.engaged.Adoulin.Charge = {}
 	sets.engaged.SomeAcc.Adoulin.Charge = {}
 	sets.engaged.Acc.Adoulin.Charge = {}
 	sets.engaged.FullAcc.Adoulin.Charge = {}
 	sets.engaged.Fodder.Adoulin.Charge = {}
 	
-    sets.engaged.Adoulin.Mighty = {}
+	sets.engaged.Adoulin.Mighty = {}
 	sets.engaged.SomeAcc.Adoulin.Mighty = {}
 	sets.engaged.Acc.Adoulin.Mighty = {}
 	sets.engaged.FullAcc.Adoulin.Mighty = {}
 	sets.engaged.Fodder.Adoulin.Mighty = {}
 	
-    sets.engaged.Adoulin.Charge.Mighty = {}
+	sets.engaged.Adoulin.Charge.Mighty = {}
 	sets.engaged.SomeAcc.Adoulin.Charge.Mighty = {}
 	sets.engaged.Acc.Adoulin.Charge.Mighty = {}
 	sets.engaged.FullAcc.Adoulin.Charge.Mighty = {}
 	sets.engaged.Fodder.Adoulin.Charge.Mighty = {}
-
-    sets.engaged.PDT = {}
+	
+	sets.engaged.PDT = {}
 	sets.engaged.SomeAcc.PDT = {}
 	sets.engaged.Acc.PDT = {}
 	sets.engaged.FullAcc.PDT = {}
 	sets.engaged.Fodder.PDT = {}
 	
-    sets.engaged.PDT.Charge = {}
+	sets.engaged.PDT.Charge = {}
 	sets.engaged.SomeAcc.PDT.Charge = {}
 	sets.engaged.Acc.PDT.Charge = {}
 	sets.engaged.FullAcc.PDT.Charge = {}
 	sets.engaged.Fodder.PDT.Charge = {}
 	
-    sets.engaged.PDT.Mighty = {}
+	sets.engaged.PDT.Mighty = {}
 	sets.engaged.SomeAcc.PDT.Mighty = {}
 	sets.engaged.Acc.PDT.Mighty = {}
 	sets.engaged.FullAcc.PDT.Mighty = {}
 	sets.engaged.Fodder.PDT.Mighty = {}
-
-    sets.engaged.PDT.Charge.Mighty = {}
+	
+	sets.engaged.PDT.Charge.Mighty = {}
 	sets.engaged.SomeAcc.PDT.Charge.Mighty = {}
 	sets.engaged.Acc.PDT.Charge.Mighty = {}
 	sets.engaged.FullAcc.PDT.Charge.Mighty = {}
 	sets.engaged.Fodder.PDT.Charge.Mighty = {}
 	
-    sets.engaged.PDT.Adoulin = {}
+	sets.engaged.PDT.Adoulin = {}
 	sets.engaged.SomeAcc.PDT.Adoulin = {}
 	sets.engaged.Acc.PDT.Adoulin = {}
 	sets.engaged.FullAcc.PDT.Adoulin = {}
 	sets.engaged.Fodder.PDT.Adoulin = {}
 	
-    sets.engaged.PDT.Adoulin.Charge = {}
+	sets.engaged.PDT.Adoulin.Charge = {}
 	sets.engaged.SomeAcc.PDT.Adoulin.Charge = {}
 	sets.engaged.Acc.PDT.Adoulin.Charge = {}
 	sets.engaged.FullAcc.PDT.Adoulin.Charge = {}
 	sets.engaged.Fodder.PDT.Adoulin.Charge = {}
 	
-    sets.engaged.PDT.Adoulin.Mighty = {}
+	sets.engaged.PDT.Adoulin.Mighty = {}
 	sets.engaged.SomeAcc.PDT.Adoulin.Mighty = {}
 	sets.engaged.Acc.PDT.Adoulin.Mighty = {}
 	sets.engaged.FullAcc.PDT.Adoulin.Mighty = {}
 	sets.engaged.Fodder.PDT.Adoulin.Mighty = {}
 	
-    sets.engaged.PDT.Adoulin.Charge.Mighty = {}
+	sets.engaged.PDT.Adoulin.Charge.Mighty = {}
 	sets.engaged.SomeAcc.PDT.Adoulin.Charge.Mighty = {}
 	sets.engaged.Acc.PDT.Adoulin.Charge.Mighty = {}
 	sets.engaged.FullAcc.PDT.Adoulin.Charge.Mighty = {}
 	sets.engaged.Fodder.PDT.Adoulin.Charge.Mighty = {}
-
-    sets.engaged.MDT = {}
+	
+	sets.engaged.MDT = {}
 	sets.engaged.SomeAcc.MDT = {}
 	sets.engaged.Acc.MDT = {}
 	sets.engaged.FullAcc.MDT = {}
 	sets.engaged.Fodder.MDT = {}
 	
-    sets.engaged.MDT.Charge = {}
+	sets.engaged.MDT.Charge = {}
 	sets.engaged.SomeAcc.MDT.Charge = {}
 	sets.engaged.Acc.MDT.Charge = {}
 	sets.engaged.FullAcc.MDT.Charge = {}
 	sets.engaged.Fodder.MDT.Charge = {}
 	
-    sets.engaged.MDT.Mighty = {}
+	sets.engaged.MDT.Mighty = {}
 	sets.engaged.SomeAcc.MDT.Mighty = {}
 	sets.engaged.Acc.MDT.Mighty = {}
 	sets.engaged.FullAcc.MDT.Mighty = {}
 	sets.engaged.Fodder.MDT.Mighty = {}
-
-    sets.engaged.MDT.Charge.Mighty = {}
+	
+	sets.engaged.MDT.Charge.Mighty = {}
 	sets.engaged.SomeAcc.MDT.Charge.Mighty = {}
 	sets.engaged.Acc.MDT.Charge.Mighty = {}
 	sets.engaged.FullAcc.MDT.Charge.Mighty = {}
 	sets.engaged.Fodder.MDT.Charge.Mighty = {}
 	
-    sets.engaged.MDT.Adoulin = {}
+	sets.engaged.MDT.Adoulin = {}
 	sets.engaged.SomeAcc.MDT.Adoulin = {}
 	sets.engaged.Acc.MDT.Adoulin = {}
 	sets.engaged.FullAcc.MDT.Adoulin = {}
 	sets.engaged.Fodder.MDT.Adoulin = {}
 	
-    sets.engaged.MDT.Adoulin.Charge = {}
+	sets.engaged.MDT.Adoulin.Charge = {}
 	sets.engaged.SomeAcc.MDT.Adoulin.Charge = {}
 	sets.engaged.Acc.MDT.Adoulin.Charge = {}
 	sets.engaged.FullAcc.MDT.Adoulin.Charge = {}
 	sets.engaged.Fodder.MDT.Adoulin.Charge = {}
 	
-    sets.engaged.MDT.Adoulin.Mighty = {}
+	sets.engaged.MDT.Adoulin.Mighty = {}
 	sets.engaged.SomeAcc.MDT.Adoulin.Mighty = {}
 	sets.engaged.Acc.MDT.Adoulin.Mighty = {}
 	sets.engaged.FullAcc.MDT.Adoulin.Mighty = {}
 	sets.engaged.Fodder.MDT.Adoulin.Mighty = {}
 	
-    sets.engaged.MDT.Adoulin.Charge.Mighty = {}
+	sets.engaged.MDT.Adoulin.Charge.Mighty = {}
 	sets.engaged.SomeAcc.MDT.Adoulin.Charge.Mighty = {}
 	sets.engaged.Acc.MDT.Adoulin.Charge.Mighty = {}
 	sets.engaged.FullAcc.MDT.Adoulin.Charge.Mighty = {}
 	sets.engaged.Fodder.MDT.Adoulin.Charge.Mighty = {}
 	
-            -- Variations for TP weapon and (optional) offense/defense modes.  Code will fall back on previous
-            -- sets if more refined versions aren't defined.
-            -- If you create a set with both offense and defense modes, the offense mode should be first.
-            -- EG: sets.engaged.Dagger.Accuracy.Evasion
+-- Variations for TP weapon and (optional) offense/defense modes.  Code will fall back on previous
+-- sets if more refined versions aren't defined.
+-- If you create a set with both offense and defense modes, the offense mode should be first.
+-- EG: sets.engaged.Dagger.Accuracy.Evasion
 
 -- Conqueror melee sets
-    sets.engaged.Conqueror = {}
+	sets.engaged.Conqueror = {}
 	sets.engaged.Conqueror.SomeAcc = {}
 	sets.engaged.Conqueror.Acc = {}
 	sets.engaged.Conqueror.FullAcc = {}
 	sets.engaged.Conqueror.Fodder = {}
 	
-    sets.engaged.Conqueror.Adoulin = {}
+	sets.engaged.Conqueror.Adoulin = {}
 	sets.engaged.Conqueror.SomeAcc.Adoulin = {}
 	sets.engaged.Conqueror.Acc.Adoulin = {}
 	sets.engaged.Conqueror.FullAcc.Adoulin = {}
 	sets.engaged.Conqueror.Fodder.Adoulin = {}
 	
-    sets.engaged.Conqueror.AM = {}
+	sets.engaged.Conqueror.AM = {}
 	sets.engaged.Conqueror.SomeAcc.AM = {}
 	sets.engaged.Conqueror.Acc.AM = {}
 	sets.engaged.Conqueror.FullAcc.AM = {}
 	sets.engaged.Conqueror.Fodder.AM = {}
 	
-    sets.engaged.Conqueror.Adoulin.AM = {}
+	sets.engaged.Conqueror.Adoulin.AM = {}
 	sets.engaged.Conqueror.SomeAcc.Adoulin.AM = {}
 	sets.engaged.Conqueror.Acc.Adoulin.AM = {}
 	sets.engaged.Conqueror.FullAcc.Adoulin.AM = {}
 	sets.engaged.Conqueror.Fodder.Adoulin.AM = {}
-
-    sets.engaged.Conqueror.Charge = {}
+	
+	sets.engaged.Conqueror.Charge = {}
 	sets.engaged.Conqueror.SomeAcc.Charge = {}
 	sets.engaged.Conqueror.Acc.Charge = {}
 	sets.engaged.Conqueror.FullAcc.Charge = {}
 	sets.engaged.Conqueror.Fodder.Charge = {}
 	
-    sets.engaged.Conqueror.Adoulin.Charge = {}
+	sets.engaged.Conqueror.Adoulin.Charge = {}
 	sets.engaged.Conqueror.SomeAcc.Adoulin.Charge = {}
 	sets.engaged.Conqueror.Acc.Adoulin.Charge = {}
 	sets.engaged.Conqueror.FullAcc.Adoulin.Charge = {}
 	sets.engaged.Conqueror.Fodder.Adoulin.Charge = {}
 	
-    sets.engaged.Conqueror.Charge.AM = {}
+	sets.engaged.Conqueror.Charge.AM = {}
 	sets.engaged.Conqueror.SomeAcc.Charge.AM = {}
 	sets.engaged.Conqueror.Acc.Charge.AM = {}
 	sets.engaged.Conqueror.FullAcc.Charge.AM = {}
 	sets.engaged.Conqueror.Fodder.Charge.AM = {}
 	
-    sets.engaged.Conqueror.Adoulin.Charge.AM = {}
+	sets.engaged.Conqueror.Adoulin.Charge.AM = {}
 	sets.engaged.Conqueror.SomeAcc.Adoulin.Charge.AM = {}
 	sets.engaged.Conqueror.Acc.Adoulin.Charge.AM = {}
 	sets.engaged.Conqueror.FullAcc.Adoulin.Charge.AM = {}
 	sets.engaged.Conqueror.Fodder.Adoulin.Charge.AM = {}
-
+	
 	sets.engaged.Conqueror.PDT = {}
 	sets.engaged.Conqueror.SomeAcc.PDT = {}
 	sets.engaged.Conqueror.Acc.PDT = {}
@@ -500,7 +586,7 @@ function init_gear_sets()
 	sets.engaged.Conqueror.Acc.PDT.Adoulin.Charge.AM = {}
 	sets.engaged.Conqueror.FullAcc.PDT.Adoulin.Charge.AM = {}
 	sets.engaged.Conqueror.Fodder.PDT.Adoulin.Charge.AM = {}
-
+	
 	sets.engaged.Conqueror.MDT = {}
 	sets.engaged.Conqueror.SomeAcc.MDT = {}
 	sets.engaged.Conqueror.Acc.MDT = {}
@@ -549,54 +635,54 @@ function init_gear_sets()
 	sets.engaged.Conqueror.FullAcc.MDT.Adoulin.Charge.AM = {}
 	sets.engaged.Conqueror.Fodder.MDT.Adoulin.Charge.AM = {}
 	
-    sets.engaged.Conqueror.Mighty = {}
+	sets.engaged.Conqueror.Mighty = {}
 	sets.engaged.Conqueror.SomeAcc.Mighty = {}
 	sets.engaged.Conqueror.Acc.Mighty = {}
 	sets.engaged.Conqueror.FullAcc.Mighty = {}
 	sets.engaged.Conqueror.Fodder.Mighty = {}
 	
-    sets.engaged.Conqueror.Adoulin.Mighty = {}
+	sets.engaged.Conqueror.Adoulin.Mighty = {}
 	sets.engaged.Conqueror.SomeAcc.Adoulin.Mighty = {}
 	sets.engaged.Conqueror.Acc.Adoulin.Mighty = {}
 	sets.engaged.Conqueror.FullAcc.Adoulin.Mighty = {}
 	sets.engaged.Conqueror.Fodder.Adoulin.Mighty = {}
 	
-    sets.engaged.Conqueror.Mighty.AM = {}
+	sets.engaged.Conqueror.Mighty.AM = {}
 	sets.engaged.Conqueror.SomeAcc.Mighty.AM = {}
 	sets.engaged.Conqueror.Acc.Mighty.AM = {}
 	sets.engaged.Conqueror.FullAcc.Mighty.AM = {}
 	sets.engaged.Conqueror.Fodder.Mighty.AM = {}
 	
-    sets.engaged.Conqueror.Adoulin.Mighty.AM = {}
+	sets.engaged.Conqueror.Adoulin.Mighty.AM = {}
 	sets.engaged.Conqueror.SomeAcc.Adoulin.Mighty.AM = {}
 	sets.engaged.Conqueror.Acc.Adoulin.Mighty.AM = {}
 	sets.engaged.Conqueror.FullAcc.Adoulin.Mighty.AM = {}
 	sets.engaged.Conqueror.Fodder.Adoulin.Mighty.AM = {}
-
-    sets.engaged.Conqueror.Charge.Mighty = {}
+	
+	sets.engaged.Conqueror.Charge.Mighty = {}
 	sets.engaged.Conqueror.SomeAcc.Charge.Mighty = {}
 	sets.engaged.Conqueror.Acc.Charge.Mighty = {}
 	sets.engaged.Conqueror.FullAcc.Charge.Mighty = {}
 	sets.engaged.Conqueror.Fodder.Charge.Mighty = {}
 	
-    sets.engaged.Conqueror.Adoulin.Charge.Mighty = {}
+	sets.engaged.Conqueror.Adoulin.Charge.Mighty = {}
 	sets.engaged.Conqueror.SomeAcc.Adoulin.Charge.Mighty = {}
 	sets.engaged.Conqueror.Acc.Adoulin.Charge.Mighty = {}
 	sets.engaged.Conqueror.FullAcc.Adoulin.Charge.Mighty = {}
 	sets.engaged.Conqueror.Fodder.Adoulin.Charge.Mighty = {}
 	
-    sets.engaged.Conqueror.Charge.Mighty.AM = {}
+	sets.engaged.Conqueror.Charge.Mighty.AM = {}
 	sets.engaged.Conqueror.SomeAcc.Charge.Mighty.AM = {}
 	sets.engaged.Conqueror.Acc.Charge.Mighty.AM = {}
 	sets.engaged.Conqueror.FullAcc.Charge.Mighty.AM = {}
 	sets.engaged.Conqueror.Fodder.Charge.Mighty.AM = {}
 	
-    sets.engaged.Conqueror.Adoulin.Charge.Mighty.AM = {}
+	sets.engaged.Conqueror.Adoulin.Charge.Mighty.AM = {}
 	sets.engaged.Conqueror.SomeAcc.Adoulin.Charge.Mighty.AM = {}
 	sets.engaged.Conqueror.Acc.Adoulin.Charge.Mighty.AM = {}
 	sets.engaged.Conqueror.FullAcc.Adoulin.Charge.Mighty.AM = {}
 	sets.engaged.Conqueror.Fodder.Adoulin.Charge.Mighty.AM = {}
-
+	
 	sets.engaged.Conqueror.PDT.Mighty = {}
 	sets.engaged.Conqueror.SomeAcc.PDT.Mighty = {}
 	sets.engaged.Conqueror.Acc.PDT.Mighty = {}
@@ -644,7 +730,7 @@ function init_gear_sets()
 	sets.engaged.Conqueror.Acc.PDT.Adoulin.Charge.Mighty.AM = {}
 	sets.engaged.Conqueror.FullAcc.PDT.Adoulin.Charge.Mighty.AM = {}
 	sets.engaged.Conqueror.Fodder.PDT.Adoulin.Charge.Mighty.AM = {}
-
+	
 	sets.engaged.Conqueror.MDT.Mighty = {}
 	sets.engaged.Conqueror.SomeAcc.MDT.Mighty = {}
 	sets.engaged.Conqueror.Acc.MDT.Mighty = {}
@@ -694,54 +780,54 @@ function init_gear_sets()
 	sets.engaged.Conqueror.Fodder.MDT.Adoulin.Charge.Mighty.AM = {}
 	
 -- Bravura melee sets
-    sets.engaged.Bravura = {}
+	sets.engaged.Bravura = {}
 	sets.engaged.Bravura.SomeAcc = {}
 	sets.engaged.Bravura.Acc = {}
 	sets.engaged.Bravura.FullAcc = {}
 	sets.engaged.Bravura.Fodder = {}
 	
-    sets.engaged.Bravura.Adoulin = {}
+	sets.engaged.Bravura.Adoulin = {}
 	sets.engaged.Bravura.SomeAcc.Adoulin = {}
 	sets.engaged.Bravura.Acc.Adoulin = {}
 	sets.engaged.Bravura.FullAcc.Adoulin = {}
 	sets.engaged.Bravura.Fodder.Adoulin = {}
 	
-    sets.engaged.Bravura.AM = {}
+	sets.engaged.Bravura.AM = {}
 	sets.engaged.Bravura.SomeAcc.AM = {}
 	sets.engaged.Bravura.Acc.AM = {}
 	sets.engaged.Bravura.FullAcc.AM = {}
 	sets.engaged.Bravura.Fodder.AM = {}
 	
-    sets.engaged.Bravura.Adoulin.AM = {}
+	sets.engaged.Bravura.Adoulin.AM = {}
 	sets.engaged.Bravura.SomeAcc.Adoulin.AM = {}
 	sets.engaged.Bravura.Acc.Adoulin.AM = {}
 	sets.engaged.Bravura.FullAcc.Adoulin.AM = {}
 	sets.engaged.Bravura.Fodder.Adoulin.AM = {}
-
-    sets.engaged.Bravura.Charge = {}
+	
+	sets.engaged.Bravura.Charge = {}
 	sets.engaged.Bravura.SomeAcc.Charge = {}
 	sets.engaged.Bravura.Acc.Charge = {}
 	sets.engaged.Bravura.FullAcc.Charge = {}
 	sets.engaged.Bravura.Fodder.Charge = {}
 	
-    sets.engaged.Bravura.Adoulin.Charge = {}
+	sets.engaged.Bravura.Adoulin.Charge = {}
 	sets.engaged.Bravura.SomeAcc.Adoulin.Charge = {}
 	sets.engaged.Bravura.Acc.Adoulin.Charge = {}
 	sets.engaged.Bravura.FullAcc.Adoulin.Charge = {}
 	sets.engaged.Bravura.Fodder.Adoulin.Charge = {}
 	
-    sets.engaged.Bravura.Charge.AM = {}
+	sets.engaged.Bravura.Charge.AM = {}
 	sets.engaged.Bravura.SomeAcc.Charge.AM = {}
 	sets.engaged.Bravura.Acc.Charge.AM = {}
 	sets.engaged.Bravura.FullAcc.Charge.AM = {}
 	sets.engaged.Bravura.Fodder.Charge.AM = {}
 	
-    sets.engaged.Bravura.Adoulin.Charge.AM = {}
+	sets.engaged.Bravura.Adoulin.Charge.AM = {}
 	sets.engaged.Bravura.SomeAcc.Adoulin.Charge.AM = {}
 	sets.engaged.Bravura.Acc.Adoulin.Charge.AM = {}
 	sets.engaged.Bravura.FullAcc.Adoulin.Charge.AM = {}
 	sets.engaged.Bravura.Fodder.Adoulin.Charge.AM = {}
-
+	
 	sets.engaged.Bravura.PDT = {}
 	sets.engaged.Bravura.SomeAcc.PDT = {}
 	sets.engaged.Bravura.Acc.PDT = {}
@@ -789,7 +875,7 @@ function init_gear_sets()
 	sets.engaged.Bravura.Acc.PDT.Adoulin.Charge.AM = {}
 	sets.engaged.Bravura.FullAcc.PDT.Adoulin.Charge.AM = {}
 	sets.engaged.Bravura.Fodder.PDT.Adoulin.Charge.AM = {}
-
+	
 	sets.engaged.Bravura.MDT = {}
 	sets.engaged.Bravura.SomeAcc.MDT = {}
 	sets.engaged.Bravura.Acc.MDT = {}
@@ -838,49 +924,49 @@ function init_gear_sets()
 	sets.engaged.Bravura.FullAcc.MDT.Adoulin.Charge.AM = {}
 	sets.engaged.Bravura.Fodder.MDT.Adoulin.Charge.AM = {}
 	
-    sets.engaged.Bravura.Mighty = {}
+	sets.engaged.Bravura.Mighty = {}
 	sets.engaged.Bravura.SomeAcc.Mighty = {}
 	sets.engaged.Bravura.Acc.Mighty = {}
 	sets.engaged.Bravura.FullAcc.Mighty = {}
 	sets.engaged.Bravura.Fodder.Mighty = {}
 	
-    sets.engaged.Bravura.Adoulin.Mighty = {}
+	sets.engaged.Bravura.Adoulin.Mighty = {}
 	sets.engaged.Bravura.SomeAcc.Adoulin.Mighty = {}
 	sets.engaged.Bravura.Acc.Adoulin.Mighty = {}
 	sets.engaged.Bravura.FullAcc.Adoulin.Mighty = {}
 	sets.engaged.Bravura.Fodder.Adoulin.Mighty = {}
 	
-    sets.engaged.Bravura.Mighty.AM = {}
+	sets.engaged.Bravura.Mighty.AM = {}
 	sets.engaged.Bravura.SomeAcc.Mighty.AM = {}
 	sets.engaged.Bravura.Acc.Mighty.AM = {}
 	sets.engaged.Bravura.FullAcc.Mighty.AM = {}
 	sets.engaged.Bravura.Fodder.Mighty.AM = {}
 	
-    sets.engaged.Bravura.Adoulin.Mighty.AM = {}
+	sets.engaged.Bravura.Adoulin.Mighty.AM = {}
 	sets.engaged.Bravura.SomeAcc.Adoulin.Mighty.AM = {}
 	sets.engaged.Bravura.Acc.Adoulin.Mighty.AM = {}
 	sets.engaged.Bravura.FullAcc.Adoulin.Mighty.AM = {}
 	sets.engaged.Bravura.Fodder.Adoulin.Mighty.AM = {}
-
-    sets.engaged.Bravura.Charge.Mighty = {}
+	
+	sets.engaged.Bravura.Charge.Mighty = {}
 	sets.engaged.Bravura.SomeAcc.Charge.Mighty = {}
 	sets.engaged.Bravura.Acc.Charge.Mighty = {}
 	sets.engaged.Bravura.FullAcc.Charge.Mighty = {}
 	sets.engaged.Bravura.Fodder.Charge.Mighty = {}
 	
-    sets.engaged.Bravura.Adoulin.Charge.Mighty = {}
+	sets.engaged.Bravura.Adoulin.Charge.Mighty = {}
 	sets.engaged.Bravura.SomeAcc.Adoulin.Charge.Mighty = {}
 	sets.engaged.Bravura.Acc.Adoulin.Charge.Mighty = {}
 	sets.engaged.Bravura.FullAcc.Adoulin.Charge.Mighty = {}
 	sets.engaged.Bravura.Fodder.Adoulin.Charge.Mighty = {}
 	
-    sets.engaged.Bravura.Charge.Mighty.AM = {}
+	sets.engaged.Bravura.Charge.Mighty.AM = {}
 	sets.engaged.Bravura.SomeAcc.Charge.Mighty.AM = {}
 	sets.engaged.Bravura.Acc.Charge.Mighty.AM = {}
 	sets.engaged.Bravura.FullAcc.Charge.Mighty.AM = {}
 	sets.engaged.Bravura.Fodder.Charge.Mighty.AM = {}
 	
-    sets.engaged.Bravura.Adoulin.Charge.Mighty.AM = {}
+	sets.engaged.Bravura.Adoulin.Charge.Mighty.AM = {}
 	sets.engaged.Bravura.SomeAcc.Adoulin.Charge.Mighty.AM = {}
 	sets.engaged.Bravura.Acc.Adoulin.Charge.Mighty.AM = {}
 	sets.engaged.Bravura.FullAcc.Adoulin.Charge.Mighty.AM = {}
@@ -933,7 +1019,7 @@ function init_gear_sets()
 	sets.engaged.Bravura.Acc.PDT.Adoulin.Charge.Mighty.AM = {}
 	sets.engaged.Bravura.FullAcc.PDT.Adoulin.Charge.Mighty.AM = {}
 	sets.engaged.Bravura.Fodder.PDT.Adoulin.Charge.Mighty.AM = {}
-
+	
 	sets.engaged.Bravura.MDT.Mighty = {}
 	sets.engaged.Bravura.SomeAcc.MDT.Mighty = {}
 	sets.engaged.Bravura.Acc.MDT.Mighty = {}
@@ -983,54 +1069,54 @@ function init_gear_sets()
 	sets.engaged.Bravura.Fodder.MDT.Adoulin.Charge.Mighty.AM = {}
 	
 -- Ragnarok melee sets
-    sets.engaged.Ragnarok = {}
+	sets.engaged.Ragnarok = {}
 	sets.engaged.Ragnarok.SomeAcc = {}
 	sets.engaged.Ragnarok.Acc = {}
 	sets.engaged.Ragnarok.FullAcc = {}
 	sets.engaged.Ragnarok.Fodder = {}
 	
-    sets.engaged.Ragnarok.Adoulin = {}
+	sets.engaged.Ragnarok.Adoulin = {}
 	sets.engaged.Ragnarok.SomeAcc.Adoulin = {}
 	sets.engaged.Ragnarok.Acc.Adoulin = {}
 	sets.engaged.Ragnarok.FullAcc.Adoulin = {}
 	sets.engaged.Ragnarok.Fodder.Adoulin = {}
 	
-    sets.engaged.Ragnarok.AM = {}
+	sets.engaged.Ragnarok.AM = {}
 	sets.engaged.Ragnarok.SomeAcc.AM = {}
 	sets.engaged.Ragnarok.Acc.AM = {}
 	sets.engaged.Ragnarok.FullAcc.AM = {}
 	sets.engaged.Ragnarok.Fodder.AM = {}
 	
-    sets.engaged.Ragnarok.Adoulin.AM = {}
+	sets.engaged.Ragnarok.Adoulin.AM = {}
 	sets.engaged.Ragnarok.SomeAcc.Adoulin.AM = {}
 	sets.engaged.Ragnarok.Acc.Adoulin.AM = {}
 	sets.engaged.Ragnarok.FullAcc.Adoulin.AM = {}
 	sets.engaged.Ragnarok.Fodder.Adoulin.AM = {}
-
-    sets.engaged.Ragnarok.Charge = {}
+	
+	sets.engaged.Ragnarok.Charge = {}
 	sets.engaged.Ragnarok.SomeAcc.Charge = {}
 	sets.engaged.Ragnarok.Acc.Charge = {}
 	sets.engaged.Ragnarok.FullAcc.Charge = {}
 	sets.engaged.Ragnarok.Fodder.Charge = {}
 	
-    sets.engaged.Ragnarok.Adoulin.Charge = {}
+	sets.engaged.Ragnarok.Adoulin.Charge = {}
 	sets.engaged.Ragnarok.SomeAcc.Adoulin.Charge = {}
 	sets.engaged.Ragnarok.Acc.Adoulin.Charge = {}
 	sets.engaged.Ragnarok.FullAcc.Adoulin.Charge = {}
 	sets.engaged.Ragnarok.Fodder.Adoulin.Charge = {}
 	
-    sets.engaged.Ragnarok.Charge.AM = {}
+	sets.engaged.Ragnarok.Charge.AM = {}
 	sets.engaged.Ragnarok.SomeAcc.Charge.AM = {}
 	sets.engaged.Ragnarok.Acc.Charge.AM = {}
 	sets.engaged.Ragnarok.FullAcc.Charge.AM = {}
 	sets.engaged.Ragnarok.Fodder.Charge.AM = {}
 	
-    sets.engaged.Ragnarok.Adoulin.Charge.AM = {}
+	sets.engaged.Ragnarok.Adoulin.Charge.AM = {}
 	sets.engaged.Ragnarok.SomeAcc.Adoulin.Charge.AM = {}
 	sets.engaged.Ragnarok.Acc.Adoulin.Charge.AM = {}
 	sets.engaged.Ragnarok.FullAcc.Adoulin.Charge.AM = {}
 	sets.engaged.Ragnarok.Fodder.Adoulin.Charge.AM = {}
-
+	
 	sets.engaged.Ragnarok.PDT = {}
 	sets.engaged.Ragnarok.SomeAcc.PDT = {}
 	sets.engaged.Ragnarok.Acc.PDT = {}
@@ -1078,7 +1164,7 @@ function init_gear_sets()
 	sets.engaged.Ragnarok.Acc.PDT.Adoulin.Charge.AM = {}
 	sets.engaged.Ragnarok.FullAcc.PDT.Adoulin.Charge.AM = {}
 	sets.engaged.Ragnarok.Fodder.PDT.Adoulin.Charge.AM = {}
-
+	
 	sets.engaged.Ragnarok.MDT = {}
 	sets.engaged.Ragnarok.SomeAcc.MDT = {}
 	sets.engaged.Ragnarok.Acc.MDT = {}
@@ -1127,54 +1213,54 @@ function init_gear_sets()
 	sets.engaged.Ragnarok.FullAcc.MDT.Adoulin.Charge.AM = {}
 	sets.engaged.Ragnarok.Fodder.MDT.Adoulin.Charge.AM = {}
 	
-    sets.engaged.Ragnarok.Mighty = {}
+	sets.engaged.Ragnarok.Mighty = {}
 	sets.engaged.Ragnarok.SomeAcc.Mighty = {}
 	sets.engaged.Ragnarok.Acc.Mighty = {}
 	sets.engaged.Ragnarok.FullAcc.Mighty = {}
 	sets.engaged.Ragnarok.Fodder.Mighty = {}
 	
-    sets.engaged.Ragnarok.Adoulin.Mighty = {}
+	sets.engaged.Ragnarok.Adoulin.Mighty = {}
 	sets.engaged.Ragnarok.SomeAcc.Adoulin.Mighty = {}
 	sets.engaged.Ragnarok.Acc.Adoulin.Mighty = {}
 	sets.engaged.Ragnarok.FullAcc.Adoulin.Mighty = {}
 	sets.engaged.Ragnarok.Fodder.Adoulin.Mighty = {}
 	
-    sets.engaged.Ragnarok.Mighty.AM = {}
+	sets.engaged.Ragnarok.Mighty.AM = {}
 	sets.engaged.Ragnarok.SomeAcc.Mighty.AM = {}
 	sets.engaged.Ragnarok.Acc.Mighty.AM = {}
 	sets.engaged.Ragnarok.FullAcc.Mighty.AM = {}
 	sets.engaged.Ragnarok.Fodder.Mighty.AM = {}
 	
-    sets.engaged.Ragnarok.Adoulin.Mighty.AM = {}
+	sets.engaged.Ragnarok.Adoulin.Mighty.AM = {}
 	sets.engaged.Ragnarok.SomeAcc.Adoulin.Mighty.AM = {}
 	sets.engaged.Ragnarok.Acc.Adoulin.Mighty.AM = {}
 	sets.engaged.Ragnarok.FullAcc.Adoulin.Mighty.AM = {}
 	sets.engaged.Ragnarok.Fodder.Adoulin.Mighty.AM = {}
-
-    sets.engaged.Ragnarok.Charge.Mighty = {}
+	
+	sets.engaged.Ragnarok.Charge.Mighty = {}
 	sets.engaged.Ragnarok.SomeAcc.Charge.Mighty = {}
 	sets.engaged.Ragnarok.Acc.Charge.Mighty = {}
 	sets.engaged.Ragnarok.FullAcc.Charge.Mighty = {}
 	sets.engaged.Ragnarok.Fodder.Charge.Mighty = {}
 	
-    sets.engaged.Ragnarok.Adoulin.Charge.Mighty = {}
+	sets.engaged.Ragnarok.Adoulin.Charge.Mighty = {}
 	sets.engaged.Ragnarok.SomeAcc.Adoulin.Charge.Mighty = {}
 	sets.engaged.Ragnarok.Acc.Adoulin.Charge.Mighty = {}
 	sets.engaged.Ragnarok.FullAcc.Adoulin.Charge.Mighty = {}
 	sets.engaged.Ragnarok.Fodder.Adoulin.Charge.Mighty = {}
 	
-    sets.engaged.Ragnarok.Charge.Mighty.AM = {}
+	sets.engaged.Ragnarok.Charge.Mighty.AM = {}
 	sets.engaged.Ragnarok.SomeAcc.Charge.Mighty.AM = {}
 	sets.engaged.Ragnarok.Acc.Charge.Mighty.AM = {}
 	sets.engaged.Ragnarok.FullAcc.Charge.Mighty.AM = {}
 	sets.engaged.Ragnarok.Fodder.Charge.Mighty.AM = {}
 	
-    sets.engaged.Ragnarok.Adoulin.Charge.Mighty.AM = {}
+	sets.engaged.Ragnarok.Adoulin.Charge.Mighty.AM = {}
 	sets.engaged.Ragnarok.SomeAcc.Adoulin.Charge.Mighty.AM = {}
 	sets.engaged.Ragnarok.Acc.Adoulin.Charge.Mighty.AM = {}
 	sets.engaged.Ragnarok.FullAcc.Adoulin.Charge.Mighty.AM = {}
 	sets.engaged.Ragnarok.Fodder.Adoulin.Charge.Mighty.AM = {}
-
+	
 	sets.engaged.Ragnarok.PDT.Mighty = {}
 	sets.engaged.Ragnarok.SomeAcc.PDT.Mighty = {}
 	sets.engaged.Ragnarok.Acc.PDT.Mighty = {}
@@ -1222,7 +1308,7 @@ function init_gear_sets()
 	sets.engaged.Ragnarok.Acc.PDT.Adoulin.Charge.Mighty.AM = {}
 	sets.engaged.Ragnarok.FullAcc.PDT.Adoulin.Charge.Mighty.AM = {}
 	sets.engaged.Ragnarok.Fodder.PDT.Adoulin.Charge.Mighty.AM = {}
-
+	
 	sets.engaged.Ragnarok.MDT.Mighty = {}
 	sets.engaged.Ragnarok.SomeAcc.MDT.Mighty = {}
 	sets.engaged.Ragnarok.Acc.MDT.Mighty = {}
@@ -1273,7 +1359,7 @@ function init_gear_sets()
 	
 ]]--
 	
-	--Extra Special Sets
+--Extra Special Sets
 	
 	sets.buff.Doom = set_combine(sets.buff.Doom, {})
 	sets.buff.Retaliation = {}
@@ -1281,6 +1367,11 @@ function init_gear_sets()
 	sets.TreasureHunter = set_combine(sets.TreasureHunter, {ammo="Per. Lucky Egg"})
 	
 	-- Weapons sets
+	sets.weapons.GreatAxe = {main="Chango",sub="Utu Grip"}
+	sets.weapons.Polearm = {main="Shining One",sub="Utu Grip"}
+	sets.weapons.GreatSword = {main="Nandaka",sub="Utu Grip"}
+	sets.weapons.Sword = {main="Naegling",sub="Blurred Shield +1"}
+	sets.weapons.Club = {main="Loxotic Mace +1",sub="Blurred Shield +1"}
 	sets.weapons.Staff = {main="Gozuki Mezuki",sub="Niobid Strap"}
 	sets.weapons.DualWeapons = {main="Naegling",sub="Demers. Degen +1"}
 	sets.weapons.ProcDagger = {main="Qutrub Knife",sub="Beatific Shield +1"}
