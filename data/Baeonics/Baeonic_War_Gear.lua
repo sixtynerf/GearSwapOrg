@@ -314,9 +314,18 @@ function init_gear_sets()
 	sets.idle = 
 	{
 		ammo="Staunch Tathlum +1",
-		head="Null Masque",neck="Null Loop",ear1="Genmei Earring",ear2="Sanare Earring",
-		body="Hjarrandi Breast.",hands=BUMBA_HANDS,ring1="Defending Ring",ring2="Shadow Ring",
-		back="Shadow Mantle",waist="Null Belt",legs=BUMBA_LEGS,feet=BUMBA_FEET
+		head="Null Masque",
+		neck="Null Loop",
+		ear1="Genmei Earring",
+		ear2="Sanare Earring",
+		body="Hjarrandi Breast.",
+		hands=BUMBA_HANDS,
+		ring1="Defending Ring",
+		ring2="Shadow Ring",
+		back="Shadow Mantle",
+		waist="Null Belt",
+		legs=BUMBA_LEGS,
+		feet=BUMBA_FEET
 	}
 	
 -- Defense sets
