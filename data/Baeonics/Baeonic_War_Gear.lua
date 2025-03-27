@@ -12,9 +12,9 @@ function user_job_setup()
 	state.Weapons:options('GreatAxe','PoleArm','GreatSword','Sword','Club','Staff','DualWeapons','ProcDagger','ProcSword','ProcGreatSword','ProcScythe','ProcPolearm','ProcKatana','ProcGreatKatana','ProcClub','ProcStaff')
 
 --Ambuscade Cape
-	AMBUTP_BACK = {name="Cichol's Mantle",augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Damage taken-5%',}}  --Add DT and ACC
-	AMBUCRIT_BACK = {name="Cichol's Mantle",augments={'STR+20','Accuracy+20 Attack+20','Crit.hit rate+10'}}
-	AMBUWS_BACK = { name="Cichol's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%','Damage taken-5%',}}
+	AMBUTP_BACK 	= {name="Cichol's Mantle",augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Damage taken-5%',}}  --Add DT and ACC
+	AMBUCRIT_BACK 	= {name="Cichol's Mantle",augments={'STR+20','Accuracy+20 Attack+20','Crit.hit rate+10'}}
+	AMBUWS_BACK 	= {name="Cichol's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%','Damage taken-5%',}}
 
 --Artifact Gear
 	AF_HEAD = {name="Pumm. Mask +1"}		--Yes 
