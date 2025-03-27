@@ -190,7 +190,7 @@ function init_gear_sets()
 			hands=KALUNGA_HANDS,
 			ring1="Niqmaddu Ring",
 			ring2="Epaminondas's Ring",
-			back=AMBUWSD_BACK,
+			back=AMBUCRIT_BACK,
 			waist="Sailfi Belt +1",
 			--waist="Fatality belt",
 			legs=KALUNGA_LEGS,
