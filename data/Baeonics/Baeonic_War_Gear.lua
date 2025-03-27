@@ -9,7 +9,7 @@ function user_job_setup()
 	state.IdleMode:options('Normal', 'PDT')
 	state.ExtraMeleeMode = M{['description']='Extra Melee Mode','None'}
 	state.Passive = M{['description'] = 'Passive Mode','None','Twilight'}
-	state.Weapons:options('GreatAxe','PoleArm','GreatSword','Sword','Club','Staff','DualWeapons','ProcDagger','ProcSword','ProcGreatSword','ProcScythe','ProcPolearm','ProcKatana','ProcGreatKatana','ProcClub','ProcStaff')
+	state.Weapons:options('Chango','PoleArm','GreatSword','Sword','Club','Staff','DualWeapons','ProcDagger','ProcSword','ProcGreatSword','ProcScythe','ProcPolearm','ProcKatana','ProcGreatKatana','ProcClub','ProcStaff')
 
 --Ambuscade Cape
 	AMBUTP_BACK 	= {name="Cichol's Mantle",augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Damage taken-5%',}}  --Add DT and ACC
@@ -374,6 +374,41 @@ function init_gear_sets()
 		waist="Sailfi Belt +1",
 		legs=AF_LEGS,
 		feet=AF_FEET
+	}
+
+	sets.engaged.DW = 
+	{
+		ammo="Coiste Bodhar",
+		head=EMPY_HEAD,
+		neck=JSE_NECK,
+		ear1="Eabani Earring",
+		ear2=EMPY_EAR,
+		body=AF_BODY,
+		hands=KALUNGA_HANDS,
+		ring1="Petrov Ring",
+		ring2="Niqmaddu Ring",
+		back=AMBUTP_BACK,
+		--waist="Sailfi Belt +1",
+		waist="Reiki Yotai",
+		legs=AF_LEGS,
+		feet=AF_FEET
+	}
+
+	sets.engaged.Chango = 
+	{
+		ammo="Coiste Bodhar",
+		head=KALUNGA_HEAD,
+		neck=JSE_NECK,
+		ear1="Schere Earring",
+		ear2=EMPY_EAR,
+		body=KALUNGA_BODY,
+		hands=KALUNGA_HANDS,
+		ring1="Chirich Ring +1",
+		ring2="Niqmaddu Ring",
+		back=AMBUTP_BACK,
+		waist="Sailfi Belt +1",
+		legs=KALUNGA_LEGS,
+		feet=KALUNGA_FEET
 	}
 	
 	sets.engaged.Acc = 
@@ -1405,13 +1440,13 @@ function init_gear_sets()
 	sets.TreasureHunter = set_combine(sets.TreasureHunter, {ammo="Per. Lucky Egg"})
 	
 	-- Weapons sets
-	sets.weapons.GreatAxe = {main="Chango",sub="Utu Grip"}
+	sets.weapons.Chango = {main="Chango",sub="Utu Grip"}
 	sets.weapons.Polearm = {main="Shining One",sub="Utu Grip"}
 	sets.weapons.GreatSword = {main="Nandaka",sub="Utu Grip"}
 	sets.weapons.Sword = {main="Naegling",sub="Blurred Shield +1"}
 	sets.weapons.Club = {main="Loxotic Mace +1",sub="Blurred Shield +1"}
 	sets.weapons.Staff = {main="Gozuki Mezuki",sub="Niobid Strap"}
-	sets.weapons.DualWeapons = {main="Naegling",sub="Demers. Degen +1"}
+	sets.weapons.DualWeapons = {main="Naegling",sub="Sangarius +1"}
 	sets.weapons.ProcDagger = {main="Qutrub Knife",sub="Beatific Shield +1"}
 	sets.weapons.ProcSword = {main="Kyukoto",sub="Beatific Shield +1"}
 	sets.weapons.ProcGreatSword = {main="Goujian",sub="Niobid Strap"}
@@ -1428,6 +1463,30 @@ function select_default_macro_book()
 	set_macro_page(1, 18)
 end
 
-function user_job_lockstyle()
-	windower.chat.input('/lockstyleset 020')
+-- Select default macro book on initial load or subjob change.
+function select_default_macro_book()
+    -- Default macro set/book
+    if player.sub_job == 'SAM' then
+        set_macro_page(3, 3)
+    elseif player.sub_job == 'DNC' then
+        set_macro_page(4, 3)
+    elseif player.sub_job == 'NIN' then
+        set_macro_page(2, 3)
+    elseif player.sub_job == 'THF' then
+        set_macro_page(1, 3)
+    else
+        set_macro_page(5, 3)
+    end
 end
+
+function user_job_lockstyle()
+	windower.chat.input('/lockstyleset 040')
+end
+
+autows_list = 
+{
+	['Naegling']='Savage Blade',
+	['ShiningOne']='Impulse Drive',
+	['Mace']='Judgment',
+	['Chango']='Upheaval',
+}
