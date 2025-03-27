@@ -1,15 +1,51 @@
 function user_job_setup()
 	-- Options: Override default values
-    state.OffenseMode:options('Normal')
-    state.WeaponskillMode:options('Normal','Proc')
-    state.HybridMode:options('Normal')
-    state.PhysicalDefenseMode:options('PDT')
-    state.MagicalDefenseMode:options('MDT')
+	state.OffenseMode:options('Normal')
+	state.WeaponskillMode:options('Normal','Proc')
+	state.HybridMode:options('Normal')
+	state.PhysicalDefenseMode:options('PDT')
+	state.MagicalDefenseMode:options('MDT')
 	state.ResistDefenseMode:options('MEVA')
 	state.IdleMode:options('Normal', 'PDT')
-    state.ExtraMeleeMode = M{['description']='Extra Melee Mode','None'}
+	state.ExtraMeleeMode = M{['description']='Extra Melee Mode','None'}
 	state.Passive = M{['description'] = 'Passive Mode','None','Twilight'}
-	state.Weapons:options('Staff','DualWeapons','ProcDagger','ProcSword','ProcGreatSword','ProcScythe','ProcPolearm','ProcKatana','ProcGreatKatana','ProcClub','ProcStaff')
+	state.Weapons:options('GreatAxe','Sword','PoleArm','Club','Staff','GreatSword','DualWeapons','ProcDagger','ProcSword','ProcGreatSword','ProcScythe','ProcPolearm','ProcKatana','ProcGreatKatana','ProcClub','ProcStaff')
+
+--Ambuscade Cape
+	AMBUTP_BACK = {name="Cichol's Mantle",augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Damage taken-5%',}}  --Add DT and ACC
+	AMBUCRIT_BACK = {name="Cichol's Mantle",augments={'STR+20','Accuracy+20 Attack+20','Crit.hit rate+10'}}
+	AMBUWS_BACK = { name="Cichol's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%','Damage taken-5%',}}
+
+--Artifact Gear
+	AF_HEAD = {name="Pumm. Mask +1"}		--Yes 
+	AF_BODY = {name="Pumm. Lorica +1"}		--Yes
+	AF_HANDS = {name="Pumm. Mufflers +1"}		--Yes
+	AF_LEGS = {name="Pumm. Cuisses +1"}		--Yes
+	AF_FEET = {name="Pumm. Calligae +1"}		--Yes
+
+	--Relic Gear
+	RELIC_HEAD = {name="Agoge Mask +1"}		--Yes
+	RELIC_BODY = {name="Agoge Lorica +1"}		--Yes	
+	RELIC_HANDS = {name="Agoge Mufflers +1"}	--Maybe
+	RELIC_LEGS = {name="Agoge Cuisses +1"}		--Maybe
+	RELIC_FEET = {name="Agoge Calligae +1"}		--Yes
+
+	--Empyrean Gear
+	EMPY_HEAD = {name="Boii Mask +1"}		--Maybe		
+	EMPY_BODY = {name="Boii Lorica +1"}		--Yes		
+	EMPY_HANDS = {name="Boii Mufflers +1"}		--Yes	
+	EMPY_LEGS = {name="Boii Cuisses +1"}		--Maybe		
+	EMPY_FEET = {name="Boii Calligae +1"}		--Yes
+
+--Empyrean Ear
+	EMPY_EAR = {name="Boii Earring +1"}
+
+--Relic Neck
+	JSE_NECK = {name="War. Beads +2"}
+
+--Odyssey Gear
+	GIGELORUM_EARRING = {name="Schere Earring"}
+	GOGMAGOG_AMMO = {name="Coiste Bodhar"}
 
 	-- Additional local binds
 	send_command('bind ^` input /ja "Hasso" <me>')
