@@ -374,7 +374,7 @@ sets.precast.FC =
 		feet=EMPY_FEET
 	}
 		
-	--]]sets.midcast['Elemental Magic'].HighTierNuke.Resistant = 
+	--[[sets.midcast['Elemental Magic'].HighTierNuke.Resistant = 
 	{
 		main="Daybreak",sub="Ammurapi Shield",ammo="Pemphredo Tathlum",
 		head=gear.merlinic_nuke_head,neck="Sanctity Necklace",ear1="Regal Earring",ear2="Malignance Earring",
