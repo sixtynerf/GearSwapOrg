@@ -34,7 +34,7 @@ function user_job_setup()
 	VANYA_BODY = {name="Vanya Robe"}
 
 --EMPY EAR
-	EMPY_EAR = {name="Azimuth Earring +2"}
+	EMPY_EAR = {name="Azimuth Earring +1"}
 	
 --Artifact Gear
 	AF_HEAD = {name="Geomancy Galero +2"}
