@@ -106,9 +106,9 @@ function init_gear_sets()
 -- Precast sets to enhance JAs
 	sets.precast.JA.Bolster = {body="Bagua Tunic +1"}
 	sets.precast.JA['Life Cycle'] = {body="Geo. Tunic +1",back=AMBUIDLE_BACK}
-	sets.precast.JA['Radial Arcana'] = {feet="Bagua Sandals +1"}
+	sets.precast.JA['Radial Arcana'] = {feet=RELIC_FEET}
 	sets.precast.JA['Mending Halation'] = {legs=RELIC_LEGS}
-	sets.precast.JA['Full Circle'] = {head="Azimuth Hood +1",hands=RELIC_HANDS}
+	sets.precast.JA['Full Circle'] = {head=EMPY_HEAD,hands=RELIC_HANDS}
 	
 -- Indi Duration in slots that would normally have skill here to make entrust more efficient.
 	sets.buff.Entrust = {}
@@ -361,26 +361,62 @@ sets.precast.FC =
 
 	-- Idle sets
 
-	sets.idle = {main="Daybreak",sub="Genmei Shield",ammo="Homiliary",
-		head="Befouled Crown",neck="Loricate Torque +1",ear1="Moonshade Earring",ear2="Ethereal Earring",
-		body="Witching Robe",hands=gear.chironic_refresh_hands,ring1="Defending Ring",ring2="Woltaris Ring",
-		back="Solemnity Cape",waist="Isa Belt",legs="Assid. Pants +1",feet=gear.chironic_refresh_feet}
+	sets.idle = 
+	{
+		main="Daybreak",
+		sub="Genmei Shield",
+		ammo="Homiliary",
+		head="Befouled Crown",
+		neck="Loricate Torque +1",
+		ear1="Moonshade Earring",
+		ear2="Ethereal Earring",
+		body="Witching Robe",
+		hands=gear.chironic_refresh_hands,
+		ring1="Defending Ring",
+		ring2="Woltaris Ring",
+		back="Solemnity Cape",
+		waist="Isa Belt",
+		legs="Assid. Pants +1",
+		feet=gear.chironic_refresh_feet
+	}
 		
-	sets.idle.PDT = {main="Malignance Pole",sub="Umbra Strap",ammo="Staunch Tathlum +1",
-		head="Nyame Helm",neck="Loricate Torque +1",ear1="Genmei Earring",ear2="Ethereal Earring",
-		body="Jhakri Robe +2",hands="Nyame Gauntlets",ring1="Defending Ring",ring2="Shadow Ring",
-		back="Shadow Mantle",waist="Carrier's Sash",legs="Nyame Flanchard",feet="Mallquis Clogs +2"}
+	sets.idle.PDT = 
+	{
+		main="Malignance Pole",sub="Umbra Strap",ammo="Staunch Tathlum +1",
+		head=BUMBA_HEAD,neck="Loricate Torque +1",ear1="Genmei Earring",ear2="Ethereal Earring",
+		body="Jhakri Robe +2",hands=BUMBA_HANDS,ring1="Defending Ring",ring2="Shadow Ring",
+		back="Shadow Mantle",waist="Carrier's Sash",legs=BUMBA_LEGS,feet="Mallquis Clogs +2"
+	}
 
-	-- .Pet sets are for when Luopan is present.
-	sets.idle.Pet = {main="Sucellus",sub="Genmei Shield",range="Dunna",
-		head="Azimuth Hood +1",neck="Loricate Torque +1",ear1="Handler's Earring",ear2="Handler's Earring +1",
-		body="Jhakri Robe +2",hands=AF_HANDS,ring1="Defending Ring",ring2="Dark Ring",
-		back=AMBUIDLE_BACK,waist="Isa Belt",legs="Psycloth Lappas",feet="Bagua Sandals +1"}
+-- .Pet sets are for when Luopan is present.
+	sets.idle.Pet = 
+	{
+		main="Idris",
+		sub="Genmei Shield",
+		range="Dunna",
+		head=EMPY_HEAD,
+		neck="Loricate Torque +1",
+		ear1="Handler's Earring",
+		--ear1="Ran Earring",
+		ear2="Handler's Earring +1",
+		--ear2="Odnowa Earring +1",
+		body="Shamash Robe",
+		hands=AF_HANDS,
+		ring1=StikiniRing_Ring1,
+		ring2="Gelatinous Ring +1",
+		back=AMBUIDLE_BACK,
+		waist="Isa Belt",
+		legs=BUMBA_LEGS,
+		feet=RELIC_FEET
+	}
 
-	sets.idle.PDT.Pet = {main="Malignance Pole",sub="Umbra Strap",range="Dunna",
-		head="Azimuth Hood +1",neck="Loricate Torque +1",ear1="Handler's Earring",ear2="Handler's Earring +1",
+	sets.idle.PDT.Pet = 
+	{
+		main="Malignance Pole",sub="Umbra Strap",range="Dunna",
+		head=EMPY_HEAD,neck="Loricate Torque +1",ear1="Handler's Earring",ear2="Handler's Earring +1",
 		body="Jhakri Robe +2",hands=AF_HANDS,ring1="Defending Ring",ring2="Dark Ring",
-		back=AMBUIDLE_BACK,waist="Isa Belt",legs="Nyame Flanchard",feet="Bagua Sandals +1"}
+		back=AMBUIDLE_BACK,waist="Isa Belt",legs=BUMBA_LEGS,feet=RELIC_FEET
+	}
 
 	-- .Indi sets are for when an Indi-spell is active.
 	sets.idle.Indi = set_combine(sets.idle, {})
@@ -388,27 +424,39 @@ sets.precast.FC =
 	sets.idle.PDT.Indi = set_combine(sets.idle.PDT, {}) 
 	sets.idle.PDT.Pet.Indi = set_combine(sets.idle.PDT.Pet, {})
 
-	sets.idle.Weak = {main="Bolelabunga",sub="Genmei Shield",ammo="Staunch Tathlum +1",
+	sets.idle.Weak = 
+	{
+		main="Bolelabunga",sub="Genmei Shield",ammo="Staunch Tathlum +1",
 		head="Befouled Crown",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Ethereal Earring",
 		body="Jhakri Robe +2",hands=gear.merlinic_refresh_hands,ring1="Defending Ring",ring2="Dark Ring",
-		back="Umbra Cape",waist="Carrier's Sash",legs="Assid. Pants +1",feet=EMPY_FEET}
+		back="Umbra Cape",waist="Carrier's Sash",legs="Assid. Pants +1",feet=EMPY_FEET
+	}
 
 	-- Defense sets
 	
-	sets.defense.PDT = {main="Malignance Pole",sub="Umbra Strap",ammo="Staunch Tathlum +1",
-		head="Nyame Helm",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Handler's Earring +1",
-		body="Mallquis Saio +2",hands="Nyame Gauntlets",ring1="Defending Ring",ring2="Dark Ring",
-		back="Umbra Cape",waist="Carrier's Sash",legs="Nyame Flanchard",feet=EMPY_FEET}
+	sets.defense.PDT = 
+	{
+		main="Malignance Pole",sub="Umbra Strap",ammo="Staunch Tathlum +1",
+		head=BUMBA_HEAD,neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Handler's Earring +1",
+		body="Mallquis Saio +2",hands=BUMBA_HANDS,ring1="Defending Ring",ring2="Dark Ring",
+		back="Umbra Cape",waist="Carrier's Sash",legs=BUMBA_LEGS,feet=EMPY_FEET
+	}
 
-	sets.defense.MDT = {main="Malignance Pole",sub="Umbra Strap",ammo="Staunch Tathlum +1",
-		head="Azimuth Hood +1",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Handler's Earring +1",
-		body="Mallquis Saio +2",hands="Nyame Gauntlets",ring1="Defending Ring",ring2="Dark Ring",
-		back="Umbra Cape",waist="Carrier's Sash",legs="Nyame Flanchard",feet=EMPY_FEET}
-		
-    sets.defense.MEVA = {main="Malignance Pole",sub="Enki Strap",ammo="Staunch Tathlum +1",
-        head="Azimuth Hood +1",neck="Warder's Charm +1",ear1="Etiolation Earring",ear2="Sanare Earring",
+	sets.defense.MDT = 
+	{
+		main="Malignance Pole",sub="Umbra Strap",ammo="Staunch Tathlum +1",
+		head=EMPY_HEAD,neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Handler's Earring +1",
+		body="Mallquis Saio +2",hands=BUMBA_HANDS,ring1="Defending Ring",ring2="Dark Ring",
+		back="Umbra Cape",waist="Carrier's Sash",legs=BUMBA_LEGS,feet=EMPY_FEET
+	}
+
+	sets.defense.MEVA = 
+	{
+		main="Malignance Pole",sub="Enki Strap",ammo="Staunch Tathlum +1",
+		head=EMPY_HEAD,neck="Warder's Charm +1",ear1="Etiolation Earring",ear2="Sanare Earring",
 		body=gear.merlinic_nuke_body,hands="Telchine Gloves",ring1="Vengeful Ring",Ring2="Purity Ring",
-        back=AMBUIDLE_BACK,waist="Luminary Sash",legs="Telchine Braconi",feet=EMPY_FEET}
+		back=AMBUIDLE_BACK,waist="Luminary Sash",legs="Telchine Braconi",feet=EMPY_FEET
+	}
 		
 	sets.defense.PetPDT = sets.idle.PDT.Pet
 		
@@ -416,7 +464,7 @@ sets.precast.FC =
 	
 	sets.defense.GeoLock = sets.midcast.Geomancy.Indi
 
-	sets.Kiting = {feet="Herald's Gaiters"}
+	sets.Kiting = {ring2="Shneddick Ring",feet="Herald's Gaiters"}
 	sets.latent_refresh = {waist="Fucho-no-obi"}
 	sets.latent_refresh_grip = {sub="Oneiros Grip"}
 	sets.TPEat = {neck="Chrys. Torque"}
@@ -424,31 +472,40 @@ sets.precast.FC =
 	sets.NightIdle = {}
 	sets.TreasureHunter = set_combine(sets.TreasureHunter, {feet=gear.merlinic_treasure_feet})
 	
-	sets.HPDown = {head="Pixie Hairpin +1",ear1="Mendicant's Earring",ear2="Evans Earring",
+	sets.HPDown = 
+	{
+		head="Pixie Hairpin +1",ear1="Mendicant's Earring",ear2="Evans Earring",
 		body="Jhakri Robe +2",hands="Jhakri Cuffs +2",ring1="Mephitas's Ring +1",ring2="Mephitas's Ring",
-		back="Swith Cape +1",legs="Shedir Seraweels",feet="Jhakri Pigaches +2"}
-	
+		back="Swith Cape +1",legs="Shedir Seraweels",feet="Jhakri Pigaches +2"
+	}
+
 	sets.buff.Doom = set_combine(sets.buff.Doom, {})
 
 	--------------------------------------
 	-- Engaged sets
 	--------------------------------------
-
+	
 	-- Variations for TP weapon and (optional) offense/defense modes.  Code will fall back on previous
 	-- sets if more refined versions aren't defined.
 	-- If you create a set with both offense and defense modes, the offense mode should be first.
 	-- EG: sets.engaged.Dagger.Accuracy.Evasion
 
 	-- Normal melee group
-	sets.engaged = {ammo="Hasty Pinion +1",
+	sets.engaged = 
+	{
+		ammo="Hasty Pinion +1",
 		head="Befouled Crown",neck="Asperity Necklace",ear1="Cessance Earring",ear2="Brutal Earring",
 		body="Jhakri Robe +2",hands="Gazu Bracelet +1",ring1="Ramuh Ring +1",ring2="Ramuh Ring +1",
-		back="Moonlight Cape",waist="Witful Belt",legs="Assid. Pants +1",feet="Battlecast Gaiters"}
-		
-	sets.engaged.DW = {ammo="Hasty Pinion +1",
+		back="Moonlight Cape",waist="Witful Belt",legs="Assid. Pants +1",feet="Battlecast Gaiters"
+	}
+	
+	sets.engaged.DW = 
+	{
+		ammo="Hasty Pinion +1",
 		head="Befouled Crown",neck="Asperity Necklace",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
 		body="Jhakri Robe +2",hands="Regal Cuffs",ring1="Ramuh Ring +1",ring2="Ramuh Ring +1",
-		back="Moonlight Cape",waist="Witful Belt",legs="Assid. Pants +1",feet="Battlecast Gaiters"}
+		back="Moonlight Cape",waist="Witful Belt",legs="Assid. Pants +1",feet="Battlecast Gaiters"
+	}
 
 	--------------------------------------
 	-- Custom buff sets
@@ -458,11 +515,44 @@ sets.precast.FC =
 	sets.RecoverMP = {body="Seidr Cotehardie"}
 	
 	-- Gear for Magic Burst mode.
-    sets.MagicBurst = {main=gear.grioavolr_nuke_staff,sub="Alber Strap",head="Ea Hat +1",neck="Mizu. Kubikazari",body="Ea Houppe. +1",ring1="Mujin Band",legs="Ea Slops +1",feet="Jhakri Pigaches +2"}
-	sets.ResistantMagicBurst = {main=gear.grioavolr_nuke_staff,sub="Enki Strap",head="Ea Hat +1",neck="Mizu. Kubikazari",body="Ea Houppe. +1",ring1="Mujin Band",legs="Ea Slops +1",feet="Jhakri Pigaches +2"}
+	sets.MagicBurst = 
+	{
+		main="Bunzi's Rod",
+		sub="Ammurapi Shield",
+		head=EMPY_HEAD,
+		neck="Mizu. Kubikazari",
+		ear1="Regal Earring",
+		ear2=EMPY_EAR,
+		body=EMPY_BODY,
+		hands=EMPY_HANDS,
+		ring1="Freke Ring",
+		ring2="Mujin Band",
+		back=AMBUNUKE_BACK,
+		waist="Sacro Cord",
+		legs=EMPY_LEGS
+		feet=EMPY_FEET
+	}
+	
+	sets.ResistantMagicBurst = 
+	{
+		main="Bunzi's Rod",
+		sub="Ammurapi Shield",
+		head=EMPY_HEAD,
+		neck="Mizu. Kubikazari",
+		ear1="Regal Earring",
+		ear2=EMPY_EAR,
+		body=EMPY_BODY,
+		hands=EMPY_HANDS,
+		ring1="Freke Ring",
+		ring2="Mujin Band",
+		back=AMBUNUKE_BACK,
+		waist="Sacro Cord",
+		legs=EMPY_LEGS
+		feet=EMPY_FEET
+	}
 	
 	sets.buff.Sublimation = {waist="Embla Sash"}
-    sets.buff.DTSublimation = {waist="Embla Sash"}
+	sets.buff.DTSublimation = {waist="Embla Sash"}
 	
 	-- Weapons sets
 	sets.weapons.Maxentius = {main='Maxentius',sub='Genmei Shield'}
