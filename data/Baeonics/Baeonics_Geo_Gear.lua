@@ -63,6 +63,13 @@ function user_job_setup()
 	ONGO_HANDS = {name="Agwu's Gages"}
 	ONGO_LEGS = {name="Agwu's Slops"}
 	ONGO_FEET = {name="Agwu's Pigaches"}
+
+--Rings
+	StikiniRing_Ring1	= {name = "Gurebu's Ring"}
+	StikiniRing_Ring2	= {name = "Stikini Ring +1", bag = "wardrobe3"}
+
+	ChirichRing_Ring1	= {name = "Chirich Ring +1", bag = "wardrobe2"}
+	ChirichRing_Ring2	= {name = "Chirich Ring +1", bag = "wardrobe3"}
 	
 	gear.obi_cure_back = "Tempered Cape +1"
 	gear.obi_cure_waist = "Witful Belt"
@@ -189,15 +196,15 @@ sets.precast.FC =
 		range="Dunna",
 		head=EMPY_HEAD,
 		neck=JSE_NECK,
-		ear1="Gifted Earring",
-		ear2="Malignance Earring",
-		body="Vedic Coat",
+		ear1="Etiolation Earring",
+		ear2="Odnowa Earring +1",
+		body="Shamash Robe",
 		hands=AF_HANDS,
 		ring1="Defending Ring",
-		ring2="Dark Ring",
+		ring2=StikiniRing_Ring2,
 		back=AMBUIDLE_BACK,
-		waist="Austerity Belt +1",
-		legs="Vanya Slops",
+		waist="Isa Belt",
+		legs=ONGO_LEGS,
 		feet=RELIC_FEET
 	}
 
