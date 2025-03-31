@@ -37,25 +37,25 @@ function user_job_setup()
 	EMPY_EAR = {name="Azimuth Earring +1"}
 	
 --Artifact Gear
-	AF_HEAD = {name="Geomancy Galero +2"}
-	AF_BODY = {name="Geomancy Tunic +3"}
-	AF_HANDS = {name="Geo. Mitaines +3"}
-	AF_LEGS = {name="Geomancy Pants +2"}
-	AF_FEET = {name="Geomancy Sandals +2"}
+	AF_HEAD = {name="Geomancy Galero +1"}
+	AF_BODY = {name="Geomancy Tunic +1"}
+	AF_HANDS = {name="Geo. Mitaines +1"}
+	AF_LEGS = {name="Geomancy Pants +1"}
+	AF_FEET = {name="Geomancy Sandals +1"}
 
 --Relic Gear
 	RELIC_HEAD = {name="Bagua Galero +1"}
    	RELIC_BODY = {name="Bagua Tunic +1"}
-	RELIC_HANDS = {name=RELIC_HANDS}
-	RELIC_LEGS = {name="Bagua Pants +3"}
-	RELIC_FEET = {name="Bagua Sandals +3"}
+	RELIC_HANDS = {name="Bagua Mitaines +1"}
+	RELIC_LEGS = {name="Bagua Pants +1"}
+	RELIC_FEET = {name="Bagua Sandals +1"}
 
 --Empyrean Gear
-	EMPY_HEAD = {name="Azimuth Hood +3"}
-	EMPY_BODY = {name="Azimuth Coat +3"}
-	EMPY_HANDS = {name="Azimuth Gloves +3"}
-	EMPY_LEGS = {name="Azimuth Tights +3"}
-	EMPY_FEET = {name="Azimuth Gaiters +3"}
+	EMPY_HEAD = {name="Azimuth Hood +1"}
+	EMPY_BODY = {name="Azimuth Coat +1"}
+	EMPY_HANDS = {name="Azimuth Gloves +1"}
+	EMPY_LEGS = {name="Azimuth Tights +1"}
+	EMPY_FEET = {name="Azimuth Gaiters +1"}
 
 --Odyssey
 	ONGO_HEAD = {name="Agwu's Cap"}
