@@ -33,6 +33,14 @@ function user_job_setup()
 	VANYA_HANDS_B = {name="Vanya Cuffs"}
 	VANYA_BODY = {name="Vanya Robe"}
 
+--Adoulin Gears
+
+	TELCHINE_ENH_HEAD 	= {name="Telchine Cap", augments={'"Cure" potency +8%','Enh. Mag. eff. dur. +8',}}
+	TELCHINE_ENH_BODY 	= {name="Telchine Chas.", augments={'"Cure" potency +7%','Enh. Mag. eff. dur. +10',}}
+	TELCHINE_ENH_HANDS 	= {name="Telchine Gloves", augments={'"Cure" potency +8%','Enh. Mag. eff. dur. +10',}}
+	TELCHINE_ENH_LEGS 	= {name="Telchine Braconi", augments={'"Cure" potency +7%','Enh. Mag. eff. dur. +9',}}
+	TELCHINE_ENH_FEET 	= {name="Telchine Pigaches", augments={'"Cure" potency +7%','Enh. Mag. eff. dur. +9',}}
+
 --EMPY EAR
 	EMPY_EAR = {name="Azimuth Earring +1"}
 	
@@ -228,10 +236,21 @@ sets.precast.FC =
 		
 	sets.midcast.Cure = 
 	{
-		main=gear.gada_healing_club,sub="Sors Shield",ammo="Hasty Pinion +1",
-		head="Amalric Coif +1",neck="Incanter's Torque",ear1="Gifted Earring",ear2="Etiolation Earring",
-		body="Zendik Robe",hands="Telchine Gloves",ring1="Janniston Ring",ring2="Menelaus's Ring",
-		back="Tempered Cape +1",waist="Witful Belt",legs=AF_LEGS,feet="Vanya Clogs"
+		main="Daybreak",
+		sub="Ammurapi Shield",
+		ammo="Hydrocera",
+		head="Vanya Hood",
+		neck="Incanter's Torque",
+		ear1="Meili Earring",
+		ear2="Mendi. Earring",
+		body="Vanya Robe",
+		hands="Vanya Cuffs",
+		ring1=StikiniRing_Ring1,
+		ring2=StikiniRing_Ring2,
+		back=AMBUIDLE_BACK,
+		waist="Luminary Sash",
+		legs="Vanya Legs",
+		feet="Vanya Clogs"
 	}
 		
 	sets.midcast.LightWeatherCure = 
@@ -344,7 +363,7 @@ sets.precast.FC =
 	{
 		main="Rubicundity",sub="Ammurapi Shield",ammo="Pemphredo Tathlum",
 		head=gear.merlinic_nuke_head,neck="Erra Pendant",ear1="Regal Earring",ear2="Malignance Earring",
-		body=gear.merlinic_nuke_body,hands="Amalric Gages +1",ring1="Metamor. Ring +1",ring2="Stikini Ring +1",
+		body=gear.merlinic_nuke_body,hands="Amalric Gages +1",ring1="Metamor. Ring +1",ring2=StikiniRing_Ring2,
 		back=AMBUNUKE_BACK,waist="Yamabuki-no-Obi",legs="Merlinic Shalwar",feet=gear.merlinic_aspir_feet
 	}
 		
@@ -362,13 +381,13 @@ sets.precast.FC =
 	{
 		main=gear.grioavolr_fc_staff,sub="Clerisy Strap +1",ammo="Hasty Pinion +1",
 		head="Amalric Coif +1",neck="Voltsurge Torque",ear1="Enchntr. Earring +1",ear2="Malignance Earring",
-		body="Zendik Robe",hands="Volte Gloves",ring1="Metamor. Ring +1",ring2="Stikini Ring +1",
+		body="Zendik Robe",hands="Volte Gloves",ring1="Metamor. Ring +1",ring2=StikiniRing_Ring2,
 		back=JSEINDI_BACK,waist="Witful Belt",legs="Psycloth Lappas",feet="Regal Pumps +1"
 	}
 		
 	sets.midcast.Stun.Resistant = {main="Daybreak",sub="Ammurapi Shield",ammo="Pemphredo Tathlum",
 		head="Amalric Coif +1",neck="Erra Pendant",ear1="Regal Earring",ear2="Malignance Earring",
-		body="Zendik Robe",hands="Amalric Gages +1",ring1="Metamor. Ring +1",ring2="Stikini Ring +1",
+		body="Zendik Robe",hands="Amalric Gages +1",ring1="Metamor. Ring +1",ring2=StikiniRing_Ring2,
 		back=AMBUNUKE_BACK,waist="Acuity Belt +1",legs="Merlinic Shalwar",feet=gear.merlinic_aspir_feet}
 		
 	sets.midcast.Impact = 
@@ -383,7 +402,7 @@ sets.precast.FC =
 		body="Twilight Cloak",
 		hands="Regal Cuffs",
 		ring1="Metamor. Ring +1",
-		ring2="Stikini Ring +1",
+		ring2=StikiniRing_Ring2,
 		back=AMBUNUKE_BACK,
 		waist="Acuity Belt +1",
 		legs="Merlinic Shalwar",
@@ -402,7 +421,7 @@ sets.precast.FC =
 		body="Zendik Robe",
 		hands="Amalric Gages +1",
 		ring1="Metamor. Ring +1",
-		ring2="Stikini Ring +1",
+		ring2=StikiniRing_Ring2,
 		back=AMBUNUKE_BACK,
 		waist="Acuity Belt +1",
 		legs="Merlinic Shalwar",
@@ -416,25 +435,25 @@ sets.precast.FC =
 		main="Daybreak",
 		sub="Ammurapi Shield",
 		ammo="Pemphredo Tathlum",
-		head="Befouled Crown",
+		head=AF_HEAD,
 		neck="Erra Pendant",
 		ear1="Regal Earring",
-		ear2="Digni. Earring",
-		body=gear.merlinic_nuke_body,
+		ear2="Malignance Earring",
+		body=AF_BODY,
 		hands="Regal Cuffs",
-		ring1="Kishar Ring",
-		ring2="Stikini Ring +1",
+		ring1=StikiniRing_Ring1,
+		ring2=StikiniRing_Ring2,
 		back=AMBUNUKE_BACK,
 		waist="Luminary Sash",
-		legs="Psycloth Lappas",
-		feet="Uk'uxkaj Boots"
+		legs=AF_LEGS,
+		feet=AF_FEET
 	}
 		
 	sets.midcast['Enfeebling Magic'].Resistant = 
 	{
 		main="Daybreak",sub="Ammurapi Shield",ammo="Pemphredo Tathlum",
 		head="Befouled Crown",neck="Erra Pendant",ear1="Regal Earring",ear2="Digni. Earring",
-		body=gear.merlinic_nuke_body,hands="Regal Cuffs",ring1="Metamor. Ring +1",ring2="Stikini Ring +1",
+		body=gear.merlinic_nuke_body,hands="Regal Cuffs",ring1="Metamor. Ring +1",ring2=StikiniRing_Ring2,
 		back=AMBUNUKE_BACK,waist="Luminary Sash",legs="Psycloth Lappas",feet="Skaoi Boots"
 	}
 		
@@ -454,17 +473,17 @@ sets.precast.FC =
 		main=gear.gada_enhancing_club,
 		sub="Ammurapi Shield",
 		ammo="Hasty Pinion +1",
-		head="Telchine Cap",
+		head=TELCHINE_ENH_HEAD,
 		neck="Incanter's Torque",
 		ear1="Andoaa Earring",ear2="Gifted Earring",
-		body="Telchine Chas.",
-		hands="Telchine Gloves",
-		ring1="Stikini Ring +1",
-		ring2="Stikini Ring +1",
+		body=TELCHINE_ENH_BODY,
+		hands=TELCHINE_ENH_HANDS,
+		ring1=StikiniRing_Ring1
+		ring2=StikiniRing_Ring2,
 		back="Perimede Cape",
 		waist="Embla Sash",
-		legs="Telchine Braconi",
-		feet="Telchine Pigaches"
+		legs=TELCHINE_ENH_LEGS,
+		feet=TELCHINE_ENH_FEET
 	}
 		
 	sets.midcast.Stoneskin = set_combine(sets.midcast['Enhancing Magic'], {neck="Nodens Gorget",ear2="Earthcry Earring",waist="Siegel Sash",legs="Shedir Seraweels"})
