@@ -7,7 +7,7 @@ function user_job_setup()
 	state.PhysicalDefenseMode:options('PDT', 'NukeLock', 'GeoLock', 'PetPDT')
 	state.MagicalDefenseMode:options('MDT', 'NukeLock')
 	state.ResistDefenseMode:options('MEVA')
-	state.Weapons:options('None','Maxentius','DualWeapons')
+	state.Weapons:options('None','Idris','Maxentius','DualWeapons')
 
 	autoindi = "Haste"
 	autogeo = "Frailty"
@@ -691,6 +691,7 @@ sets.precast.FC =
 	
 	-- Weapons sets
 	sets.weapons.Maxentius = {main='Maxentius',sub='Genmei Shield'}
+	sets.weapons.Idris = {main='Idris',sub='Genmei Shield'}
 	sets.weapons.DualWeapons = {main='Maxentius',sub='Nehushtan'}
 end
 
@@ -702,3 +703,9 @@ end
 function user_job_lockstyle()
 	windower.chat.input('/lockstyleset 020')
 end
+
+autows_list = 
+{
+	['Idris']="Exudation",
+	['Maxentius']="Black Halo",
+}
