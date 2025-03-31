@@ -2,7 +2,8 @@ function user_job_setup()
 
 -- Options: Override default values
 	state.OffenseMode:options('Normal')
-	state.CastingMode:options('Normal', 'Resistant', 'Fodder', 'Proc')
+	--state.CastingMode:options('Normal', 'Resistant', 'Fodder', 'Proc')
+	state.CastingMode:options('Normal')
 	state.IdleMode:options('Normal','PDT')
 	state.PhysicalDefenseMode:options('PDT', 'NukeLock', 'GeoLock', 'PetPDT')
 	state.MagicalDefenseMode:options('MDT', 'NukeLock')
@@ -361,10 +362,21 @@ sets.precast.FC =
 		
 	sets.midcast['Dark Magic'] = 
 	{
-		main="Rubicundity",sub="Ammurapi Shield",ammo="Pemphredo Tathlum",
-		head=gear.merlinic_nuke_head,neck="Erra Pendant",ear1="Regal Earring",ear2="Malignance Earring",
-		body=gear.merlinic_nuke_body,hands="Amalric Gages +1",ring1="Metamor. Ring +1",ring2=StikiniRing_Ring2,
-		back=AMBUNUKE_BACK,waist="Yamabuki-no-Obi",legs="Merlinic Shalwar",feet=gear.merlinic_aspir_feet
+		main="Rubicundity",
+		sub="Ammurapi Shield",
+		ammo="Pemphredo Tathlum",
+		head=RELIC_HEAD,
+		neck="Erra Pendant",
+		ear1="Mani Earring",
+		ear2="Barkaro. Earring",
+		body=AF_BODY,
+		hands="Merlinic Dastanas",
+		ring1="Evanescence Ring",
+		ring2="Archon Ring",
+		back=AMBUNUKE_BACK,
+		waist="Fucho-no-Obi",
+		legs=EMPY_LEGS,
+		feet=ONGO_FEET
 	}
 		
 	sets.midcast.Drain = 
