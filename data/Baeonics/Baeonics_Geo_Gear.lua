@@ -647,9 +647,18 @@ sets.precast.FC =
 	sets.engaged = 
 	{
 		ammo="Hasty Pinion +1",
-		head="Befouled Crown",neck="Asperity Necklace",ear1="Cessance Earring",ear2="Brutal Earring",
-		body="Jhakri Robe +2",hands="Gazu Bracelet +1",ring1="Ramuh Ring +1",ring2="Ramuh Ring +1",
-		back="Moonlight Cape",waist="Witful Belt",legs="Assid. Pants +1",feet="Battlecast Gaiters"
+		head=BUMBA_HEAD,
+		neck="Lissome Necklace",
+		ear1="Telos Earring",
+		ear2="Crep. Earring",
+		body=BUMBA_BODY",
+		hands=BUMBA_HANDS,
+		ring1=ChirichRing_Ring1,
+		ring2=ChirichRing_Ring2,
+		back=AMBUIDLE_BACK,
+		waist="Cetl Belt",
+		legs=BUMBA_LEGS,
+		feet=BUMBA_FEET
 	}
 	
 	sets.engaged.DW = 
