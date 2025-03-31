@@ -1,21 +1,21 @@
 function user_job_setup()
 
-	-- Options: Override default values
-    state.OffenseMode:options('Normal')
+-- Options: Override default values
+	state.OffenseMode:options('Normal')
 	state.CastingMode:options('Normal', 'Resistant', 'Fodder', 'Proc')
-    state.IdleMode:options('Normal','PDT')
+	state.IdleMode:options('Normal','PDT')
 	state.PhysicalDefenseMode:options('PDT', 'NukeLock', 'GeoLock', 'PetPDT')
 	state.MagicalDefenseMode:options('MDT', 'NukeLock')
 	state.ResistDefenseMode:options('MEVA')
 	state.Weapons:options('None','Maxentius','DualWeapons')
 
-autoindi = "Haste"
-autogeo = "Frailty"
+	autoindi = "Haste"
+	autogeo = "Frailty"
 	
 --AMBU CAPES
 	AMBUNUKE_BACK = {name="Nantosuelta's Cape",augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','Mag. Acc.+10','"Mag.Atk.Bns."+10'}}
 	AMBUIDLE_BACK = {name="Nantosuelta's Cape",augments={'HP+60','Eva.+20 /Mag. Eva.+20','Pet: "Regen"+10','Pet: "Regen"+5'}}
-	JSEINDI_BACK = { name="Lifestream Cape", augments={'Geomancy Skill +10','Indi. eff. dur. +20','Pet: Damage taken -2%',}}
+	JSEINDI_BACK = { name=JSEINDI_BACK, augments={'Geomancy Skill +10','Indi. eff. dur. +20','Pet: Damage taken -2%',}}
 
 --Others
 	GADA_INDI = {name="Gada", augments={'Indi. eff. dur. +9','VIT+13','DMG:+12',}}
@@ -39,14 +39,14 @@ autogeo = "Frailty"
 --Artifact Gear
 	AF_HEAD = {name="Geomancy Galero +2"}
 	AF_BODY = {name="Geomancy Tunic +3"}
-	AF_HANDS = {name="Geomancy Mitaines +3"}
+	AF_HANDS = {name="Geo. Mitaines +3"}
 	AF_LEGS = {name="Geomancy Pants +2"}
 	AF_FEET = {name="Geomancy Sandals +2"}
 
 --Relic Gear
 	RELIC_HEAD = {name="Bagua Galero +1"}
    	RELIC_BODY = {name="Bagua Tunic +1"}
-	RELIC_HANDS = {name="Bagua Mitaines +1"}
+	RELIC_HANDS = {name=RELIC_HANDS}
 	RELIC_LEGS = {name="Bagua Pants +3"}
 	RELIC_FEET = {name="Bagua Sandals +3"}
 
@@ -92,33 +92,47 @@ end
 
 function init_gear_sets()
 	
-	--------------------------------------
-	-- Precast sets
-	--------------------------------------
+--------------------------------------
+-- Precast sets
+--------------------------------------
 
-	-- Precast sets to enhance JAs
+-- Precast sets to enhance JAs
 	sets.precast.JA.Bolster = {body="Bagua Tunic +1"}
 	sets.precast.JA['Life Cycle'] = {body="Geo. Tunic +1",back=AMBUIDLE_BACK}
 	sets.precast.JA['Radial Arcana'] = {feet="Bagua Sandals +1"}
-	sets.precast.JA['Mending Halation'] = {legs="Bagua Pants +1"}
-	sets.precast.JA['Full Circle'] = {head="Azimuth Hood +1",hands="Bagua Mitaines +1"}
+	sets.precast.JA['Mending Halation'] = {legs=RELIC_LEGS}
+	sets.precast.JA['Full Circle'] = {head="Azimuth Hood +1",hands=RELIC_HANDS}
 	
-	-- Indi Duration in slots that would normally have skill here to make entrust more efficient.
+-- Indi Duration in slots that would normally have skill here to make entrust more efficient.
 	sets.buff.Entrust = {}
 	
-	-- Relic hat for Blaze of Glory HP increase.
+-- Relic hat for Blaze of Glory HP increase.
 	sets.buff['Blaze of Glory'] = {}
 	
-	-- Fast cast sets for spells
+-- Fast cast sets for spells
 
-	sets.precast.FC = {main=gear.grioavolr_fc_staff,sub="Clerisy Strap +1",ammo="Impatiens",
-		head="Amalric Coif +1",neck="Voltsurge Torque",ear1="Enchntr. Earring +1",ear2="Malignance Earring",
-		body="Zendik Robe",hands="Volte Gloves",ring1="Kishar Ring",ring2="Lebeche Ring",
-		back="Perimede Cape",waist="Witful Belt",legs="Geo. Pants +1",feet="Regal Pumps +1"}
+sets.precast.FC = 
+	{
+		main=gear.grioavolr_fc_staff,
+		sub="Clerisy Strap +1",
+		ammo="Impatiens",
+		head="Amalric Coif +1",
+		neck="Voltsurge Torque",
+		ear1="Enchntr. Earring +1",
+		ear2="Malignance Earring",
+		body="Zendik Robe",
+		hands="Volte Gloves",
+		ring1="Kishar Ring",
+		ring2="Lebeche Ring",
+		back="Perimede Cape",
+		waist="Witful Belt",
+		legs=AF_LEGS,
+		feet="Regal Pumps +1"
+	}
 
 	sets.precast.FC.Geomancy = set_combine(sets.precast.FC, {range="Dunna",ammo=empty})
 	
-    sets.precast.FC['Elemental Magic'] = set_combine(sets.precast.FC, {ear2="Malignance Earring",hands="Bagua Mitaines +1"})
+	sets.precast.FC['Elemental Magic'] = set_combine(sets.precast.FC, {ear2="Malignance Earring",hands=RELIC_HANDS})
 
 	sets.precast.FC.Cure = set_combine(sets.precast.FC, {main="Serenity",sub="Clerisy Strap +1"})
 		
@@ -128,55 +142,90 @@ function init_gear_sets()
 	sets.Cure_Received = {neck="Phalaina Locket",ring1="Kunaji Ring",ring2="Asklepian Ring",waist="Gishdubar Sash"}
 	sets.Self_Refresh = {back="Grapevine Cape",waist="Gishdubar Sash",feet="Inspirited Boots"}
 	
-    sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, {waist="Siegel Sash"})
+	sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, {waist="Siegel Sash"})
+	
+	sets.precast.FC.Stoneskin = set_combine(sets.precast.FC['Enhancing Magic'], {})
 
-    sets.precast.FC.Stoneskin = set_combine(sets.precast.FC['Enhancing Magic'], {})
-
-	sets.precast.FC.Impact = {ammo="Impatiens",
-		head=empty,neck="Voltsurge Torque",ear1="Enchntr. Earring +1",ear2="Malignance Earring",
-		body="Twilight Cloak",hands="Volte Gloves",ring1="Kishar Ring",ring2="Lebeche Ring",
-		back="Lifestream Cape",waist="Witful Belt",legs="Geo. Pants +1",feet="Regal Pumps +1"}
+	sets.precast.FC.Impact = 
+	{
+		ammo="Impatiens",
+		head=empty,
+		neck="Voltsurge Torque",
+		ear1="Enchntr. Earring +1",
+		ear2="Malignance Earring",
+		body="Twilight Cloak",
+		hands="Volte Gloves",
+		ring1="Kishar Ring",
+		ring2="Lebeche Ring",
+		back=JSEINDI_BACK,
+		waist="Witful Belt",
+		legs=AF_LEGS,
+		feet="Regal Pumps +1"
+	}
 		
 	sets.precast.FC.Dispelga = set_combine(sets.precast.FC, {main="Daybreak",sub="Genmei Shield"})
 	
-	-- Weaponskill sets
-	-- Default set for any weaponskill that isn't any more specifically defined
+-- Weaponskill sets
+-- Default set for any weaponskill that isn't any more specifically defined
+	
 	sets.precast.WS = {}
 
+--------------------------------------
+-- Midcast sets
+--------------------------------------
 
-	--------------------------------------
-	-- Midcast sets
-	--------------------------------------
-
-    sets.midcast.FastRecast = {main=gear.grioavolr_fc_staff,sub="Clerisy Strap +1",
+	sets.midcast.FastRecast = 
+	{
+		main=gear.grioavolr_fc_staff,sub="Clerisy Strap +1",
 		head="Amalric Coif +1",neck="Voltsurge Torque",ear1="Enchntr. Earring +1",ear2="Malignance Earring",
 		body="Zendik Robe",hands="Volte Gloves",ring1="Kishar Ring",ring2="Prolix Ring",
-		back="Lifestream Cape",waist="Witful Belt",legs="Geo. Pants +1",feet="Regal Pumps +1"}
+		back=JSEINDI_BACK,waist="Witful Belt",legs=AF_LEGS,feet="Regal Pumps +1"
+	}
 
-	sets.midcast.Geomancy = {main="Solstice",sub="Genmei Shield",range="Dunna",
-		head="Vanya Hood",neck="Incanter's Torque",ear1="Gifted Earring",ear2="Malignance Earring",
-		body="Vedic Coat",hands="Geo. Mitaines +3",ring1="Defending Ring",ring2="Dark Ring",
-		back="Solemnity Cape",waist="Austerity Belt +1",legs="Vanya Slops",feet="Medium's Sabots"}
+	sets.midcast.Geomancy = 
+	{
+		main="Idris",
+		sub="Genmei Shield",
+		range="Dunna",
+		head=EMPY_HEAD,
+		neck=JSE_NECK,
+		ear1="Gifted Earring",
+		ear2="Malignance Earring",
+		body="Vedic Coat",
+		hands=AF_HANDS,
+		ring1="Defending Ring",
+		ring2="Dark Ring",
+		back=AMBUIDLE_BACK,
+		waist="Austerity Belt +1",
+		legs="Vanya Slops",
+		feet=RELIC_FEET
+	}
 
 
-	--Extra Indi duration as long as you can keep your 900 skill cap.
-	sets.midcast.Geomancy.Indi = set_combine(sets.midcast.Geomancy, {back=AMBUIDLE_BACK,legs="Bagua Pants +1",feet="Azimuth Gaiters +1"})
+--Extra Indi duration as long as you can keep your 900 skill cap.
+	sets.midcast.Geomancy.Indi = set_combine(sets.midcast.Geomancy, 
+		{
+			main=GADA_INDI,
+			back=JSEINDI_BACK,
+			legs=RELIC_LEGS,
+			feet=EMPY_FEET
+		})
 		
     sets.midcast.Cure = {main=gear.gada_healing_club,sub="Sors Shield",ammo="Hasty Pinion +1",
         head="Amalric Coif +1",neck="Incanter's Torque",ear1="Gifted Earring",ear2="Etiolation Earring",
         body="Zendik Robe",hands="Telchine Gloves",ring1="Janniston Ring",ring2="Menelaus's Ring",
-        back="Tempered Cape +1",waist="Witful Belt",legs="Geo. Pants +1",feet="Vanya Clogs"}
+        back="Tempered Cape +1",waist="Witful Belt",legs=AF_LEGS,feet="Vanya Clogs"}
 		
     sets.midcast.LightWeatherCure = {main="Chatoyant Staff",sub="Curatio Grip",ammo="Hasty Pinion +1",
         head="Amalric Coif +1",neck="Phalaina Locket",ear1="Gifted Earring",ear2="Etiolation Earring",
         body="Vrikodara Jupon",hands="Telchine Gloves",ring1="Janniston Ring",ring2="Menelaus's Ring",
-        back="Twilight Cape",waist="Hachirin-no-Obi",legs="Geo. Pants +1",feet="Vanya Clogs"}
+        back="Twilight Cape",waist="Hachirin-no-Obi",legs=AF_LEGS,feet="Vanya Clogs"}
 		
 		--Cureset for if it's not light weather but is light day.
     sets.midcast.LightDayCure = {main=gear.gada_healing_club,sub="Sors Shield",ammo="Hasty Pinion +1",
         head="Amalric Coif +1",neck="Incanter's Torque",ear1="Gifted Earring",ear2="Etiolation Earring",
         body="Zendik Robe",hands="Telchine Gloves",ring1="Janniston Ring",ring2="Lebeche Ring",
-        back="Twilight Cape",waist="Hachirin-no-Obi",legs="Geo. Pants +1",feet="Vanya Clogs"}
+        back="Twilight Cape",waist="Hachirin-no-Obi",legs=AF_LEGS,feet="Vanya Clogs"}
 
     sets.midcast.Curaga = set_combine(sets.midcast.Cure, {main="Daybreak",sub="Sors Shield"})
 
@@ -235,7 +284,7 @@ function init_gear_sets()
 	sets.midcast.Stun = {main=gear.grioavolr_fc_staff,sub="Clerisy Strap +1",ammo="Hasty Pinion +1",
 		head="Amalric Coif +1",neck="Voltsurge Torque",ear1="Enchntr. Earring +1",ear2="Malignance Earring",
 		body="Zendik Robe",hands="Volte Gloves",ring1="Metamor. Ring +1",ring2="Stikini Ring +1",
-		back="Lifestream Cape",waist="Witful Belt",legs="Psycloth Lappas",feet="Regal Pumps +1"}
+		back=JSEINDI_BACK,waist="Witful Belt",legs="Psycloth Lappas",feet="Regal Pumps +1"}
 		
 	sets.midcast.Stun.Resistant = {main="Daybreak",sub="Ammurapi Shield",ammo="Pemphredo Tathlum",
 		head="Amalric Coif +1",neck="Erra Pendant",ear1="Regal Earring",ear2="Malignance Earring",
@@ -318,12 +367,12 @@ function init_gear_sets()
 	-- .Pet sets are for when Luopan is present.
 	sets.idle.Pet = {main="Sucellus",sub="Genmei Shield",range="Dunna",
 		head="Azimuth Hood +1",neck="Loricate Torque +1",ear1="Handler's Earring",ear2="Handler's Earring +1",
-		body="Jhakri Robe +2",hands="Geo. Mitaines +3",ring1="Defending Ring",ring2="Dark Ring",
+		body="Jhakri Robe +2",hands=AF_HANDS,ring1="Defending Ring",ring2="Dark Ring",
 		back=AMBUIDLE_BACK,waist="Isa Belt",legs="Psycloth Lappas",feet="Bagua Sandals +1"}
 
 	sets.idle.PDT.Pet = {main="Malignance Pole",sub="Umbra Strap",range="Dunna",
 		head="Azimuth Hood +1",neck="Loricate Torque +1",ear1="Handler's Earring",ear2="Handler's Earring +1",
-		body="Jhakri Robe +2",hands="Geo. Mitaines +3",ring1="Defending Ring",ring2="Dark Ring",
+		body="Jhakri Robe +2",hands=AF_HANDS,ring1="Defending Ring",ring2="Dark Ring",
 		back=AMBUIDLE_BACK,waist="Isa Belt",legs="Nyame Flanchard",feet="Bagua Sandals +1"}
 
 	-- .Indi sets are for when an Indi-spell is active.
@@ -335,24 +384,24 @@ function init_gear_sets()
 	sets.idle.Weak = {main="Bolelabunga",sub="Genmei Shield",ammo="Staunch Tathlum +1",
 		head="Befouled Crown",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Ethereal Earring",
 		body="Jhakri Robe +2",hands=gear.merlinic_refresh_hands,ring1="Defending Ring",ring2="Dark Ring",
-		back="Umbra Cape",waist="Carrier's Sash",legs="Assid. Pants +1",feet="Azimuth Gaiters +1"}
+		back="Umbra Cape",waist="Carrier's Sash",legs="Assid. Pants +1",feet=EMPY_FEET}
 
 	-- Defense sets
 	
 	sets.defense.PDT = {main="Malignance Pole",sub="Umbra Strap",ammo="Staunch Tathlum +1",
 		head="Nyame Helm",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Handler's Earring +1",
 		body="Mallquis Saio +2",hands="Nyame Gauntlets",ring1="Defending Ring",ring2="Dark Ring",
-		back="Umbra Cape",waist="Carrier's Sash",legs="Nyame Flanchard",feet="Azimuth Gaiters +1"}
+		back="Umbra Cape",waist="Carrier's Sash",legs="Nyame Flanchard",feet=EMPY_FEET}
 
 	sets.defense.MDT = {main="Malignance Pole",sub="Umbra Strap",ammo="Staunch Tathlum +1",
 		head="Azimuth Hood +1",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Handler's Earring +1",
 		body="Mallquis Saio +2",hands="Nyame Gauntlets",ring1="Defending Ring",ring2="Dark Ring",
-		back="Umbra Cape",waist="Carrier's Sash",legs="Nyame Flanchard",feet="Azimuth Gaiters +1"}
+		back="Umbra Cape",waist="Carrier's Sash",legs="Nyame Flanchard",feet=EMPY_FEET}
 		
     sets.defense.MEVA = {main="Malignance Pole",sub="Enki Strap",ammo="Staunch Tathlum +1",
         head="Azimuth Hood +1",neck="Warder's Charm +1",ear1="Etiolation Earring",ear2="Sanare Earring",
 		body=gear.merlinic_nuke_body,hands="Telchine Gloves",ring1="Vengeful Ring",Ring2="Purity Ring",
-        back=AMBUIDLE_BACK,waist="Luminary Sash",legs="Telchine Braconi",feet="Azimuth Gaiters +1"}
+        back=AMBUIDLE_BACK,waist="Luminary Sash",legs="Telchine Braconi",feet=EMPY_FEET}
 		
 	sets.defense.PetPDT = sets.idle.PDT.Pet
 		
