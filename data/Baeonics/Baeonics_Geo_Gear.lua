@@ -381,20 +381,42 @@ sets.precast.FC =
 		
 	sets.midcast.Drain = 
 	{
-		main="Rubicundity",sub="Ammurapi Shield",ammo="Pemphredo Tathlum",
-		head="Pixie Hairpin +1",neck="Erra Pendant",ear1="Regal Earring",ear2="Malignance Earring",
-		body=gear.merlinic_nuke_body,hands="Amalric Gages +1",ring1="Archon Ring",ring2="Evanescence Ring",
-		back=AMBUNUKE_BACK,waist="Fucho-no-obi",legs="Merlinic Shalwar",feet=gear.merlinic_aspir_feet
+		main="Rubicundity",
+		sub="Ammurapi Shield",
+		ammo="Pemphredo Tathlum",
+		head=RELIC_HEAD,
+		neck="Erra Pendant",
+		ear1="Mani Earring",
+		ear2="Barkaro. Earring",
+		body=AF_BODY,
+		hands="Merlinic Dastanas",
+		ring1="Evanescence Ring",
+		ring2="Archon Ring",
+		back=AMBUNUKE_BACK,
+		waist="Fucho-no-Obi",
+		legs=EMPY_LEGS,
+		feet=ONGO_FEET
 	}
     
 	sets.midcast.Aspir = sets.midcast.Drain
 		
 	sets.midcast.Stun = 
 	{
-		main=gear.grioavolr_fc_staff,sub="Clerisy Strap +1",ammo="Hasty Pinion +1",
-		head="Amalric Coif +1",neck="Voltsurge Torque",ear1="Enchntr. Earring +1",ear2="Malignance Earring",
-		body="Zendik Robe",hands="Volte Gloves",ring1="Metamor. Ring +1",ring2=StikiniRing_Ring2,
-		back=JSEINDI_BACK,waist="Witful Belt",legs="Psycloth Lappas",feet="Regal Pumps +1"
+		main="Rubicundity",
+		sub="Ammurapi Shield",
+		ammo="Pemphredo Tathlum",
+		head="Merlinic Hood",
+		neck="Erra Pendant",
+		ear1="Regal Earring",
+		ear2="Enchntr. Earring +1",
+		body="Zendik Robe",
+		hands=AF_HANDS,
+		ring1="Kishar Ring",
+		ring2="Archon Ring",
+		back=AMBUNUKE_BACK,
+		waist="Ninurta's Sash",
+		legs=AF_LEGS,
+		feet="Merlinic Crackows"
 	}
 		
 	sets.midcast.Stun.Resistant = {main="Daybreak",sub="Ammurapi Shield",ammo="Pemphredo Tathlum",
