@@ -2033,9 +2033,9 @@ function apply_defense(baseSet)
 			defenseSet = user_job_customize_defense_set(defenseSet)
 		end
 		
-		apply_extra_defense(baseSet)
-
 		baseSet = set_combine(baseSet, defenseSet)
+		
+		baseSet = apply_extra_defense(baseSet)
 	end
 	
 	return baseSet
@@ -2059,8 +2059,6 @@ function apply_passive(baseSet)
 		baseSet = user_job_customize_passive_set(baseSet)
 	end
 	
-	apply_extra_defense(baseSet)
-	
 	return baseSet
 end
 
@@ -2068,6 +2066,8 @@ function apply_extra_defense(baseSet)
 	if state.ExtraDefenseMode.value ~= 'None' then
 		baseSet = set_combine(baseSet, sets[state.ExtraDefenseMode.value])
 	end
+	
+	return baseSet
 end
 
 -- Function to add kiting gear on top of the base set if kiting state is true.
