@@ -542,7 +542,7 @@ sets.precast.FC =
 		ear1="Andoaa Earring",ear2="Gifted Earring",
 		body=TELCHINE_ENH_BODY,
 		hands=TELCHINE_ENH_HANDS,
-		ring1=StikiniRing_Ring1
+		ring1=StikiniRing_Ring1,
 		ring2=StikiniRing_Ring2,
 		back="Perimede Cape",
 		waist="Embla Sash",
@@ -715,7 +715,7 @@ sets.precast.FC =
 		neck="Lissome Necklace",
 		ear1="Telos Earring",
 		ear2="Crep. Earring",
-		body=BUMBA_BODY",
+		body=BUMBA_BODY,
 		hands=BUMBA_HANDS,
 		ring1=ChirichRing_Ring1,
 		ring2=ChirichRing_Ring2,
@@ -756,7 +756,7 @@ sets.precast.FC =
 		ring2="Mujin Band",
 		back=AMBUNUKE_BACK,
 		waist="Sacro Cord",
-		legs=EMPY_LEGS
+		legs=EMPY_LEGS,
 		feet=EMPY_FEET
 	}
 	
