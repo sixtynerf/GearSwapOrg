@@ -370,7 +370,7 @@ sets.precast.FC =
 		ring2="Shiva Ring +1",
 		back=AMBUNUKE_BACK,
 		waist="Sacro Cord",
-		legs=EMPY_LEGS
+		legs=EMPY_LEGS,
 		feet=EMPY_FEET
 	}
 		
