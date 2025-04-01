@@ -239,7 +239,7 @@ sets.precast.FC =
 --Extra Indi duration as long as you can keep your 900 skill cap.
 	sets.midcast.Geomancy.Indi = set_combine(sets.midcast.Geomancy, 
 		{
-			main=GADA_INDI,
+			--main=GADA_INDI,
 			back=JSEINDI_BACK,
 			legs=RELIC_LEGS,
 			feet=EMPY_FEET
