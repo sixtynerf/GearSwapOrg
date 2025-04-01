@@ -1,10 +1,13 @@
+--https://www.bg-wiki.com/ffxi/Compendium_of_Colure:_The_Art_of_Geomancy
+
 function user_job_setup()
 
 -- Options: Override default values
 	state.OffenseMode:options('Normal')
 	--state.CastingMode:options('Normal', 'Resistant', 'Fodder', 'Proc')
 	state.CastingMode:options('Normal')
-	state.IdleMode:options('Normal','PDT')
+	--state.IdleMode:options('Normal','PDT')
+	state.IdleMode:options('Normal')
 	state.PhysicalDefenseMode:options('PDT', 'NukeLock', 'GeoLock', 'PetPDT')
 	state.MagicalDefenseMode:options('MDT', 'NukeLock')
 	state.ResistDefenseMode:options('MEVA')
@@ -79,6 +82,9 @@ function user_job_setup()
 
 	ChirichRing_Ring1	= {name = "Chirich Ring +1", bag = "wardrobe2"}
 	ChirichRing_Ring2	= {name = "Chirich Ring +1", bag = "wardrobe3"}
+
+--Dynamis Neck
+	JSE_NECK		= {name = "Bagua Charm + 2"}
 	
 	gear.obi_cure_back = "Tempered Cape +1"
 	gear.obi_cure_waist = "Witful Belt"
@@ -184,7 +190,7 @@ sets.precast.FC =
 		back=JSEINDI_BACK,
 		waist="Witful Belt",
 		legs=AF_LEGS,
-		feet="Regal Pumps +1"
+		feet=ONGO_FEET
 	}
 		
 	sets.precast.FC.Dispelga = set_combine(sets.precast.FC, {main="Daybreak",sub="Genmei Shield"})
@@ -200,8 +206,8 @@ sets.precast.FC =
 
 	sets.midcast.FastRecast = 
 	{
-		main=gear.grioavolr_fc_staff,
-		sub="Clerisy Strap +1",
+		main="C. Palug Hammer",		--07 FC
+		sub="Chanter's Shield",		--03 FC
 		head="Amalric Coif +1",
 		neck="Voltsurge Torque",
 		ear1="Enchntr. Earring +1",
@@ -213,7 +219,7 @@ sets.precast.FC =
 		back=JSEINDI_BACK,
 		waist="Witful Belt",
 		legs=AF_LEGS,
-		feet="Regal Pumps +1"
+		feet=ONGO_FEET
 	}
 
 	sets.midcast.Geomancy = 
@@ -580,43 +586,15 @@ sets.precast.FC =
 
 	sets.idle = 
 	{
-		main="Daybreak",
-		sub="Genmei Shield",
-		ammo="Homiliary",
-		head="Befouled Crown",
-		neck="Loricate Torque +1",
-		ear1="Moonshade Earring",
-		ear2="Ethereal Earring",
-		body="Witching Robe",
-		hands=gear.chironic_refresh_hands,
-		ring1="Defending Ring",
-		ring2="Woltaris Ring",
-		back="Solemnity Cape",
-		waist="Isa Belt",
-		legs="Assid. Pants +1",
-		feet=gear.chironic_refresh_feet
-	}
-		
-	sets.idle.PDT = 
-	{
-		main="Malignance Pole",sub="Umbra Strap",ammo="Staunch Tathlum +1",
-		head=BUMBA_HEAD,neck="Loricate Torque +1",ear1="Genmei Earring",ear2="Ethereal Earring",
-		body="Jhakri Robe +2",hands=BUMBA_HANDS,ring1="Defending Ring",ring2="Shadow Ring",
-		back="Shadow Mantle",waist="Carrier's Sash",legs=BUMBA_LEGS,feet="Mallquis Clogs +2"
-	}
-
--- .Pet sets are for when Luopan is present.
-	sets.idle.Pet = 
-	{
 		main="Idris",
 		sub="Genmei Shield",
 		range="Dunna",
 		head=EMPY_HEAD,
 		neck="Loricate Torque +1",
-		ear1="Handler's Earring",
-		--ear1="Ran Earring",
-		ear2="Handler's Earring +1",
-		--ear2="Odnowa Earring +1",
+		--ear1="Handler's Earring",
+		ear1="Ran Earring",
+		--ear2="Handler's Earring +1",
+		ear2="Odnowa Earring +1",
 		body="Shamash Robe",
 		hands=AF_HANDS,
 		ring1=StikiniRing_Ring1,
@@ -626,20 +604,48 @@ sets.precast.FC =
 		legs=BUMBA_LEGS,
 		feet=RELIC_FEET
 	}
+		
+	--[[sets.idle.PDT = 
+	{
+		main="Malignance Pole",sub="Umbra Strap",ammo="Staunch Tathlum +1",
+		head=BUMBA_HEAD,neck="Loricate Torque +1",ear1="Genmei Earring",ear2="Ethereal Earring",
+		body="Jhakri Robe +2",hands=BUMBA_HANDS,ring1="Defending Ring",ring2="Shadow Ring",
+		back="Shadow Mantle",waist="Carrier's Sash",legs=BUMBA_LEGS,feet="Mallquis Clogs +2"
+	}]]
 
-	sets.idle.PDT.Pet = 
+-- .Pet sets are for when Luopan is present.
+	sets.idle.Pet = 
+	{
+		main="Idris",
+		sub="Genmei Shield",
+		range="Dunna",
+		head=EMPY_HEAD,
+		neck=JSE_NECK,
+		ear1="Etiolation Earring",
+		ear2="Odnowa Earring +1",
+		body="Shamash Robe",
+		hands=AF_HANDS,
+		ring1="Defending Ring",
+		ring2=StikiniRing_Ring2,
+		back=AMBUIDLE_BACK,
+		waist="Isa Belt",
+		legs=ONGO_LEGS,
+		feet=RELIC_FEET
+	}
+
+	--[[sets.idle.PDT.Pet = 
 	{
 		main="Malignance Pole",sub="Umbra Strap",range="Dunna",
 		head=EMPY_HEAD,neck="Loricate Torque +1",ear1="Handler's Earring",ear2="Handler's Earring +1",
 		body="Jhakri Robe +2",hands=AF_HANDS,ring1="Defending Ring",ring2="Dark Ring",
 		back=AMBUIDLE_BACK,waist="Isa Belt",legs=BUMBA_LEGS,feet=RELIC_FEET
-	}
+	}]]
 
 	-- .Indi sets are for when an Indi-spell is active.
 	sets.idle.Indi = set_combine(sets.idle, {})
 	sets.idle.Pet.Indi = set_combine(sets.idle.Pet, {}) 
-	sets.idle.PDT.Indi = set_combine(sets.idle.PDT, {}) 
-	sets.idle.PDT.Pet.Indi = set_combine(sets.idle.PDT.Pet, {})
+	--sets.idle.PDT.Indi = set_combine(sets.idle.PDT, {}) 
+	--sets.idle.PDT.Pet.Indi = set_combine(sets.idle.PDT.Pet, {})
 
 	sets.idle.Weak = 
 	{
