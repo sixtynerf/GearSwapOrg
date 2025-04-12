@@ -227,39 +227,10 @@ function job_post_precast(spell, spellMap, eventArgs)
 	end
 end
 
-function job_midcast(spell, spellMap, eventArgs)
-
-end
-
-function job_post_midcast(spell, spellMap, eventArgs)
-
-	if spell.skill == 'Elemental Magic' and default_spell_map ~= 'ElementalEnfeeble' and spell.english ~= 'Impact' then
-		if state.MagicBurstMode.value ~= 'Off' then equip(sets.MagicBurst) end
-		if spell.element == world.weather_element or spell.element == world.day_element then
-			if state.CastingMode.value == 'Fodder' then
-				if spell.element == world.day_element then
-					if item_available('Zodiac Ring') then
-						sets.ZodiacRing = {ring2="Zodiac Ring"}
-						equip(sets.ZodiacRing)
-					end
-				end
-			end
-		end
-
-		if spell.element and sets.element[spell.element] then
-			equip(sets.element[spell.element])
-		end
-	end
-
-end
-
 function job_aftercast(spell, spellMap, eventArgs)
 	if not spell.interrupted then
 		if state.UseCustomTimers.value and spell.english == 'Sleep' or spell.english == 'Sleepga' then
 			send_command('@timers c "'..spell.english..' ['..spell.target.name..']" 60 down spells/00220.png')
-		elseif spell.skill == 'Elemental Magic' and state.MagicBurstMode.value == 'Single' then
-			state.MagicBurstMode:reset()
-			if state.DisplayMode.value then update_job_states()	end
 		elseif type(spell.type) == 'string' and spell.type:startswith('BloodPact') and state.DefenseMode.value == 'None' then
 			petWillAct = os.clock()
 			if ConduitLocked and ConduitLocked ~= spell.english then
@@ -269,33 +240,33 @@ function job_aftercast(spell, spellMap, eventArgs)
 			local currentSet = (get_pet_midcast_set(spell, spellMap))
 			if state.Buff['Aftermath: Lv.3'] then
 				if sets.midcast.Pet[spell.english] and sets.midcast.Pet[spell.english].AM then
-					currentSet = set_combine(curentSet, sets.midcast.Pet[spell.english].AM)
+					currentSet = set_combine(currentSet, sets.midcast.Pet[spell.english].AM)
 				elseif spellMap == 'PhysicalBloodPactRage' and sets.midcast.Pet.PhysicalBloodPactRage.AM then
-					currentSet = set_combine(curentSet, sets.midcast.Pet.PhysicalBloodPactRage.AM)
+					currentSet = set_combine(currentSet, sets.midcast.Pet.PhysicalBloodPactRage.AM)
 				end
 			end
 
 			if state.CastingMode.value:contains('Resistant') then
 				if sets.midcast.Pet[spell.english] and sets.midcast.Pet[spell.english].Acc then
-					currentSet = set_combine(curentSet, sets.midcast.Pet[spell.english].Acc)
+					currentSet = set_combine(currentSet, sets.midcast.Pet[spell.english].Acc)
 				elseif spellMap == 'PhysicalBloodPactRage' and sets.midcast.Pet.PhysicalBloodPactRage.Acc then
-					currentSet = set_combine(curentSet, sets.midcast.Pet.PhysicalBloodPactRage.Acc)
+					currentSet = set_combine(currentSet, sets.midcast.Pet.PhysicalBloodPactRage.Acc)
 				elseif spellMap == 'MagicalBloodPactRage' and sets.midcast.Pet.MagicalBloodPactRage.Acc then
-					currentSet = set_combine(curentSet, sets.midcast.Pet.MagicalBloodPactRage.Acc)
+					currentSet = set_combine(currentSet, sets.midcast.Pet.MagicalBloodPactRage.Acc)
 				end
 			end
 
 			if spellMap == 'PhysicalBloodPactRage' then
 				if sets.midcast.Pet.PhysicalBloodPactRage[pet.name] then
-					currentSet = set_combine(curentSet, sets.midcast.Pet.PhysicalBloodPactRage[pet.name])
+					currentSet = set_combine(currentSet, sets.midcast.Pet.PhysicalBloodPactRage[pet.name])
 				end
 			elseif spellMap == 'MagicalBloodPactRage' then
 				if sets.midcast.Pet.MagicalBloodPactRage[pet.name] then
-					currentSet = set_combine(curentSet, sets.midcast.Pet.MagicalBloodPactRage[pet.name])
+					currentSet = set_combine(currentSet, sets.midcast.Pet.MagicalBloodPactRage[pet.name])
 				end
 			elseif spellMap == 'DebuffBloodPactWard' then
 				if sets.midcast.Pet.BloodPactWard[pet.name] then
-					currentSet = set_combine(curentSet, sets.midcast.Pet.BloodPactWard[pet.name])
+					currentSet = set_combine(currentSet, sets.midcast.Pet.BloodPactWard[pet.name])
 				end
 			end
 

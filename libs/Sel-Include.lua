@@ -113,6 +113,7 @@ function init_include()
 	state.HybridMode          = M{['description'] = 'Hybrid Mode'}
 	state.IdleMode            = M{['description'] = 'Idle Mode'}
 	state.MagicBurstMode 	  = M{['description'] = 'Magic Burst Mode', 'Off', 'Single', 'Lock'}
+	state.RecoverMode 		  = M{['description'] = 'Recover Mode', '35%', '60%', 'Always', 'Never'}
 	state.MagicalDefenseMode  = M{['description'] = 'Magical Defense Mode', 'MDT'}
 	state.OffenseMode         = M{['description'] = 'Offense Mode'}
 	state.PCTargetMode        = M{['description'] = 'PC Target Mode', 'default', 'stpt', 'stal', 'stpc'}
@@ -707,7 +708,7 @@ function handle_actions(spell, action)
 		end
 		
 		-- Job-specific handling of this action
-		if not eventArgs.cancel and not eventArgs.handled and _G['job_'..action] then
+		if not eventArgs.cancel and _G['job_'..action] then
 			_G['job_'..action](spell, spellMap, eventArgs)
 			
 			if eventArgs.cancel and (action == 'pretarget' or action == 'precast') then
@@ -715,7 +716,7 @@ function handle_actions(spell, action)
 			end
 		end
 		
-		if not eventArgs.cancel and not eventArgs.handled and _G['user_job_'..action] then
+		if not eventArgs.cancel and _G['user_job_'..action] then
 			_G['user_job_'..action](spell, spellMap, eventArgs)
 			
 			if eventArgs.cancel and (action == 'pretarget' or action == 'precast') then
@@ -724,7 +725,7 @@ function handle_actions(spell, action)
 		end
 	
 		-- Default handling of this action
-		if not eventArgs.cancel and not eventArgs.handled and _G['default_'..action] then
+		if not eventArgs.cancel and _G['default_'..action] then
 			_G['default_'..action](spell, spellMap, eventArgs)
 			display_breadcrumbs(spell, spellMap, action)
 			
@@ -747,6 +748,10 @@ function handle_actions(spell, action)
 			_G['user_post_'..action](spell, spellMap, eventArgs)
 		end
 
+		if not eventArgs.cancel and _G['general_post_'..action] then
+			_G['general_post_'..action](spell, spellMap, eventArgs)
+		end
+
 	   -- Job-specific post-handling of this action
 		if not eventArgs.cancel and _G['job_post_'..action] then
 			_G['job_post_'..action](spell, spellMap, eventArgs)
@@ -759,7 +764,7 @@ function handle_actions(spell, action)
 		if not eventArgs.cancel and _G['default_post_'..action] then
 			_G['default_post_'..action](spell, spellMap, eventArgs)
 		end
-		
+
 		if not eventArgs.cancel and _G['extra_user_post_'..action] then
 			_G['extra_user_post_'..action](spell, spellMap, eventArgs)
 		end
@@ -948,6 +953,8 @@ end
 
 function default_precast(spell, spellMap, eventArgs)
 	prepared_action = spell.english
+	delayed_cast = ''
+	delayed_target = ''
 	cancel_conflicting_buffs(spell, spellMap, eventArgs)
 	equip(get_precast_set(spell, spellMap))
 	
@@ -971,44 +978,7 @@ function default_post_precast(spell, spellMap, eventArgs)
 	if not eventArgs.handled then
 		if spell.type == 'WeaponSkill' then
 			if state.WeaponskillMode.value ~= 'Proc' and data.weaponskills.elemental:contains(spell.english) then
-				local distance = spell.target.distance - spell.target.model_size
-				local single_obi_intensity = 0
-				local orpheus_intensity = 0
-				local hachirin_intensity = 0
-
-				if item_available("Orpheus's Sash") then
-					orpheus_intensity = (16 - (distance <= 1 and 1 or distance >= 15 and 15 or distance))
-				end
-				
-				if item_available(data.elements.obi_of[spell.element]) then
-					if spell.element == world.weather_element then
-						single_obi_intensity = single_obi_intensity + data.weather_bonus_potency[world.weather_intensity]
-					end
-					if spell.element == world.day_element then
-						single_obi_intensity = single_obi_intensity + 10
-					end
-				end
-				
-				if item_available('Hachirin-no-Obi') then
-					if spell.element == world.weather_element then
-						hachirin_intensity = hachirin_intensity + data.weather_bonus_potency[world.weather_intensity]
-					elseif spell.element == data.elements.weak_to[world.weather_element] then
-						hachirin_intensity = hachirin_intensity - data.weather_bonus_potency[world.weather_intensity]
-					end
-					if spell.element == world.day_element then
-						hachirin_intensity = hachirin_intensity + 10
-					elseif spell.element == data.elements.weak_to[world.day_element] then
-						hachirin_intensity = hachirin_intensity - 10
-					end
-				end
-
-				if single_obi_intensity >= hachirin_intensity and single_obi_intensity >= orpheus_intensity and single_obi_intensity >= 5 then
-					equip({waist=data.elements.obi_of[spell.element]})
-				elseif hachirin_intensity >= orpheus_intensity and hachirin_intensity >= 5 then
-					equip({waist="Hachirin-no-Obi"})
-				elseif orpheus_intensity >= 5 then
-					equip({waist="Orpheus's Sash"})
-				end
+				set_elemental_obi_cape_ring(spell, spellMap)
 			end
 
 			if state.SkillchainMode.value ~= 'Off' and sets.Skillchain then
@@ -1039,8 +1009,6 @@ function default_post_precast(spell, spellMap, eventArgs)
 			elseif state.TreasureMode.value ~= 'None' and spell.target.type == 'MONSTER' and not info.tagged_mobs[spell.target.id] then
 				equip(sets.TreasureHunter)
 			end
-		elseif spell.action_type == 'Magic' then
-			check_item_dependant_spells(spell, spellMap)
 		end
 		
 		if state.DefenseMode.value ~= 'None' and in_combat then
@@ -1075,24 +1043,52 @@ function default_post_precast(spell, spellMap, eventArgs)
 			end
 		end
 	end
+	
+	if spell.action_type == 'Magic' then
+		check_item_dependant_spells(spell, spellMap)
+	end
 end
 
 function default_midcast(spell, spellMap, eventArgs)
 	equip(get_midcast_set(spell, spellMap))
 end
 
-function default_post_midcast(spell, spellMap, eventArgs)
+function general_post_midcast(spell, spellMap, eventArgs)
 	if not eventArgs.handled then
-		
 		if spell.action_type == 'Magic' then
-			if is_nuke(spell, spellMap) and state.CastingMode.value ~= 'Proc' then
-				if not job_post_midcast and state.MagicBurstMode.value ~= 'Off' and sets.MagicBurst then
-					equip(sets.MagicBurst)
+			if is_nuke(spell, spellMap) then
+				if state.MagicBurstMode.value ~= 'Off' and state.CastingMode.value ~= 'Proc' then
+					if spellMap == 'Helix' and state.CastingMode.value:contains('Resistant') and sets.ResistantHelixBurst then
+						equip(sets.ResistantHelixBurst)
+					elseif state.CastingMode.value:contains('Resistant') and sets.ResistantMagicBurst then
+						equip(sets.ResistantMagicBurst)
+					elseif spellMap == 'Helix' and sets.HelixBurst then
+						equip(sets.HelixBurst)
+					elseif sets.MagicBurst then
+						equip(sets.MagicBurst)
+					end
 				end
-				
+
 				set_elemental_obi_cape_ring(spell, spellMap)
+
+				if spell.element and sets.element[spell.element] then
+					equip(sets.element[spell.element])
+				end
+
+				if state.RecoverMode.value ~= 'Never' and not (state.Buff['Manafont'] or state.Buff['Manawell']) and (state.RecoverMode.value == 'Always' or tonumber(state.RecoverMode.value:sub(1, -2)) > player.mpp) then
+					if state.MagicBurstMode.value ~= 'Off' then
+						if state.CastingMode.value:contains('Resistant') and sets.ResistantRecoverBurst then
+							equip(sets.ResistantRecoverBurst)
+						elseif sets.RecoverBurst then
+							equip(sets.RecoverBurst)
+						elseif sets.RecoverMP then
+							equip(sets.RecoverMP)
+						end
+					elseif sets.RecoverMP then
+						equip(sets.RecoverMP)
+					end
+				end
 			end
-			check_item_dependant_spells(spell, spellMap)
 		end
 
 		if spell.target.type == 'SELF' and spellMap then
@@ -1131,7 +1127,11 @@ function default_post_midcast(spell, spellMap, eventArgs)
 		if state.TreasureMode.value ~= 'None' and spell.target.type == 'MONSTER' and not info.tagged_mobs[spell.target.id] then
 			equip(sets.TreasureHunter)
 		end
-		
+	end
+end
+
+function default_post_midcast(spell, spellMap, eventArgs)
+	if not eventArgs.handled then
 		if state.DefenseMode.value ~= 'None' and spell.action_type == 'Magic' and in_combat then
 			if sets.midcast[spell.english] and sets.midcast[spell.english].DT then
 				equip(sets.midcast[spell.english].DT)
@@ -1156,6 +1156,10 @@ function default_post_midcast(spell, spellMap, eventArgs)
 	
 	if buffactive.doom then
 		equip(sets.buff.Doom)
+	end
+	
+	if spell.action_type == 'Magic' then
+		check_item_dependant_spells(spell, spellMap)
 	end
 end
 

@@ -362,16 +362,14 @@ end
 function set_elemental_obi_cape_ring(spell, spellMap) -- Thank you Lili <3
 	if spell.element == 'None' then return end
 
-	if spell.element == world.weather_element or spell.element == world.day_element and item_available("Twilight Cape") then
-		gear.ElementalCape.name = "Twilight Cape"
-	else
-		gear.ElementalCape.name = gear.default.obi_back
-	end
-
-	if spell.element == world.day_element and spell.english ~= 'Impact' and not spell.skill == 'Divine Magic' and item_available("Zodiac Ring") then
-		gear.ElementalRing.name = "Zodiac Ring"
-	else
-		gear.ElementalRing.name = gear.default.obi_ring
+	if state.CastingMode.value == 'Fodder' then
+		if spell.element == world.day_element and item_available("Zodiac Ring") then
+			equip({ring2="Zodiac Ring"})
+		end
+		
+		if spell.element == world.weather_element or spell.element == world.day_element and item_available("Twilight Cape") then
+			equip({back="Twilight Cape"})
+		end
 	end
 
 	local distance = spell.target.distance - spell.target.model_size
@@ -385,7 +383,7 @@ function set_elemental_obi_cape_ring(spell, spellMap) -- Thank you Lili <3
 	end
 
 	if spell.english:endswith('helix') or spell.english:endswith('helix II') then
-		if orpheus_intensity > 2 then
+		if orpheus_intensity > 5 then
 			equip({waist="Orpheus's Sash"})
 		end
 		return
@@ -1184,6 +1182,14 @@ function check_recast(spell, spellMap, eventArgs)
 					eventArgs.cancel = true
 					send_command('@input /ja "Swipe" <t>')
 					return true
+				elseif abil_recasts[spell.recast_id] < 5 and state.MiniQueue.value then
+					local seconds = seconds_to_clock(abil_recasts[spell.recast_id], 'seconds')
+					add_to_chat(123,'Abort: ['..spell.english..'] waiting on recast, attempting to cast in ('..seconds..') seconds.')
+					eventArgs.cancel = true
+					delayed_cast = spell.english or ''
+					delayed_target = spell.target.id or ''
+					add_tick_delay(tonumber(seconds) +.1)
+					return true
 				else
 					add_to_chat(123,'Abort: ['..spell.english..'] waiting on recast. ('..seconds_to_clock(abil_recasts[spell.recast_id])..')')
 					eventArgs.cancel = true
@@ -1194,8 +1200,16 @@ function check_recast(spell, spellMap, eventArgs)
 			end
 		elseif spell.action_type == 'Magic' then
 			local spell_recasts = windower.ffxi.get_spell_recasts()
-			if (spell_recasts[spell.recast_id] > spell_latency) then
+			if spell_recasts[spell.recast_id] > spell_latency then
 				if stepdown(spell, eventArgs) then
+					return true
+				elseif spell_recasts[spell.recast_id]/60 < 5 and state.MiniQueue.value then
+					local seconds = seconds_to_clock(spell_recasts[spell.recast_id]/60, 'seconds')
+					add_to_chat(123,'Abort: ['..spell.english..'] waiting on recast, attempting to cast in ('..seconds..') seconds.')
+					eventArgs.cancel = true
+					delayed_cast = spell.english or ''
+					delayed_target = spell.target.id or ''
+					add_tick_delay(tonumber(seconds) +.1)
 					return true
 				else
 					add_to_chat(123,'Abort: ['..spell.english..'] waiting on recast. ('..seconds_to_clock(spell_recasts[spell.recast_id]/60)..')')
@@ -2185,17 +2199,32 @@ function internal_enable_set(priority)
 	build_internal_disable()
 end
 
-function seconds_to_clock(seconds)
-  local seconds = tonumber(seconds)
+function seconds_to_clock(seconds, units)
+	local seconds = tonumber(seconds)
+	
+	local hours
+	local mins
+	local secs
 
-  if seconds <= 0 then
-	return "00:00:00";
-  else
-	hours = string.format("%01.f", math.floor(seconds/3600));
-	mins = string.format("%02.f", math.floor(seconds/60 - (hours*60)));
-	secs = string.format("%02.f", math.floor(seconds - hours*3600 - mins *60));
-	return hours..":"..mins..":"..secs
-  end
+	if seconds <= 0 then
+		hours = '00'
+		mins = '00'
+		secs = '00'
+	else
+		hours = string.format("%01.f", math.floor(seconds/3600));
+		mins = string.format("%02.f", math.floor(seconds/60 - (hours*60)));
+		secs = string.format("%02.f", math.floor(seconds - hours*3600 - mins *60));
+	end
+	
+	if not units or units == 'hours' then
+		return hours..":"..mins..":"..secs
+	elseif units == 'minutes' then
+		return mins..":"..secs
+	elseif units == 'seconds' then
+		return secs
+	else
+		return nil
+	end
 end
 
 function parse_set_to_keys(str)
