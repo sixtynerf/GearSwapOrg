@@ -81,12 +81,14 @@ function self_command(commandArgs)
 		user_self_command(commandArgs, eventArgs)
 	end
 
+	local handleCmd
+	
 	if not eventArgs.handled then
 		-- Of the original command message passed in, remove the first word from
 		-- the list (it will be used to determine which function to call), and
 		-- send the remaining words as parameters for the function.
-		local handleCmd = (table.remove(commandArgs, 1)):lower()
-		local functionName = "handle_" .. handleCmd
+		handleCmd = (table.remove(commandArgs, 1)):lower()
+		local functionName = "handle_"..handleCmd
 
 		if _G[functionName] then
 			_G[functionName](commandArgs, eventArgs)
@@ -95,6 +97,11 @@ function self_command(commandArgs)
 
 	if not eventArgs.handled and not midaction() and not (pet_midaction() or ((petWillAct + 2) > os.clock())) then
 		handle_equipping_gear(player.status)
+		
+		if handleCmd and handleCmd == 'softequip' then
+			local set = get_table_from_string(commandArgs[1])
+			equip(set)
+		end
 	end
 
 	equip(internal_disable)
@@ -474,7 +481,18 @@ function handle_weapons(cmdParams)
 			state.Weapons:reset()
 		end
 	elseif weaponSet:lower() == 'initialize' then
-		if not data.jobs.dual_wield_jobs:contains(player.main_job) and (player.sub_job == 'DNC' or player.sub_job == 'NIN') and state.Weapons:contains(default_dual_weapons) and sets.weapons[default_dual_weapons] then
+		if not data.jobs.dual_wield_jobs:contains(player.main_job) and (player.sub_job == 'DNC' or player.sub_job == 'NIN') and weapon_sets['Dual'] then
+			state.WeaponSets:set('Dual')
+			state.Weapons:options(unpack(weapon_sets[state.WeaponSets.value]))
+		elseif weapon_sets['Default'] then
+			state.WeaponSets:set('Default')
+			state.Weapons:options(unpack(weapon_sets[state.WeaponSets.value]))
+			if data.jobs.mage_jobs:contains(player.main_job) and not data.jobs.mage_jobs:contains(player.sub_job) and state.Weapons:contains(default_weapons) and sets.weapons[default_weapons] then
+				state.Weapons:set(default_weapons)
+			end
+		elseif data.jobs.mage_jobs:contains(player.main_job) and not data.jobs.mage_jobs:contains(player.sub_job) and state.Weapons:contains(default_weapons) and sets.weapons[default_weapons] then
+			state.Weapons:set(default_weapons)
+		elseif not data.jobs.dual_wield_jobs:contains(player.main_job) and (player.sub_job == 'DNC' or player.sub_job == 'NIN') and state.Weapons:contains(default_dual_weapons) and sets.weapons[default_dual_weapons] then
 			state.Weapons:set(default_dual_weapons)
 		elseif data.jobs.mage_jobs:contains(player.main_job) and not data.jobs.mage_jobs:contains(player.sub_job) and default_weapons and state.Weapons:contains(default_weapons) and sets.weapons[default_weapons] then
 			state.Weapons:set(default_weapons)
@@ -551,9 +569,12 @@ function handle_forceequip(cmdParams)
 	else
 		local equipslot = (table.remove(cmdParams, 1)):lower()
 		local gear = table.concat(cmdParams, ' ')
-		add_to_chat(gear)
 		internal_disable_set({[equipslot]=gear}, "User")
 	end
+end
+
+function softequip(cmdParams)
+	
 end
 
 function handle_autonuke(cmdParams)
@@ -1405,7 +1426,8 @@ end
 
 -- A function for testing lua code.  Called via "gs c test".
 function handle_test(cmdParams)
-	table.vprint(internal_disable)
+	local temp = next(abyssea_elemental_ws_proc_weapons_map['darkness'])
+	add_to_chat(temp)
 	if user_test then
 		user_test(cmdParams)
 	elseif job_test then
