@@ -100,6 +100,7 @@ function init_include()
 	-- This just defines the vars and sets the descriptions.  List modes with no values automatically
 	-- get assigned a 'Normal' default value.
 	state.AutoBuffMode 		  = M{['description'] = 'Auto Buff Mode','Off','Auto'}
+	state.AutoRuneMode 		  = M{['description'] = 'Auto Rune Mode','Off','Runes','Full'}
 	state.AutoSambaMode 	  = M{['description'] = 'Auto Samba Mode', 'Off', 'Haste Samba', 'Aspir Samba', 'Drain Samba II'}
 	state.CastingMode         = M{['description'] = 'Casting Mode'}
 	state.CombatForm          = M{['description'] = 'Combat Form', ['string']=''}
@@ -135,10 +136,10 @@ function init_include()
 	state.AutoContradanceMode = M(true, 'Auto Contradance Mode')
 	state.AutoFoodMode		  = M(false, 'Auto Food Mode')
 	state.AutoHolyWaterMode   = M(true, 'Auto Holy Water Mode')
+	state.AutoJumpMode 		  = M(false, 'Auto Jump Mode')
 	state.AutoLockstyle	 	  = M(false, 'AutoLockstyle Mode')
 	state.AutoNukeMode 		  = M(false, 'Auto Nuke Mode')
 	state.AutoRemoveDoomMode  = M(true, 'Auto Remove Doom Mode')
-	state.AutoRuneMode 		  = M(false, 'Auto Rune Mode')
 	state.AutoShadowMode 	  = M(false, 'Auto Shadow Mode')
 	state.AutoSubMode 		  = M(false, 'Auto Sublimation Mode')
 	state.AutoSuperJumpMode   = M(false, 'Auto SuperJump Mode')
@@ -261,6 +262,9 @@ function init_include()
 	disabled_sets = {}
 	silent_can_use_cache = {['/ma']={},['/ja']={},['/ws']={}}
 	local_offset = 18000
+	elemental_ws_proc_target_id = ''
+	elemental_ws_proc_element = 'fire'
+	elemental_magic_proc_target_id = ''
 
 	-- Buff tracking that buffactive can't detect
 	lastshadow = "Utsusemi: San"
@@ -1392,6 +1396,7 @@ function default_tick()
 	if check_cpring_buff() then return true end
 	if state.Buff['Sneak'] then return false end
 	if check_ws() then return true end
+	if check_jump() then return true end
 	if check_nuke() then return true end
 	return false
 end
@@ -2322,14 +2327,7 @@ function state_change(stateField, newValue, oldValue)
 			state.Weapons:reset()
 		end
 
-		if autows_list[newValue] then
-			if type(autows_list[newValue]) == "table" then
-				autows 		= autows_list[newValue][1]
-				autowstp 	= autows_list[newValue][2]
-			else
-				autows 		= autows_list[newValue]
-			end
-		end
+		set_autows(newValue)
 
 		if weapons_pagelist[newValue] then
 			set_macro_page(weapons_pagelist[newValue][1], weapons_pagelist[newValue][2])
@@ -2367,6 +2365,8 @@ function state_change(stateField, newValue, oldValue)
 		if weapon_sets[state.WeaponSets.value] then
 			state.Weapons:options(unpack(weapon_sets[state.WeaponSets.value]))
 		end
+		
+		set_autows(state.Weapons.value)
 		
 		equip_weaponset()
 	elseif stateField == 'Capacity' then

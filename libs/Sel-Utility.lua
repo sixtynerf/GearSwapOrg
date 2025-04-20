@@ -1417,6 +1417,33 @@ function actual_cost(spell)
 	return cost
 end
 
+function check_jump(user)
+	if player.sub_job ~= 'DRG' then
+		if user then
+			add_to_chat(123, "Not currently subbing Dragoon!")
+		end
+		return
+	end
+
+	if user or (state.AutoJumpMode.value and player.status == 'Engaged' and player.tp < 501) then
+		local abil_recasts = windower.ffxi.get_ability_recasts()
+		if abil_recasts[158] < latency then
+			windower.chat.input('/ja "Jump" <t>')
+			add_tick_delay()
+			return true
+		elseif abil_recasts[159] < latency then
+			windower.chat.input('/ja "High Jump" <t>')
+			add_tick_delay()
+			return true
+		else
+			if user then
+				add_to_chat(123, "All jumps currently on cooldown.")
+			end
+			return false
+		end
+	end
+end
+
 function check_nuke()
 	if state.AutoNukeMode.value and player.target.type == "MONSTER" then
 		local spell = res.spells:with('name',autonuke)
@@ -1481,7 +1508,7 @@ function check_buffup()
 end
 
 function check_samba()
-	if not (buffactive['Haste Samba'] or buffactive['Drain Samba'] or buffactive['Aspir Samba']) and windower.ffxi.get_ability_recasts()[216] and windower.ffxi.get_ability_recasts()[216] < latency and state.AutoSambaMode.value ~= 'Off' and player.tp > 400 then
+	if state.AutoSambaMode.value ~= 'Off' and not (buffactive['Haste Samba'] or buffactive['Drain Samba'] or buffactive['Aspir Samba']) and (player.main_job == 'DNC' or player.sub_job == 'DNC') and player.status == 'Engaged' and player.tp > 400 then
 		windower.chat.input('/ja "'..state.AutoSambaMode.value..'" <me>')
 		add_tick_delay()
 		return true
@@ -1750,6 +1777,17 @@ function check_delayed_cast()
 		return true
 	end
 	return false
+end
+
+function set_autows(weapons)
+	if autows_list[weapons] then
+		if type(autows_list[weapons]) == "table" then
+			autows 		= autows_list[weapons][1]
+			autowstp 	= autows_list[weapons][2]
+		else
+			autows 		= autows_list[weapons]
+		end
+	end
 end
 
 function check_ws()
@@ -2388,22 +2426,17 @@ function count_total_ammo(ammo_name)
 end
 
 function check_rune()
-
-	if state.AutoRuneMode.value and (player.main_job == 'RUN' or player.sub_job == 'RUN') then
+	if state.AutoRuneMode.value ~= 'false' and state.AutoRuneMode.value ~= 'Off' and (player.main_job == 'RUN' or player.sub_job == 'RUN') then
 		local abil_recasts = windower.ffxi.get_ability_recasts()
 
-		if player.main_job == 'RUN' and (not buffactive[state.RuneElement.value] or buffactive[state.RuneElement.value] < 3) then
+		if not buffactive[state.RuneElement.value] or buffactive[state.RuneElement.value] < 2 or (player.main_job == 'RUN' and buffactive[state.RuneElement.value] < 3) then
 			if abil_recasts[92] > 0 then return false end
 			windower.chat.input('/ja "'..state.RuneElement.value..'" <me>')
 			add_tick_delay()
 			return true
 
-		elseif not buffactive[state.RuneElement.value] or buffactive[state.RuneElement.value] < 2 then
-			if abil_recasts[92] > 0 then return false end
-			windower.chat.input('/ja "'..state.RuneElement.value..'" <me>')
-			add_tick_delay()
-			return true
-
+		elseif state.AutoRuneMode.value ~= 'Full' then
+			return false
 		elseif player.main_job == 'RUN' and abil_recasts[242] < latency and (player.hpp < 50 or (state.RuneElement.Value == 'Tenebrae' and player.mpp < 75)) then
 			windower.chat.input('/ja "Vivacious Pulse" <me>')
 			add_tick_delay()
