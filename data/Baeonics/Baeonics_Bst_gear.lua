@@ -9,55 +9,107 @@ function user_job_setup()
 	state.MagicalDefenseMode:options('PetMDT','MDT')
 	state.ResistDefenseMode:options('PetMEVA','MEVA')
 	state.Weapons:options('None','Default','DualWeapons')
-	autows_list = {['Default']='Ruinator',['DualWeapons']='Ruinator'}
+	
+	autows_list = 
+	{
+		['Default']='Ruinator',
+		['DualWeapons']='Ruinator'
+	}
 
-	-- Set up Jug Pet cycling and keybind Ctrl+F7
-	-- INPUT PREFERRED JUG PETS HERE
+--Artifact Gear
+	AF_HEAD = {name="Totemic Helm +1"}			
+	AF_BODY = {name="Tot. Jackcoat +1"}		
+	AF_HANDS = {name="Tot. Gloves +1"}		
+	AF_LEGS = {name="Tot. Trousers +1"}			
+	AF_FEET = {name="Tot. Gaiters +1"}		
+
+--Relic Gear
+	RELIC_HEAD = {name="Ankusa Helm +1"}		
+	RELIC_BODY = {name="An. Jackcoat +1"}		
+	RELIC_HANDS = {name="Ankusa Gloves +1"}		
+	RELIC_LEGS = {name="Ankusa Trousers +1"}		
+	RELIC_FEET = {name="Ankusa Gaiters +1"}	
+
+--Empyrean Gear
+	EMPY_HEAD = {name="Nuk. Cabasset +1"}		
+	EMPY_BODY = {name="Nukumi Gausape +1"}		
+	EMPY_HANDS = {name="Nukumi Manoplas +1"}		
+	EMPY_LEGS = {name="Nukumi Quijotes +1"}		
+	EMPY_FEET = {name="Nukumi Ocreae +1"}
+
+--Empyrean Ear
+	EMPY_EAR = {name=EMPY_EAR}
+
+--Rings
+	StikiniRing_Ring1	= {name = "Gurebu's Ring"}
+	StikiniRing_Ring2	= {name = "Stikini Ring +1", bag = "wardrobe3"}
+
+-- Set up Jug Pet cycling and keybind Ctrl+F7
+-- INPUT PREFERRED JUG PETS HERE
+	
 	state.JugMode = M{['description']='Jug Mode','GenerousArthur','ScissorlegXerin','BlackbeardRandy','AttentiveIbuki','DroopyDortwin','WarlikePatrick','AcuexFamiliar'}
 	send_command('bind !f7 gs c cycle JugMode')
 
-	-- Set up Monster Correlation Modes and keybind Alt+F7
+-- Set up Monster Correlation Modes and keybind Alt+F7
+	
 	state.CorrelationMode = M{['description']='Correlation Mode', 'Neutral', 'Favorable'}
 	send_command('bind @!f7 gs c cycle CorrelationMode')
 
-	-- Set up Pet Modes for Hybrid sets and keybind 'Windows Key'+F7
+-- Set up Pet Modes for Hybrid sets and keybind 'Windows Key'+F7
+	
 	state.PetMode = M{['description']='Pet Mode','Tank','DD'}
 	send_command('bind @f9 gs c cycle PetMode')
 
-	-- Set up Reward Modes and keybind Ctrl+Backspace
+-- Set up Reward Modes and keybind Ctrl+Backspace
+	
 	state.RewardMode = M{['description']='Reward Mode', 'Theta', 'Zeta', 'Eta'}
 	send_command('bind ^backspace gs c cycle RewardMode')
 
 	send_command('bind @f8 gs c toggle AutoReadyMode')
 	send_command('bind !` gs c ready default')
 
-	--Example of how to change default ready moves.
-	--ready_moves.default.WarlikePatrick = 'Tail Blow'
+--Example of how to change default ready moves.
+--ready_moves.default.WarlikePatrick = 'Tail Blow'
 
 
-	--Ikenga_axe_bonus = 300  -- It is 300 at R25. Uncomment if you need to manually adjust because you are using below R25 or above
+--Ikenga_axe_bonus = 300  -- It is 300 at R25. Uncomment if you need to manually adjust because you are using below R25 or above
 
 	select_default_macro_book()
 end
 
 -- BST gearsets
+
 function init_gear_sets()
-	-- PRECAST SETS
-	sets.precast.JA['Killer Instinct'] = {} --head="Ankusa Helm +1"
-	sets.precast.JA['Bestial Loyalty'] = {hands="Ankusa Gloves +1"} --body="Mirke Wardecors"
+-- PRECAST SETS
+	
+	sets.precast.JA['Killer Instinct'] = {head=RELIC_HEAD}
+	sets.precast.JA['Bestial Loyalty'] = {hands=RELIC_HANDS} 		--body="Mirke Wardecors"
 	sets.precast.JA['Call Beast'] = sets.precast.JA['Bestial Loyalty']
-	sets.precast.JA.Familiar = {} --legs="Ankusa Trousers +1"
-	sets.precast.JA.Tame = {} --head="Totemic Helm +1"
-	sets.precast.JA.Spur = {back="Artio's Mantle",feet="Nukumi Ocreae +3"}
+	sets.precast.JA.Familiar = {legs=RELIC_LEGS}
+	sets.precast.JA.Tame = {head=AF_HEAD}
+	sets.precast.JA.Spur = {back="Artio's Mantle",feet=EMPY_FEET}		--make an ambu cape
 	sets.SpurAxe = {main="Skullrender"}
 	sets.SpurAxesDW = {main="Skullrender",sub="Skullrender"}
 
 	sets.precast.JA['Feral Howl'] = {}
 
-	sets.precast.JA.Reward = {main="Mdomo Axe",sub="Sacro Bulwark", --+1 and Augment the Axe
-		head="Null Masque",neck="Phalaina Locket",ear1="Ferine Earring",ear2="Nukumi Earring +1", --head="Stout Bonnet"
-		body="Nyame Mail",hands="Malignance Gloves",ring1="Metamor. Ring +1",ring2="Stikini Ring +1",
-		back="Artio's Mantle",waist="Isa Belt",legs="Nukumi Quijotes +3",feet="Monster Gaiters +2"}
+	sets.precast.JA.Reward = 
+	{
+		main="Mdomo Axe",		--+1 and Augment the Axe
+		sub="Sacro Bulwark",
+		head="Null Masque",		--head="Stout Bonnet"
+		neck="Phalaina Locket",
+		ear1="Ferine Earring",
+		ear2=EMPY_EAR,
+		body=BUMBA_BODY,
+		hands="Malignance Gloves",
+		ring1="Metamor. Ring +1",
+		ring2=StikiniRing_Ring2,
+		back="Artio's Mantle",		--make the right ambu cape
+		waist="Isa Belt",
+		legs=EMPY_LEGS,
+		feet=RELIC_FEET
+	}
 
 	sets.precast.JA.Reward.DW = {}
 
@@ -68,16 +120,16 @@ function init_gear_sets()
 
 	sets.precast.JA.Charm = {}
 
-	-- CURING WALTZ
+-- CURING WALTZ
 	sets.precast.Waltz = {}
 
-		-- HEALING WALTZ
+-- HEALING WALTZ
 	sets.precast.Waltz['Healing Waltz'] = {}
 
-		-- STEPS
+-- STEPS
 	sets.precast.Step = {}
 
-		-- VIOLENT FLOURISH
+-- VIOLENT FLOURISH
 	sets.precast.Flourish1 = {}
 	sets.precast.Flourish1['Violent Flourish'] = {}
 
@@ -85,7 +137,7 @@ function init_gear_sets()
 
 	sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {neck="Magoraga Beads"})
 
-		-- MIDCAST SETS
+-- MIDCAST SETS
 	sets.midcast.FastRecast = {}
 
 	sets.midcast.Utsusemi = set_combine(sets.midcast.FastRecast, {}) --back="Mujin Mantle"
@@ -115,75 +167,187 @@ function init_gear_sets()
 	sets.midcast.Helix = sets.midcast['Elemental Magic']
 	sets.midcast.Helix.Resistant = sets.midcast['Elemental Magic']
 
-		-- WEAPONSKILLS
-		-- Default weaponskill sets.
+-- WEAPONSKILLS
+-- Default weaponskill sets.
 	sets.precast.WS = {}
 
 	sets.precast.WS.Acc = {}
 
-		-- Swap to these on Moonshade using WS if at 3000 TP
+-- Swap to these on Moonshade using WS if at 3000 TP
 	sets.MaxTP = {ear1="Sherida Earring",ear2="Brutal Earring",}
-	sets.AccMaxTP = {ear1="Telos Earring",ear2="Nukumi Earring +1"}
+	sets.AccMaxTP = {ear1="Telos Earring",ear2=EMPY_EAR}
 
-				-- PET SIC & READY MOVES
-	sets.midcast.Pet.WS = {main="Agwu's Axe",sub="Sacro Bulwark",ammo="Voluspa Tathlum",
-		head="Nuk. Cabasset +3",neck="Adad Amulet",ear1="Kyrene's Earring",ear2="Nukumi Earring +1",
-		body="Nukumi Gausape +3",hands="Nukumi Manoplas +3",ring1="Tali'ah Ring",ring2="Stikini Ring +1", --ring2="C. Palug Ring"
-		back="Artio's Mantle",waist="Incarnation Sash",legs="Nukumi Quijotes +3",feet="Gleti's Boots"}
+-- PET SIC & READY MOVES
+	sets.midcast.Pet.WS = 
+	{
+		main="Agwu's Axe",
+		sub="Sacro Bulwark",
+		ammo="Voluspa Tathlum",
+		head=EMPY_HEAD,
+		neck="Adad Amulet",
+		ear1="Kyrene's Earring",
+		ear2=EMPY_EAR,
+		body=EMPY_BODY,
+		hands=EMPY_HANDS,
+		ring1="Tali'ah Ring",
+		ring2=StikiniRing_Ring2, --ring2="C. Palug Ring"
+		back="Artio's Mantle",
+		waist="Incarnation Sash",
+		legs=EMPY_LEGS,
+		feet=NGAI_FEET
+	}
 
-	sets.midcast.Pet.Acc = {main="Agwu's Axe",sub="Sacro Bulwark",ammo="Voluspa Tathlum",
-		head="Nuk. Cabasset +3",neck="Adad Amulet",ear1="Kyrene's Earring",ear2="Nukumi Earring +1",
-		body="Nukumi Gausape +3",hands="Nukumi Manoplas +3",ring1="Tali'ah Ring",ring2="Stikini Ring +1", --ring2="C. Palug Ring"
-		back="Artio's Mantle",waist="Incarnation Sash",legs="Nukumi Quijotes +3",feet="Gleti's Boots"}
+	sets.midcast.Pet.Acc = 
+	{
+		main="Agwu's Axe",
+		sub="Sacro Bulwark",
+		ammo="Voluspa Tathlum",
+		head=EMPY_HEAD,
+		neck="Adad Amulet",
+		ear1="Kyrene's Earring",
+		ear2=EMPY_EAR,
+		body=EMPY_BODY,
+		hands=EMPY_HANDS,
+		ring1="Tali'ah Ring",
+		ring2=StikiniRing_Ring2, --ring2="C. Palug Ring"
+		back="Artio's Mantle",
+		waist="Incarnation Sash",
+		legs=EMPY_LEGS,
+		feet=NGAI_FEET
+	}
 				
-	sets.midcast.Pet.MagicReady = {main="Agwu's Axe",sub="Sacro Bulwark",ammo="Voluspa Tathlum",
-		head="Nuk. Cabasset +3",neck="Adad Amulet",ear1="Kyrene's Earring",ear2="Nukumi Earring +1",
-		body="Nukumi Gausape +3",hands="Nukumi Manoplas +3",ring1="Tali'ah Ring",ring2="Stikini Ring +1", --ring2="C. Palug Ring"
-		back="Artio's Mantle",waist="Incarnation Sash",legs="Nukumi Quijotes +3",feet="Gleti's Boots"}
+	sets.midcast.Pet.MagicReady = 
+	{
+		main="Agwu's Axe",
+		sub="Sacro Bulwark",
+		ammo="Voluspa Tathlum",
+		head=EMPY_HEAD,
+		neck="Adad Amulet",
+		ear1="Kyrene's Earring",
+		ear2=EMPY_EAR,
+		body=EMPY_BODY,
+		hands=EMPY_HANDS,
+		ring1="Tali'ah Ring",
+		ring2=StikiniRing_Ring2, --ring2="C. Palug Ring"
+		back="Artio's Mantle",
+		waist="Incarnation Sash",
+		legs=EMPY_LEGS,
+		feet=NGAI_FEET
+	}
 		
-	sets.midcast.Pet.DebuffReady = {main="Agwu's Axe",sub="Sacro Bulwark",ammo="Voluspa Tathlum",
-		head="Nuk. Cabasset +3",neck="Adad Amulet",ear1="Kyrene's Earring",ear2="Nukumi Earring +1",
-		body="Nukumi Gausape +3",hands="Nukumi Manoplas +3",ring1="Tali'ah Ring",ring2="Stikini Ring +1", --ring2="C. Palug Ring"
-		back="Artio's Mantle",waist="Incarnation Sash",legs="Nukumi Quijotes +3",feet="Gleti's Boots"}
+	sets.midcast.Pet.DebuffReady = 
+	{
+		main="Agwu's Axe",
+		sub="Sacro Bulwark",
+		ammo="Voluspa Tathlum",
+		head=EMPY_HEAD,
+		neck="Adad Amulet",
+		ear1="Kyrene's Earring",
+		ear2=EMPY_EAR,
+		body=EMPY_BODY,
+		hands=EMPY_HANDS,
+		ring1="Tali'ah Ring",
+		ring2=StikiniRing_Ring2, --ring2="C. Palug Ring"
+		back="Artio's Mantle",
+		waist="Incarnation Sash",
+		legs=EMPY_LEGS,
+		feet=NGAI_FEET
+	}
 		
-	sets.midcast.Pet.PhysicalDebuffReady = {main="Agwu's Axe",sub="Sacro Bulwark",ammo="Voluspa Tathlum",
-		head="Nuk. Cabasset +3",neck="Adad Amulet",ear1="Kyrene's Earring",ear2="Nukumi Earring +1",
-		body="Nukumi Gausape +3",hands="Nukumi Manoplas +3",ring1="Tali'ah Ring",ring2="Stikini Ring +1", --ring2="C. Palug Ring"
-		back="Artio's Mantle",waist="Incarnation Sash",legs="Nukumi Quijotes +3",feet="Gleti's Boots"}
+	sets.midcast.Pet.PhysicalDebuffReady = 
+	{
+		main="Agwu's Axe",
+		sub="Sacro Bulwark",
+		ammo="Voluspa Tathlum",
+		head=EMPY_HEAD,
+		neck="Adad Amulet",
+		ear1="Kyrene's Earring",
+		ear2=EMPY_EAR,
+		body=EMPY_BODY,
+		hands=EMPY_HANDS,
+		ring1="Tali'ah Ring",
+		ring2=StikiniRing_Ring2, --ring2="C. Palug Ring"
+		back="Artio's Mantle",
+		waist="Incarnation Sash",
+		legs=EMPY_LEGS,
+		feet=NGAI_FEET
+	}
 
-	sets.midcast.Pet.ReadyRecast = {main="Charmer's Merlin",legs="Gleti's Breeches"}
-	sets.midcast.Pet.ReadyRecastDW = {sub="Charmer's Merlin",legs="Gleti's Breeches"}
+	sets.midcast.Pet.ReadyRecast = {main="Charmer's Merlin",legs=NGAI_LEGS}
+	sets.midcast.Pet.ReadyRecastDW = {sub="Charmer's Merlin",legs=NGAI_LEGS}
 	sets.midcast.Pet.Neutral = {}
-	sets.midcast.Pet.Favorable = {head="Nuk. Cabasset +3"}
-	sets.midcast.Pet.TPBonus = {hands="Nukumi Manoplas +3"}
+	sets.midcast.Pet.Favorable = {head=EMPY_HEAD}
+	sets.midcast.Pet.TPBonus = {hands=EMPY_HANDS}
 
-	-- RESTING
+-- RESTING
 	sets.resting = {}
 
-	sets.idle = {main="Agwu's Axe",sub="Sacro Bulwark",ammo="Voluspa Tathlum",
-		head="Nyame Helm",neck="Loricate Torque +1",ear1="Infused Earring",ear2="Sanare Earring", --ear1="Domesticator's Earring+1"
-		body="Nyame Mail",hands="Nyame Gauntlets",ring1="Defending Ring",ring2="Shneddick Ring",
-		back="Null Shawl",waist="Null Belt",legs="Nyame Flanchard",feet="Nyame Sollerets"}
+	sets.idle = 
+	{
+		main="Agwu's Axe",
+		sub="Sacro Bulwark",
+		ammo="Voluspa Tathlum",
+		head=BUMBA_HEAD,
+		neck="Loricate Torque +1",
+		ear1="Infused Earring",
+		ear2="Sanare Earring", --ear1="Domesticator's Earring+1"
+		body=BUMBA_BODY,
+		hands=BUMBA_HANDS,
+		ring1="Defending Ring",
+		ring2="Shneddick Ring",
+		back="Null Shawl",
+		waist="Null Belt",
+		legs=BUMBA_LEGS,
+		feet=BUMBA_FEET
+	}
 		
 	sets.idle.Refresh = {}
 		
 	sets.idle.Reraise = set_combine(sets.idle, {head="Twilight Helm",body="Twilight Mail"})
 
-	sets.idle.Pet = {main="Agwu's Axe",sub="Sacro Bulwark",ammo="Voluspa Tathlum",
-		head="Nuk. Cabasset +3",neck="Empath Necklace",ear1="Odnowa Earring +1",ear2="Nukumi Earring +1", --ear1="Domesticator's Earring+1"
-		body="Nyame Mail",hands="Gleti's Gauntlets",ring1="Defending Ring",ring2="Shadow Ring",
-		back="Artio's Mantle",waist="Isa Belt",legs="Nukumi Quijotes +3",feet="Gleti's Boots"}
+	sets.idle.Pet = 
+	{
+		main="Agwu's Axe",
+		sub="Sacro Bulwark",
+		ammo="Voluspa Tathlum",
+		head=EMPY_HEAD,
+		neck="Empath Necklace",
+		ear1="Odnowa Earring +1",
+		ear2=EMPY_EAR, --ear1="Domesticator's Earring+1"
+		body=BUMBA_BODY,
+		hands=NGAI_LEGS,
+		ring1="Defending Ring",
+		ring2="Shadow Ring",
+		back="Artio's Mantle",
+		waist="Isa Belt",
+		legs=EMPY_LEGS,
+		feet=NGAI_FEET
+	}
 		
 	sets.idle.Pet.DW = {main="Agwu's Axe",sub="Astolfo"}
 
-	sets.idle.Pet.Engaged = {main="Agwu's Axe",sub="Sacro Bulwark",ammo="Voluspa Tathlum",
-		head="Nuk. Cabasset +3",neck="Empath Necklace",ear1="Odnowa Earring +1",ear2="Nukumi Earring +1", --ear1="Domesticator's Earring+1"
-		body="Nyame Mail",hands="Gleti's Gauntlets",ring1="Defending Ring",ring2="Shadow Ring",
-		back="Artio's Mantle",waist="Isa Belt",legs="Nukumi Quijotes +3",feet="Gleti's Boots"}
+	sets.idle.Pet.Engaged = 
+	{
+		main="Agwu's Axe",
+		sub="Sacro Bulwark",
+		ammo="Voluspa Tathlum",
+		head=EMPY_HEAD,
+		neck="Empath Necklace",
+		ear1="Odnowa Earring +1",
+		ear2=EMPY_EAR, --ear1="Domesticator's Earring+1"
+		body=BUMBA_BODY,
+		hands=NGAI_LEGS,
+		ring1="Defending Ring",
+		ring2="Shadow Ring",
+		back="Artio's Mantle",
+		waist="Isa Belt",
+		legs=EMPY_LEGS,
+		feet=NGAI_FEET
+	}
 
 	sets.idle.Pet.Engaged.DW = {main="Agwu's Axe",sub="Astolfo"}
 
-	-- DEFENSE SETS
+-- DEFENSE SETS
 	sets.defense.PDT = {}
 
 	sets.defense.PetPDT = {}
@@ -192,12 +356,12 @@ function init_gear_sets()
 
 	sets.defense.PetMEVA = sets.defense.PetMDT
 
-	sets.defense.PKiller = set_combine(sets.defense.PDT, {body="Nukumi Gausape +3"})
+	sets.defense.PKiller = set_combine(sets.defense.PDT, {body=EMPY_BODY})
 	sets.defense.Reraise = set_combine(sets.defense.PDT, {head="Twilight Helm",body="Twilight Mail"})
 
 	sets.defense.MDT = {}
 
-	sets.defense.MKiller = set_combine(sets.defense.MDT, {body="Nukumi Gausape +3"})
+	sets.defense.MKiller = set_combine(sets.defense.MDT, {body=EMPY_BODY})
 
 	sets.defense.MEVA = {}
 
@@ -205,17 +369,17 @@ function init_gear_sets()
 	sets.DayIdle = {}
 	sets.NightIdle = {}
 
-	-- MELEE (SINGLE-WIELD) SETS
+-- MELEE (SINGLE-WIELD) SETS
 	sets.engaged = {}
 
 	sets.engaged.Acc = {}
 
-	-- MELEE (SINGLE-WIELD) HYBRID SETS
+-- MELEE (SINGLE-WIELD) HYBRID SETS
 	sets.engaged.DT = {}
 
 	sets.engaged.Acc.DT = {}
 
-	-- MELEE (DUAL-WIELD) SETS FOR DNC AND NIN SUBJOB
+-- MELEE (DUAL-WIELD) SETS FOR DNC AND NIN SUBJOB
 	sets.engaged.DW = {}
 
 	sets.engaged.DW.DT = {}
@@ -224,40 +388,40 @@ function init_gear_sets()
 
 	sets.engaged.DW.Acc.DT = {}
 
-	-- GEARSETS FOR MASTER ENGAGED (SINGLE-WIELD) & PET ENGAGED
+-- GEARSETS FOR MASTER ENGAGED (SINGLE-WIELD) & PET ENGAGED
 	sets.engaged.BothDD = set_combine(sets.engaged,{})
 	sets.engaged.BothDD.SomeAcc = set_combine(sets.engaged.SomeAcc, {})
 	sets.engaged.BothDD.Acc = set_combine(sets.engaged.Acc, {})
 	sets.engaged.BothDD.FullAcc = set_combine(sets.engaged.FullAcc, {})
 	sets.engaged.BothDD.Fodder = set_combine(sets.engaged.Fodder, {})
 
-	-- GEARSETS FOR MASTER ENGAGED (SINGLE-WIELD) & PET TANKING
+-- GEARSETS FOR MASTER ENGAGED (SINGLE-WIELD) & PET TANKING
 	sets.engaged.PetTank = set_combine(sets.engaged,{})
 	sets.engaged.PetTank.SomeAcc = set_combine(sets.engaged.SomeAcc, {})
 	sets.engaged.PetTank.Acc = set_combine(sets.engaged.Acc, {})
 	sets.engaged.PetTank.FullAcc = set_combine(sets.engaged.FullAcc, {})
 	sets.engaged.PetTank.Fodder = set_combine(sets.engaged.Fodder, {})
 
-	-- GEARSETS FOR MASTER ENGAGED (DUAL-WIELD) & PET ENGAGED
+-- GEARSETS FOR MASTER ENGAGED (DUAL-WIELD) & PET ENGAGED
 	sets.engaged.DW.BothDD = set_combine(sets.engaged.DW,{})
 	sets.engaged.DW.BothDD.SomeAcc = set_combine(sets.engaged.DW.SomeAcc, {})
 	sets.engaged.DW.BothDD.Acc = set_combine(sets.engaged.DW.Acc, {})
 	sets.engaged.DW.BothDD.FullAcc = set_combine(sets.engaged.DW.FullAcc, {})
 	sets.engaged.DW.BothDD.Fodder = set_combine(sets.engaged.DW.Fodder, {})
 
-	-- GEARSETS FOR MASTER ENGAGED (DUAL-WIELD) & PET TANKING
+-- GEARSETS FOR MASTER ENGAGED (DUAL-WIELD) & PET TANKING
 	sets.engaged.DW.PetTank = set_combine(sets.engaged.DW,{})
 	sets.engaged.DW.PetTank.SomeAcc = set_combine(sets.engaged.DW.SomeAcc, {})
 	sets.engaged.DW.PetTank.Acc = set_combine(sets.engaged.DW.Acc, {})
 	sets.engaged.DW.PetTank.FullAcc = set_combine(sets.engaged.DW.FullAcc, {})
 	sets.engaged.DW.PetTank.Fodder = set_combine(sets.engaged.DW.Fodder, {})
 
-	sets.buff['Killer Instinct'] = {body="Nukumi Gausape +3"}
+	sets.buff['Killer Instinct'] = {body=EMPY_BODY}
 	sets.buff.Doom = set_combine(sets.buff.Doom, {})
-	sets.buff.Sleep = {} --head="Frenzy Sallet"
+	sets.buff.Sleep = {head="Frenzy Sallet"}
 	sets.TreasureHunter = set_combine(sets.TreasureHunter, {})
 	
-	-- Weapons sets
+-- Weapons sets
 	sets.weapons.Default = {main="Agwu's Axe",sub="Sacro Bulwark",}
 	sets.weapons.DualWeapons = {}
 
@@ -288,9 +452,9 @@ function init_gear_sets()
 	sets.precast.JA['Bestial Loyalty'].GooeyGerard = set_combine(sets.precast.JA['Bestial Loyalty'], {ammo="Cl. Wheat Broth"})
 	sets.precast.JA['Bestial Loyalty'].CrudeRaphie = set_combine(sets.precast.JA['Bestial Loyalty'], {ammo="Shadowy Broth"})
 
-	-------------------------------------------------------------------------------------------------------------------
-	-- Complete iLvl Jug Pet Precast List
-	-------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------
+-- Complete iLvl Jug Pet Precast List
+-------------------------------------------------------------------------------------------------------------------
 
 	sets.precast.JA['Bestial Loyalty'].DroopyDortwin = set_combine(sets.precast.JA['Bestial Loyalty'], {ammo="Swirling Broth"})
 	sets.precast.JA['Bestial Loyalty'].PonderingPeter = set_combine(sets.precast.JA['Bestial Loyalty'], {ammo="Vis. Broth"})
