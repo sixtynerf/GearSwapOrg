@@ -542,73 +542,78 @@ function init_gear_sets()
 -- EG: sets.engaged.Dagger.Accuracy.Evasion
     
 -- Normal melee group
-	sets.engaged = 
-		{
-			ammo="Aurgelmir Orb +1",
-			head="Adhemar Bonnet +1",  	
-			neck=JSE_NECK,
-			ear1="Brutal Earring",		--Balder Earring +1
-			ear2="Sherida Earring",
-			body="Malignance Tabard",
-			hands="Adhemar Wrist. +1",	--PathA	
-			ring1="Gere Ring",
-			ring2=CHIRING_2,
-			back=AMBUSTP_BACK,		--Dex +20, Accuracy +20 Attack +20, Accuracy +10, Store TP +10, Phys. dmg. taken -10%
-			waist="Reiki Yotai",
-			legs=NGAI_LEGS,
-			feet=RELIC_FEET
-		}
+	sets.engaged =
+	{
+		ammo="Aurgelmir Orb +1",
+		--head="Adhemar Bonnet +1",
+		head=AF_HEAD,
+		neck=JSE_NECK,
+		ear1="Brutal Earring",		--Balder Earring +1
+		ear2="Sherida Earring",
+		--body="Malignance Tabard",
+		body="Adhemar Jacket +1",	--Path A
+		hands="Adhemar Wrist. +1",	--Path A	
+		ring1="Gere Ring",
+		ring2=CHIRING_2,
+		back=AMBUSTP_BACK,		--Dex +20, Accuracy +20 Attack +20, Accuracy +10, Store TP +10, Phys. dmg. taken -10%
+		waist="Reiki Yotai",
+		legs=NGAI_LEGS,
+		feet=RELIC_FEET
+	}
 
 	sets.engaged.HyrbidGleti = 
-		{
-			ammo="Aurgelmir Orb +1",
-			head="Adhemar Bonnet +1",  	
-			neck=JSE_NECK,
-			ear1="Brutal Earring",		--Balder Earring +1
-			ear2="Sherida Earring",
-			body="Malignance Tabard",
-			hands="Malignance Gloves",	--PathA	
-			ring1="Gere Ring",
-			ring2="Moonlight Ring",
-			back=AMBUSTP_BACK,		--Dex +20, Accuracy +20 Attack +20, Accuracy +10, Store TP +10, Phys. dmg. taken -10%
-			waist="Reiki Yotai",
-			legs=NGAI_LEGS,
-			feet="Malignance Boots"
-		}
+	{
+		ammo="Aurgelmir Orb +1",
+		--head="Adhemar Bonnet +1",
+		head=AF_HEAD,
+		neck=JSE_NECK,
+		ear1="Brutal Earring",		--Balder Earring +1
+		ear2="Sherida Earring",
+		body="Malignance Tabard",
+		hands="Malignance Gloves",	
+		ring1="Gere Ring",
+		ring2="Moonlight Ring",
+		back=AMBUSTP_BACK,		--Dex +20, Accuracy +20 Attack +20, Accuracy +10, Store TP +10, Phys. dmg. taken -10%
+		waist="Reiki Yotai",
+		legs=NGAI_LEGS,
+		feet="Malignance Boots"
+	}
 
 	sets.engaged.HyrbidCento = 
-		{
-			ammo="Aurgelmir Orb +1",
-			head="Adhemar Bonnet +1",  	
-			neck=JSE_NECK,
-			ear1="Brutal Earring",		--Balder Earring +1
-			ear2="Sherida Earring",
-			body="Malignance Tabard",
-			hands="Malignance Gloves",	--PathA	
-			ring1="Gere Ring",
-			ring2=CHIRING_2,
-			back=AMBUSTP_BACK,		--Dex +20, Accuracy +20 Attack +20, Accuracy +10, Store TP +10, Phys. dmg. taken -10%
-			waist="Reiki Yotai",
-			legs=NGAI_LEGS,
-			feet="Malignance Boots"
-		}
+	{
+		ammo="Aurgelmir Orb +1",
+		--head="Adhemar Bonnet +1",
+		head=AF_HEAD,
+		neck=JSE_NECK,
+		ear1="Brutal Earring",		--Balder Earring +1
+		ear2="Sherida Earring",
+		body="Malignance Tabard",
+		hands="Malignance Gloves",	
+		ring1="Gere Ring",
+		ring2=CHIRING_2,
+		back=AMBUSTP_BACK,		--Dex +20, Accuracy +20 Attack +20, Accuracy +10, Store TP +10, Phys. dmg. taken -10%
+		waist="Reiki Yotai",
+		legs=NGAI_LEGS,
+		feet=RELIC_FEET
+	}
 		
 	sets.engaged.FullDT = 
-		{
-			ammo="Aurgelmir Orb +1",
-			head="Adhemar Bonnet +1",  	
-			neck=JSE_NECK,
-			ear1="Brutal Earring",		--Balder Earring +1
-			ear2="Sherida Earring",
-			body="Malignance Tabard",
-			hands="Malignance Gloves",	--PathA	
-			ring1=MOONRING_1,
-			ring2=MOONRING_2,
-			back=AMBUSTP_BACK,		--Dex +20, Accuracy +20 Attack +20, Accuracy +10, Store TP +10, Phys. dmg. taken -10%
-			waist="Reiki Yotai",
-			legs=NGAI_LEGS,
-			feet="Malignance Boots"
-		}
+	{
+		ammo="Aurgelmir Orb +1",
+		--head="Adhemar Bonnet +1",
+		head=AF_HEAD,
+		neck=JSE_NECK,
+		ear1="Brutal Earring",		--Balder Earring +1
+		ear2="Sherida Earring",
+		body="Malignance Tabard",
+		hands="Malignance Gloves",	--PathA	
+		ring1=MOONRING_1,
+		ring2=MOONRING_2,
+		back=AMBUSTP_BACK,		--Dex +20, Accuracy +20 Attack +20, Accuracy +10, Store TP +10, Phys. dmg. taken -10%
+		waist="Reiki Yotai",
+		legs=NGAI_LEGS,
+		feet=RELIC_FEET
+	}
 	
 -- Buff sets: Gear that needs to be worn to actively enhance a current player buff.
 	
