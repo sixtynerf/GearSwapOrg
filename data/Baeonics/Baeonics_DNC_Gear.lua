@@ -13,6 +13,8 @@
 --ear2="Trux Earring"
 --legs="Zoar Subligar +1",
 --feet="Ahosi Leggings"
+--head="Blistering Sallet +1",
+--body="Dread Jupon",
 
 function user_job_setup()
 	state.OffenseMode:options('Normal','HybridGleti','HybridCento','FullDT')
@@ -83,6 +85,7 @@ function user_job_setup()
 	AMBUCRIT_BACK = {name="Senuna's Mantle",augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}  --make a critical cape
 	AMBUWALTZ_BACK = {name="Senuna's Mantle",augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}}  --make a waltz cape with CHR
 	AMBUFC_BACK = {name="Senuna's Mantle",augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}}  --make a fastcast magic cape
+	AMBUDA_BACK = {name="Senuna's Mantle",augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}} --make a DA Cape
 
 -- Additional local binds
 	send_command('bind @` gs c step')
@@ -212,6 +215,7 @@ function init_gear_sets()
 	sets.precast.JA.Provoke = sets.Enmity
 	
 	sets.precast.Flourish1 = {}
+	
 	sets.precast.Flourish1['Violent Flourish'] = 
 	{
 		ammo="C. Palug Stone",
@@ -249,6 +253,7 @@ function init_gear_sets()
 		}
 	
 	sets.precast.Flourish2 = {}
+	
 	sets.precast.Flourish2['Reverse Flourish'] = 
 	{
 		hands=EMPY_HANDS,
@@ -256,26 +261,33 @@ function init_gear_sets()
 	}
 	
 	sets.precast.Flourish3 = {}
+	
 	sets.precast.Flourish3['Striking Flourish'] = 
 	{
 		body=RELIC_BODY
 	}
+	
 	sets.precast.Flourish3['Climactic Flourish'] = {}
 
 -- Fast cast sets for spells
     
 	sets.precast.FC = 
 	{
-		ammo="Impatiens",
-		--head=gear.herculean_fc_head,
-		neck="Voltsurge Torque",
-		ear1="Enchntr. Earring +1",
-		ear2="Loquac. Earring",
+		--Fix this set
+		ammo="Sapience Orb",			--2 FC
+		head="Herculean Helm",			--7 FC ~
+		neck="Orunmila's Torque",		--5 FC
+		ear1="Enchntr. Earring +1",		--2 FC
+		ear2="Loquac. Earring",			--2 FC
 		--body="Dread Jupon",
-		hands="Leyline Gloves",
-		ring1="Rahab Ring",
-		ring2="Prolix Ring",
-		--legs="Rawhide Trousers"
+		hands="Leyline Gloves",			--5 FC ~
+		ring1="Rahab Ring",			--2 FC
+		ring2="Prolix Ring",			--2 FC
+		--back="Moonlight Cape",
+		back=AMBUFC_BACK,			--10 FC
+		waist="Plat. Mog. Belt",
+		legs="Herculean Trousers",
+		feet="Herculean Boots"
 	}
 	
 	sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, 
@@ -290,16 +302,20 @@ function init_gear_sets()
 	sets.precast.WS = 
 	{
 		ammo="Coiste Bodhar",
+		--ammmo="Crepuscular Pebble",	--high buff
 		head=EMPY_HEAD,
 		neck=JSE_NECK,
 		ear1="Moonshade Earring",
 		ear2="Sherida Earring",
-		body="Adhemar Jacket +1",
-		hands=AF_HANDS,
-		ring1="Ilabrat Ring",
+		--ear2=EMPY_EAR,		--high buff
+		body=BUMBA_BODY,
+		--body=NGAI_BODY,		--high buff
+		--hands=BUMBA_HANDS,
+		hands=AF_HANDS,			--high buff
+		ring1="Epaminondas's Ring",
 		ring2="Regal Ring",
-		back=AMBUWS_BACK,
-		waist="Sailfi Belt +1",
+		back=AMBUWSD_BACK,
+		waist="Kentarch Belt +1",
 		legs=RELIC_LEGS,
 		feet=BUMBA_FEET
 	}
@@ -316,7 +332,7 @@ function init_gear_sets()
 	sets.precast.WS["Rudra's Storm"] = set_combine(sets.precast.WS, 
 		{
 			ammo="Coiste Bodhar",
-			--ammo="Crepuscular Pebble",	--high buff
+			--ammmo="Crepuscular Pebble",	--high buff
 			head=EMPY_HEAD,
 			neck=JSE_NECK,
 			ear1="Moonshade Earring",
@@ -324,13 +340,13 @@ function init_gear_sets()
 			--ear2=EMPY_EAR,		--high buff
 			body=BUMBA_BODY,
 			--body=NGAI_BODY,		--high buff
-			hands=AF_HANDS,
+			--hands=BUMBA_HANDS,
+			hands=AF_HANDS,			--high buff
 			ring1="Epaminondas's Ring",
 			ring2="Regal Ring",
-			back=AMBUWS_BACK,
+			back=AMBUWSD_BACK,
 			waist="Kentarch Belt +1",
-			legs=BUMBA_LEGS,
-			--legs="NGAI_LEGS",		--high buff
+			legs=RELIC_LEGS,
 			feet=BUMBA_FEET
 		})
 	
@@ -354,7 +370,7 @@ function init_gear_sets()
 			--hands="NGAI_HANDS",		--high buff
 			ring1="Ilabrat Ring",
 			ring2="Regal Ring",
-			back=AMBUWS_BACK,		--agi cape
+			back=AMBUWSD_BACK,		--agi cape
 			waist="Sailfi Belt +1",
 			legs=BUMBA_LEGS,
 			--legs="NGAI_LEGS",		--high buff
@@ -369,21 +385,22 @@ function init_gear_sets()
 	sets.precast.WS['Evisceration'] = set_combine(sets.precast.WS, 
 		{
 			ammo="Yetshila +1",
-			head="Blistering Sallet +1",
+			--head="Blistering Sallet +1",
 			neck="Fotia Gorget",
+			--ear1="Mache Earring +1",	-- high buff
 			ear1="Moonshade Earring",
 			ear2="Odr Earring",
 			body=NGAI_BODY,
-			hands="Adhe. Gamashes +1",	--Path B
+			hands="Adhemar Wrist. +1",	--Path B
 			--hands="NGAI_HANDS",		--high buff
 			ring1="Begrudging Ring",
-			--ring1="Gere Ring",
+			--ring1="Gere Ring",		--high buff
 			ring2="Regal Ring",
-			back=AMBUWS_BACK,		--crit cape
+			back=AMBUCRIT_BACK,		--critical cape
 			waist="Fotia Belt",
 			legs=NGAI_LEGS,
 			feet="Adhe. Gamashes +1"	--Path B
-			--feet="NGAI_FEET"
+			--feet="NGAI_FEET"		--high buff		
 		})
 	
 	--[[sets.precast.WS['Evisceration'].SomeAcc = set_combine(sets.precast.WS.SomeAcc, {head="Adhemar Bonnet +1",neck="Fotia Gorget",body="Abnoba Kaftan",hands="Mummu Wrists +2",ring1="Begrudging Ring",waist="Fotia Belt",legs="Mummu Kecks +2",feet="Mummu Gamash. +2"})
@@ -391,12 +408,7 @@ function init_gear_sets()
 	sets.precast.WS['Evisceration'].FullAcc = set_combine(sets.precast.WS.FullAcc, {head=MUMMU_HEAD,body="Mummu Jacket +2",hands="Mummu Wrists +2",legs="Mummu Kecks +2",feet="Mummu Gamash. +2"})
 	sets.precast.WS['Evisceration'].Fodder = set_combine(sets.precast.WS['Evisceration'], {})]]
 	
-	sets.precast.WS['Pyrrhic Kleos'] = set_combine(sets.precast.WS, 
-		{
-			head="Adhemar Bonnet +1",
-			hands=AF_HANDS,
-			feet=gear.herculean_ta_feet
-		})
+	sets.precast.WS['Pyrrhic Kleos'] = set_combine(sets.precast.WS,{})
 	
 	--[[sets.precast.WS['Pyrrhic Kleos'].SomeAcc = set_combine(sets.precast.WS.SomeAcc, {head="Adhemar Bonnet +1",hands=AF_HANDS,})
 	sets.precast.WS['Pyrrhic Kleos'].Acc = set_combine(sets.precast.WS.Acc, {})
@@ -414,7 +426,7 @@ function init_gear_sets()
 		hands=BUMBA_HANDS,
 		ring1="Epaminondas's Ring",
 		ring2="Dingir Ring",
-		back=AMBUWS_BACK,
+		back=AMBUFC_BACK,
 		waist="Orpheus's Sash",
 		legs=BUMBA_LEGS,
 		feet=BUMBA_FEET
@@ -422,8 +434,52 @@ function init_gear_sets()
 
 	sets.precast.WS['Aeolian Edge'].TH = set_combine(sets.precast.WS['Aeolian Edge'], sets.TreasureHunter)
 
+	sets.precast.WS['Exenterator'] = 
+	{
+		ammo="Coiste Bodhar",
+		--ammmo="Crepuscular Pebble",	--high buff
+		head=BUMBA_HEAD,
+		neck="Fotia Gorget",
+		ear1="Moonshade Earring",
+		ear2="Sherida Earring",
+		body=BUMBA_BODY,
+		--body=NGAI_BODY,
+		hands=BUMBA_HANDS,
+		--hands=NGAI_HANDS,
+		ring1="Gere Ring",
+		ring2="Sroda Ring",
+		back=AMBUDA_BACK,
+		waist="Fotia Belt",
+		legs=BUMBA_LEGS,
+		--legs=NGAI_LEGS,
+		feet=BUMBA_FEET
+	}
+
+	sets.precast.WS['Shark Bite'] = 
+	{
+		ammo="Coiste Bodhar",
+		--ammmo="Crepuscular Pebble",	--high buff
+		head=BUMBA_HEAD,
+		neck=JSE_NECK,
+		ear1="Moonshade Earring",
+		ear2="Sherida Earring",
+		body=BUMBA_BODY,
+		hands=BUMBA_HANDS,
+		--hands=NGAI_HANDS,		--high buff
+		--ring1="Epaminondas's Ring",	--high buff
+		ring1="Ilabrat Ring",
+		ring2="Regal Ring",
+		back=AMBUWSD_BACK,
+		waist="Sailfi Belt +1",
+		legs=BUMBA_LEGS,
+		--legs=NGAI_LEGS,		--high buff
+		feet=BUMBA_FEET
+	}
+
 -- Swap to these on Moonshade using WS if at 3000 TP
+	
 	sets.MaxTP = {ear1="Ishvara Earring",ear2="Sherida Earring"}
+	
 	sets.AccMaxTP = {ear1="Mache Earring +1",ear2="Sherida Earring"}
 	
 	sets.Skillchain = {hands=EMPY_HANDS}
@@ -433,12 +489,12 @@ function init_gear_sets()
     
 	sets.midcast.FastRecast = 
 	{
-		head=gear.herculean_fc_head,
-		neck="Voltsurge Torque",
-		ear1="Enchntr. Earring +1",
-		ear2="Loquac. Earring",
-		body="Dread Jupon",
-		hands="Leyline Gloves",
+		--head=gear.herculean_fc_head,
+		neck="Voltsurge Torque",		--4 FC
+		ear1="Enchntr. Earring +1",		--2 FC
+		ear2="Loquac. Earring",			--2 FC
+		--body="Dread Jupon",
+		hands="Leyline Gloves",			--5 FC ~
 		ring1="Defending Ring",
 		ring2="Prolix Ring",
 		back="Moonlight Cape",
@@ -471,7 +527,7 @@ function init_gear_sets()
 		hands=NGAI_HANDS,
 		ring1=CHIRING_1,
 		ring2=CHIRING_2,
-		back="Shadow Mantle",
+		back=AMBUFC_BACK,
 		waist="Plat. Mog. Belt",
 		legs=NGAI_LEGS,
 		feet=NGAI_FEET
