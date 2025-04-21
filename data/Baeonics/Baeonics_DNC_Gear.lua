@@ -80,6 +80,9 @@ function user_job_setup()
 --AMBU CAPES
 	AMBUSTP_BACK = {name="Senuna's Mantle",augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}}
 	AMBUWSD_BACK = {name="Senuna's Mantle",augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}
+	AMBUCRIT_BACK = {name="Senuna's Mantle",augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}  --make a critical cape
+	AMBUWALTZ_BACK = {name="Senuna's Mantle",augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}}  --make a waltz cape with CHR
+	AMBUFC_BACK = {name="Senuna's Mantle",augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}}  --make a fastcast magic cape
 
 -- Additional local binds
 	send_command('bind @` gs c step')
