@@ -62,8 +62,8 @@ function user_job_setup()
 	MACHEAR_2 = {name = "Mache Earring +1", bag = "wardrobe3"}
 
 --CHR Rings
-	CHRRING_1 = {name = "Carb. Ring +1", bag = "wardrobe2"}
-	CHRRING_2 = {name = "Carb. Ring +1", bag = "wardrobe3"}
+	CARBRING_1 = {name = "Carb. Ring +1", bag = "wardrobe2"}
+	CARBRING_2 = {name = "Carb. Ring +1", bag = "wardrobe3"}
 
 --Expensive Rings...
 	BMSRING_1 = {name = "Stikini Ring +1", bag = "wardrobe2"}
@@ -137,9 +137,9 @@ function init_gear_sets()
 		body=AF_BODY,
 		hands="Regal Gloves",
 		ring1="Defending Ring",
-		--ring1=CHRRING_1,
+		--ring1=CARBRING_1,
 		--ring2="Valseur's Ring",
-		-ring2=CHRRING_2,
+		-ring2=CARBRING_2,
 		back="Toetapper Mantle",
 		waist="Chaac Belt",
 		legs="Dashing Subligar",
@@ -608,9 +608,13 @@ function init_gear_sets()
 		}
 	
 -- Buff sets: Gear that needs to be worn to actively enhance a current player buff.
+	
 	sets.buff['Saber Dance'] = {legs=RELIC_LEGS}
+	
 	sets.buff['Climactic Flourish'] = {ammo="Charis Feather",head=EMPY_HEAD,body=MEGHANADA_BODY}
+	
 	sets.buff.Doom = set_combine(sets.buff.Doom, {})
+	
 	sets.buff.Sleep = {head="Frenzy Sallet"}
 end
 
