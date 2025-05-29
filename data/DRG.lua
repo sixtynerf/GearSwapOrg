@@ -65,6 +65,12 @@ function job_setup()
 	autofood = 'Soy Ramen'
 
 	Breath_HPP = 60
+	healing_breath_trigger_head = ''
+	
+	
+	if sets.midcast.HB_Trigger and sets.midcast.HB_Trigger.head then
+		healing_breath_trigger_head = standardize_slot(sets.midcast.HB_Trigger.head)
+	end
 	
 	update_melee_groups()
 	init_job_states({"Capacity","AutoFoodMode","AutoTrustMode","AutoWSMode","AutoJumpMode","AutoShadowMode","AutoStunMode","AutoDefenseMode"},{"AutoBuffMode","AutoSambaMode","AutoRuneMode","Weapons","OffenseMode","WeaponskillMode","Stance","IdleMode","Passive","RuneElement","TreasureMode",})
@@ -305,13 +311,13 @@ end
 
 function find_breath_hpp()
 	if S{'WHM','BLM','RDM','SMN','BLU','SCH','GEO'}:contains(player.sub_job) then
-		if sets.midcast.HB_Trigger and (sets.midcast.HB_Trigger.head:contains('Vishap') or sets.midcast.HB_Trigger.head:contains('Drachen')) then
+		if (healing_breath_trigger_head:contains('Vishap') or healing_breath_trigger_head.head:contains('Drachen')) then
 			Breath_HPP = 65
 		else
 			Breath_HPP = 45
 		end
 	elseif S{'PLD','DRK','BRD','NIN','RUN'}:contains(player.sub_job) then
-		if sets.midcast.HB_Trigger and (sets.midcast.HB_Trigger.head:contains('Vishap') or sets.midcast.HB_Trigger.head:contains('Drachen')) then
+		if (healing_breath_trigger_head:contains('Vishap') or healing_breath_trigger_head.head:contains('Drachen')) then
 			Breath_HPP = 45
 		else
 			Breath_HPP = 35
