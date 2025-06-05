@@ -318,13 +318,7 @@ function check_ammo_precast(spell, action, spellMap, eventArgs)
 		cancel_spell()
 		eventArgs.cancel = true
 		enable('ammo')
-		if sets.weapons[state.Weapons.value].ammo and item_available(sets.weapons[state.Weapons.value].ammo) then
-			equip({ammo=sets.weapons[state.Weapons.value].ammo})
-		elseif item_available(DefaultAmmo[RangedWeaponType].Default) then
-			equip({ammo=DefaultAmmo[RangedWeaponType].Default})
-		else
-			equip({ammo=empty})
-		end
+		equip({ammo=empty})
 		add_to_chat(123,"Abort: Don't shoot your good ammo!")
 		return
 	elseif not state.UseDefaultAmmo.value then
